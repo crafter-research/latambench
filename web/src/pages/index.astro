@@ -1,0 +1,530 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const categories = [
+  {
+    id: "GEN",
+    name: "Latam-Gen",
+    description: "Generación de texto abierta con instrucciones en variedades regionales.",
+    tasks: ["Narración", "Resumen", "Redacción libre"],
+    samples: 200,
+  },
+  {
+    id: "RSN",
+    name: "Latam-Reason",
+    description: "Razonamiento lógico y matemático expresado en español latinoamericano.",
+    tasks: ["Aritmética", "Silogismos", "Lógica proposicional"],
+    samples: 200,
+  },
+  {
+    id: "COD",
+    name: "Latam-Code",
+    description: "Generación de código con especificaciones técnicas en español.",
+    tasks: ["Algoritmos", "Debug", "Documentación"],
+    samples: 200,
+    priority: true,
+  },
+  {
+    id: "CUL",
+    name: "Latam-Cultura",
+    description: "Conocimiento cultural, histórico y geopolítico de América Latina.",
+    tasks: ["Historia", "Gastronomía", "Geografía"],
+    samples: 200,
+  },
+  {
+    id: "IF",
+    name: "Latam-IF",
+    description: "Seguimiento de instrucciones complejas con restricciones en español.",
+    tasks: ["Formatos", "Restricciones", "Multi-step"],
+    samples: 100,
+  },
+];
+
+const leaderboard = [
+  { model: "GPT-5", org: "OpenAI", gen: 71, rsn: 78, cod: 69, cul: 58, if: 74, avg: 70.0 },
+  { model: "Claude Opus 4.6", org: "Anthropic", gen: 68, rsn: 74, cod: 67, cul: 55, if: 72, avg: 67.2 },
+  { model: "Gemini 2.0 Pro", org: "Google", gen: 65, rsn: 70, cod: 63, cul: 52, if: 68, avg: 63.6 },
+  { model: "Llama 3.3 70B", org: "Meta", gen: 58, rsn: 62, cod: 55, cul: 48, if: 61, avg: 56.8 },
+  { model: "Mistral Large 2", org: "Mistral", gen: 54, rsn: 59, cod: 51, cul: 44, if: 57, avg: 53.0 },
+];
+
+const varieties = ["PE", "MX", "AR", "CO", "CL"];
+---
+
+<Layout>
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 border-b border-white/8 backdrop-blur-sm bg-[#080808]/80">
+    <span class="font-['Space_Grotesk'] text-sm font-medium tracking-[0.12em] uppercase text-white">
+      LatamBench
+    </span>
+    <div class="flex items-center gap-8">
+      <a href="#benchmark" class="font-['JetBrains_Mono'] text-xs text-[#6b6560] hover:text-white transition-colors tracking-[0.08em] uppercase">Benchmark</a>
+      <a href="#leaderboard" class="font-['JetBrains_Mono'] text-xs text-[#6b6560] hover:text-white transition-colors tracking-[0.08em] uppercase">Leaderboard</a>
+      <a href="#contribute" class="font-['JetBrains_Mono'] text-xs text-[#6b6560] hover:text-white transition-colors tracking-[0.08em] uppercase">Contribute</a>
+      <a
+        href="https://github.com/crafter-research/latambench"
+        target="_blank"
+        rel="noopener"
+        class="font-['JetBrains_Mono'] text-xs border border-white/12 px-4 py-2 text-[#c8c4be] hover:text-white hover:border-white/30 transition-all tracking-[0.08em] uppercase"
+      >
+        GitHub
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
+    <!-- Geometric background -->
+    <div class="absolute inset-0 pointer-events-none select-none">
+      <!-- Hairline grid -->
+      <svg class="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#F8F8F8" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
+
+      <!-- Fibonacci spiral — top right -->
+      <svg
+        class="absolute top-0 right-0 w-[640px] h-[640px] opacity-[0.07]"
+        viewBox="0 0 640 640"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="spiral-path"
+          d="M 320 320
+             C 320 270, 270 220, 220 220
+             C 120 220, 70 300, 70 380
+             C 70 500, 170 580, 320 580
+             C 500 580, 600 460, 600 320
+             C 600 140, 460 60, 280 60
+             C 80 60, -60 200, -60 400
+             C -60 620, 120 720, 340 720"
+          stroke="#F8F8F8"
+          stroke-width="0.8"
+          fill="none"
+          vector-effect="non-scaling-stroke"
+        />
+        <!-- Concentric circles -->
+        <circle cx="320" cy="320" r="50" stroke="#F8F8F8" stroke-width="0.5" fill="none" opacity="0.6"/>
+        <circle cx="320" cy="320" r="100" stroke="#F8F8F8" stroke-width="0.5" fill="none" opacity="0.5"/>
+        <circle cx="320" cy="320" r="180" stroke="#F8F8F8" stroke-width="0.5" fill="none" opacity="0.4"/>
+        <circle cx="320" cy="320" r="280" stroke="#F8F8F8" stroke-width="0.5" fill="none" opacity="0.3"/>
+      </svg>
+
+      <!-- Sacred geometry — bottom left -->
+      <svg
+        class="absolute bottom-0 left-0 w-[400px] h-[400px] opacity-[0.05]"
+        viewBox="0 0 400 400"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="200" cy="200" r="160" stroke="#F8F8F8" stroke-width="0.5"/>
+        <circle cx="120" cy="200" r="80" stroke="#F8F8F8" stroke-width="0.5"/>
+        <circle cx="280" cy="200" r="80" stroke="#F8F8F8" stroke-width="0.5"/>
+        <circle cx="200" cy="130" r="80" stroke="#F8F8F8" stroke-width="0.5"/>
+        <circle cx="200" cy="270" r="80" stroke="#F8F8F8" stroke-width="0.5"/>
+        <line x1="40" y1="200" x2="360" y2="200" stroke="#F8F8F8" stroke-width="0.3"/>
+        <line x1="200" y1="40" x2="200" y2="360" stroke="#F8F8F8" stroke-width="0.3"/>
+      </svg>
+    </div>
+
+    <!-- Hero content -->
+    <div class="relative z-10 px-8 md:px-16 max-w-6xl">
+      <!-- Label -->
+      <div class="flex items-center gap-4 mb-10">
+        <div class="w-8 h-px bg-white/20"></div>
+        <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">
+          crafter-research / 2026
+        </span>
+      </div>
+
+      <!-- Main headline -->
+      <h1 class="font-['Space_Grotesk'] font-light text-[clamp(56px,9vw,112px)] leading-[1.0] tracking-[0.04em] uppercase text-white mb-8">
+        Latam<br />Bench
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="font-['IBM_Plex_Sans'] font-light text-[#c8c4be] text-xl max-w-xl leading-relaxed mb-12" style="max-width: 520px;">
+        El primer benchmark generación-primero para evaluar LLMs en español latinoamericano auténtico —
+        desde Lima hasta Ciudad de México.
+      </p>
+
+      <!-- Stats row -->
+      <div class="flex items-center gap-12 mb-12">
+        <div>
+          <div class="font-['JetBrains_Mono'] text-3xl font-medium text-white">900</div>
+          <div class="font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] uppercase text-[#6b6560] mt-1">Muestras</div>
+        </div>
+        <div class="w-px h-10 bg-white/8"></div>
+        <div>
+          <div class="font-['JetBrains_Mono'] text-3xl font-medium text-white">5</div>
+          <div class="font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] uppercase text-[#6b6560] mt-1">Variedades</div>
+        </div>
+        <div class="w-px h-10 bg-white/8"></div>
+        <div>
+          <div class="font-['JetBrains_Mono'] text-3xl font-medium text-white">5</div>
+          <div class="font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] uppercase text-[#6b6560] mt-1">Categorías</div>
+        </div>
+        <div class="w-px h-10 bg-white/8"></div>
+        <div>
+          <div class="font-['JetBrains_Mono'] text-3xl font-medium text-white">
+            <span class="text-[#6b6560]">∞</span>
+          </div>
+          <div class="font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] uppercase text-[#6b6560] mt-1">Open Source</div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="flex items-center gap-4">
+        <a
+          href="#leaderboard"
+          class="font-['Space_Grotesk'] text-sm tracking-[0.08em] uppercase bg-white text-[#080808] px-7 py-3 hover:bg-[#c8c4be] transition-colors font-medium"
+        >
+          Ver Leaderboard
+        </a>
+        <a
+          href="#contribute"
+          class="font-['Space_Grotesk'] text-sm tracking-[0.08em] uppercase border border-white/12 text-[#c8c4be] px-7 py-3 hover:border-white/30 hover:text-white transition-all"
+        >
+          Contribuir
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 right-8 flex flex-col items-center gap-2">
+      <div class="font-['JetBrains_Mono'] text-[9px] tracking-[0.2em] uppercase text-[#6b6560] rotate-90 translate-y-4">scroll</div>
+      <div class="w-px h-12 bg-white/10"></div>
+    </div>
+  </section>
+
+  <!-- THE GAP -->
+  <section class="border-t border-white/8 py-28 px-8 md:px-16">
+    <div class="max-w-6xl">
+      <div class="flex items-start gap-24">
+        <!-- Left: label + text -->
+        <div class="flex-1 max-w-lg">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-8 h-px bg-white/20"></div>
+            <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">
+              01 / El Problema
+            </span>
+          </div>
+          <h2 class="font-['Space_Grotesk'] font-light text-[clamp(32px,5vw,52px)] leading-[1.1] tracking-[0.02em] uppercase text-white mb-8">
+            Los benchmarks<br />no hablan<br />como nosotros
+          </h2>
+          <p class="font-['IBM_Plex_Sans'] text-[#c8c4be] leading-relaxed mb-6">
+            MMLU, HumanEval, GSM8K — todos en inglés, todos midiendo inteligencia según un único
+            estándar cultural. Cuando se traducen, se pierde el contexto, el modismo, la realidad
+            técnica del desarrollador peruano que escribe en español pero documenta en Spanglish.
+          </p>
+          <p class="font-['IBM_Plex_Sans'] text-[#c8c4be] leading-relaxed">
+            LatamBench no es una traducción. Es un instrumento construido desde adentro —
+            por y para la comunidad técnica latinoamericana.
+          </p>
+
+          <!-- Parchment inset quote -->
+          <div class="mt-10 p-6 bg-[#e8dfc8] border-l-2 border-[#4a3f35]">
+            <p class="font-['IBM_Plex_Sans'] text-[#4a3f35] text-sm italic leading-relaxed">
+              "Un modelo que no entiende qué es 'hacer la tarea en la compu' o 'jalar el código'
+              no entiende a su usuario."
+            </p>
+            <div class="font-['JetBrains_Mono'] text-[#6b6560] text-[10px] tracking-[0.12em] uppercase mt-3">
+              — Motivación del proyecto
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: gap visualization -->
+        <div class="flex-1 pt-16">
+          <div class="font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] uppercase text-[#6b6560] mb-6">
+            Delta de cobertura vs benchmarks en inglés
+          </div>
+          <div class="space-y-4">
+            {[
+              { label: "MMLU (inglés)", coverage: 100, latam: false },
+              { label: "MMLU-ES (traducido)", coverage: 61, latam: false },
+              { label: "Latam-Gen", coverage: 100, latam: true },
+              { label: "Latam-Code", coverage: 100, latam: true },
+              { label: "Latam-Cultura", coverage: 100, latam: true },
+            ].map((item) => (
+              <div>
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class={`font-['JetBrains_Mono'] text-xs ${item.latam ? "text-white" : "text-[#6b6560]"}`}>
+                    {item.label}
+                  </span>
+                  <span class="font-['JetBrains_Mono'] text-[10px] text-[#6b6560]">
+                    {item.coverage}%
+                  </span>
+                </div>
+                <div class="h-px bg-white/5 relative">
+                  <div
+                    class={`h-full absolute left-0 top-0 ${item.latam ? "bg-white" : "bg-[#3a3a3a]"}`}
+                    style={`width: ${item.coverage}%`}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div class="mt-8 font-['JetBrains_Mono'] text-[10px] text-[#6b6560] tracking-[0.08em]">
+            * Cobertura lingüística y cultural estimada
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENCHMARK CATEGORIES -->
+  <section id="benchmark" class="border-t border-white/8 py-28 px-8 md:px-16">
+    <div class="max-w-6xl">
+      <div class="flex items-center gap-4 mb-16">
+        <div class="w-8 h-px bg-white/20"></div>
+        <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">
+          02 / Categorías
+        </span>
+      </div>
+
+      <!-- Film-strip grid -->
+      <div class="grid grid-cols-5 border-l border-t border-white/8">
+        {categories.map((cat) => (
+          <div class={`border-r border-b border-white/8 p-6 ${cat.priority ? "bg-white/[0.02]" : ""}`}>
+            <!-- Header -->
+            <div class="flex items-start justify-between mb-8">
+              <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] text-[#6b6560]">
+                [{cat.id}]
+              </span>
+              {cat.priority && (
+                <span class="font-['JetBrains_Mono'] text-[8px] tracking-[0.15em] uppercase text-[#6b6560] border border-white/10 px-2 py-0.5">
+                  Fase 1
+                </span>
+              )}
+            </div>
+
+            <!-- Category name -->
+            <h3 class="font-['Space_Grotesk'] text-lg font-medium tracking-[0.02em] text-white mb-3">
+              {cat.name}
+            </h3>
+
+            <!-- Description -->
+            <p class="font-['IBM_Plex_Sans'] text-[#6b6560] text-sm leading-relaxed mb-8">
+              {cat.description}
+            </p>
+
+            <!-- Tasks -->
+            <div class="space-y-1.5">
+              {cat.tasks.map((task) => (
+                <div class="flex items-center gap-2">
+                  <div class="w-1 h-1 rounded-full bg-[#3a3a3a]"></div>
+                  <span class="font-['JetBrains_Mono'] text-[11px] text-[#6b6560]">{task}</span>
+                </div>
+              ))}
+            </div>
+
+            <!-- Samples count -->
+            <div class="mt-8 pt-4 border-t border-white/8">
+              <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.12em] uppercase text-[#6b6560]">
+                {cat.samples} muestras objetivo
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Varieties row -->
+      <div class="mt-8 flex items-center gap-4">
+        <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] uppercase text-[#6b6560]">
+          Variedades:
+        </span>
+        {varieties.map((v) => (
+          <span class="font-['JetBrains_Mono'] text-[11px] border border-white/8 px-3 py-1 text-[#c8c4be]">
+            {v}
+          </span>
+        ))}
+        <span class="font-['JetBrains_Mono'] text-[10px] text-[#6b6560]">
+          + más en expansión
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERBOARD -->
+  <section id="leaderboard" class="border-t border-white/8 py-28 px-8 md:px-16">
+    <div class="max-w-6xl">
+      <div class="flex items-center justify-between mb-16">
+        <div class="flex items-center gap-4">
+          <div class="w-8 h-px bg-white/20"></div>
+          <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">
+            03 / Leaderboard
+          </span>
+        </div>
+        <div class="font-['JetBrains_Mono'] text-[10px] text-[#6b6560] border border-white/8 px-3 py-1.5">
+          Piloto — 50 muestras · Latam-Code
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="border border-white/8">
+        <!-- Header -->
+        <div class="grid border-b border-white/8 bg-[#111111]" style="grid-template-columns: 2rem 1fr 1fr repeat(5, 1fr) 1fr;">
+          <div class="px-4 py-3"></div>
+          {["Modelo", "Org", "GEN", "RSN", "COD", "CUL", "IF", "Avg"].map((h) => (
+            <div class="px-4 py-3 font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] uppercase text-[#6b6560]">
+              {h}
+            </div>
+          ))}
+        </div>
+
+        <!-- Rows -->
+        {leaderboard.map((row, i) => (
+          <div
+            class={`grid border-b border-white/8 hover:bg-white/[0.02] transition-colors ${i === 0 ? "bg-white/[0.015]" : ""}`}
+            style="grid-template-columns: 2rem 1fr 1fr repeat(5, 1fr) 1fr;"
+          >
+            <div class="px-4 py-4 font-['JetBrains_Mono'] text-[11px] text-[#6b6560]">
+              {i + 1}
+            </div>
+            <div class="px-4 py-4 font-['Space_Grotesk'] text-sm font-medium text-white">
+              {row.model}
+            </div>
+            <div class="px-4 py-4 font-['JetBrains_Mono'] text-[11px] text-[#6b6560]">
+              {row.org}
+            </div>
+            {[row.gen, row.rsn, row.cod, row.cul, row.if].map((score) => (
+              <div class="px-4 py-4 font-['JetBrains_Mono'] text-sm text-[#c8c4be]">
+                {score}
+              </div>
+            ))}
+            <div class="px-4 py-4 font-['JetBrains_Mono'] text-sm font-medium text-white">
+              {row.avg.toFixed(1)}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="mt-6 font-['JetBrains_Mono'] text-[10px] text-[#6b6560] tracking-[0.08em]">
+        * Datos preliminares. Los scores serán reemplazados con resultados del benchmark completo (900 muestras, Q3 2026).
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTRIBUTE -->
+  <section id="contribute" class="border-t border-white/8 py-28 px-8 md:px-16">
+    <div class="max-w-6xl">
+      <div class="flex items-start gap-24">
+        <!-- Left -->
+        <div class="flex-1">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-8 h-px bg-white/20"></div>
+            <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">
+              04 / Contribuir
+            </span>
+          </div>
+          <h2 class="font-['Space_Grotesk'] font-light text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[0.02em] uppercase text-white mb-8">
+            Buscamos<br />anotadores piloto
+          </h2>
+          <p class="font-['IBM_Plex_Sans'] text-[#c8c4be] leading-relaxed mb-8">
+            Necesitamos 5 anotadores para la fase piloto — uno por cada variedad regional
+            (PE, MX, AR, CO, CL). El trabajo es asíncrono, open source, y acreditado en el paper.
+          </p>
+
+          <!-- Requirements -->
+          <div class="space-y-3 mb-10">
+            {[
+              "Nativo de español latinoamericano (cualquier variedad)",
+              "Perfil técnico: developer, data scientist, o estudiante de ingeniería",
+              "Disponibilidad para revisar ~10 muestras/semana",
+              "Interés genuino en NLP y evaluación de LLMs",
+            ].map((req) => (
+              <div class="flex items-start gap-3">
+                <div class="w-1 h-1 rounded-full bg-white/30 mt-2 flex-shrink-0"></div>
+                <span class="font-['IBM_Plex_Sans'] text-[#c8c4be] text-sm">{req}</span>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="https://github.com/crafter-research/latambench"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-3 font-['Space_Grotesk'] text-sm tracking-[0.08em] uppercase border border-white/12 text-[#c8c4be] px-7 py-3 hover:border-white/30 hover:text-white transition-all"
+          >
+            Aplica en GitHub
+            <span class="text-[#6b6560]">→</span>
+          </a>
+        </div>
+
+        <!-- Right: timeline -->
+        <div class="flex-1 pt-20">
+          <div class="font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] uppercase text-[#6b6560] mb-8">
+            Roadmap
+          </div>
+          <div class="space-y-0">
+            {[
+              { phase: "Semana 1", milestone: "5 anotadores piloto reclutados", status: "active" },
+              { phase: "Semana 2–3", milestone: "50 muestras Latam-Code anotadas", status: "pending" },
+              { phase: "Semana 3–4", milestone: "Evaluación de 5 modelos base", status: "pending" },
+              { phase: "Mes 2", milestone: "400 muestras + preprint preliminar", status: "pending" },
+              { phase: "Mes 3", milestone: "900 muestras + preprint v2", status: "pending" },
+              { phase: "Mes 4", milestone: "Envío a LatinX in NLP @ NAACL", status: "pending" },
+            ].map((item, i) => (
+              <div class="flex gap-6 pb-8 relative">
+                <!-- Line -->
+                {i < 5 && (
+                  <div class="absolute left-[5px] top-3 bottom-0 w-px bg-white/8"></div>
+                )}
+                <!-- Dot -->
+                <div class={`w-2.5 h-2.5 rounded-full border flex-shrink-0 mt-0.5 ${item.status === "active" ? "bg-white border-white" : "bg-transparent border-white/20"}`}></div>
+                <!-- Content -->
+                <div>
+                  <div class="font-['JetBrains_Mono'] text-[10px] text-[#6b6560] tracking-[0.1em] uppercase mb-1">
+                    {item.phase}
+                  </div>
+                  <div class={`font-['IBM_Plex_Sans'] text-sm ${item.status === "active" ? "text-white" : "text-[#6b6560]"}`}>
+                    {item.milestone}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/8 py-12 px-8 md:px-16">
+    <div class="max-w-6xl flex items-center justify-between">
+      <div>
+        <div class="font-['Space_Grotesk'] text-sm tracking-[0.08em] uppercase text-white mb-2">
+          LatamBench
+        </div>
+        <div class="font-['JetBrains_Mono'] text-[10px] text-[#6b6560] tracking-[0.1em]">
+          crafter-research · Lima, Perú · 2026
+        </div>
+      </div>
+      <div class="flex items-center gap-8">
+        <a
+          href="https://github.com/crafter-research/latambench"
+          target="_blank"
+          rel="noopener"
+          class="font-['JetBrains_Mono'] text-[11px] text-[#6b6560] hover:text-white transition-colors tracking-[0.08em] uppercase"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://huggingface.co/datasets/crafter-research/latambench"
+          target="_blank"
+          rel="noopener"
+          class="font-['JetBrains_Mono'] text-[11px] text-[#6b6560] hover:text-white transition-colors tracking-[0.08em] uppercase"
+        >
+          HuggingFace
+        </a>
+      </div>
+    </div>
+  </footer>
+</Layout>
