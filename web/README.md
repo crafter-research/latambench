@@ -1,43 +1,54 @@
-# Astro Starter Kit: Minimal
+# web/
 
-```sh
-bun create astro@latest -- --template minimal
+Landing page for [latambench.org](https://latambench.org).
+
+Built with Astro 5 + Tailwind CSS v4. Scientific Noir design aesthetic — void black, hairline geometry, Space Grotesk typography.
+
+## Stack
+
+- **Framework**: Astro 5 (static output)
+- **Styling**: Tailwind CSS v4 with custom design tokens
+- **Fonts**: Space Grotesk (display) · IBM Plex Sans (body) · JetBrains Mono (mono)
+- **Deploy**: Vercel (`crafter-station/latambench`)
+- **Domain**: latambench.org
+
+## Development
+
+```bash
+bun install
+bun dev          # localhost:4321
+bun run build    # static output → dist/
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Brand Assets
 
-## 🚀 Project Structure
+Generated via `scripts/generate-assets.ts` using `sharp`:
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+bun run scripts/generate-assets.ts
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Outputs:
+- `public/og.png` — Open Graph (1200×630)
+- `public/og-twitter.png` — Twitter card (1200×600)
+- `public/favicon.svg` — SVG favicon (Crafter icon mark)
+- `public/favicon-32.png`, `public/favicon-16.png`
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Design Tokens
 
-Any static assets, like images, can be placed in the `public/` directory.
+Defined in `src/styles/global.css` via `@theme`:
 
-## 🧞 Commands
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--color-void` | `#080808` | Page background |
+| `--color-white` | `#ffffff` | Primary text |
+| `--color-silver` | `#c8c4be` | Secondary text |
+| `--color-annotation` | `#6b6560` | Muted labels |
+| `--color-parchment` | `#e8dfc8` | Quote blocks |
+| `--font-display` | Space Grotesk | Headlines |
+| `--font-body` | IBM Plex Sans | Body copy |
+| `--font-mono` | JetBrains Mono | Labels, code |
 
-All commands are run from the root of the project, from a terminal:
+## Deployment
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Vercel auto-deploys on push to `main`. Domain configured via Spaceship DNS (A record → 76.76.21.21).
