@@ -2,7 +2,7 @@
 
 Landing page for [latambench.org](https://latambench.org).
 
-Built with Astro 5 + Tailwind CSS v4. Scientific Noir design aesthetic — void black, hairline geometry, Space Grotesk typography.
+Built with Astro 5 + Tailwind CSS v4. Scientific Noir design aesthetic - void black, hairline geometry, Space Grotesk typography.
 
 ## Stack
 
@@ -29,9 +29,9 @@ bun run scripts/generate-assets.ts
 ```
 
 Outputs:
-- `public/og.png` — Open Graph (1200×630)
-- `public/og-twitter.png` — Twitter card (1200×600)
-- `public/favicon.svg` — SVG favicon (Crafter icon mark)
+- `public/og.png` - Open Graph (1200×630)
+- `public/og-twitter.png` - Twitter card (1200×600)
+- `public/favicon.svg` - SVG favicon (Crafter icon mark)
 - `public/favicon-32.png`, `public/favicon-16.png`
 
 ## Design Tokens

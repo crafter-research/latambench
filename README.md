@@ -2,7 +2,7 @@
 
 **The first generation-first benchmark for evaluating LLMs on authentic Latin American Spanish.**
 
-Built by [Crafter Research](https://github.com/crafter-research) — a research lab of [Crafter Station](https://crafterstation.com).
+Built by [Crafter Research](https://github.com/crafter-research) - a research lab of [Crafter Station](https://crafterstation.com).
 
 [![Website](https://img.shields.io/badge/web-latambench.org-white?style=flat-square&labelColor=080808)](https://latambench.org)
 [![License](https://img.shields.io/badge/license-MIT-white?style=flat-square&labelColor=080808)](LICENSE)
@@ -14,7 +14,7 @@ Built by [Crafter Research](https://github.com/crafter-research) — a research 
 
 Current benchmarks (MMLU, HumanEval, GSM8K) are built in English and reflect a single cultural standard. Translations lose context, idioms, and the technical reality of Latin American developers who code in Spanish but document in Spanglish.
 
-LatamBench is not a translation. It is an instrument built from the inside — by and for the Latin American technical community.
+LatamBench is not a translation. It is an instrument built from the inside - by and for the Latin American technical community.
 
 ## Benchmark Categories
 
@@ -47,7 +47,7 @@ latambench/
 
 ## Current Status
 
-**Phase 1 — Pilot** (active)
+**Phase 1 - Pilot** (active)
 
 - [ ] Recruit 5 pilot annotators (1 per variety: PE, MX, AR, CO, CL)
 - [ ] Annotate 50 Latam-Code pilot samples (~10 per annotator)
@@ -58,7 +58,7 @@ See the full [roadmap](https://latambench.org#roadmap).
 
 ## Contributing
 
-We are looking for **5 pilot annotators** — one per regional variety.
+We are looking for **5 pilot annotators** - one per regional variety.
 
 **Requirements:**
 - Native Latin American Spanish speaker (any variety)

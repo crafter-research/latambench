@@ -4,10 +4,10 @@ Guidelines for annotators contributing to LatamBench.
 
 ## General Principles
 
-1. **Authentic over translated** — Write instructions as a native speaker would, not as a translation of English text.
-2. **Regional specificity** — Use vocabulary, idioms, and technical terms natural to your variety (PE, MX, AR, CO, CL).
-3. **Technical accuracy** — Code samples must be correct and runnable.
-4. **Difficulty calibration** — Label difficulty honestly: easy (junior dev), medium (mid-level), hard (senior).
+1. **Authentic over translated** - Write instructions as a native speaker would, not as a translation of English text.
+2. **Regional specificity** - Use vocabulary, idioms, and technical terms natural to your variety (PE, MX, AR, CO, CL).
+3. **Technical accuracy** - Code samples must be correct and runnable.
+4. **Difficulty calibration** - Label difficulty honestly: easy (junior dev), medium (mid-level), hard (senior).
 
 ## Category-Specific Guidelines
 

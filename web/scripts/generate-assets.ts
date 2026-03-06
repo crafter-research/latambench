@@ -31,7 +31,7 @@ function makeSpiral(cx: number, cy: number, scale: number, opacity = 0.06): stri
 }
 
 // ─────────────────────────────────────────────
-// OG IMAGE — 1200×630
+// OG IMAGE - 1200×630
 // ─────────────────────────────────────────────
 const ogSvg = `<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
   <defs>${makeGrid(1200, 630, 60, 1)}</defs>
@@ -42,10 +42,10 @@ const ogSvg = `<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http
   <!-- Grid -->
   ${makeGrid(1200, 630, 60, 1)}
 
-  <!-- Spiral decoration — top right -->
+  <!-- Spiral decoration - top right -->
   ${makeSpiral(1080, 120, 1.4, 0.07)}
 
-  <!-- Hairline cross — top right -->
+  <!-- Hairline cross - top right -->
   <line x1="980" y1="0" x2="980" y2="630" stroke="${WHITE}" stroke-width="0.4" opacity="0.04"/>
   <line x1="0" y1="160" x2="1200" y2="160" stroke="${WHITE}" stroke-width="0.4" opacity="0.04"/>
 
@@ -93,7 +93,7 @@ const ogSvg = `<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http
 </svg>`;
 
 // ─────────────────────────────────────────────
-// OG TWITTER — 1200×600
+// OG TWITTER - 1200×600
 // ─────────────────────────────────────────────
 const twitterSvg = `<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
   <defs>${makeGrid(1200, 600, 60, 1)}</defs>
@@ -115,7 +115,7 @@ const twitterSvg = `<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns=
 </svg>`;
 
 // ─────────────────────────────────────────────
-// FAVICON SVG — uses Crafter yellow icon
+// FAVICON SVG - uses Crafter yellow icon
 // ─────────────────────────────────────────────
 const faviconSvg = `<svg width="32" height="32" viewBox="0 0 85 96" xmlns="http://www.w3.org/2000/svg">
   <rect width="85" height="96" rx="8" fill="${VOID}"/>

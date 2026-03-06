@@ -6,7 +6,7 @@ Annotated benchmark datasets for LatamBench.
 
 ```
 data/
-├── latam-code/      # Code generation (Phase 1 — active)
+├── latam-code/      # Code generation (Phase 1 - active)
 ├── latam-gen/       # Open text generation
 ├── latam-reason/    # Logical reasoning
 ├── latam-cultura/   # Cultural knowledge
@@ -36,7 +36,7 @@ Each sample is a JSONL file with the following schema:
 
 | Category | Samples | Status |
 |----------|---------|--------|
-| Latam-Code | 0/200 | Phase 1 — recruiting annotators |
+| Latam-Code | 0/200 | Phase 1 - recruiting annotators |
 | Latam-Gen | 0/200 | Pending |
 | Latam-Reason | 0/200 | Pending |
 | Latam-Cultura | 0/200 | Pending |
