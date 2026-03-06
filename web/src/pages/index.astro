@@ -50,32 +50,54 @@ const roadmap = [
   { phase: "Mes 3", milestone: "900 muestras totales + preprint v2", status: "pending" },
   { phase: "Mes 4", milestone: "Envío a LatinX in NLP @ NAACL", status: "pending" },
 ];
+
+const gaps = [
+  { label: "Variedades regionales", detail: "El español de Lima, Bogotá y Buenos Aires son distintos. Los benchmarks existentes no distinguen." },
+  { label: "Contexto técnico local", detail: "Un dev latinoamericano mezcla español e inglés al escribir specs. Eso no está en ningún benchmark." },
+  { label: "Cultura e historia propias", detail: "Las preguntas culturales en benchmarks traducidos reflejan contexto anglosajón, no latinoamericano." },
+  { label: "Instrucciones en español", detail: "Los modelos son evaluados con instrucciones complejas solo en inglés. El desempeño en español no está medido." },
+];
+
+const steps = [
+  { n: "01", title: "Recibe muestras", detail: "Te asignamos ~10 muestras de código con especificaciones en español de tu variedad." },
+  { n: "02", title: "Evalúa respuestas", detail: "Comparas respuestas de modelos según criterios de corrección, fluidez y naturalidad regional." },
+  { n: "03", title: "Documenta edge cases", detail: "Registras casos donde el modelo falla en contexto latinoamericano específico." },
+  { n: "04", title: "Crédito en el paper", detail: "Todos los anotadores son coautores en los agradecimientos del preprint." },
+];
 ---
 
 <Layout>
   <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 border-b border-white/8 backdrop-blur-sm bg-[#080808]/80">
-    <span class="font-['Space_Grotesk'] text-sm font-medium tracking-[0.12em] uppercase text-white">
-      LatamBench
-    </span>
-    <div class="flex items-center gap-8">
+  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 md:px-8 py-4 md:py-5 border-b border-white/8 backdrop-blur-sm bg-[#080808]/80">
+    <a href="/" class="flex items-center gap-3 group">
+      <!-- Crafter Station icon mark -->
+      <svg width="20" height="20" viewBox="0 0 85 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M34.7718 13.6653C32.7175 12.2339 29.2082 10.55 26.8971 9.87636C21.6759 8.27657 17.5551 9.17712 14.8283 10.129C9.52151 11.9813 6.18334 14.4231 3.18755 18.8857C-1.52013 25.79 -0.835381 36.9885 4.89943 43.3035C6.18334 44.8191 6.86809 44.5665 11.8326 40.9459C12.0037 40.7775 11.319 39.6829 10.2919 38.4199C7.98082 35.5571 6.61131 30.3368 7.29606 27.3898C9.52151 18.1279 20.9055 13.1601 28.2666 18.2121C29.8929 19.3067 35.0286 23.8534 39.6506 28.316C46.5838 34.8835 48.638 36.3991 50.3499 36.2307C52.0618 36.0623 52.6609 35.4729 52.8321 33.6206C53.0889 31.5998 52.3186 30.421 48.3812 26.8846C45.7278 24.4428 43.588 22.2537 43.588 21.8327C43.588 21.4959 45.3854 20.0645 47.6109 18.7173C61.9907 9.70797 77.4832 27.6424 65.5001 39.4303C63.9594 40.9459 61.2204 42.5457 59.4229 43.0509C57.3686 43.5561 47.8677 43.9771 36.0557 43.9771C13.9724 43.9771 12.7741 44.2297 6.95368 49.3658C-0.493008 56.0176 -2.20489 67.3845 3.01635 75.636C9.77829 86.4135 24.3293 89.1079 34.6006 81.4458L38.3667 78.583L42.732 81.4458C49.8363 86.1609 55.5712 87.0871 62.5043 84.8137C76.3705 80.1828 81.5062 62.8377 72.5188 51.2182C71.4917 49.9552 70.9781 49.871 69.6086 50.5446C65.4145 52.9022 65.5001 52.7338 67.9823 57.7858C69.8654 61.6589 70.2077 63.1745 69.7798 66.1215C68.5815 73.531 62.9322 78.4988 55.7423 78.4988C50.1787 78.4988 48.3812 77.4042 38.11 67.5529C32.7175 62.5009 27.7531 58.291 27.0683 58.291C25.7844 58.291 23.0454 60.9011 23.0454 62.1641C23.0454 62.5009 25.3564 65.1953 28.2666 68.0581L33.4879 73.1942L30.4065 75.5518C19.536 83.7191 4.04349 73.952 7.63844 61.1537C8.75116 57.2806 12.6885 52.9864 16.4546 51.6392C17.9097 51.0498 26.8971 50.713 39.0515 50.713C61.3915 50.713 64.045 50.292 69.1806 45.9137C84.502 33.1154 75.6002 9.03437 55.5711 9.11857C49.7507 9.11857 46.5838 10.2974 41.1913 14.2547L38.4523 16.2755L34.7718 13.6653Z" fill="#F8BB2D"/>
+      </svg>
+      <div class="flex flex-col leading-none">
+        <span class="font-['Space_Grotesk'] text-xs font-medium tracking-[0.12em] uppercase text-white">LatamBench</span>
+        <span class="font-['JetBrains_Mono'] text-[9px] tracking-[0.08em] text-[#6b6560]">by Crafter Research</span>
+      </div>
+    </a>
+    <!-- Desktop links -->
+    <div class="hidden md:flex items-center gap-8">
       <a href="#benchmark" class="font-['JetBrains_Mono'] text-xs text-[#6b6560] hover:text-white transition-colors tracking-[0.08em] uppercase">Benchmark</a>
-      <a href="#roadmap" class="font-['JetBrains_Mono'] text-xs text-[#6b6560] hover:text-white transition-colors tracking-[0.08em] uppercase">Roadmap</a>
+      <a href="#roadmap"   class="font-['JetBrains_Mono'] text-xs text-[#6b6560] hover:text-white transition-colors tracking-[0.08em] uppercase">Roadmap</a>
       <a href="#contribute" class="font-['JetBrains_Mono'] text-xs text-[#6b6560] hover:text-white transition-colors tracking-[0.08em] uppercase">Contribute</a>
-      <a
-        href="https://github.com/crafter-research/latambench"
-        target="_blank"
-        rel="noopener"
-        class="font-['JetBrains_Mono'] text-xs border border-white/12 px-4 py-2 text-[#c8c4be] hover:text-white hover:border-white/30 transition-all tracking-[0.08em] uppercase"
-      >
+      <a href="https://github.com/crafter-research/latambench" target="_blank" rel="noopener"
+         class="font-['JetBrains_Mono'] text-xs border border-white/12 px-4 py-2 text-[#c8c4be] hover:text-white hover:border-white/30 transition-all tracking-[0.08em] uppercase">
         GitHub
       </a>
     </div>
+    <!-- Mobile: just GitHub -->
+    <a href="https://github.com/crafter-research/latambench" target="_blank" rel="noopener"
+       class="md:hidden font-['JetBrains_Mono'] text-xs border border-white/12 px-3 py-2 text-[#c8c4be] tracking-[0.08em] uppercase">
+      GitHub
+    </a>
   </nav>
 
   <!-- HERO -->
-  <section class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
-    <!-- Hairline grid -->
+  <section class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-16 md:pt-20">
     <div class="absolute inset-0 pointer-events-none select-none">
       <svg class="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -85,22 +107,15 @@ const roadmap = [
         </defs>
         <rect width="100%" height="100%" fill="url(#grid)" />
       </svg>
-
-      <!-- Fibonacci spiral — top right -->
-      <svg class="absolute top-0 right-0 w-[640px] h-[640px] opacity-[0.07]" viewBox="0 0 640 640" fill="none">
-        <path
-          class="spiral-path"
-          d="M 320 320 C 320 270, 270 220, 220 220 C 120 220, 70 300, 70 380 C 70 500, 170 580, 320 580 C 500 580, 600 460, 600 320 C 600 140, 460 60, 280 60 C 80 60, -60 200, -60 400"
-          stroke="#F8F8F8" stroke-width="0.8" fill="none" vector-effect="non-scaling-stroke"
-        />
+      <svg class="absolute top-0 right-0 w-[300px] h-[300px] md:w-[640px] md:h-[640px] opacity-[0.07]" viewBox="0 0 640 640" fill="none">
+        <path class="spiral-path" d="M 320 320 C 320 270, 270 220, 220 220 C 120 220, 70 300, 70 380 C 70 500, 170 580, 320 580 C 500 580, 600 460, 600 320 C 600 140, 460 60, 280 60 C 80 60, -60 200, -60 400"
+          stroke="#F8F8F8" stroke-width="0.8" fill="none" vector-effect="non-scaling-stroke"/>
         <circle cx="320" cy="320" r="50"  stroke="#F8F8F8" stroke-width="0.5" fill="none" opacity="0.6"/>
         <circle cx="320" cy="320" r="100" stroke="#F8F8F8" stroke-width="0.5" fill="none" opacity="0.5"/>
         <circle cx="320" cy="320" r="180" stroke="#F8F8F8" stroke-width="0.5" fill="none" opacity="0.4"/>
         <circle cx="320" cy="320" r="280" stroke="#F8F8F8" stroke-width="0.5" fill="none" opacity="0.3"/>
       </svg>
-
-      <!-- Sacred geometry — bottom left -->
-      <svg class="absolute bottom-0 left-0 w-[400px] h-[400px] opacity-[0.05]" viewBox="0 0 400 400" fill="none">
+      <svg class="hidden md:block absolute bottom-0 left-0 w-[400px] h-[400px] opacity-[0.05]" viewBox="0 0 400 400" fill="none">
         <circle cx="200" cy="200" r="160" stroke="#F8F8F8" stroke-width="0.5"/>
         <circle cx="120" cy="200" r="80"  stroke="#F8F8F8" stroke-width="0.5"/>
         <circle cx="280" cy="200" r="80"  stroke="#F8F8F8" stroke-width="0.5"/>
@@ -111,71 +126,57 @@ const roadmap = [
       </svg>
     </div>
 
-    <!-- Hero content -->
-    <div class="relative z-10 px-8 md:px-16 max-w-6xl">
-      <div class="flex items-center gap-4 mb-10">
-        <div class="w-8 h-px bg-white/20"></div>
+    <div class="relative z-10 px-5 md:px-16 max-w-6xl">
+      <div class="flex items-center gap-4 mb-8 md:mb-10">
+        <div class="w-6 md:w-8 h-px bg-white/20"></div>
         <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">
-          crafter-research · en construcción
+          Crafter Research Lab · en construcción
         </span>
       </div>
 
-      <h1 class="font-['Space_Grotesk'] font-light text-[clamp(56px,9vw,112px)] leading-[1.0] tracking-[0.04em] uppercase text-white mb-8">
+      <h1 class="font-['Space_Grotesk'] font-light text-[clamp(56px,12vw,112px)] leading-[1.0] tracking-[0.04em] uppercase text-white mb-6 md:mb-8">
         Latam<br />Bench
       </h1>
 
-      <p class="font-['IBM_Plex_Sans'] font-light text-[#c8c4be] text-xl leading-relaxed mb-12" style="max-width: 520px;">
-        El primer benchmark generación-primero para evaluar LLMs en español latinoamericano auténtico —
-        construido por la comunidad, desde adentro.
+      <p class="font-['IBM_Plex_Sans'] font-light text-[#c8c4be] text-lg md:text-xl leading-relaxed mb-8 md:mb-12 max-w-sm md:max-w-xl">
+        The first generation-first benchmark for evaluating LLMs on authentic Latin American Spanish —
+        built by the community, from the inside.
       </p>
 
-      <!-- Status pill -->
-      <div class="inline-flex items-center gap-3 border border-white/8 px-5 py-3 mb-12">
+      <div class="inline-flex items-center gap-3 border border-white/8 px-4 md:px-5 py-3 mb-8 md:mb-12">
         <div class="w-1.5 h-1.5 rounded-full bg-[#6b6560] animate-pulse"></div>
-        <span class="font-['JetBrains_Mono'] text-xs text-[#6b6560] tracking-[0.1em] uppercase">
+        <span class="font-['JetBrains_Mono'] text-[10px] text-[#6b6560] tracking-[0.1em] uppercase">
           Fase piloto — buscando anotadores
         </span>
       </div>
 
-      <div class="flex items-center gap-4">
-        <a
-          href="#contribute"
-          class="font-['Space_Grotesk'] text-sm tracking-[0.08em] uppercase bg-white text-[#080808] px-7 py-3 hover:bg-[#c8c4be] transition-colors font-medium"
-        >
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-4">
+        <a href="#contribute"
+           class="font-['Space_Grotesk'] text-sm tracking-[0.08em] uppercase bg-white text-[#080808] px-6 md:px-7 py-3 hover:bg-[#c8c4be] transition-colors font-medium w-full sm:w-auto text-center">
           Únete como anotador
         </a>
-        <a
-          href="https://github.com/crafter-research/latambench"
-          target="_blank"
-          rel="noopener"
-          class="font-['Space_Grotesk'] text-sm tracking-[0.08em] uppercase border border-white/12 text-[#c8c4be] px-7 py-3 hover:border-white/30 hover:text-white transition-all"
-        >
+        <a href="https://github.com/crafter-research/latambench" target="_blank" rel="noopener"
+           class="font-['Space_Grotesk'] text-sm tracking-[0.08em] uppercase border border-white/12 text-[#c8c4be] px-6 md:px-7 py-3 hover:border-white/30 hover:text-white transition-all w-full sm:w-auto text-center">
           Ver en GitHub
         </a>
       </div>
     </div>
-
-    <div class="absolute bottom-10 right-8 flex flex-col items-center gap-2">
-      <div class="font-['JetBrains_Mono'] text-[9px] tracking-[0.2em] uppercase text-[#6b6560] rotate-90 translate-y-4">scroll</div>
-      <div class="w-px h-12 bg-white/10"></div>
-    </div>
   </section>
 
   <!-- EL PROBLEMA -->
-  <section class="border-t border-white/8 py-28 px-8 md:px-16">
+  <section class="border-t border-white/8 py-20 md:py-28 px-5 md:px-16">
     <div class="max-w-6xl">
-      <div class="flex items-start gap-24">
-        <div class="flex-1 max-w-lg">
-          <div class="flex items-center gap-4 mb-8">
-            <div class="w-8 h-px bg-white/20"></div>
-            <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">
-              01 / El Problema
-            </span>
-          </div>
-          <h2 class="font-['Space_Grotesk'] font-light text-[clamp(32px,5vw,52px)] leading-[1.1] tracking-[0.02em] uppercase text-white mb-8">
+      <div class="flex items-center gap-4 mb-10 md:mb-16">
+        <div class="w-6 md:w-8 h-px bg-white/20"></div>
+        <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">01 / El Problema</span>
+      </div>
+
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-24">
+        <div class="flex-1 lg:max-w-lg">
+          <h2 class="font-['Space_Grotesk'] font-light text-[clamp(28px,5vw,52px)] leading-[1.1] tracking-[0.02em] uppercase text-white mb-6 md:mb-8">
             Los benchmarks<br />no hablan<br />como nosotros
           </h2>
-          <p class="font-['IBM_Plex_Sans'] text-[#c8c4be] leading-relaxed mb-6">
+          <p class="font-['IBM_Plex_Sans'] text-[#c8c4be] leading-relaxed mb-5">
             MMLU, HumanEval, GSM8K — todos en inglés, todos midiendo inteligencia según un único
             estándar cultural. Cuando se traducen, se pierde el contexto, el modismo, la realidad
             técnica del desarrollador peruano que escribe en español pero documenta en Spanglish.
@@ -185,7 +186,7 @@ const roadmap = [
             por y para la comunidad técnica latinoamericana.
           </p>
 
-          <div class="mt-10 p-6 bg-[#e8dfc8] border-l-2 border-[#4a3f35]">
+          <div class="mt-8 md:mt-10 p-5 md:p-6 bg-[#e8dfc8] border-l-2 border-[#4a3f35]">
             <p class="font-['IBM_Plex_Sans'] text-[#4a3f35] text-sm italic leading-relaxed">
               "Un modelo que no entiende qué es 'hacer la tarea en la compu' o 'jalar el código'
               no entiende a su usuario."
@@ -196,31 +197,13 @@ const roadmap = [
           </div>
         </div>
 
-        <!-- Right: el gap explicado cualitativamente -->
-        <div class="flex-1 pt-16">
-          <div class="font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] uppercase text-[#6b6560] mb-8">
+        <div class="flex-1">
+          <div class="font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] uppercase text-[#6b6560] mb-6 md:mb-8">
             Lo que falta en los benchmarks actuales
           </div>
-          <div class="space-y-6">
-            {[
-              {
-                label: "Variedades regionales",
-                detail: "El español de Lima, Bogotá y Buenos Aires son distintos. Los benchmarks existentes no distinguen.",
-              },
-              {
-                label: "Contexto técnico local",
-                detail: "Un dev latinoamericano mezcla español e inglés al escribir specs. Eso no está en ningún benchmark.",
-              },
-              {
-                label: "Cultura e historia propias",
-                detail: "Las preguntas culturales en benchmarks traducidos reflejan contexto anglosajón, no latinoamericano.",
-              },
-              {
-                label: "Seguimiento de instrucciones en español",
-                detail: "Los modelos son evaluados con instrucciones complejas solo en inglés. El desempeño en español no está medido.",
-              },
-            ].map((item) => (
-              <div class="border-b border-white/8 pb-6">
+          <div class="space-y-5 md:space-y-6">
+            {gaps.map((item) => (
+              <div class="border-b border-white/8 pb-5 md:pb-6">
                 <div class="font-['Space_Grotesk'] text-sm font-medium text-white mb-2">{item.label}</div>
                 <div class="font-['IBM_Plex_Sans'] text-sm text-[#6b6560] leading-relaxed">{item.detail}</div>
               </div>
@@ -232,39 +215,30 @@ const roadmap = [
   </section>
 
   <!-- BENCHMARK CATEGORIES -->
-  <section id="benchmark" class="border-t border-white/8 py-28 px-8 md:px-16">
+  <section id="benchmark" class="border-t border-white/8 py-20 md:py-28 px-5 md:px-16">
     <div class="max-w-6xl">
-      <div class="flex items-center justify-between mb-16">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10 md:mb-16">
         <div class="flex items-center gap-4">
-          <div class="w-8 h-px bg-white/20"></div>
-          <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">
-            02 / Categorías
-          </span>
+          <div class="w-6 md:w-8 h-px bg-white/20"></div>
+          <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">02 / Categorías</span>
         </div>
-        <div class="font-['JetBrains_Mono'] text-[10px] text-[#6b6560] border border-white/8 px-3 py-1.5">
+        <div class="font-['JetBrains_Mono'] text-[10px] text-[#6b6560] border border-white/8 px-3 py-1.5 self-start">
           900 muestras objetivo · 5 variedades
         </div>
       </div>
 
-      <div class="grid grid-cols-5 border-l border-t border-white/8">
+      <!-- Mobile: stacked cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 border-l border-t border-white/8">
         {categories.map((cat) => (
-          <div class={`border-r border-b border-white/8 p-6 ${cat.priority ? "bg-white/[0.02]" : ""}`}>
-            <div class="flex items-start justify-between mb-8">
-              <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] text-[#6b6560]">
-                [{cat.id}]
-              </span>
+          <div class={`border-r border-b border-white/8 p-5 md:p-6 ${cat.priority ? "bg-white/[0.02]" : ""}`}>
+            <div class="flex items-start justify-between mb-6 md:mb-8">
+              <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] text-[#6b6560]">[{cat.id}]</span>
               {cat.priority && (
-                <span class="font-['JetBrains_Mono'] text-[8px] tracking-[0.15em] uppercase text-[#6b6560] border border-white/10 px-2 py-0.5">
-                  Primero
-                </span>
+                <span class="font-['JetBrains_Mono'] text-[8px] tracking-[0.15em] uppercase text-[#6b6560] border border-white/10 px-2 py-0.5">Primero</span>
               )}
             </div>
-            <h3 class="font-['Space_Grotesk'] text-lg font-medium tracking-[0.02em] text-white mb-3">
-              {cat.name}
-            </h3>
-            <p class="font-['IBM_Plex_Sans'] text-[#6b6560] text-sm leading-relaxed mb-8">
-              {cat.description}
-            </p>
+            <h3 class="font-['Space_Grotesk'] text-base md:text-lg font-medium tracking-[0.02em] text-white mb-2 md:mb-3">{cat.name}</h3>
+            <p class="font-['IBM_Plex_Sans'] text-[#6b6560] text-sm leading-relaxed mb-6 md:mb-8">{cat.description}</p>
             <div class="space-y-1.5">
               {cat.tasks.map((task) => (
                 <div class="flex items-center gap-2">
@@ -273,7 +247,7 @@ const roadmap = [
                 </div>
               ))}
             </div>
-            <div class="mt-8 pt-4 border-t border-white/8">
+            <div class="mt-6 md:mt-8 pt-4 border-t border-white/8">
               <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.12em] uppercase text-[#3a3a3a]">
                 {cat.target} muestras objetivo
               </span>
@@ -282,54 +256,42 @@ const roadmap = [
         ))}
       </div>
 
-      <div class="mt-8 flex items-center gap-4">
-        <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] uppercase text-[#6b6560]">
-          Variedades objetivo:
-        </span>
+      <div class="mt-6 md:mt-8 flex flex-wrap items-center gap-3">
+        <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] uppercase text-[#6b6560]">Variedades objetivo:</span>
         {varieties.map((v) => (
-          <span class="font-['JetBrains_Mono'] text-[11px] border border-white/8 px-3 py-1 text-[#6b6560]">
-            {v}
-          </span>
+          <span class="font-['JetBrains_Mono'] text-[11px] border border-white/8 px-3 py-1 text-[#6b6560]">{v}</span>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- LEADERBOARD — Coming Soon -->
-  <section id="roadmap" class="border-t border-white/8 py-28 px-8 md:px-16">
+  <!-- LEADERBOARD + ROADMAP -->
+  <section id="roadmap" class="border-t border-white/8 py-20 md:py-28 px-5 md:px-16">
     <div class="max-w-6xl">
-      <div class="flex items-start gap-24">
+      <div class="flex flex-col lg:flex-row gap-16 lg:gap-24">
 
         <!-- Leaderboard placeholder -->
         <div class="flex-1">
-          <div class="flex items-center gap-4 mb-16">
-            <div class="w-8 h-px bg-white/20"></div>
-            <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">
-              03 / Leaderboard
-            </span>
+          <div class="flex items-center gap-4 mb-10 md:mb-16">
+            <div class="w-6 md:w-8 h-px bg-white/20"></div>
+            <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">03 / Leaderboard</span>
           </div>
 
           <div class="border border-white/8">
-            <!-- Header -->
             <div class="grid border-b border-white/8 bg-[#111111]" style="grid-template-columns: 2rem 1fr 1fr repeat(5, 1fr) 1fr;">
               {["#", "Modelo", "Org", "GEN", "RSN", "COD", "CUL", "IF", "Avg"].map((h) => (
-                <div class="px-4 py-3 font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] uppercase text-[#3a3a3a]">
-                  {h}
-                </div>
+                <div class="px-3 md:px-4 py-3 font-['JetBrains_Mono'] text-[9px] md:text-[10px] tracking-[0.15em] uppercase text-[#3a3a3a]">{h}</div>
               ))}
             </div>
-            <!-- Empty state -->
-            <div class="py-20 flex flex-col items-center justify-center gap-4">
-              <svg class="w-12 h-12 opacity-10" viewBox="0 0 48 48" fill="none">
+            <div class="py-16 md:py-20 flex flex-col items-center justify-center gap-4">
+              <svg class="w-10 h-10 md:w-12 md:h-12 opacity-10" viewBox="0 0 48 48" fill="none">
                 <circle cx="24" cy="24" r="20" stroke="#F8F8F8" stroke-width="0.8"/>
                 <circle cx="24" cy="24" r="10" stroke="#F8F8F8" stroke-width="0.8"/>
                 <line x1="4" y1="24" x2="44" y2="24" stroke="#F8F8F8" stroke-width="0.8"/>
                 <line x1="24" y1="4" x2="24" y2="44" stroke="#F8F8F8" stroke-width="0.8"/>
               </svg>
-              <div class="font-['Space_Grotesk'] text-sm tracking-[0.04em] uppercase text-[#3a3a3a]">
-                Sin datos aún
-              </div>
-              <div class="font-['JetBrains_Mono'] text-[11px] text-[#3a3a3a] tracking-[0.08em]">
+              <div class="font-['Space_Grotesk'] text-sm tracking-[0.04em] uppercase text-[#3a3a3a]">Sin datos aún</div>
+              <div class="font-['JetBrains_Mono'] text-[10px] md:text-[11px] text-[#3a3a3a] tracking-[0.08em] text-center px-4">
                 El leaderboard se publicará con los primeros resultados del piloto
               </div>
             </div>
@@ -337,59 +299,50 @@ const roadmap = [
         </div>
 
         <!-- Roadmap -->
-        <div class="w-80 pt-0">
-          <div class="flex items-center gap-4 mb-16">
-            <div class="w-8 h-px bg-white/20"></div>
-            <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">
-              04 / Roadmap
-            </span>
+        <div class="lg:w-80">
+          <div class="flex items-center gap-4 mb-10 md:mb-16">
+            <div class="w-6 md:w-8 h-px bg-white/20"></div>
+            <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">04 / Roadmap</span>
           </div>
 
           <div class="space-y-0">
             {roadmap.map((item, i) => (
-              <div class="flex gap-6 pb-8 relative">
+              <div class="flex gap-5 md:gap-6 pb-7 md:pb-8 relative">
                 {i < roadmap.length - 1 && (
                   <div class="absolute left-[5px] top-3 bottom-0 w-px bg-white/8"></div>
                 )}
                 <div class={`w-2.5 h-2.5 rounded-full border flex-shrink-0 mt-0.5 ${item.status === "active" ? "bg-white border-white" : "bg-transparent border-white/20"}`}></div>
                 <div>
-                  <div class="font-['JetBrains_Mono'] text-[10px] text-[#6b6560] tracking-[0.1em] uppercase mb-1">
-                    {item.phase}
-                  </div>
-                  <div class={`font-['IBM_Plex_Sans'] text-sm ${item.status === "active" ? "text-white" : "text-[#6b6560]"}`}>
-                    {item.milestone}
-                  </div>
+                  <div class="font-['JetBrains_Mono'] text-[10px] text-[#6b6560] tracking-[0.1em] uppercase mb-1">{item.phase}</div>
+                  <div class={`font-['IBM_Plex_Sans'] text-sm ${item.status === "active" ? "text-white" : "text-[#6b6560]"}`}>{item.milestone}</div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- CONTRIBUTE -->
-  <section id="contribute" class="border-t border-white/8 py-28 px-8 md:px-16">
+  <section id="contribute" class="border-t border-white/8 py-20 md:py-28 px-5 md:px-16">
     <div class="max-w-6xl">
-      <div class="flex items-start gap-24">
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-24">
         <div class="flex-1">
-          <div class="flex items-center gap-4 mb-8">
-            <div class="w-8 h-px bg-white/20"></div>
-            <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">
-              05 / Contribuir
-            </span>
+          <div class="flex items-center gap-4 mb-8 md:mb-10">
+            <div class="w-6 md:w-8 h-px bg-white/20"></div>
+            <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">05 / Contribuir</span>
           </div>
-          <h2 class="font-['Space_Grotesk'] font-light text-[clamp(28px,4vw,44px)] leading-[1.1] tracking-[0.02em] uppercase text-white mb-8">
+          <h2 class="font-['Space_Grotesk'] font-light text-[clamp(28px,5vw,44px)] leading-[1.1] tracking-[0.02em] uppercase text-white mb-6 md:mb-8">
             Buscamos<br />5 anotadores<br />piloto
           </h2>
-          <p class="font-['IBM_Plex_Sans'] text-[#c8c4be] leading-relaxed mb-8">
+          <p class="font-['IBM_Plex_Sans'] text-[#c8c4be] leading-relaxed mb-6 md:mb-8">
             Uno por variedad regional — PE, MX, AR, CO, CL. El trabajo es asíncrono,
             open source y acreditado en el paper. Empezamos con Latam-Code: 50 muestras,
             ~10 por anotador.
           </p>
 
-          <div class="space-y-3 mb-10">
+          <div class="space-y-3 mb-8 md:mb-10">
             {[
               "Nativo de español latinoamericano (cualquier variedad)",
               "Perfil técnico: developer, data scientist o estudiante de ingeniería",
@@ -403,32 +356,20 @@ const roadmap = [
             ))}
           </div>
 
-          <a
-            href="https://github.com/crafter-research/latambench/issues"
-            target="_blank"
-            rel="noopener"
-            class="inline-flex items-center gap-3 font-['Space_Grotesk'] text-sm tracking-[0.08em] uppercase bg-white text-[#080808] px-7 py-3 hover:bg-[#c8c4be] transition-colors font-medium"
-          >
+          <a href="https://github.com/crafter-research/latambench/issues" target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center gap-3 font-['Space_Grotesk'] text-sm tracking-[0.08em] uppercase bg-white text-[#080808] px-6 md:px-7 py-3 hover:bg-[#c8c4be] transition-colors font-medium w-full sm:w-auto">
             Aplica vía GitHub Issues
           </a>
         </div>
 
-        <!-- Right: cómo funciona -->
-        <div class="flex-1 pt-20">
-          <div class="font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] uppercase text-[#6b6560] mb-8">
+        <div class="flex-1">
+          <div class="font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] uppercase text-[#6b6560] mb-6 md:mb-8">
             Cómo funciona la anotación
           </div>
-          <div class="space-y-6">
-            {[
-              { n: "01", title: "Recibe muestras", detail: "Te asignamos ~10 muestras de código con especificaciones en español de tu variedad." },
-              { n: "02", title: "Evalúa respuestas", detail: "Comparas respuestas de modelos según criterios de corrección, fluidez y naturalidad regional." },
-              { n: "03", title: "Documenta edge cases", detail: "Registras casos donde el modelo falla en contexto latinoamericano específico." },
-              { n: "04", title: "Crédito en el paper", detail: "Todos los anotadores son coautores en los agradecimientos del preprint." },
-            ].map((step) => (
-              <div class="flex gap-5 border-b border-white/8 pb-6">
-                <div class="font-['JetBrains_Mono'] text-[10px] text-[#3a3a3a] tracking-[0.1em] mt-0.5 flex-shrink-0">
-                  {step.n}
-                </div>
+          <div class="space-y-5 md:space-y-6">
+            {steps.map((step) => (
+              <div class="flex gap-4 md:gap-5 border-b border-white/8 pb-5 md:pb-6">
+                <div class="font-['JetBrains_Mono'] text-[10px] text-[#3a3a3a] tracking-[0.1em] mt-0.5 flex-shrink-0">{step.n}</div>
                 <div>
                   <div class="font-['Space_Grotesk'] text-sm font-medium text-white mb-1">{step.title}</div>
                   <div class="font-['IBM_Plex_Sans'] text-sm text-[#6b6560] leading-relaxed">{step.detail}</div>
@@ -442,33 +383,20 @@ const roadmap = [
   </section>
 
   <!-- FOOTER -->
-  <footer class="border-t border-white/8 py-12 px-8 md:px-16">
-    <div class="max-w-6xl flex items-center justify-between">
+  <footer class="border-t border-white/8 py-10 md:py-12 px-5 md:px-16">
+    <div class="max-w-6xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
       <div>
-        <div class="font-['Space_Grotesk'] text-sm tracking-[0.08em] uppercase text-white mb-2">
-          LatamBench
+        <div class="flex items-center gap-2.5 mb-2">
+          <svg width="16" height="16" viewBox="0 0 85 96" fill="none"><path d="M34.7718 13.6653C32.7175 12.2339 29.2082 10.55 26.8971 9.87636C21.6759 8.27657 17.5551 9.17712 14.8283 10.129C9.52151 11.9813 6.18334 14.4231 3.18755 18.8857C-1.52013 25.79 -0.835381 36.9885 4.89943 43.3035C6.18334 44.8191 6.86809 44.5665 11.8326 40.9459C12.0037 40.7775 11.319 39.6829 10.2919 38.4199C7.98082 35.5571 6.61131 30.3368 7.29606 27.3898C9.52151 18.1279 20.9055 13.1601 28.2666 18.2121C29.8929 19.3067 35.0286 23.8534 39.6506 28.316C46.5838 34.8835 48.638 36.3991 50.3499 36.2307C52.0618 36.0623 52.6609 35.4729 52.8321 33.6206C53.0889 31.5998 52.3186 30.421 48.3812 26.8846C45.7278 24.4428 43.588 22.2537 43.588 21.8327C43.588 21.4959 45.3854 20.0645 47.6109 18.7173C61.9907 9.70797 77.4832 27.6424 65.5001 39.4303C63.9594 40.9459 61.2204 42.5457 59.4229 43.0509C57.3686 43.5561 47.8677 43.9771 36.0557 43.9771C13.9724 43.9771 12.7741 44.2297 6.95368 49.3658C-0.493008 56.0176 -2.20489 67.3845 3.01635 75.636C9.77829 86.4135 24.3293 89.1079 34.6006 81.4458L38.3667 78.583L42.732 81.4458C49.8363 86.1609 55.5712 87.0871 62.5043 84.8137C76.3705 80.1828 81.5062 62.8377 72.5188 51.2182C71.4917 49.9552 70.9781 49.871 69.6086 50.5446C65.4145 52.9022 65.5001 52.7338 67.9823 57.7858C69.8654 61.6589 70.2077 63.1745 69.7798 66.1215C68.5815 73.531 62.9322 78.4988 55.7423 78.4988C50.1787 78.4988 48.3812 77.4042 38.11 67.5529C32.7175 62.5009 27.7531 58.291 27.0683 58.291C25.7844 58.291 23.0454 60.9011 23.0454 62.1641C23.0454 62.5009 25.3564 65.1953 28.2666 68.0581L33.4879 73.1942L30.4065 75.5518C19.536 83.7191 4.04349 73.952 7.63844 61.1537C8.75116 57.2806 12.6885 52.9864 16.4546 51.6392C17.9097 51.0498 26.8971 50.713 39.0515 50.713C61.3915 50.713 64.045 50.292 69.1806 45.9137C84.502 33.1154 75.6002 9.03437 55.5711 9.11857C49.7507 9.11857 46.5838 10.2974 41.1913 14.2547L38.4523 16.2755L34.7718 13.6653Z" fill="#F8BB2D"/></svg>
+          <span class="font-['Space_Grotesk'] text-sm tracking-[0.08em] uppercase text-white">LatamBench</span>
         </div>
-        <div class="font-['JetBrains_Mono'] text-[10px] text-[#6b6560] tracking-[0.1em]">
-          crafter-research · Lima, Perú · 2026
-        </div>
+        <div class="font-['JetBrains_Mono'] text-[10px] text-[#6b6560] tracking-[0.1em]">A Crafter Research Lab · Lima, Perú · 2026</div>
       </div>
-      <div class="flex items-center gap-8">
-        <a
-          href="https://github.com/crafter-research/latambench"
-          target="_blank"
-          rel="noopener"
-          class="font-['JetBrains_Mono'] text-[11px] text-[#6b6560] hover:text-white transition-colors tracking-[0.08em] uppercase"
-        >
-          GitHub
-        </a>
-        <a
-          href="https://huggingface.co/crafter-research"
-          target="_blank"
-          rel="noopener"
-          class="font-['JetBrains_Mono'] text-[11px] text-[#6b6560] hover:text-white transition-colors tracking-[0.08em] uppercase"
-        >
-          HuggingFace
-        </a>
+      <div class="flex items-center gap-6 md:gap-8">
+        <a href="https://github.com/crafter-research/latambench" target="_blank" rel="noopener"
+           class="font-['JetBrains_Mono'] text-[11px] text-[#6b6560] hover:text-white transition-colors tracking-[0.08em] uppercase">GitHub</a>
+        <a href="https://huggingface.co/crafter-research" target="_blank" rel="noopener"
+           class="font-['JetBrains_Mono'] text-[11px] text-[#6b6560] hover:text-white transition-colors tracking-[0.08em] uppercase">HuggingFace</a>
       </div>
     </div>
   </footer>
