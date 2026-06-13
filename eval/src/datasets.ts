@@ -122,6 +122,17 @@ function mulberry32(seed: number) {
   };
 }
 
+/** Uniform Fisher-Yates shuffle (seeded). The comparator-based sort(()=>rand()-0.5)
+ *  is NOT uniform and biases the sample; this is the correct unbiased shuffle. */
+function shuffle<T>(arr: T[], rand: () => number): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [a[i], a[j]] = [a[j]!, a[i]!];
+  }
+  return a;
+}
+
 /** Stratified sample by country: proportional allocation, at least 1 per country when possible. */
 export function stratifiedSample(items: BenchItem[], n: number, seed: number): BenchItem[] {
   if (n >= items.length) return items;
@@ -137,8 +148,7 @@ export function stratifiedSample(items: BenchItem[], n: number, seed: number): B
   for (const country of countries) {
     const group = byCountry.get(country)!;
     const quota = Math.max(1, Math.round((group.length / items.length) * n));
-    const shuffled = [...group].sort(() => rand() - 0.5);
-    picked.push(...shuffled.slice(0, quota));
+    picked.push(...shuffle(group, rand).slice(0, quota));
   }
-  return [...picked].sort(() => rand() - 0.5).slice(0, n);
+  return shuffle(picked, rand).slice(0, n);
 }

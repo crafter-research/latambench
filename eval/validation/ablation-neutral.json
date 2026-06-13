@@ -1,0 +1,14 @@
+{
+  "anthropic/claude-opus-4.8": {
+    "abstain": 20,
+    "n": 60
+  },
+  "openai/gpt-5.4-mini": {
+    "abstain": 4,
+    "n": 60
+  },
+  "google/gemini-3.5-flash": {
+    "abstain": 0,
+    "n": 60
+  }
+}
