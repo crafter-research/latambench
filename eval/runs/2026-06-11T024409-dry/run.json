@@ -1,0 +1,13 @@
+{
+  "runId": "2026-06-11T024409-dry",
+  "benchmark": "trueque",
+  "model": "dry",
+  "smokeOnly": true,
+  "seed": 42,
+  "nItems": 3,
+  "nTotal": 500,
+  "failed": 0,
+  "meanTokenF1": 0,
+  "scoring": "token-f1-v1 (lexical only - hybrid judge lands in V2)",
+  "createdAt": "2026-06-11T02:44:09.467Z"
+}

@@ -1,0 +1,18 @@
+{
+  "runId": "2026-06-12T045048-gateway_deepseek_deepseek-v4-pro",
+  "benchmark": "trueque",
+  "model": "gateway:deepseek/deepseek-v4-pro",
+  "smokeOnly": false,
+  "seed": 42,
+  "nItems": 500,
+  "nTotal": 500,
+  "failed": 0,
+  "meanTokenF1": 0.3673,
+  "scoring": "token-f1-v1 (lexical only - hybrid judge lands in V2)",
+  "createdAt": "2026-06-12T05:12:13.712Z",
+  "judgeModel": "xai/grok-4.3",
+  "judgeAccuracy": 0.552,
+  "judgePartialRate": 0.242,
+  "judgeMeanScore": 0.673,
+  "meanEmbSim": 0.8398
+}

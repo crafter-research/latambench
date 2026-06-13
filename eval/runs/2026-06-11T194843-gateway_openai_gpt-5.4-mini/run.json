@@ -1,0 +1,18 @@
+{
+  "runId": "2026-06-11T194843-gateway_openai_gpt-5.4-mini",
+  "benchmark": "trueque",
+  "model": "gateway:openai/gpt-5.4-mini",
+  "smokeOnly": false,
+  "seed": 42,
+  "nItems": 100,
+  "nTotal": 500,
+  "failed": 0,
+  "meanTokenF1": 0.3435,
+  "scoring": "token-f1-v1 (lexical only - hybrid judge lands in V2)",
+  "createdAt": "2026-06-11T19:49:12.886Z",
+  "judgeModel": "xai/grok-4.3",
+  "judgeAccuracy": 0.4,
+  "judgePartialRate": 0.37,
+  "judgeMeanScore": 0.585,
+  "meanEmbSim": 0.8187
+}

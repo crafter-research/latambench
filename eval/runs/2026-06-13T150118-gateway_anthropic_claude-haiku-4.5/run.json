@@ -1,0 +1,20 @@
+{
+  "runId": "2026-06-13T150118-gateway_anthropic_claude-haiku-4.5",
+  "benchmark": "choclo",
+  "model": "gateway:anthropic/claude-haiku-4.5",
+  "smokeOnly": false,
+  "seed": 42,
+  "nItems": 500,
+  "nTotal": 104847,
+  "failed": 0,
+  "meanTokenF1": 0.0812,
+  "scoring": "token-f1-v1 (lexical only - hybrid judge lands in V2)",
+  "createdAt": "2026-06-13T15:03:46.069Z",
+  "judgeModel": "xai/grok-4.3",
+  "nExcluded": 0,
+  "nValid": 500,
+  "judgeAccuracy": 0.188,
+  "judgePartialRate": 0.092,
+  "judgeMeanScore": 0.234,
+  "meanEmbSim": 0.4198
+}

@@ -1,0 +1,18 @@
+{
+  "runId": "2026-06-11T195154-gateway_alibaba_qwen3.7-max",
+  "benchmark": "trueque",
+  "model": "gateway:alibaba/qwen3.7-max",
+  "smokeOnly": false,
+  "seed": 42,
+  "nItems": 100,
+  "nTotal": 500,
+  "failed": 0,
+  "meanTokenF1": 0.3439,
+  "scoring": "token-f1-v1 (lexical only - hybrid judge lands in V2)",
+  "createdAt": "2026-06-11T19:56:40.273Z",
+  "judgeModel": "xai/grok-4.3",
+  "judgeAccuracy": 0.54,
+  "judgePartialRate": 0.23,
+  "judgeMeanScore": 0.655,
+  "meanEmbSim": 0.8355
+}

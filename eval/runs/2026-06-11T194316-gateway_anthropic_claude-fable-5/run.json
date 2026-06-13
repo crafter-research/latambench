@@ -1,0 +1,18 @@
+{
+  "runId": "2026-06-11T194316-gateway_anthropic_claude-fable-5",
+  "benchmark": "trueque",
+  "model": "gateway:anthropic/claude-fable-5",
+  "smokeOnly": false,
+  "seed": 42,
+  "nItems": 100,
+  "nTotal": 500,
+  "failed": 0,
+  "meanTokenF1": 0.3428,
+  "scoring": "token-f1-v1 (lexical only - hybrid judge lands in V2)",
+  "createdAt": "2026-06-11T19:45:00.737Z",
+  "judgeModel": "xai/grok-4.3",
+  "judgeAccuracy": 0.69,
+  "judgePartialRate": 0.22,
+  "judgeMeanScore": 0.8,
+  "meanEmbSim": 0.8511
+}

@@ -1,0 +1,20 @@
+{
+  "runId": "2026-06-12T205831-compat_http_146.115.17.148_18565_v1_latam-gpt_Llama-3.1-70B-LatamGPT-SFT-1.0",
+  "benchmark": "trueque",
+  "model": "compat:http://146.115.17.148:18565/v1|latam-gpt/Llama-3.1-70B-LatamGPT-SFT-1.0",
+  "smokeOnly": false,
+  "seed": 42,
+  "nItems": 500,
+  "nTotal": 500,
+  "failed": 18,
+  "meanTokenF1": 0.2583,
+  "scoring": "token-f1-v1 (lexical only - hybrid judge lands in V2)",
+  "createdAt": "2026-06-12T22:47:18.576Z",
+  "judgeModel": "xai/grok-4.3",
+  "nExcluded": 18,
+  "nValid": 482,
+  "judgeAccuracy": 0.2386,
+  "judgePartialRate": 0.2946,
+  "judgeMeanScore": 0.3859,
+  "meanEmbSim": 0.7957
+}

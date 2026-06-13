@@ -1,0 +1,19 @@
+{
+  "name": "@latambench/eval",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "LatamBench eval harness - independent LLM evals for LATAM (Trueque, CHOCLO, capability control)",
+  "scripts": {
+    "bench": "bun src/cli.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^2.0.0",
+    "@ai-sdk/openai": "^2.0.0",
+    "ai": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/json-schema": "^7.0.15"
+  }
+}

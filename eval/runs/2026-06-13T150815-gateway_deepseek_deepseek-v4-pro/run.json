@@ -1,0 +1,20 @@
+{
+  "runId": "2026-06-13T150815-gateway_deepseek_deepseek-v4-pro",
+  "benchmark": "choclo",
+  "model": "gateway:deepseek/deepseek-v4-pro",
+  "smokeOnly": false,
+  "seed": 42,
+  "nItems": 500,
+  "nTotal": 104847,
+  "failed": 0,
+  "meanTokenF1": 0.2029,
+  "scoring": "token-f1-v1 (lexical only - hybrid judge lands in V2)",
+  "createdAt": "2026-06-13T15:16:33.842Z",
+  "judgeModel": "xai/grok-4.3",
+  "nExcluded": 0,
+  "nValid": 500,
+  "judgeAccuracy": 0.402,
+  "judgePartialRate": 0.166,
+  "judgeMeanScore": 0.485,
+  "meanEmbSim": 0.4938
+}

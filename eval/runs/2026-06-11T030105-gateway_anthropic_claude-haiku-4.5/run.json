@@ -1,0 +1,13 @@
+{
+  "runId": "2026-06-11T030105-gateway_anthropic_claude-haiku-4.5",
+  "benchmark": "trueque",
+  "model": "gateway:anthropic/claude-haiku-4.5",
+  "smokeOnly": false,
+  "seed": 42,
+  "nItems": 5,
+  "nTotal": 500,
+  "failed": 0,
+  "meanTokenF1": 0.1887,
+  "scoring": "token-f1-v1 (lexical only - hybrid judge lands in V2)",
+  "createdAt": "2026-06-11T03:01:23.054Z"
+}

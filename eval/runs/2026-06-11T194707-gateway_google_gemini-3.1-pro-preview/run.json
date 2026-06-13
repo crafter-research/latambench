@@ -1,0 +1,18 @@
+{
+  "runId": "2026-06-11T194707-gateway_google_gemini-3.1-pro-preview",
+  "benchmark": "trueque",
+  "model": "gateway:google/gemini-3.1-pro-preview",
+  "smokeOnly": false,
+  "seed": 42,
+  "nItems": 100,
+  "nTotal": 500,
+  "failed": 0,
+  "meanTokenF1": 0.3866,
+  "scoring": "token-f1-v1 (lexical only - hybrid judge lands in V2)",
+  "createdAt": "2026-06-11T19:48:43.703Z",
+  "judgeModel": "xai/grok-4.3",
+  "judgeAccuracy": 0.63,
+  "judgePartialRate": 0.28,
+  "judgeMeanScore": 0.77,
+  "meanEmbSim": 0.86
+}
