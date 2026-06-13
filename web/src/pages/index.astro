@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-// Trueque-500 — judge accuracy (reference-anchored, calibrated grok-4.3), seed 42, temp 0.
+// Trueque-500: judge accuracy (reference-anchored, calibrated grok-4.3), seed 42, temp 0.
 // Datos reproducibles en el repo (runs/*/run.json + judgments.jsonl).
 const leaderboard = [
   { org: "Anthropic", model: "Claude Fable 5", judge: 0.728, score: 0.814 },
@@ -35,7 +35,7 @@ const evals = [
   {
     id: "LATAM-*",
     name: "Dataset propio",
-    description: "Conjunto generativo nativo con referencias multi-respuesta — diseñado para cubrir el espacio de respuestas defendibles, no un solo punto.",
+    description: "Conjunto generativo nativo con referencias multi-respuesta, diseñado para cubrir el espacio de respuestas defendibles, no un solo punto.",
     meta: "Crafter Research · fase 2",
     status: "planned",
   },
@@ -45,7 +45,7 @@ const method = [
   { label: "Juez anclado a referencia", detail: "Un modelo fuera del set comparado decide si la respuesta expresa los hechos de la referencia. Calibrado con un set sintético (TPR 0.99 / TNR 0.97)." },
   { label: "Scoring híbrido", detail: "token-F1 + similitud de embeddings + veredicto del juez. Los desacuerdos entre señales pasan a revisión manual." },
   { label: "Reproducible", detail: "Cada corrida guarda las respuestas crudas y los transcripts del juez. Seed fijo, temperatura 0, todo versionado en git." },
-  { label: "Auditoría del benchmark", detail: "El pipeline detecta no solo errores de los modelos sino issues de referencia en los propios benchmarks — propuestas de fix aditivas." },
+  { label: "Auditoría del benchmark", detail: "El pipeline detecta no solo errores de los modelos sino issues de referencia en los propios benchmarks: propuestas de fix aditivas." },
 ];
 
 const findings = [
@@ -168,7 +168,7 @@ const findings = [
             bien, y los rankings ingenuos por solapamiento de palabras dan resultados engañosos.
           </p>
           <p class="font-['IBM_Plex_Sans'] text-[#c8c4be] leading-relaxed">
-            LatamBench corre esos evals con un juez calibrado y transcripts abiertos — y en el
+            LatamBench corre esos evals con un juez calibrado y transcripts abiertos, y en el
             proceso audita los benchmarks mismos. La pregunta de fondo: ¿quién posee la "verdad
             cultural" cuando una respuesta tiene varias formas legítimas?
           </p>

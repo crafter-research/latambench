@@ -2,9 +2,9 @@
 
 **Independent evaluation of LLMs on Latin American cultural knowledge.**
 
-Reproducible numbers nobody else publishes — with a calibrated judge and open transcripts.
+Reproducible numbers nobody else publishes, with a calibrated judge and open transcripts.
 
-Built by [Crafter Research](https://github.com/crafter-research) — a research lab of [Crafter Station](https://crafterstation.com).
+Built by [Crafter Research](https://github.com/crafter-research), a research lab of [Crafter Station](https://crafterstation.com).
 
 [![Website](https://img.shields.io/badge/web-latambench.org-white?style=flat-square&labelColor=080808)](https://latambench.org)
 [![License](https://img.shields.io/badge/license-MIT-white?style=flat-square&labelColor=080808)](LICENSE)
@@ -15,9 +15,9 @@ Built by [Crafter Research](https://github.com/crafter-research) — a research 
 
 Benchmarks of Latin American culture exist (Trueque, CHOCLO), but they run without auditing: nobody compares models independently, nobody verifies the references are correct, and naive lexical rankings (token overlap) give misleading results.
 
-LatamBench is an **evals observatory**. It runs those benchmarks with a calibrated reference-anchored judge and open transcripts — and in the process audits the benchmarks themselves. The underlying question: *who owns the "cultural truth" when an answer has several legitimate forms?*
+LatamBench is an **evals observatory**. It runs those benchmarks with a calibrated reference-anchored judge and open transcripts, and in the process audits the benchmarks themselves. The underlying question: *who owns the "cultural truth" when an answer has several legitimate forms?*
 
-## Leaderboard — Trueque (500 questions)
+## Leaderboard: Trueque (500 questions)
 
 Judge accuracy: % of answers a reference-anchored judge (a model outside the compared set) considers correct. Seed 42, temperature 0. Reproducible from `eval/runs/`.
 
@@ -39,10 +39,10 @@ The best frontier model answers ~73% of cultural questions; none goes higher. A 
 
 ## Methodology
 
-- **Reference-anchored judge** — a model outside the compared set decides whether a candidate answer expresses the facts of the reference. Calibrated on a synthetic set built from the dataset itself (TPR 0.99 / TNR 0.97 gate ≥ 0.95).
-- **Hybrid scoring** — token-F1 + embedding similarity + judge verdict. Signal disagreements go to manual spot-check.
-- **Reproducible** — every run stores raw responses and full judge transcripts. Fixed seed, temperature 0, versioned in git.
-- **Benchmark audit** — the disagreement pipeline surfaces reference-quality issues in the benchmarks themselves; proposed fixes are additive (accept synonyms / multiple senses), never cultural corrections.
+- **Reference-anchored judge**: a model outside the compared set decides whether a candidate answer expresses the facts of the reference. Calibrated on a synthetic set built from the dataset itself (TPR 0.99 / TNR 0.97 gate ≥ 0.95).
+- **Hybrid scoring**: token-F1 + embedding similarity + judge verdict. Signal disagreements go to manual spot-check.
+- **Reproducible**: every run stores raw responses and full judge transcripts. Fixed seed, temperature 0, versioned in git.
+- **Benchmark audit**: the disagreement pipeline surfaces reference-quality issues in the benchmarks themselves; proposed fixes are additive (accept synonyms / multiple senses), never cultural corrections.
 
 ## Repository Structure
 
@@ -73,9 +73,9 @@ Model id prefixes: `gateway:<provider>/<model>` (Vercel AI Gateway), `compat:<ba
 
 ## Roadmap
 
-- [x] Evals observatory live — Trueque-500, 11 models, calibrated judge
-- [x] Benchmark audit — reference-quality issues surfaced
-- [ ] CHOCLO leaderboard — judge recalibration for short references
+- [x] Evals observatory live: Trueque-500, 11 models, calibrated judge
+- [x] Benchmark audit: reference-quality issues surfaced
+- [ ] CHOCLO leaderboard: judge recalibration for short references
 - [ ] Own generative dataset with multi-answer references (covering the space of defensible answers, not a single point)
 
 ## License
