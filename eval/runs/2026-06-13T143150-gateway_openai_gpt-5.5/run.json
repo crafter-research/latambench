@@ -1,0 +1,20 @@
+{
+  "runId": "2026-06-13T143150-gateway_openai_gpt-5.5",
+  "benchmark": "choclo",
+  "model": "gateway:openai/gpt-5.5",
+  "smokeOnly": false,
+  "seed": 42,
+  "nItems": 500,
+  "nTotal": 104847,
+  "failed": 1,
+  "meanTokenF1": 0.2618,
+  "scoring": "token-f1-v1 (lexical only - hybrid judge lands in V2)",
+  "createdAt": "2026-06-13T14:50:59.904Z",
+  "judgeModel": "xai/grok-4.3",
+  "nExcluded": 1,
+  "nValid": 499,
+  "judgeAccuracy": 0.481,
+  "judgePartialRate": 0.2004,
+  "judgeMeanScore": 0.5812,
+  "meanEmbSim": 0.5287
+}

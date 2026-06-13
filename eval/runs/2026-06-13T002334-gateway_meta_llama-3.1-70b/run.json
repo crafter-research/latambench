@@ -1,0 +1,20 @@
+{
+  "runId": "2026-06-13T002334-gateway_meta_llama-3.1-70b",
+  "benchmark": "choclo",
+  "model": "gateway:meta/llama-3.1-70b",
+  "smokeOnly": false,
+  "seed": 42,
+  "nItems": 500,
+  "nTotal": 104847,
+  "failed": 1,
+  "meanTokenF1": 0.23,
+  "scoring": "token-f1-v1 (lexical only - hybrid judge lands in V2)",
+  "createdAt": "2026-06-13T00:32:41.871Z",
+  "judgeModel": "xai/grok-4.3",
+  "nExcluded": 1,
+  "nValid": 499,
+  "judgeAccuracy": 0.2224,
+  "judgePartialRate": 0.1523,
+  "judgeMeanScore": 0.2986,
+  "meanEmbSim": 0.4672
+}

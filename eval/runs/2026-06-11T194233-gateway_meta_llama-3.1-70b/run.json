@@ -1,0 +1,18 @@
+{
+  "runId": "2026-06-11T194233-gateway_meta_llama-3.1-70b",
+  "benchmark": "trueque",
+  "model": "gateway:meta/llama-3.1-70b",
+  "smokeOnly": false,
+  "seed": 42,
+  "nItems": 100,
+  "nTotal": 500,
+  "failed": 0,
+  "meanTokenF1": 0.2931,
+  "scoring": "token-f1-v1 (lexical only - hybrid judge lands in V2)",
+  "createdAt": "2026-06-11T19:43:16.844Z",
+  "judgeModel": "xai/grok-4.3",
+  "judgeAccuracy": 0.18,
+  "judgePartialRate": 0.39,
+  "judgeMeanScore": 0.375,
+  "meanEmbSim": 0.7918
+}

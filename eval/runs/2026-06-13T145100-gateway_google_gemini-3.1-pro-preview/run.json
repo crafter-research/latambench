@@ -1,0 +1,20 @@
+{
+  "runId": "2026-06-13T145100-gateway_google_gemini-3.1-pro-preview",
+  "benchmark": "choclo",
+  "model": "gateway:google/gemini-3.1-pro-preview",
+  "smokeOnly": false,
+  "seed": 42,
+  "nItems": 500,
+  "nTotal": 104847,
+  "failed": 0,
+  "meanTokenF1": 0.2179,
+  "scoring": "token-f1-v1 (lexical only - hybrid judge lands in V2)",
+  "createdAt": "2026-06-13T14:59:34.868Z",
+  "judgeModel": "xai/grok-4.3",
+  "nExcluded": 0,
+  "nValid": 500,
+  "judgeAccuracy": 0.508,
+  "judgePartialRate": 0.18,
+  "judgeMeanScore": 0.598,
+  "meanEmbSim": 0.5092
+}

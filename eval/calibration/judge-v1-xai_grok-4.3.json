@@ -1,0 +1,2017 @@
+{
+  "version": "judge-v1-xai_grok-4.3",
+  "judge": "xai/grok-4.3",
+  "perType": 50,
+  "tpr": 0.99,
+  "tnr": 0.97,
+  "byType": {
+    "exact": 1,
+    "paraphrase": 0.98,
+    "swap": 1,
+    "corrupt": 0.94
+  },
+  "gate": "PASS",
+  "createdAt": "2026-06-11T21:44:54.268Z",
+  "cases": [
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-0",
+      "question": "¿Qué es la corpachada en Argentina?",
+      "reference": "La corpachada es una ceremonia ancestral andina, celebrada el 1º de agosto en el noroeste argentino, que consiste en ofrecer a la Pachamama alimentos, bebidas, hojas de coca, tabaco y otros elementos en un hoyo cavado en la tierra, como acto de agradecimiento, petición de abundancia y renovación del vínculo de reciprocidad con la Madre Tierra.",
+      "candidate": "La corpachada es una ceremonia ancestral andina, celebrada el 1º de agosto en el noroeste argentino, que consiste en ofrecer a la Pachamama alimentos, bebidas, hojas de coca, tabaco y otros elementos en un hoyo cavado en la tierra, como acto de agradecimiento, petición de abundancia y renovación del vínculo de reciprocidad con la Madre Tierra.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-10",
+      "question": "¿Qué significa “boludo” según el contexto?",
+      "reference": "“Boludo” puede ser un insulto que significa estúpido o idiota, pero también se usa entre amigos como una forma coloquial y afectuosa, similar a “man” o “compa”, dependiendo del tono y el contexto. Su significado varía según la relación entre las personas y la intención al decirlo.",
+      "candidate": "“Boludo” puede ser un insulto que significa estúpido o idiota, pero también se usa entre amigos como una forma coloquial y afectuosa, similar a “man” o “compa”, dependiendo del tono y el contexto. Su significado varía según la relación entre las personas y la intención al decirlo.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-20",
+      "question": "¿Qué son los glaciares patagónicos y dónde se encuentran?",
+      "reference": "Los glaciares patagónicos son grandes masas de hielo ubicadas en la región patagónica de América del Sur, principalmente en la Cordillera de los Andes, entre Argentina y Chile, con el Campo de Hielo Patagónico Sur como su núcleo principal, incluyendo áreas del Parque Nacional Los Glaciares en Santa Cruz, Argentina.",
+      "candidate": "Los glaciares patagónicos son grandes masas de hielo ubicadas en la región patagónica de América del Sur, principalmente en la Cordillera de los Andes, entre Argentina y Chile, con el Campo de Hielo Patagónico Sur como su núcleo principal, incluyendo áreas del Parque Nacional Los Glaciares en Santa Cruz, Argentina.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-30",
+      "question": "¿Qué pueblos originarios habitan la región chaqueña argentina?",
+      "reference": "En la región chaqueña argentina habitan los qom, wichí, mocoví, pilagá, guaraní y enxet sur, pueblos históricamente vinculados al monte, la pesca, la recolección y el uso comunitario del territorio.",
+      "candidate": "En la región chaqueña argentina habitan los qom, wichí, mocoví, pilagá, guaraní y enxet sur, pueblos históricamente vinculados al monte, la pesca, la recolección y el uso comunitario del territorio.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-40",
+      "question": "¿Qué es un sonso en Bolivia?",
+      "reference": "El sonso en Bolivia es un platillo tradicional del oriente, hecho con yuca cocida, queso rallado y sal, preparado como tortilla o en brochetas sobre plancha, con una corteza crujiente y un interior esponjoso, acompañado comúnmente de café. También se usa coloquialmente para referirse a alguien despistado o un poco tonto, con tono cariñoso.",
+      "candidate": "El sonso en Bolivia es un platillo tradicional del oriente, hecho con yuca cocida, queso rallado y sal, preparado como tortilla o en brochetas sobre plancha, con una corteza crujiente y un interior esponjoso, acompañado comúnmente de café. También se usa coloquialmente para referirse a alguien despistado o un poco tonto, con tono cariñoso.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-50",
+      "question": "¿Quién fue el primer presidente de Bolivia?",
+      "reference": "El primer presidente de Bolivia fue Antonio José de Sucre, quien asumió el cargo el 29 de diciembre de 1825 tras la renuncia de Simón Bolívar, quien fue reconocido como Protector de la República pero no como presidente constitucional. José María Pérez de Urdininea fue el primer presidente nacido en el territorio boliviano, pero no el primero en ejercer el cargo.",
+      "candidate": "El primer presidente de Bolivia fue Antonio José de Sucre, quien asumió el cargo el 29 de diciembre de 1825 tras la renuncia de Simón Bolívar, quien fue reconocido como Protector de la República pero no como presidente constitucional. José María Pérez de Urdininea fue el primer presidente nacido en el territorio boliviano, pero no el primero en ejercer el cargo.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-60",
+      "question": "¿Qué es Alasitas en Bolivia?",
+      "reference": "Alasitas es una feria tradicional boliviana celebrada el 24 de enero en La Paz, donde se compran miniaturas de objetos como dinero, casas y vehículos para que el Ekeko, dios de la abundancia, las convierta en realidad, cumpliendo deseos de prosperidad. Con raíces prehispánicas y declarada Patrimonio Inmaterial de la Humanidad por la UNESCO, su práctica se mantiene viva desde el siglo XVIII.",
+      "candidate": "Alasitas es una feria tradicional boliviana celebrada el 24 de enero en La Paz, donde se compran miniaturas de objetos como dinero, casas y vehículos para que el Ekeko, dios de la abundancia, las convierta en realidad, cumpliendo deseos de prosperidad. Con raíces prehispánicas y declarada Patrimonio Inmaterial de la Humanidad por la UNESCO, su práctica se mantiene viva desde el siglo XVIII.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-70",
+      "question": "O que é tacacá?",
+      "reference": "Tacacá é um caldo típico da Amazônia brasileira, feito com tucupi, goma de tapioca, jambu, camarão seco e pimenta, servido quente em uma cuia e consumido sem talheres.",
+      "candidate": "Tacacá é um caldo típico da Amazônia brasileira, feito com tucupi, goma de tapioca, jambu, camarão seco e pimenta, servido quente em uma cuia e consumido sem talheres.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-80",
+      "question": "Como os garçons de Morretes ludicamente verificam se o ponto do barreado está correto?",
+      "reference": "Eles viram o prato sobre a cabeça do cliente; se o barreado não cair, o ponto está perfeito.",
+      "candidate": "Eles viram o prato sobre a cabeça do cliente; se o barreado não cair, o ponto está perfeito.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-90",
+      "question": "Quando e por quem foi fundada a primeira escola do Brasil?",
+      "reference": "A primeira escola do Brasil foi fundada em 1549 pelo padre Manuel da Nóbrega, em Salvador, Bahia, pelos jesuítas, com o objetivo de catequizar os indígenas.",
+      "candidate": "A primeira escola do Brasil foi fundada em 1549 pelo padre Manuel da Nóbrega, em Salvador, Bahia, pelos jesuítas, com o objetivo de catequizar os indígenas.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-100",
+      "question": "Quais moedas já foram oficialmente adotadas no Brasil?",
+      "reference": "O Brasil já adotou oficialmente nove moedas: réis, cruzeiro (três vezes distintas), cruzeiro novo (duas vezes), cruzado, cruzado novo e real. O real, em vigor desde 1994, é a moeda atual.",
+      "candidate": "O Brasil já adotou oficialmente nove moedas: réis, cruzeiro (três vezes distintas), cruzeiro novo (duas vezes), cruzado, cruzado novo e real. O real, em vigor desde 1994, é a moeda atual.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-110",
+      "question": "¿Qué artículo de la Constitución de Chile garantiza el derecho a la seguridad personal?",
+      "reference": "El derecho a la seguridad personal en Chile es la garantía constitucional de no ser arbitrariamente detenido, arrestado o afectado en su libertad e integridad física, reconocido en el artículo 19 Nº 7 de la Constitución, y se complementa con el derecho a la vida y a la integridad personal, protegidos en los artículos 19 Nº 1 y 24, asegurando que cualquier restricción a la libertad sea legal, justificada y proporcional.",
+      "candidate": "El derecho a la seguridad personal en Chile es la garantía constitucional de no ser arbitrariamente detenido, arrestado o afectado en su libertad e integridad física, reconocido en el artículo 19 Nº 7 de la Constitución, y se complementa con el derecho a la vida y a la integridad personal, protegidos en los artículos 19 Nº 1 y 24, asegurando que cualquier restricción a la libertad sea legal, justificada y proporcional.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-120",
+      "question": "¿Qué es el as en la gastronomía chilena?",
+      "reference": "El as es un sándwich chileno hecho con pan para completo y relleno de carne de vacuno asada o frita, con variantes que incluyen queso, palta, tomate, cebolla caramelizada o huevo, y se adapta con lomo de cerdo o pechuga de pollo como as de lomito o as de ave.",
+      "candidate": "El as es un sándwich chileno hecho con pan para completo y relleno de carne de vacuno asada o frita, con variantes que incluyen queso, palta, tomate, cebolla caramelizada o huevo, y se adapta con lomo de cerdo o pechuga de pollo como as de lomito o as de ave.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-130",
+      "question": "¿Qué características tienen las plantas de café en la comuna chilena de Isla de Pascua y quién las llevó allí?",
+      "reference": "Las plantas de café en Isla de Pascua, llevadas posiblemente por navegantes neerlandeses a principios del siglo XIX, se conservan como silvestres repartidas por la isla, crecen en suelo volcánico, son cultivadas sin químicos y producen un café con notas terrosas, de frutos secos y cacao, mantenido por la comunidad Rapa Nui.",
+      "candidate": "Las plantas de café en Isla de Pascua, llevadas posiblemente por navegantes neerlandeses a principios del siglo XIX, se conservan como silvestres repartidas por la isla, crecen en suelo volcánico, son cultivadas sin químicos y producen un café con notas terrosas, de frutos secos y cacao, mantenido por la comunidad Rapa Nui.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-140",
+      "question": "¿Qué es el sancocho valluno?",
+      "reference": "El sancocho valluno es un caldo tradicional del Valle de Colombia hecho con gallina, yuca, plátano verde, mazorca, papa, ajo, cilantro y aliños, cocinado en etapas hasta obtener un caldo sabroso y sustancioso, que se sirve caliente y se caracteriza por su textura ligera y sabor auténtico.",
+      "candidate": "El sancocho valluno es un caldo tradicional del Valle de Colombia hecho con gallina, yuca, plátano verde, mazorca, papa, ajo, cilantro y aliños, cocinado en etapas hasta obtener un caldo sabroso y sustancioso, que se sirve caliente y se caracteriza por su textura ligera y sabor auténtico.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-150",
+      "question": "¿Qué es la bandeja paisa y qué ingredientes la componen?",
+      "reference": "La bandeja paisa es un plato típico de Antioquia compuesto por frijoles, arroz, carne molida, chicharrón, chorizo, morcilla, huevo frito, plátano maduro, aguacate y arepa, servido en porciones abundantes, y a menudo acompañado con hogao o ensalada.",
+      "candidate": "La bandeja paisa es un plato típico de Antioquia compuesto por frijoles, arroz, carne molida, chicharrón, chorizo, morcilla, huevo frito, plátano maduro, aguacate y arepa, servido en porciones abundantes, y a menudo acompañado con hogao o ensalada.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-160",
+      "question": "¿Qué es el Festival de la Leyenda Vallenata y dónde se celebra?",
+      "reference": "El Festival de la Leyenda Vallenata es una celebración musical que honra la tradición del vallenato y se celebra anualmente en Valledupar, Colombia, a finales de abril. Reúne a los mejores acordeoneros y preserva las raíces culturales de este género como patrimonio nacional.",
+      "candidate": "El Festival de la Leyenda Vallenata es una celebración musical que honra la tradición del vallenato y se celebra anualmente en Valledupar, Colombia, a finales de abril. Reúne a los mejores acordeoneros y preserva las raíces culturales de este género como patrimonio nacional.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-170",
+      "question": "¿Cuál es el significado de \"mae\" para los costarricense?",
+      "reference": "En Costa Rica, “mae” es un vocativo coloquial para dirigirse a una persona, sin importar su género, usado entre amigos o desconocidos; su significado varía según el tono y contexto, y deriva de “maje”, con el que comparte usos como “agarrar de mae” o “hacerse el mae”, perdiendo su connotación peyorativa original.",
+      "candidate": "En Costa Rica, “mae” es un vocativo coloquial para dirigirse a una persona, sin importar su género, usado entre amigos o desconocidos; su significado varía según el tono y contexto, y deriva de “maje”, con el que comparte usos como “agarrar de mae” o “hacerse el mae”, perdiendo su connotación peyorativa original.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-180",
+      "question": "¿En que fecha se conmemora la Acta de la Anexión del Partido de Nicoya?",
+      "reference": "La Acta de la Anexión del Partido de Nicoya se conmemora el 25 de julio de 1824, fecha en que los pobladores de Nicoya y Santa Cruz, en un cabildo abierto, decidieron por mayoría incorporarse voluntariamente a Costa Rica, bajo el principio de “De la patria por nuestra voluntad”.",
+      "candidate": "La Acta de la Anexión del Partido de Nicoya se conmemora el 25 de julio de 1824, fecha en que los pobladores de Nicoya y Santa Cruz, en un cabildo abierto, decidieron por mayoría incorporarse voluntariamente a Costa Rica, bajo el principio de “De la patria por nuestra voluntad”.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-190",
+      "question": "¿Qué es el Combate de la Angostura de Costa Rica?",
+      "reference": "El Combate de la Angostura fue un enfrentamiento armado el 28 de septiembre de 1860 en Puntarenas, donde las fuerzas gubernamentales derrotaron a las tropas leales al expresidente Juan Rafael Mora Porras, quien intentaba recuperar el poder tras su derrocamiento; Mora y sus aliados fueron capturados y fusilados días después.",
+      "candidate": "El Combate de la Angostura fue un enfrentamiento armado el 28 de septiembre de 1860 en Puntarenas, donde las fuerzas gubernamentales derrotaron a las tropas leales al expresidente Juan Rafael Mora Porras, quien intentaba recuperar el poder tras su derrocamiento; Mora y sus aliados fueron capturados y fusilados días después.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-200",
+      "question": "¿Quienes son \"los machos\" en la cultura popular de costa rica?",
+      "reference": "En la cultura popular de Costa Rica, “macho” se refiere a una persona de cabello rubio, independientemente de su género, y es un término comúnmente usado en el país, diferenciándose del significado tradicional en otros contextos hispanohablantes.  ",
+      "candidate": "En la cultura popular de Costa Rica, “macho” se refiere a una persona de cabello rubio, independientemente de su género, y es un término comúnmente usado en el país, diferenciándose del significado tradicional en otros contextos hispanohablantes.  ",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-210",
+      "question": "¿Qué profesión ejerció Antonio de Bastidas?",
+      "reference": "Antonio de Bastidas fue poeta, predicador y profesor de gramática y humanidades, destacándose como catedrático en colegios como San Luis de Quito y Popayán, y como figura clave en la poesía barroca y los inicios de la literatura ecuatoriana.",
+      "candidate": "Antonio de Bastidas fue poeta, predicador y profesor de gramática y humanidades, destacándose como catedrático en colegios como San Luis de Quito y Popayán, y como figura clave en la poesía barroca y los inicios de la literatura ecuatoriana.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-220",
+      "question": "¿Quién escribio \"Bruna, soroche y los tíos\" ?",
+      "reference": "\"Bruna, soroche y los tíos\" fue escrita por Alicia Yánez Cossío.",
+      "candidate": "\"Bruna, soroche y los tíos\" fue escrita por Alicia Yánez Cossío.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-230",
+      "question": "¿Qué son los churos en ecuador?",
+      "reference": "Los churos en Ecuador son caracoles terrestres comestibles, un manjar típico de la Sierra andina que se consume especialmente en mercados como los de Quito y Otavalo, preparados hervidos y acompañados de limón, ají o colada de tres granos, siendo un alimento de temporada que aparece con las lluvias.",
+      "candidate": "Los churos en Ecuador son caracoles terrestres comestibles, un manjar típico de la Sierra andina que se consume especialmente en mercados como los de Quito y Otavalo, preparados hervidos y acompañados de limón, ají o colada de tres granos, siendo un alimento de temporada que aparece con las lluvias.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-240",
+      "question": "En Ecuador, ¿qué son los 'cucuruchos'?",
+      "reference": "Los cucuruchos son penitentes que, durante la Semana Santa en Quito, Ecuador, visten túnicas moradas y capirotes cónicos como símbolo de arrepentimiento, caminan descalzos y cargan cruces para expiar sus pecados, con raíces en las tradiciones de la Inquisición española.",
+      "candidate": "Los cucuruchos son penitentes que, durante la Semana Santa en Quito, Ecuador, visten túnicas moradas y capirotes cónicos como símbolo de arrepentimiento, caminan descalzos y cargan cruces para expiar sus pecados, con raíces en las tradiciones de la Inquisición española.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-250",
+      "question": "¿Qué expresa el verbo “ahuevar” en uso salvadoreño?",
+      "reference": "En uso salvadoreño, el verbo “ahuevar” expresa humillar o herir la dignidad de alguien, y también puede significar atontar, azorar o acobardar, tanto en forma transitiva como pronominal.",
+      "candidate": "En uso salvadoreño, el verbo “ahuevar” expresa humillar o herir la dignidad de alguien, y también puede significar atontar, azorar o acobardar, tanto en forma transitiva como pronominal.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-260",
+      "question": "¿Qué significa “pidiche” en El Salvador?",
+      "reference": "En El Salvador, “pidiche” significa una persona pedigüeña que pide insistentemente, y se usa como sustantivo o adjetivo para describir a alguien que busca favores o dinero de forma persistente.",
+      "candidate": "En El Salvador, “pidiche” significa una persona pedigüeña que pide insistentemente, y se usa como sustantivo o adjetivo para describir a alguien que busca favores o dinero de forma persistente.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-270",
+      "question": "¿Qué es “tetelque” en El Salvador?",
+      "reference": "Tetelque es un término en El Salvador que describe una fruta con sabor acre por no estar madura.",
+      "candidate": "Tetelque es un término en El Salvador que describe una fruta con sabor acre por no estar madura.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-280",
+      "question": "¿Cómo se diferencian las tortillas de maiz guatemaltecas con las mexicanas?",
+      "reference": "Las tortillas guatemaltecas son más gruesas, se hacen a mano y son suaves por dentro con una ligera corteza crujiente, mientras que las mexicanas suelen ser más delgadas y se producen con máquinas. Las guatemaltecas se usan como acompañamiento, no como base para tacos, y se elaboran con maíz nativo de varios colores, valorando el proceso artesanal.",
+      "candidate": "Las tortillas guatemaltecas son más gruesas, se hacen a mano y son suaves por dentro con una ligera corteza crujiente, mientras que las mexicanas suelen ser más delgadas y se producen con máquinas. Las guatemaltecas se usan como acompañamiento, no como base para tacos, y se elaboran con maíz nativo de varios colores, valorando el proceso artesanal.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-290",
+      "question": "¿Cuál es el aporte científico más reconocido de la investigadora hondureña Mirna Marin en el campo de la botánica, según publicaciones de la Universidad Nacional Autónoma de Honduras hasta 2020?",
+      "reference": "Mirna Marín es una bióloga y oceanógrafa hondureña pionera en biología marina que contribuyó al desarrollo de la investigación científica en Honduras mediante su labor docente e institucional en la UNAH, donde impulsó la creación de unidades académicas en ciencias biológicas y fortaleció la formación en maricultura y oceanografía, aunque no se documentan públicamente publicaciones o descubrimientos científicos específicos.",
+      "candidate": "Mirna Marín es una bióloga y oceanógrafa hondureña pionera en biología marina que contribuyó al desarrollo de la investigación científica en Honduras mediante su labor docente e institucional en la UNAH, donde impulsó la creación de unidades académicas en ciencias biológicas y fortaleció la formación en maricultura y oceanografía, aunque no se documentan públicamente publicaciones o descubrimientos científicos específicos.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-300",
+      "question": "¿Quiénes fueron los incas y en qué región gobernaron?",
+      "reference": "Los incas fueron una civilización indígena que gobernaron el Imperio Incaico, conocido como Tawantinsuyu, en el occidente de América del Sur, abarcando territorios de los actuales Perú, Ecuador, Bolivia, Chile y Argentina, con su centro político en Cusco.",
+      "candidate": "Los incas fueron una civilización indígena que gobernaron el Imperio Incaico, conocido como Tawantinsuyu, en el occidente de América del Sur, abarcando territorios de los actuales Perú, Ecuador, Bolivia, Chile y Argentina, con su centro político en Cusco.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-310",
+      "question": "¿a qué personaje de la televisión mexicana hace referencia la canción \"Que no te haga bobo Jacobo\"?",
+      "reference": "A Jacobo Zabludovsky, el icónico presentador del noticiero 24 Horas de Televisa, quien se convirtió en símbolo del periodismo oficialista y fue criticado por transmitir la línea del gobierno.",
+      "candidate": "A Jacobo Zabludovsky, el icónico presentador del noticiero 24 Horas de Televisa, quien se convirtió en símbolo del periodismo oficialista y fue criticado por transmitir la línea del gobierno.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-320",
+      "question": "¿Qué significa la palabra \"chilango\"?",
+      "reference": "Chilango es el término coloquial para referirse a una persona originaria o habitante de la Ciudad de México. Aunque históricamente tuvo connotación peyorativa, hoy se usa comúnmente como identidad cultural, sin carga negativa en la mayoría de los contextos.",
+      "candidate": "Chilango es el término coloquial para referirse a una persona originaria o habitante de la Ciudad de México. Aunque históricamente tuvo connotación peyorativa, hoy se usa comúnmente como identidad cultural, sin carga negativa en la mayoría de los contextos.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-330",
+      "question": "Comida típica que se come mayormente el 2 de febrero",
+      "reference": "Tamales con atole.  ",
+      "candidate": "Tamales con atole.  ",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-340",
+      "question": "¿A qué dos cosas se refiere Ancón vinculadas al Canal de Panamá?",
+      "reference": "Ancón se refiere al SS Ancón, el primer barco que transitó oficialmente el Canal de Panamá el 15 de agosto de 1914, y al Cerro Ancón, la colina que alberga la bandera panameña junto al canal.",
+      "candidate": "Ancón se refiere al SS Ancón, el primer barco que transitó oficialmente el Canal de Panamá el 15 de agosto de 1914, y al Cerro Ancón, la colina que alberga la bandera panameña junto al canal.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-350",
+      "question": "¿Por qué se conoce a la región de Azuero en Panamá de esa forma?",
+      "reference": "La región de Azuero debe su nombre al apellido del político y jurista colombiano Vicente Azuero y Plata, quien fue homenajeado con ese nombre en la península durante el siglo XIX, cuando la zona fue oficialmente denominada provincia de Azuero entre 1850 y 1855, manteniendo la identidad cultural pese a su disolución.",
+      "candidate": "La región de Azuero debe su nombre al apellido del político y jurista colombiano Vicente Azuero y Plata, quien fue homenajeado con ese nombre en la península durante el siglo XIX, cuando la zona fue oficialmente denominada provincia de Azuero entre 1850 y 1855, manteniendo la identidad cultural pese a su disolución.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-360",
+      "question": "¿Qué es la Feria de Azuero?",
+      "reference": "La Feria de Azuero es el evento cultural, agroindustrial y artesanal más importante de la región de Azuero, Panamá, que celebra anualmente entre abril y mayo las tradiciones, el folclore, la gastronomía y la artesanía local, atrayendo a miles de visitantes con exposiciones, desfiles, música y actividades comerciales que reflejan la identidad regional.",
+      "candidate": "La Feria de Azuero es el evento cultural, agroindustrial y artesanal más importante de la región de Azuero, Panamá, que celebra anualmente entre abril y mayo las tradiciones, el folclore, la gastronomía y la artesanía local, atrayendo a miles de visitantes con exposiciones, desfiles, música y actividades comerciales que reflejan la identidad regional.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-370",
+      "question": "¿Qué es el juego balita - balita?",
+      "reference": "El juego \"balita-balita\" es un juego tradicional infantil de Paraguay similar a las canicas, donde se usan pequeñas bolas de vidrio para intentar sacar las del oponente de un círculo dibujado en el suelo, ganando puntos o las balitas, con técnicas como cuare, cuartí o pika valita.",
+      "candidate": "El juego \"balita-balita\" es un juego tradicional infantil de Paraguay similar a las canicas, donde se usan pequeñas bolas de vidrio para intentar sacar las del oponente de un círculo dibujado en el suelo, ganando puntos o las balitas, con técnicas como cuare, cuartí o pika valita.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-380",
+      "question": "¿Cuáles son los principales estilos de la marinera Peruana?",
+      "reference": "Los principales estilos de la marinera peruana son la norteña, la limeña y la serrana, cada uno distinto por su ritmo, vestimenta y coreografía, vinculados a regiones como La Libertad, Lima y la sierra central.",
+      "candidate": "Los principales estilos de la marinera peruana son la norteña, la limeña y la serrana, cada uno distinto por su ritmo, vestimenta y coreografía, vinculados a regiones como La Libertad, Lima y la sierra central.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-390",
+      "question": "Explica brevemente qué es ‘Carnaval de Cajamarca‘.",
+      "reference": "El Carnaval de Cajamarca es una fiesta popular peruana que se celebra antes del Miércoles de Ceniza, caracterizada por desfiles, danzas tradicionales, juegos con agua, pintura, talco y serpentina, y la figura central del Ño Carnavalón, un muñeco que se entierra al final. Con más de 300 mil participantes en su día central, es conocida como la fiesta más alegre del Perú y fue declarada Patrimonio Cultural Nacional en 2002.",
+      "candidate": "El Carnaval de Cajamarca es una fiesta popular peruana que se celebra antes del Miércoles de Ceniza, caracterizada por desfiles, danzas tradicionales, juegos con agua, pintura, talco y serpentina, y la figura central del Ño Carnavalón, un muñeco que se entierra al final. Con más de 300 mil participantes en su día central, es conocida como la fiesta más alegre del Perú y fue declarada Patrimonio Cultural Nacional en 2002.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-400",
+      "question": "¿Qué es la festividad ‘Virgen de la Candelaria‘?",
+      "reference": "La Virgen de la Candelaria es una festividad católica celebrada el 2 de febrero, que conmemora la presentación de Jesús en el Templo y la purificación de María, y se distingue especialmente en Puno, Perú, donde se combina con tradiciones andinas en procesiones, danzas, música folklórica y ceremonias de clausura, siendo reconocida como Patrimonio Cultural Inmaterial de la Humanidad.",
+      "candidate": "La Virgen de la Candelaria es una festividad católica celebrada el 2 de febrero, que conmemora la presentación de Jesús en el Templo y la purificación de María, y se distingue especialmente en Puno, Perú, donde se combina con tradiciones andinas en procesiones, danzas, música folklórica y ceremonias de clausura, siendo reconocida como Patrimonio Cultural Inmaterial de la Humanidad.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-410",
+      "question": "¿Qué es la Reserva Nacional de Paracas?",
+      "reference": "La Reserva Nacional de Paracas es un área protegida en Ica, Perú, creada en 1975 para conservar ecosistemas marino-costeros y su rica biodiversidad, incluyendo aves, mamíferos marinos y especies del mar frío de la Corriente de Humboldt. Con 335.000 hectáreas, también protege patrimonio arqueológico de la cultura Paracas y es reconocida como humedal de importancia internacional.",
+      "candidate": "La Reserva Nacional de Paracas es un área protegida en Ica, Perú, creada en 1975 para conservar ecosistemas marino-costeros y su rica biodiversidad, incluyendo aves, mamíferos marinos y especies del mar frío de la Corriente de Humboldt. Con 335.000 hectáreas, también protege patrimonio arqueológico de la cultura Paracas y es reconocida como humedal de importancia internacional.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-420",
+      "question": "¿Qué es el “concho” y cómo se diferencia del taxi tradicional en República Dominicana?",
+      "reference": "El concho es un transporte colectivo en vehículos privados que recorre rutas fijas y cobra por asiento, compartido entre varios pasajeros, mientras que el taxi tradicional se contrata individualmente, con tarifa por viaje y sin compartir el vehículo.  ",
+      "candidate": "El concho es un transporte colectivo en vehículos privados que recorre rutas fijas y cobra por asiento, compartido entre varios pasajeros, mientras que el taxi tradicional se contrata individualmente, con tarifa por viaje y sin compartir el vehículo.  ",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-430",
+      "question": "¿Cuáles son los ingredientes principales del sancocho dominicano según la receta tradicional de la República Dominicana?",
+      "reference": "El sancocho dominicano es un guiso espeso de carnes y tubérculos como yuca, plátano verde, ñame y maíz, sazonado con cilantro, ají y agrio de naranja. Se distingue por su densidad, la ausencia de papas y fideos, y su preparación tradicional con múltiples ingredientes que se añaden por tiempo de cocción, acompañado de arroz y aguacate en celebraciones familiares.",
+      "candidate": "El sancocho dominicano es un guiso espeso de carnes y tubérculos como yuca, plátano verde, ñame y maíz, sazonado con cilantro, ají y agrio de naranja. Se distingue por su densidad, la ausencia de papas y fideos, y su preparación tradicional con múltiples ingredientes que se añaden por tiempo de cocción, acompañado de arroz y aguacate en celebraciones familiares.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-440",
+      "question": "¿Qué es un 'sanky panky' en República dominicana?",
+      "reference": "Un “sanky panky” en República Dominicana es un hombre que seduce a turistas, principalmente mujeres, para obtener beneficios económicos, dinero, ropa o oportunidades de emigración, usando encanto y apariencia cuidada en zonas turísticas, sin buscar relaciones genuinas sino transacciones basadas en el interés personal.",
+      "candidate": "Un “sanky panky” en República Dominicana es un hombre que seduce a turistas, principalmente mujeres, para obtener beneficios económicos, dinero, ropa o oportunidades de emigración, usando encanto y apariencia cuidada en zonas turísticas, sin buscar relaciones genuinas sino transacciones basadas en el interés personal.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-450",
+      "question": "¿Qué vía de comunicación fue clave entre islas de República Dominicana, Haití y  Puerto Rico?",
+      "reference": "El canal de la Mona fue la vía de comunicación clave entre las islas de República Dominicana, Haití y Puerto Rico.",
+      "candidate": "El canal de la Mona fue la vía de comunicación clave entre las islas de República Dominicana, Haití y Puerto Rico.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-460",
+      "question": "¿Qué cartas funcionan como piezas en el juego de naipes llamado \"truco\" en Uruguay?",
+      "reference": "En el truco uruguayo, las piezas son el 2, 4, 5, sota (10) y caballo (11) del palo de la muestra; si la muestra es una de estas, el rey (12) del mismo palo la reemplaza como pieza. Estas cartas tienen el mayor valor en las bazas y afectan el cálculo del envido.",
+      "candidate": "En el truco uruguayo, las piezas son el 2, 4, 5, sota (10) y caballo (11) del palo de la muestra; si la muestra es una de estas, el rey (12) del mismo palo la reemplaza como pieza. Estas cartas tienen el mayor valor en las bazas y afectan el cálculo del envido.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-470",
+      "question": "¿Cómo se puede ir de Montevideo a Punta del Este?",
+      "reference": "Se puede ir de Montevideo a Punta del Este en ómnibus desde la Terminal Tres Cruces o en auto por la Ruta Interbalnearia, con un viaje de aproximadamente 1 hora y media a 2 horas. También están disponibles servicios de traslado privado.",
+      "candidate": "Se puede ir de Montevideo a Punta del Este en ómnibus desde la Terminal Tres Cruces o en auto por la Ruta Interbalnearia, con un viaje de aproximadamente 1 hora y media a 2 horas. También están disponibles servicios de traslado privado.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-480",
+      "question": "¿Qué significa la expresión uruguaya \"Es lo que hay, valor\"?",
+      "reference": "Es lo que hay, valor es una expresión uruguaya que significa aceptar una situación sin posibilidad de cambio, con resignación o ironía, y se usa para indicar que no hay nada mejor y que hay que conformarse. Popularizada por Alberto Kesman, transmite una actitud de realismo práctico ante lo inevitable.",
+      "candidate": "Es lo que hay, valor es una expresión uruguaya que significa aceptar una situación sin posibilidad de cambio, con resignación o ironía, y se usa para indicar que no hay nada mejor y que hay que conformarse. Popularizada por Alberto Kesman, transmite una actitud de realismo práctico ante lo inevitable.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "exact",
+      "expected": "correct",
+      "itemId": "trueque-490",
+      "question": "En venezuela, ¿que es exatamente el alimento \"toddy\"?",
+      "reference": "Toddy es una bebida achocolatada en polvo extremadamente popular en Venezuela, consumida caliente o fría, y se ha convertido en un término genérico para cualquier bebida de chocolate en polvo, siendo un ícono cultural del país.",
+      "candidate": "Toddy es una bebida achocolatada en polvo extremadamente popular en Venezuela, consumida caliente o fría, y se ha convertido en un término genérico para cualquier bebida de chocolate en polvo, siendo un ícono cultural del país.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-1",
+      "question": "¿Qué es una apacheta en Argentina?",
+      "reference": "Una apacheta es un montículo de piedras apiladas en forma cónica, construido como ofrenda a la Pachamama o a las deidades andinas, especialmente en caminos de montaña y cuestas altas, donde también sirve como hito de señalización. Su construcción es una tradición indígena que se mantiene en Argentina, y quitar sus piedras se considera una profanación.",
+      "candidate": "Las apachetas son estructuras de piedras amontonadas con diseño de cono que se encuentran en Argentina, siguiendo un legado indígena vigente. Ubicadas frecuentemente en pasos de montaña y cumbres, actúan como puntos de referencia y como presentes para la Pachamama o los dioses andinos. Debido a su carácter sagrado, extraer cualquier piedra de estos montículos se cataloga como una profanación.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-11",
+      "question": "¿Cuál es la moneda oficial Argentina?",
+      "reference": "El peso argentino.",
+      "candidate": "La moneda oficial de la República Argentina.",
+      "verdict": "incorrect",
+      "pass": false
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-21",
+      "question": "¿Quienes eran los Patagones y en qué región vivian?",
+      "reference": "Los patagones eran los pueblos indígenas tehuelches que habitaban la región de Patagonia, desde el río Negro hasta el estrecho de Magallanes, y desde los Andes hasta el océano. Fueron llamados así por Magallanes en 1520 por su gran estatura, lo que dio nombre a la región, aunque no eran gigantes, sino más altos que los europeos de la época.",
+      "candidate": "En 1520, Magallanes denominó patagones a los tehuelches, el pueblo originario que ocupaba el territorio comprendido entre el río Negro y el estrecho de Magallanes, y desde los Andes hasta el océano. Esta designación, que acabó dando nombre a la Patagonia, se debió a que poseían una estatura mayor que la de los europeos de ese periodo, si bien no llegaban a ser gigantes.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-31",
+      "question": "¿Qué pueblos originarios habitaron la región de Cuyo en Argentina?",
+      "reference": "En la región de Cuyo habitaron originariamente los huarpes, diaguitas, capayanes, pehuenches, mapuches y ranqueles, con los huarpes como grupo principal en Mendoza, San Juan y San Luis, mientras que los demás se distribuyeron en zonas norteñas y sureñas según sus adaptaciones territoriales.",
+      "candidate": "Originariamente, el territorio de Cuyo fue poblado por los huarpes, diaguitas, capayanes, pehuenches, mapuches y ranqueles. En las provincias de San Juan, San Luis y Mendoza, los huarpes destacaron como el grupo más importante, en tanto que las otras tribus se localizaron en sectores septentrionales y meridionales siguiendo sus necesidades de adaptación al entorno.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-41",
+      "question": "En Bolivia ¿Quién es \"El Tío de la mina\"?",
+      "reference": "El Tío de la Mina es una deidad venerada por los mineros bolivianos, especialmente en Potosí y Oruro, representada como una figura demoníaca que protege las minas y exige ofrendas como coca, cigarros y alcohol para garantizar seguridad y buena suerte en el trabajo subterráneo.",
+      "candidate": "Los trabajadores mineros de Bolivia, principalmente en las zonas de Oruro y Potosí, rinden culto al Tío de la Mina, una deidad con aspecto de demonio que custodia los yacimientos. Con el objetivo de obtener protección y fortuna en las labores bajo tierra, se le entregan ofrendas de alcohol, tabaco y hojas de coca.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-51",
+      "question": "¿En qué ciudad de Bolivia se inauguró en 2014 el sistema de teleférico urbano más extenso del mundo?",
+      "reference": "En 2014 se inauguró en La Paz y El Alto, Bolivia, el sistema de teleférico urbano más extenso del mundo, conocido como Mi Teleférico, con la primera línea que conecta ambas ciudades y que, al completarse, superó los 30 km de red total.",
+      "candidate": "Mi Teleférico, la red de transporte por cable urbano más larga del planeta, inició operaciones en 2014 en las localidades bolivianas de La Paz y El Alto. Su tramo inaugural unió estas dos urbes y, tras finalizar el proyecto, la extensión total sobrepasó los 30 kilómetros.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-61",
+      "question": "¿Qué es el Ekeko en Bolivia?",
+      "reference": "El Ekeko es una deidad andina de la abundancia, la prosperidad y la suerte, representada como un hombre pequeño y sonriente cargado de objetos y alimentos. Se le rinde culto ofreciendo miniaturas de bienes deseados, como dinero, casas o vehículos, especialmente durante la Feria de las Alasitas, para atraer fortuna y realizar deseos. Su culto tiene raíces prehispánicas y sigue vigente en Bolivia.",
+      "candidate": "Esta deidad de los Andes, símbolo de la fortuna, la opulencia y el éxito, es el Ekeko, a quien se personifica como un individuo diminuto y jovial que carga múltiples productos y comida. Durante la Feria de las Alasitas, los devotos le obsequian versiones en miniatura de lo que anhelan obtener, tales como inmuebles, efectivo o medios de transporte, buscando así atraer la buena suerte. Pese a tener un origen prehispánico, su veneración permanece plenamente vigente en territorio boliviano.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-71",
+      "question": "Qual a contribuicao brasileira para o chuveiro elétrico?",
+      "reference": "A principal contribuição brasileira ao chuveiro elétrico foi sua invenção, realizada pelo engenheiro paulista Francisco Canhos por volta dos anos 1930, que adaptou o aparelho para aquecer água diretamente na torneira usando a rede elétrica, tornando-o essencial nos lares brasileiros.",
+      "candidate": "A maior colaboração do Brasil para o chuveiro elétrico ocorreu com sua criação pelo engenheiro paulista Francisco Canhos, por volta da década de 1930. Ele projetou o dispositivo para realizar o aquecimento da água na própria saída por meio da rede elétrica, o que fez do aparelho um item indispensável nas casas brasileiras.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-81",
+      "question": "Quais são os ingredientes básicos do prato típico barreado?",
+      "reference": "Os ingredientes básicos são paleta bovina, bacon, cebola, alho, cominho, folhas de louro, sal, vinagre, farinha de mandioca e banana-da-terra.",
+      "candidate": "A composição essencial deste prato inclui paleta bovina, bacon, cebola, alho, cominho, folhas de louro, sal, vinagre, farinha de mandioca e banana-da-terra.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-91",
+      "question": "Como é a sinalização usada para indicar a necessidade de cumprimento da lei antifumo (LEI N° 13.541, DE 07 DE MAIO DE 2009) no estado de São Paulo?",
+      "reference": "A sinalização deve apresentar a silhueta do mapa do estado de São Paulo em vermelho, com um cigarro centralizado em preto e cortado por uma linha diagonal vermelha inclinada à direita, conforme exigido pela Lei nº 13.541/2009.",
+      "candidate": "Em conformidade com a Lei nº 13.541/2009, os avisos devem exibir o contorno do estado de São Paulo na cor vermelha, contendo um cigarro preto centralizado e atravessado por uma faixa diagonal vermelha inclinada para a direita.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-101",
+      "question": "Quais são os animais que estampam as cédulas do Real?",
+      "reference": "Os animais que estampam as cédulas do Real são: beija-flor-de-peito-azul, tartaruga-de-pente, garça-branca-grande, arara-vermelha-grande, mico-leão-dourado, onça-pintada, garoupa e lobo-guará.",
+      "candidate": "As notas de Real apresentam ilustrações de diversas espécies da fauna, especificamente o beija-flor-de-peito-azul, a tartaruga-de-pente, a garça-branca-grande, a arara-vermelha-grande, o mico-leão-dourado, a onça-pintada, a garoupa e o lobo-guará.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-111",
+      "question": "¿Quiénes eran los mapuches en Chile?",
+      "reference": "Los mapuches son un pueblo indígena originario del sur de Chile, con una rica cultura, organización comunitaria y una histórica resistencia a la dominación colonial, que mantienen su identidad, tradiciones y vínculo con la tierra hasta hoy.",
+      "candidate": "Originarios de la zona austral de Chile, los mapuches constituyen una etnia aborigen que destaca por su vasto patrimonio cultural y su estructura social basada en la comunidad. Este pueblo es reconocido por su prolongada oposición al dominio colonial, logrando preservar hasta la actualidad su identidad propia, sus costumbres ancestrales y su estrecha relación con el territorio.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-121",
+      "question": "¿Qué ingredientes se utilizan para el completo brasileño y qué colores emula?",
+      "reference": "El completo brasileño lleva queso derretido y palta, y emula los colores verde y amarillo de la bandera de Brasil.",
+      "candidate": "Con el objetivo de replicar los tonos amarillo y verde de la enseña de Brasil, el completo brasileño incorpora palta y queso fundido.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-131",
+      "question": "¿Qué es el cancato en Chile?",
+      "reference": "El cancato es un plato de pescado asado típico de la gastronomía del sur de Chile, especialmente asociado a Chiloé, donde se prepara con pescados como el salmón o la sierra, asados sobre fogata o en horno, y frecuentemente acompañados de tomate, longaniza, queso y verduras.",
+      "candidate": "Originario de la zona austral de Chile y vinculado estrechamente a Chiloé, el cancato consiste en una preparación de pescado asado —comúnmente sierra o salmón— cocinado al horno o sobre fogatas. Esta receta tradicional suele integrar ingredientes como queso, tomate, longaniza y diversos vegetales.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-141",
+      "question": "¿Qué es el sancocho antioqueño?",
+      "reference": "El sancocho antioqueño es una sopa espesa de carne de res, cerdo o pollo, con mazorca, plátano verde, papa, yuca y aliños como cilantro, ajo y cebolla, servido típicamente con arroz blanco, aguacate y ají. Cada familia tiene su versión, pero siempre es abundante y sabrosa.",
+      "candidate": "Originario de Antioquia, este caldo consistente integra carne de cerdo, res o pollo junto a ingredientes como yuca, papa, plátano verde y mazorca. Se condimenta empleando ajo, cebolla y cilantro, sirviéndose habitualmente con ají, aguacate y arroz blanco. Si bien cada hogar posee su propia receta, se caracteriza por ser una comida sustanciosa y deliciosa.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-151",
+      "question": "¿Qué fue el 'Bogotazo' y en qué año ocurrió?",
+      "reference": "El Bogotazo fue una revuelta popular ocurrida el 9 de abril de 1948 en Bogotá tras el asesinato del líder liberal Jorge Eliécer Gaitán, que desencadenó violencia generalizada en el país.",
+      "candidate": "El 9 de abril de 1948, la ciudad de Bogotá fue escenario del Bogotazo, una insurrección civil detonada por el magnicidio del dirigente liberal Jorge Eliécer Gaitán, lo cual derivó en una situación de violencia extendida por toda la nación.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-161",
+      "question": "¿Qué es la arepa de huevo y en qué región de Colombia es típica?",
+      "reference": "La arepa de huevo es un plato típico de la Costa Caribe de Colombia, hecho con masa de maíz y un huevo entero en su interior, que se fríe hasta cocinarlo; en algunas versiones se le añade carne o queso. Se originó en Luruaco, Atlántico, y es parte central de su gastronomía regional.",
+      "candidate": "Surgida en Luruaco, Atlántico, la arepa de huevo constituye un pilar de la cocina tradicional de la Costa Caribe de Colombia. Este alimento consiste en una masa de maíz frita que encierra un huevo completo, contando además con variantes que integran queso o carne.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-171",
+      "question": "Para un costarricense que significa \"Le amarró el perro\"?",
+      "reference": "Para un costarricense, “le amarró el perro” significa que alguien le quedó debiendo dinero y no lo pagó.",
+      "candidate": "La frase “le amarró el perro” es utilizada en Costa Rica para describir la situación en la que un individuo no cancela una deuda monetaria.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-181",
+      "question": "¿Qué tradición estudiantil se celebra la noche del 14 de septiembre en Costa Rica y qué simboliza?",
+      "reference": "La noche del 14 de septiembre en Costa Rica se celebra el Desfile de Faroles, donde estudiantes recorren las calles con faroles artesanales iluminados, simbolizando la luz de la libertad y emulando el gesto de Dolores Bedoya, quien en 1821 alumbró las calles de Antigua Guatemala para impulsar la independencia, y que hoy acompaña el paso de la Antorcha Centroamericana de la Independencia.",
+      "candidate": "Durante la velada del 14 de septiembre, se realiza en Costa Rica el Desfile de Faroles, una tradición en la que el alumnado transita las vías públicas con faroles manuales encendidos. Esta práctica representa la claridad de la libertad y conmemora a Dolores Bedoya, quien en 1821 recorrió Antigua Guatemala con luces para promover la emancipación. Actualmente, este festejo escolta el trayecto de la Antorcha Centroamericana de la Independencia.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-191",
+      "question": "¿Qué es la \"leche dormida\" en Costa Rica?",
+      "reference": "La \"leche dormida\" es una bebida refrescante de Guanacaste, especialmente de Cañas, hecha con leche, azúcar, canela, vainilla y un ingrediente secreto, que se deja reposar para espesarse antes de servirse licuada con hielo. Su nombre proviene del reposo que \"duerme\" la mezcla y de una leyenda que vincula su creación a un sueño del inventor. Se consume fría y es popular en regiones como Cañas, Tilarán y San Carlos.",
+      "candidate": "Originaria de Guanacaste, específicamente de Cañas, la \"leche dormida\" es una bebida refrescante compuesta por leche, azúcar, canela, vainilla y un elemento secreto. El proceso implica dejar reposar la mezcla para que espese, sirviéndose posteriormente licuada con hielo. Su apelativo deriva del tiempo que la preparación \"duerme\" y de una leyenda que atribuye su invención a un sueño del creador. Este producto se toma frío y es tradicional en localidades como Cañas, Tilarán y San Carlos.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-201",
+      "question": "¿ Qué es el arroz congris en Cuba?",
+      "reference": "El arroz congrí es un plato cubano hecho con arroz blanco y frijoles negros cocinados juntos, preparados con sofrito de ajo, cebolla, pimiento, tocino o chicharrones, y especias como comino, orégano y laurel, sazonado con sal; se sirve como plato principal o guarnición, y su nombre refleja raíces africanas.  \n",
+      "candidate": "Con una denominación que evidencia sus raíces africanas, el congrí es una receta cubana que consiste en la cocción conjunta de frijoles negros y arroz blanco. El plato se sazona con sal y una mezcla de especias que incluye laurel, orégano y comino, incorporando un sofrito de pimiento, cebolla y ajo junto con chicharrones o tocino. Se puede presentar tanto de plato principal como de acompañamiento.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-211",
+      "question": "¿Que significa arraray en Ecuador?",
+      "reference": "\"Arraray\" en Ecuador es una interjección coloquial usada para expresar un dolor repentino o ardor, especialmente cuando algo quema, como una olla caliente o el vapor, común en la sierra y con un tono que puede ser de sorpresa, queja o incluso chistoso.",
+      "candidate": "En la región de la sierra ecuatoriana, se emplea la expresión informal \"Arraray\" para manifestar una sensación de ardor o dolor súbito, frecuentemente provocada por el vapor o el contacto con objetos calientes como ollas. Esta interjección puede utilizarse con un matiz de queja, asombro o incluso de forma graciosa.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-221",
+      "question": "¿Qué es el 'caldo de bolas' ecuatoriano?",
+      "reference": "El caldo de bolas es un plato típico ecuatoriano de la costa, compuesto por un caldo de carne o pollo con bolas de plátano verde rellenas de carne, queso, cebolla, maní, pasas, huevo duro y especias, acompañadas de yuca y choclo, y servido con limón o ají.  ",
+      "candidate": "El caldo de bolas, receta tradicional de la zona costera de Ecuador, consiste en un consomé de pollo o res que incorpora esferas de plátano verde. Dichas bolas están rellenas de una mezcla de carne, queso, cebolla, maní, pasas, huevo duro y diversos condimentos. La sopa incluye además choclo y yuca, y se acostumbra acompañarla con ají o limón.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-231",
+      "question": "¿Cuál es la razón principal por la que la ciudad de Ibarra, Ecuador, es conocida como 'Ciudad Blanca'?",
+      "reference": "Ibarra se conoce como “Ciudad Blanca” porque, tras el terremoto de 1868, fue reconstruida con fachadas pintadas de blanco con cal, tanto para desinfectar como para combatir malos olores, una práctica que se mantuvo y definió su identidad arquitectónica.",
+      "candidate": "El apelativo de “Ciudad Blanca” otorgado a Ibarra surgió tras el terremoto de 1868, periodo en el que se reconstruyó utilizando cal para pintar las fachadas de blanco. Dicha acción buscaba higienizar y mitigar olores desagradables, convirtiéndose en una costumbre permanente que moldeó su fisonomía arquitectónica.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-241",
+      "question": "¿Qué siginifica \"cuéntame un cacho\" en Ecuador?",
+      "reference": "En Ecuador, “cuéntame un cacho” significa “cuéntame un chiste”, ya que “cacho” es un término coloquial para referirse a una broma o anécdota graciosa.",
+      "candidate": "La expresión \"cuéntame un cacho\" se emplea en Ecuador para pedir que alguien relate un chiste, dado que el vocablo \"cacho\" funciona como un nombre informal para las bromas o historias divertidas.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-251",
+      "question": "¿Qué quiere decir “andar de cachetes embarrados” en el Salvador?",
+      "reference": "Andar de cachetes embarrados en El Salvador significa estar muy enamorado.",
+      "candidate": "En El Salvador, la expresión «andar de cachetes embarrados» se utiliza para indicar que una persona se encuentra profundamente enamorada.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-261",
+      "question": "¿Qué es “tiricia” en El Salvador?",
+      "reference": "En El Salvador, “tiricia” es un modismo que expresa pereza o mal humor.",
+      "candidate": "En territorio salvadoreño, el vocablo “tiricia” se utiliza como una expresión para manifestar desgano o un estado de ánimo irritable.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-271",
+      "question": "¿Qué significa “cuilio” en El Salvador?",
+      "reference": "En El Salvador, “cuilio” es un término despectivo usado para referirse a un policía.  ",
+      "candidate": "La expresión \"cuilio\" se emplea en El Salvador como un apelativo peyorativo dirigido hacia los miembros de la policía.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-281",
+      "question": "¿Cuales son los idiomas reconocidos en guatemala?",
+      "reference": "El español es el único idioma oficial de Guatemala, y se reconocen 22 idiomas mayas, además del garífuna y el xinca, sumando 25 idiomas nacionales reconocidos. Entre los mayas, los más hablados son el k’iche’, kaqchikel, mam, q’eqchi’ y poqomchi’.",
+      "candidate": "Aunque el español posee exclusividad como idioma oficial en Guatemala, el país reconoce legalmente 25 lenguas nacionales, compuestas por 22 idiomas de origen maya, el garífuna y el xinca. Dentro de la familia maya, las lenguas con mayor predominancia son el k’iche’, kaqchikel, mam, q’eqchi’ y poqomchi’.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-291",
+      "question": "¿Cuál es el aporte científico más reconocido de la investigadora hondureña María Cristina Pineda de Carías en el campo de la botánica, según publicaciones de la Universidad Nacional Autónoma de Honduras hasta 2020?",
+      "reference": "María Cristina Pineda de Carías fundó y dirigió el Observatorio Astronómico de Suyapa, impulsó la enseñanza y investigación en astronomía y astrofísica en Honduras, estudió el meteorito caído en Comayagua en 2012, y promovió la arqueoastronomía maya, siendo pionera en la formación académica en ciencias espaciales en Centroamérica.",
+      "candidate": "Como precursora de la educación académica en ciencias espaciales en Centroamérica, María Cristina Pineda de Carías estableció y encabezó el Observatorio Astronómico de Suyapa. En Honduras, potenció la investigación y la docencia en astrofísica y astronomía, analizó el meteorito que impactó en Comayagua en 2012 y dio impulso a la arqueoastronomía maya.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-301",
+      "question": "¿Qué es el quipu y para qué se usaba?",
+      "reference": "El quipu era un sistema de cuerdas con nudos usado por los incas para registrar información como cosechas, tributos, población y ganado, utilizando colores, posiciones y tipos de nudos en un sistema decimal; los quipucamayocs lo interpretaban como un medio de contabilidad y memoria, posiblemente también para relatos históricos.",
+      "candidate": "Los incas utilizaban el quipu, un método de cordeles con nudos, para documentar datos sobre el ganado, la población, los tributos y las cosechas. A través de un sistema decimal que integraba diversos colores, clases de nudos y posiciones, los quipucamayocs empleaban este recurso para la contabilidad y la memoria, sirviendo probablemente también para transmitir crónicas históricas.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-311",
+      "question": "¿qué programa de televisión mexicana comenzaba con la frase \"¡Este es el programa número uno de la televisión humorística!\"?",
+      "reference": "El programa mexicano que comenzaba con la frase \"¡Este es el programa número uno de la televisión humorística!\" es *Chespirito*, que incluía *El Chavo del Ocho* como uno de sus sketches principales.  ",
+      "candidate": "\"¡Este es el programa número uno de la televisión humorística!\" era la frase de apertura de *Chespirito*, una producción mexicana que integraba a *El Chavo del Ocho* entre sus segmentos más relevantes.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-321",
+      "question": "¿Qué significa tocayo?",
+      "reference": "Tocayo es una persona que tiene el mismo nombre que otra.",
+      "candidate": "Se designa como tocayo a aquel individuo que posee el mismo nombre que otro sujeto.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-331",
+      "question": "¿Qué se celebra el 2 de noviembre?",
+      "reference": "El 2 de noviembre se celebra el Día de Muertos, una tradición en la que se honra a los seres queridos fallecidos con ofrendas, altares, calaveras de azúcar, pan de muerto y visitas a los cementerios, especialmente en México y América Latina.",
+      "candidate": "Cada 2 de noviembre se conmemora el Día de Muertos, una festividad destinada a homenajear a los difuntos. Esta costumbre, arraigada principalmente en México y América Latina, incluye la creación de altares y ofrendas, el uso de calaveras de azúcar, el consumo de pan de muerto y la asistencia a los cementerios.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-341",
+      "question": "¿Qué representa la pollera panameña y en qué ocasiones se utiliza?",
+      "reference": "La pollera panameña representa la identidad, tradición y orgullo cultural de Panamá, siendo un símbolo de artesanía y elegancia. Se utiliza en ocasiones especiales como fiestas patronales, el Festival de la Pollera en Las Tablas, fiestas patrias, carnavales y eventos folclóricos, donde se baila el tamborito. Se confecciona a mano con bordados, encajes y tembleques, y su uso refleja el valor patrimonial de la mujer panameña.",
+      "candidate": "Considerada un ícono de distinción y labor manual, la pollera de Panamá simboliza el sentido de pertenencia, la herencia y la cultura nacional. Se viste habitualmente en las fiestas de los santos patronos, durante el Festival de la Pollera en Las Tablas, en las efemérides patrias, los carnavales y diversas galas folclóricas donde se interpreta el tamborito. Su fabricación artesanal incluye bordados, encajes y tembleques, proyectando a través de su uso la relevancia patrimonial de la mujer panameña.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-351",
+      "question": "¿Qué es la chicha de Saril?",
+      "reference": "La chicha de saril es una bebida tradicional panameña hecha con flor de hibisco (saril), agua, azúcar, jengibre, canela y clavo de olor, que se hierve, se enfría y se sirve fría, especialmente durante las fiestas navideñas.  ",
+      "candidate": "Típica de Panamá, la chicha de saril es una infusión tradicional compuesta por flor de hibisco (saril), agua, azúcar, canela, jengibre y clavo de olor. Este brebaje se obtiene mediante el hervor de sus componentes, se deja reposar hasta que enfría y se consume helado, particularmente en el transcurso de las celebraciones de Navidad.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-361",
+      "question": "¿Que es un morisqueto?",
+      "reference": "Un morisqueto es una persona que hace gestos exagerados o muecas graciosas para divertir en fiestas, especialmente en Panamá, derivado de “morisqueta” (mueca) o “morisco”, con un cambio de significado de burla a animación festiva. También puede referirse al plato mexicano de arroz con frijoles y salsa, pero el uso más común es el coloquial para describir a quien alegra las reuniones con su comportamiento risueño y exuberante.",
+      "candidate": "El término morisqueto describe principalmente a individuos que, mediante muecas divertidas y ademanes exagerados, amenizan reuniones sociales, particularmente en el contexto panameño. Su origen etimológico se halla en las palabras \"morisqueta\" o \"morisco\", transformando su connotación original de mofa en una de dinamismo festivo. Pese a que el vocablo identifica igualmente a un platillo de la gastronomía mexicana compuesto por frijoles, arroz y salsa, su acepción coloquial más habitual es la de aquel sujeto exuberante y alegre que divierte a los asistentes en una fiesta.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-371",
+      "question": "¿Cómo se le llama al juego de la  cometa en Paraguay?",
+      "reference": "En Paraguay, al juego de la cometa se le llama comúnmente pandorga, aunque también se conoce como barrilete o cometa, y en guaraní se dice kuatiaveve.",
+      "candidate": "Pandorga es el nombre más frecuente que recibe la cometa en Paraguay, donde también se le llama barrilete y, en lengua guaraní, se conoce como kuatiaveve.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-381",
+      "question": "¿Qué canal de televisión peruano es reconocido por emitir diversidad cultural “Reportaje al Perú”?",
+      "reference": "TV Perú es el canal reconocido por emitir “Reportaje al Perú”, programa que destaca la diversidad cultural, histórica y turística del país.",
+      "candidate": "La cadena TV Perú es distinguida por difundir “Reportaje al Perú”, un espacio que resalta la pluralidad histórica, cultural y turística de la nación.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-391",
+      "question": "Explica brevemente qué es el ‘Señor de los Milagros‘ y dónde se venera.",
+      "reference": "El Señor de los Milagros es una pintura colonial de Cristo crucificado, conocida como el Cristo Moreno, realizada en adobe en Lima, Perú, en el siglo XVII. Se venera en el Santuario de Las Nazarenas, y su culto se intensifica en octubre con procesiones multitudinarias donde los devotos usan hábitos morados, símbolo de penitencia y devoción, tras un milagroso evento en 1655 que la salvó de un terremoto.",
+      "candidate": "Conocida popularmente como el Cristo Moreno, esta representación colonial de Jesús crucificado fue realizada sobre un muro de adobe en la Lima del siglo XVII. La imagen, que se custodia en el Santuario de Las Nazarenas, cobró especial relevancia tras permanecer intacta durante un terremoto en 1655. Cada octubre, la fe se manifiesta en multitudinarias procesiones donde los fieles visten hábitos morados como símbolo de su penitencia y devoción.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-401",
+      "question": "¿Qué es la artesanía de los retablos ayacuchanos?",
+      "reference": "Los retablos ayacuchanos son cajas de madera de cedro con figuras hechas de pasta de papa hervida, yeso y polvo colado, que representan escenas religiosas, fiestas populares, danzas tradicionales, vida rural, peleas de gallos y corridas de toros, expresando el arte andino con colorido y simbolismo, transmitido de generación en generación y declarado Patrimonio Cultural de la Nación.",
+      "candidate": "Reconocidos como Patrimonio Cultural de la Nación, los retablos ayacuchanos consisten en estructuras de madera de cedro que albergan figuras moldeadas con una mezcla de papa hervida, yeso y polvo colado. Estas piezas, que simbolizan el arte andino a través de su colorido, retratan corridas de toros, peleas de gallos, la cotidianidad del campo, bailes típicos, festividades del pueblo y motivos religiosos, manteniendo una tradición heredada generacionalmente.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-411",
+      "question": "¿Qué es la Danza de los Shacshas?",
+      "reference": "La Danza de los Shacshas es una tradición andina de Áncash, Perú, que se realiza durante la Fiesta del Señor de la Soledad; sus danzantes usan atuendos coloridos con cascabeles en las pantorrillas que producen el sonido característico, representan escenas de la vida campesina y cumplen promesas religiosas, expresando devoción y herencia cultural.",
+      "candidate": "En la región de Áncash, Perú, se celebra la Danza de los Shacshas como parte de la Fiesta del Señor de la Soledad. Esta manifestación andina se distingue por el sonido de los cascabeles que los ejecutantes portan en sus pantorrillas sobre vestimentas de colores. A través de ella, se escenifican labores del campo y se concretan promesas espirituales, consolidándose como una muestra de identidad cultural y fervor religioso.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-421",
+      "question": "¿Qué ocurrió el 27 de febrero de 1844 en República Dominicana?",
+      "reference": "El 27 de febrero de 1844 se proclamó la independencia de la República Dominicana frente a Haití, con el enhestamiento de la bandera tricolor en la Puerta del Conde por Francisco del Rosario Sánchez y Matías Ramón Mella, poniendo fin a 22 años de ocupación haitiana y dando nacimiento a la nación soberana.",
+      "candidate": "El surgimiento de la República Dominicana como nación libre tuvo lugar el 27 de febrero de 1844, fecha en que se declaró su emancipación de Haití. Mediante el izamiento del pabellón tricolor en la Puerta del Conde, acto realizado por Matías Ramón Mella y Francisco del Rosario Sánchez, se dio por finalizado un periodo de 22 años de ocupación haitiana.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-431",
+      "question": "¿Por qué el 14 de junio es simbólico en República Dominicana?",
+      "reference": "El 14 de junio es simbólico en República Dominicana porque conmemora el desembarco armado de 1959 en Constanza, Maimón y Estero Hondo, una expedición para derrocar la dictadura de Trujillo que, aunque falló, inspiró la resistencia nacional y dio nombre al Movimiento Revolucionario 14 de Junio.",
+      "candidate": "El 14 de junio posee un alto valor histórico en República Dominicana, pues recuerda la incursión armada de 1959 en Maimón, Estero Hondo y Constanza. Este esfuerzo por derribar la tiranía de Trujillo, si bien resultó fallido, impulsó el sentimiento de resistencia en el país y dio origen al nombre del Movimiento Revolucionario 14 de Junio.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-441",
+      "question": "¿Qué es el dembow y cuál es su oirigen?",
+      "reference": "El dembow es un género musical urbano originado en República Dominicana en los años 90, derivado del dancehall jamaicano, especialmente del ritmo de la canción “Dem Bow” de Shabba Ranks (1990), y consolidado con “Mujeres Andadoras” de DJ Bollo. Se caracteriza por un patrón rítmico repetitivo, tempos acelerados y letras sobre la calle, el amor y la fiesta.",
+      "candidate": "Surgido en la República Dominicana durante la década de los 90, el dembow constituye un estilo de música urbana que proviene del dancehall de Jamaica, tomando como base principal el ritmo del tema \"Dem Bow\" de Shabba Ranks (1990) y afianzándose gracias a \"Mujeres Andadoras\" de DJ Bollo. Sus rasgos distintivos incluyen una estructura rítmica constante, velocidades elevadas y temáticas líricas enfocadas en las vivencias callejeras, el romance y las celebraciones.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-451",
+      "question": "¿Cuál era el epicentro occidental taíno?",
+      "reference": "El epicentro occidental taíno era el cacicazgo de Jaragua, ubicado en el extremo suroccidental de La Española, desde donde se extendió su influencia a partes de Cuba oriental y central, y probablemente Jamaica, siendo su variante lingüística la más prestigiosa de la región.",
+      "candidate": "Localizado en la zona suroccidental de La Española, el cacicazgo de Jaragua representaba el núcleo taíno de occidente. Su autoridad se expandió hacia el centro y el este de Cuba, llegando probablemente a Jamaica, y su dialecto era considerado el de mayor distinción en toda la región.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-461",
+      "question": "¿Qué significa cantar en el juego de naipes llamado \"truco\" en Uruguay?",
+      "reference": "Cantar en el truco uruguayo significa proponer una apuesta como Envido, Real Envido, Falta Envido, Flor, Truco, Retruco o Vale Cuatro, con respuestas posibles como “Quiero”, “No quiero” o elevar la apuesta, según las reglas del juego.",
+      "candidate": "En el marco del truco uruguayo, el término cantar se refiere a lanzar desafíos de apuesta como Envido, Real Envido, Falta Envido, Flor, Truco, Retruco o Vale Cuatro. Las opciones para responder, conforme a las normas, son decir “Quiero”, “No quiero” o aumentar la apuesta.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-471",
+      "question": "¿Qué es Casapueblo?",
+      "reference": "Casapueblo es una obra arquitectónica única en Punta Ballena, Uruguay, creada por el artista Carlos Páez Vilaró como casa, taller y museo. Su diseño, inspirado en un nido de hornero, alberga sus obras de arte, terrazas para ver la puesta del sol y una ceremonia cultural al atardecer, combinando arte, arquitectura y cultura en un solo espacio.",
+      "candidate": "Ubicada en Punta Ballena, Uruguay, Casapueblo constituye una singular edificación que Carlos Páez Vilaró ideó para que sirviera simultáneamente de hogar, estudio y museo. Con una estética que evoca el nido del hornero, el recinto custodia el legado artístico del autor y dispone de plataformas para admirar el ocaso, momento en el que se desarrolla una ceremonia cultural que amalgama arte, arquitectura y cultura.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-481",
+      "question": "¿qué significa \"toque madre\" en el candombe?",
+      "reference": "\"Toque madre\" se refiere a los tres estilos fundamentales del candombe uruguayo, cada uno asociado a un barrio de Montevideo: el del Barrio Sur (Cuareim), el del Cordón y el de Palermo (Ansina), que representan las formas tradicionales y auténticas del ritmo afrodescendiente.",
+      "candidate": "Las tres vertientes esenciales del candombe uruguayo se denominan \"toque madre\", y cada una se vincula a un sector específico de Montevideo: el Barrio Sur (Cuareim), Palermo (Ansina) y el Cordón, constituyendo las expresiones más genuinas y tradicionales de este ritmo afrodescendiente.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "paraphrase",
+      "expected": "correct",
+      "itemId": "trueque-491",
+      "question": "¿De que pais es originaria la arepa?",
+      "reference": "La arepa es originaria de Colombia y Venezuela, con raíces indígenas prehispánicas en la región que hoy abarca ambos países.",
+      "candidate": "Este platillo tiene su origen en las culturas indígenas de la era prehispánica, localizadas en el territorio que actualmente integran las naciones de Colombia y Venezuela.",
+      "verdict": "correct",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-2",
+      "question": "¿Cuales son los ingredientes de los \"pastelitos dulces\" de Argentina?",
+      "reference": "Los pastelitos dulces argentinos llevan masa hojaldrada de harina, manteca, agua, sal y jugo de limón, rellena con dulce de membrillo o batata, y se fríen hasta dorar, terminando con un pincelado de almíbar. Se forman con forma de flor.",
+      "candidate": "“Boludo” puede ser un insulto que significa estúpido o idiota, pero también se usa entre amigos como una forma coloquial y afectuosa, similar a “man” o “compa”, dependiendo del tono y el contexto. Su significado varía según la relación entre las personas y la intención al decirlo.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-12",
+      "question": "¿Qué es el Obelisco de Buenos Aires?",
+      "reference": "El Obelisco de Buenos Aires es un monumento histórico de 67,5 metros de altura, construido en 1936 por Alberto Prebisch para conmemorar el cuarto centenario de la fundación de la ciudad. Ubicado en la Plaza de la República, en la intersección de las avenidas 9 de Julio y Corrientes, es el símbolo más reconocido de Buenos Aires.",
+      "candidate": "“Boludo” puede ser un insulto que significa estúpido o idiota, pero también se usa entre amigos como una forma coloquial y afectuosa, similar a “man” o “compa”, dependiendo del tono y el contexto. Su significado varía según la relación entre las personas y la intención al decirlo.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-22",
+      "question": "Explica brevemente qué quiere decir tener \"fiaca\" en la Argentina",
+      "reference": "Tener fiaca en Argentina significa sentir pereza, desgana o falta de energía para hacer algo, como si uno no tuviera ganas de moverse o actuar. Es un término coloquial que describe un estado de inercia o indolencia, usado tanto como sustantivo como adjetivo, y que refleja una actitud común ante la necesidad de trabajar o cumplir tareas.",
+      "candidate": "“Boludo” puede ser un insulto que significa estúpido o idiota, pero también se usa entre amigos como una forma coloquial y afectuosa, similar a “man” o “compa”, dependiendo del tono y el contexto. Su significado varía según la relación entre las personas y la intención al decirlo.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-32",
+      "question": "¿Qué pueblos originarios habitaron el Litoral argentino?",
+      "reference": "En el Litoral argentino habitaron los guaraníes, los chaná, los charrúas y grupos canoeros como los de la cultura Goya Malabrigo, todos vinculados a los ríos y a la pesca, la caza y la recolección, con presencia también de pueblos arawak y cazadores-pescadores de la industria altoparanaense.",
+      "candidate": "“Boludo” puede ser un insulto que significa estúpido o idiota, pero también se usa entre amigos como una forma coloquial y afectuosa, similar a “man” o “compa”, dependiendo del tono y el contexto. Su significado varía según la relación entre las personas y la intención al decirlo.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-42",
+      "question": "En Bolivia ¿Cuando se \"challa\"?",
+      "reference": "En Bolivia, el ch’alla se realiza principalmente el martes de Carnaval, cuando se ofrecen ofrendas a la Pachamama para pedir buena fortuna, y también los primeros viernes de cada mes en negocios y oficinas, así como en la inauguración de construcciones o proyectos.",
+      "candidate": "Los cochalos son las personas originarias del departamento de Cochabamba, Bolivia; el gentilicio correcto es cochabambino, pero \"cochalo\" se usa coloquialmente como sustantivo y adjetivo para referirse a ellos o a lo que proviene de esa región.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-52",
+      "question": "¿Cúantas lenguas indígenas reconocidas existen en Bolivia?",
+      "reference": "Bolivia reconoce 36 lenguas indígenas originarias, como el aymara, quechua, guaraní, araona y yamiwana, entre otras, establecidas en su Constitución. Algunas están en peligro de extinción por falta de uso, pero todas tienen reconocimiento oficial como parte de la diversidad lingüística del país.",
+      "candidate": "La danza de los caporales es originaria de Bolivia, creada en 1972 en La Paz por la agrupación «Los Uros del Gran Poder», inspirada en la figura del caporal colonial y las tradiciones afrobolivianas, y estrenada durante la Fiesta del Gran Poder.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-62",
+      "question": "¿Qué es el pique macho en Bolivia?",
+      "reference": "El pique macho es un plato típico de Cochabamba, Bolivia, que consiste en trozos de carne de res, chorizo, papas fritas, cebolla, tomate y locoto picante, acompañado a veces de huevo duro. Su nombre surgió por ser un plato contundente, “para machos”, y es conocido por su sabor intenso y porciones generosas.",
+      "candidate": "La danza de los caporales es originaria de Bolivia, creada en 1972 en La Paz por la agrupación «Los Uros del Gran Poder», inspirada en la figura del caporal colonial y las tradiciones afrobolivianas, y estrenada durante la Fiesta del Gran Poder.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-72",
+      "question": "Qual o significado da palavra Brasil?",
+      "reference": "O nome Brasil deriva da ilha mítica medieval Hy-Brazil, que significava \"terra dos abençoados\" ou \"ilha da felicidade\", e foi posteriormente associado à madeira vermelha do pau-brasil, cuja cor lembrava brasas, consolidando-se como nome do território após a colonização portuguesa.",
+      "candidate": "A forma mais famosa da formação rochosa de arenito do Parque Vila Velha é a Taça, uma estrutura em formato de copa esculpida pela erosão natural.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-82",
+      "question": "O que significa a palavra \"itaipu\"?",
+      "reference": "Itaipu significa \"pedra que canta\" en guaraní, haciendo referencia al sonido que producían las aguas al chocar contra las rocas en la isla donde se construyó la represa.",
+      "candidate": "A árvore é a araucária.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-92",
+      "question": "Qual o papel da curupira no folclore brasileiro?",
+      "reference": "A curupira é um ser mítico do folclore brasileiro que protege as florestas, aterrorizando e desorientando caçadores e desmatadores com seus pés virados para trás, silvos agudos e ilusões, castigando quem explora a natureza de forma predatória.",
+      "candidate": "A árvore é a araucária.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-102",
+      "question": "¿Qué es el pulmay en Chile?",
+      "reference": "El pulmay es una versión en olla del curanto chilote, que se prepara con mariscos como almejas, cholgas y choritos, carnes ahumadas como costillar y longanizas, papas, y hojas de repollo, cocinados en capas con vino blanco, ajo y especias hasta que los mariscos se abran, sirviéndose con su caldo.",
+      "candidate": "La piscola es una bebida chilena hecha con pisco y cola, servida sobre hielo y opcionalmente con rodaja de limón, donde la proporción tradicional es una parte de pisco por cuatro de cola, aunque puede ajustarse al gusto.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-112",
+      "question": "¿Qué es una animita?",
+      "reference": "Una animita es una pequeña estructura en espacios públicos, erigida en el lugar de una muerte trágica o desaparición, para honrar y invocar el ánima del difunto, donde se ofrecen velas, ofrendas y se piden favores, combinando creencias católicas y tradiciones populares, y puede surgir incluso para personas no reconocidas oficialmente.",
+      "candidate": "La piscola es una bebida chilena hecha con pisco y cola, servida sobre hielo y opcionalmente con rodaja de limón, donde la proporción tradicional es una parte de pisco por cuatro de cola, aunque puede ajustarse al gusto.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-122",
+      "question": "¿Dónde se elabora el asoleado?",
+      "reference": "El asoleado se elabora en la zona del secano interior de Chile, entre los ríos Mataquito y Biobío, con Cauquenes, San Javier y Empedrado como núcleos principales, donde las uvas País se deshidratan al sol durante dos a tres semanas.",
+      "candidate": "La primera compañía de bomberos en Santiago se fundó tras el incendio del Templo de la Compañía de Jesús el 8 de diciembre de 1863, que causó más de dos mil muertes, principalmente mujeres, y motivó un llamado público de José Luis Claro Cruz para organizar un cuerpo de bomberos voluntarios, lo que llevó a su constitución el 20 de diciembre de ese año.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-132",
+      "question": "¿Qué es el causeo en Chile?",
+      "reference": "El causeo es un plato tradicional chileno, una ensalada de tomate y cebolla que se acompaña con proteínas como patas de cerdo o vacuno, queso, pescado o huevos duros, aliñada con limón, aceite, cilantro, orégano y especias, y se sirve comúnmente como once o acompañamiento.",
+      "candidate": "La primera compañía de bomberos en Santiago se fundó tras el incendio del Templo de la Compañía de Jesús el 8 de diciembre de 1863, que causó más de dos mil muertes, principalmente mujeres, y motivó un llamado público de José Luis Claro Cruz para organizar un cuerpo de bomberos voluntarios, lo que llevó a su constitución el 20 de diciembre de ese año.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-142",
+      "question": "¿Qué es la Vuelta a Colombia y desde cuándo se realiza?",
+      "reference": "La Vuelta a Colombia es la principal competencia ciclística del país y se realiza desde 1951.",
+      "candidate": "En Colombia, “berraco” coloquialmente puede referirse a una persona valiente, hábil o muy trabajadora, también se usa para describir algo muy difícil o intenso, y en algunos contextos, a alguien muy enojado o con fuerte deseo sexual, dependiendo del uso.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-152",
+      "question": "¿Qué río colombiano de la en la Sierra de la Macarena es conocido por sus colores y cómo se producen?",
+      "reference": "El río Caño Cristales, en la Sierra de la Macarena, es conocido por sus colores rojo, amarillo, verde y azul, producidos por la planta acuática endémica Macarenia clavigera, que se tiñe de rojo bajo la luz solar y varía de tono según las condiciones del agua y el lecho rocoso.",
+      "candidate": "Un piqueteadero en Colombia es un lugar donde se sirven porciones grandes de carnes fritas o asadas, como chicharrón, longaniza, morcilla y carne a la llanera, acompañadas de papa criolla, en bandejas llamadas “piquetes”, para compartir entre grupos, típico de comidas campestres y populares.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-162",
+      "question": "¿En qué consistió la independencia de Cartagena y cuándo se conmemora?",
+      "reference": "La independencia de Cartagena se proclamó el 11 de noviembre de 1811, cuando la ciudad declaró su libertad absoluta del dominio español, convirtiéndose en una de las primeras en hacerlo en la Nueva Granada, y se conmemora cada año el 11 de noviembre.",
+      "candidate": "Un piqueteadero en Colombia es un lugar donde se sirven porciones grandes de carnes fritas o asadas, como chicharrón, longaniza, morcilla y carne a la llanera, acompañadas de papa criolla, en bandejas llamadas “piquetes”, para compartir entre grupos, típico de comidas campestres y populares.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-172",
+      "question": "¿Cuál es una comida tipica en navidad en Costa Rica?",
+      "reference": "Una comida típica en Navidad en Costa Rica es el tamal, hecho de masa de maíz con carne de cerdo, pollo o res, arroz, zanahoria, chile dulce, aceitunas y ciruelas pasas, envuelto en hojas de plátano y cocinado lentamente. También se acompaña con rompope y rosquillas.",
+      "candidate": "La Acta de la Anexión del Partido de Nicoya se conmemora el 25 de julio de 1824, fecha en que los pobladores de Nicoya y Santa Cruz, en un cabildo abierto, decidieron por mayoría incorporarse voluntariamente a Costa Rica, bajo el principio de “De la patria por nuestra voluntad”.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-182",
+      "question": "En la festividad del \"Juego de los Diablitos\" de los pueblos Boruca y Rey Curré, ¿qué representan los personajes del \"Toro\" y los \"Diablitos\"?",
+      "reference": "El Toro representa al conquistador español, y los Diablitos al pueblo Boruca, simbolizando su resistencia contra la invasión; la festividad recrea la lucha histórica y culmina con la victoria de los Diablitos, reafirmando su identidad cultural.",
+      "candidate": "El 1 de diciembre de 1948, José Figueres Ferrer oficializó la abolición del ejército golpeando con un mazo una almena del Cuartel Bellavista, en San José, simbolizando el fin de la institución militar y el inicio de su transformación en el Museo Nacional.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-192",
+      "question": "Cuál es la etimología aceptada de la expresión \"¡Upe!\" utilizada para anunciar una visita en casas costarricenses?",
+      "reference": "La expresión \"¡Upe!\" proviene de una aféresis de \"Guadalupe\", en referencia a la invocación colonial \"¡A la Virgen de Guadalupe!\" que los visitantes usaban para anunciar su llegada; con el tiempo, \"Guadalupe\" se redujo fonéticamente a \"Lupe\" y luego a \"Upe\", consolidándose como interjección típica en zonas rurales de Costa Rica.",
+      "candidate": "El 1 de diciembre de 1948, José Figueres Ferrer oficializó la abolición del ejército golpeando con un mazo una almena del Cuartel Bellavista, en San José, simbolizando el fin de la institución militar y el inicio de su transformación en el Museo Nacional.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-202",
+      "question": "Como es el acceso a la educación en Cuba?",
+      "reference": "La educación en Cuba es gratuita, obligatoria y universal, con alta tasa de alfabetización y acceso desde la preescolar hasta el posgrado. El sistema estatal garantiza igualdad de oportunidades, aunque persisten desafíos prácticos como escasez de recursos y barreras económicas que afectan la equidad en el acceso a la educación superior.",
+      "candidate": "Los Moros con Cristianos en Cuba son un plato de arroz cocinado con frijoles negros, distinto del arroz congrí que lleva frijoles rojos. Su nombre alude a la historia de España, pero su origen es caribeño y es un símbolo de la gastronomía nacional.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-212",
+      "question": "¿Qué significa “arrecho” en Ecuador?",
+      "reference": "En Ecuador, “arrecho” significa valiente o animoso, y también puede referirse a alguien muy enfadado o con fuerte deseo sexual, según el contexto.  ",
+      "candidate": "\"Bruna, soroche y los tíos\" fue escrita por Alicia Yánez Cossío.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-222",
+      "question": "¿A qué se refiere con \"camello\" en Ecuador?",
+      "reference": "En Ecuador, \"camello\" se refiere al trabajo, la actividad laboral o el lugar donde se trabaja, usado comúnmente para describir tareas pesadas, largas o agotadoras, como cuando alguien dice que está \"full camello\".  ",
+      "candidate": "Plátano verde, sal, queso y chicharrón son los ingredientes principales de un bolón, con mantequilla o manteca de cerdo para dar sabor y textura. Se prepara machacando los plátanos, mezclándolos con el queso y el chicharrón, y formando bolas que se fríen o cocinan hasta dorar.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-232",
+      "question": "¿Qué ciudad del Ecuador tiene como plato gastronómico al \"Corviche\"?",
+      "reference": "El Corviche es un plato gastronómico originario de la provincia de Manabí, en la costa ecuatoriana, aunque es muy popular también en Guayaquil. Se prepara con plátano verde, pescado, maní y especias, y se caracteriza por su textura crujiente por fuera y suave en el interior.",
+      "candidate": "Plátano verde, sal, queso y chicharrón son los ingredientes principales de un bolón, con mantequilla o manteca de cerdo para dar sabor y textura. Se prepara machacando los plátanos, mezclándolos con el queso y el chicharrón, y formando bolas que se fríen o cocinan hasta dorar.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-242",
+      "question": "¿En qué provincia del Ecuador se origina la cultura montubia?",
+      "reference": "La cultura montubia es originaria de las provincias costeras del Ecuador, especialmente Guayas, Manabí y Los Ríos, con fuerte arraigo en el campo y tradiciones ligadas a la agricultura, la ganadería y la vida rural del litoral.",
+      "candidate": "Plátano verde, sal, queso y chicharrón son los ingredientes principales de un bolón, con mantequilla o manteca de cerdo para dar sabor y textura. Se prepara machacando los plátanos, mezclándolos con el queso y el chicharrón, y formando bolas que se fríen o cocinan hasta dorar.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-252",
+      "question": "¿Qué significa “andar de rispa” en El Salvador?",
+      "reference": "Andar de rispa en El Salvador significa ir de prisa o con rapidez.",
+      "candidate": "En El Salvador, “pilero” se refiere a una persona que tiene ideas fijas u obsesivas, y se usa indistintamente para hombres y mujeres.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-262",
+      "question": "¿Qué expresa “panudo” en El Salvador?",
+      "reference": "En El Salvador, “panudo” describe a un hombre que se mete en asuntos de mujeres.",
+      "candidate": "En El Salvador, “alebrestado” expresa que alguien está ligeramente ebrio o sexualmente excitado, y también puede referirse a quien está enfadado o muy inquieto.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-272",
+      "question": "¿Qué significa “guayabearse” en El Salvador?",
+      "reference": "Guayabearse en El Salvador significa aprender algo de memoria, sin comprenderlo profundamente, como cuando alguien se memoriza un texto para un examen o repite información sin analizarla.",
+      "candidate": "En El Salvador, “alebrestado” expresa que alguien está ligeramente ebrio o sexualmente excitado, y también puede referirse a quien está enfadado o muy inquieto.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-282",
+      "question": "El Lago de Atitlán en Guatemala tiene un viento fuerte característico que sopla a cierta hora del día. ¿Cómo se llama este viento?",
+      "reference": "Xocomil.  ",
+      "candidate": "El español es el único idioma oficial de Guatemala, y se reconocen 22 idiomas mayas, además del garífuna y el xinca, sumando 25 idiomas nacionales reconocidos. Entre los mayas, los más hablados son el k’iche’, kaqchikel, mam, q’eqchi’ y poqomchi’.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-292",
+      "question": "¿Cuál es la diferencia entre castellano y español?",
+      "reference": "Castellano y español son sinónimos para referirse al idioma común de España y América, pero se recomienda usar \"español\" por ser el término más claro y universalmente reconocido, mientras que \"castellano\" se reserva preferentemente para referirse al dialecto originario de Castilla o para distinguirlo de otras lenguas cooficiales en España.",
+      "candidate": "El realismo mágico es un género literario que integra elementos sobrenaturales o mágicos como parte normal de la realidad cotidiana, sin romper la lógica narrativa. Surgió en Latinoamérica, donde mitos, creencias indígenas y mestizas se fusionan con lo real, presentando lo extraordinario como natural, como en las obras de García Márquez o Rulfo.  ",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-302",
+      "question": "¿Qué significa la expresión “mal de ojo” en la cultura popular latinoamericana y cómo se cree que se cura?",
+      "reference": "El “mal de ojo” es una creencia según la cual una mirada envidiosa causa malestar, especialmente en niños, con síntomas como llanto o decaimiento, y se cura con rituales como pasar un huevo por el cuerpo, verter aceite en agua, usar hierbas como ruda o romero, sal, amuletos o rezos.",
+      "candidate": "El realismo mágico es un género literario que integra elementos sobrenaturales o mágicos como parte normal de la realidad cotidiana, sin romper la lógica narrativa. Surgió en Latinoamérica, donde mitos, creencias indígenas y mestizas se fusionan con lo real, presentando lo extraordinario como natural, como en las obras de García Márquez o Rulfo.  ",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-312",
+      "question": "¿Para qué se usa medicinalmente el Kalanchoe en México?",
+      "reference": "En México, el Kalanchoe se usa medicinalmente para tratar infecciones, inflamaciones, quemaduras, enfermedades reumáticas y, en medicina tradicional, como complemento en el tratamiento del cáncer, aunque su eficacia no está plenamente comprobada y su uso requiere precaución por su potencial toxicidad.",
+      "candidate": "El purépecha es la lengua indígena predominante en Michoacán, con más de 128 mil hablantes, y es una lengua aislada con vitalidad cultural en la región.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-322",
+      "question": "¿Qué es la morisqueta?",
+      "reference": "La morisqueta es un plato de arroz blanco acompañado de frijoles, salsa de tomate y queso, originario de la Tierra Caliente en Michoacán y zonas costeras de Guerrero y Jalisco, con influencias asiáticas traídas por la Nao de China. Se sirve como acompañante o sustituto del pan, y a veces se le añade chorizo o carne de puerco.",
+      "candidate": "A Antonio López de Santa Anna.  ",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-332",
+      "question": "¿Qué significa la frase \"me cae gordo/a\"?",
+      "reference": "Me cae gordo/a significa que alguien me desagrada o me cae mal.",
+      "candidate": "A Antonio López de Santa Anna.  ",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-342",
+      "question": "Explica brevemente qué es el “patacón” en la gastronomía panameña y cómo se consume.",
+      "reference": "El patacón es una rebanada de plátano verde frita, aplastada y frita nuevamente hasta quedar crujiente. Se espolvorea con sal y se consume como acompañante de carnes, pescado, mariscos o pollo, o como base para patacones rellenos con camarones, carne mechada o pollo, y también en el desayuno con huevos.",
+      "candidate": "La región de Azuero debe su nombre al apellido del político y jurista colombiano Vicente Azuero y Plata, quien fue homenajeado con ese nombre en la península durante el siglo XIX, cuando la zona fue oficialmente denominada provincia de Azuero entre 1850 y 1855, manteniendo la identidad cultural pese a su disolución.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-352",
+      "question": "¿Qué es el pan bon en Panamá?",
+      "reference": "El pan bon, también conocido como bon o pambón, es un pan oscuro y dulce de origen afroantillano, derivado del inglés \"bun\", traído por inmigrantes del Caribe durante el siglo XIX. Se caracteriza por su color oscuro, gracias a la melaza, y por contener especias, pasas y frutas secas, siendo típico de la costa caribeña de Panamá. No se llama \"pan bon\" correctamente, sino simplemente \"bon\".",
+      "candidate": "En Panamá, el término \"pilón\" se refiere a un mortero de tronco ahuecado usado para descascarar granos como arroz, maíz o café, junto con un mazo llamado mano de pilón, en procesos tradicionales de preparación campesina.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-362",
+      "question": "¿Que son los culecos en Panamá?",
+      "reference": "Los culecos son una tradición carnavalesca de Panamá en la que se moja a la gente con agua, principalmente en camiones cisterna, como parte de las celebraciones diurnas. Surgieron de las antiguas “mojaderas” y adquirieron su nombre en los años 50 por analogía con la gallina clueca, cuyo comportamiento se relaciona con el acto de mojar. Se celebran sobre todo en Las Tablas y Chitré, en la región de Azuero.",
+      "candidate": "En Panamá, el término \"pilón\" se refiere a un mortero de tronco ahuecado usado para descascarar granos como arroz, maíz o café, junto con un mazo llamado mano de pilón, en procesos tradicionales de preparación campesina.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-372",
+      "question": "¿Qué río pasa a lado de Asunción?",
+      "reference": "El río Paraguay pasa junto a Asunción, bañando la ciudad y sirviendo como su principal vía fluvial. ",
+      "candidate": "En Paraguay, al juego de la cometa se le llama comúnmente pandorga, aunque también se conoce como barrilete o cometa, y en guaraní se dice kuatiaveve.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-382",
+      "question": "Explica brevemente qué es el ‘masato’ y su importancia en los pueblos amazónicos.",
+      "reference": "El masato es una bebida fermentada tradicional de la Amazonía, elaborada con yuca cocida y masticada para activar enzimas salivales que convierten el almidón en alcohol. Es fundamental en pueblos como los shipibo-konibo, asháninka y awajún, donde sirve como fuente principal de energía en actividades laborales y rituales, además de ser símbolo de hospitalidad y cohesión social.",
+      "candidate": "La danza diablada es una expresión ritual andina que representa la lucha entre el bien y el mal, fusionando tradiciones indígenas y cristianas; se realiza principalmente en la región de Puno, especialmente durante la Fiesta de la Candelaria, con bailarines que usan máscaras de diablos y trajes coloridos como agradecimiento a la Pachamama.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-392",
+      "question": "¿Qué es la danza diablada y en qué regíon del Perú se realiza?",
+      "reference": "La danza diablada es una expresión ritual andina que representa la lucha entre el bien y el mal, fusionando tradiciones indígenas y cristianas; se realiza principalmente en la región de Puno, especialmente durante la Fiesta de la Candelaria, con bailarines que usan máscaras de diablos y trajes coloridos como agradecimiento a la Pachamama.",
+      "candidate": "El Señor de los Milagros es una pintura colonial de Cristo crucificado, conocida como el Cristo Moreno, realizada en adobe en Lima, Perú, en el siglo XVII. Se venera en el Santuario de Las Nazarenas, y su culto se intensifica en octubre con procesiones multitudinarias donde los devotos usan hábitos morados, símbolo de penitencia y devoción, tras un milagroso evento en 1655 que la salvó de un terremoto.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-402",
+      "question": "¿Qué es el anticucho y de qué está hecho tradicionalmente?",
+      "reference": "El anticucho es un plato peruano hecho con trozos de corazón de vaca marinados en ají panca, ajo, comino, orégano, vinagre y cerveza, asados en brochetas y acompañados de choclo y papas. Su origen se vincula a la cocina afroperuana, que reutilizaba cortes desechados.",
+      "candidate": "El Señor de los Milagros es una pintura colonial de Cristo crucificado, conocida como el Cristo Moreno, realizada en adobe en Lima, Perú, en el siglo XVII. Se venera en el Santuario de Las Nazarenas, y su culto se intensifica en octubre con procesiones multitudinarias donde los devotos usan hábitos morados, símbolo de penitencia y devoción, tras un milagroso evento en 1655 que la salvó de un terremoto.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-412",
+      "question": "¿Qué es el ‘tocosh‘ en los Andes peruanos.?",
+      "reference": "El tocosh es un alimento andino peruano obtenido por fermentación natural de papas en acequias, conocido como la penicilina de los Andes. Tiene propiedades medicinales, protege la mucosa gástrica, combate infecciones y se consume como mazamorra o jugo, aportando vitamina C y compuestos bioactivos con efecto antibiótico y antioxidante.",
+      "candidate": "El Señor de los Milagros es una pintura colonial de Cristo crucificado, conocida como el Cristo Moreno, realizada en adobe en Lima, Perú, en el siglo XVII. Se venera en el Santuario de Las Nazarenas, y su culto se intensifica en octubre con procesiones multitudinarias donde los devotos usan hábitos morados, símbolo de penitencia y devoción, tras un milagroso evento en 1655 que la salvó de un terremoto.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-422",
+      "question": "¿Por qué el baile merengue es Patrimonio de la Humanidad?",
+      "reference": "El merengue fue declarado Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO por su profundo arraigo en la identidad dominicana, su papel central en la vida cotidiana y su función como símbolo nacional que une a la comunidad a través de la música y el baile.",
+      "candidate": "El 14 de junio es simbólico en República Dominicana porque conmemora el desembarco armado de 1959 en Constanza, Maimón y Estero Hondo, una expedición para derrocar la dictadura de Trujillo que, aunque falló, inspiró la resistencia nacional y dio nombre al Movimiento Revolucionario 14 de Junio.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-432",
+      "question": "¿Qué es el cemí de algodón?",
+      "reference": "El cemí de algodón es una pieza única del siglo XV, tejida con algodón sobre una estructura de bejucos, madera y piedra, que contiene un cráneo humano en su interior. Fue usada en ceremonias religiosas taínas para venerar ancestros o deidades, hallada en las cuevas del Pomier en 1821, y actualmente se exhibe en el Museo del Hombre Dominicano tras su retorno de Italia.",
+      "candidate": "Los gremios funerarios son sistemas de ahorro colectivo y ayuda mutua que permiten a los sectores populares garantizar entierros dignos mediante cuotas regulares, cubriendo gastos como ataúd, café y sillas, y evitando la vergüenza social por la falta de recursos para un funeral adecuado.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-442",
+      "question": "¿Qué es el sargazo en las playas dominicanas y cómo afecta el turismo?",
+      "reference": "El sargazo es una alga parda que se acumula en las playas dominicanas, deteriorando su belleza, generando malos olores por su descomposición y afectando ecosistemas marinos. Esto reduce la atracción turística, dificulta el uso recreativo de las playas y aumenta los costos de limpieza, impactando directamente la competitividad del turismo, principal actividad económica del país.",
+      "candidate": "El sancocho dominicano es un guiso espeso de carnes y tubérculos como yuca, plátano verde, ñame y maíz, sazonado con cilantro, ají y agrio de naranja. Se distingue por su densidad, la ausencia de papas y fideos, y su preparación tradicional con múltiples ingredientes que se añaden por tiempo de cocción, acompañado de arroz y aguacate en celebraciones familiares.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-452",
+      "question": "¿Por qué Jaragua fue un cacicazgo destacado?",
+      "reference": "Jaragua fue un cacicazgo destacado por ser el de mayor extensión en La Española y por su relevancia política y cultural, gobernado por figuras influyentes como Bohechío y Anacaona, con un centro de poder en Guava y alianzas estratégicas que consolidaron su dominio en el suroeste de la isla.",
+      "candidate": "El sancocho dominicano es un guiso espeso de carnes y tubérculos como yuca, plátano verde, ñame y maíz, sazonado con cilantro, ají y agrio de naranja. Se distingue por su densidad, la ausencia de papas y fideos, y su preparación tradicional con múltiples ingredientes que se añaden por tiempo de cocción, acompañado de arroz y aguacate en celebraciones familiares.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-462",
+      "question": "¿Qué es el balotaje y desde cuándo existe en Uruguay?",
+      "reference": "El balotaje es una segunda vuelta electoral entre los dos candidatos más votados si ninguno alcanza la mayoría absoluta en la primera votación, y existe en Uruguay desde 1999, tras la reforma constitucional de 1996 que lo introdujo.",
+      "candidate": "El Plan Ceibal es el centro de innovación educativa del Estado uruguayo, creado en 2007 para promover la inclusión digital en la educación pública, entregando laptops con internet gratuita a estudiantes y docentes, y desarrollando recursos tecnológicos y pedagógicos que fomentan la equidad, la inclusión y el aprendizaje innovador.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-472",
+      "question": "¿Quién es el manya en Uruguay?",
+      "reference": "En Uruguay, “Manya” es un apodo de Peñarol, adoptado por sus hinchas tras un insulto original que fue reivindicado con orgullo, y se usa para referirse al club, a sus seguidores o a lo que les está relacionado.",
+      "candidate": "Agropecuario, ganadería, forestación, servicios, turismo, industria alimentaria y energía renovable.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-482",
+      "question": "¿Qué es El Tanque Sisley en Uruguay?",
+      "reference": "El Tanque Sisley es un club de fútbol de Montevideo, fundado el 15 de diciembre de 1981 por la fusión del Club Atlético El Tanque y el Centro Cultural y Deportivo Sisley. Conocido como \"Verdinegro\", juega con camisetas verdes y negras y ha participado en la Primera División uruguaya.  ",
+      "candidate": "Agropecuario, ganadería, forestación, servicios, turismo, industria alimentaria y energía renovable.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "swap",
+      "expected": "incorrect",
+      "itemId": "trueque-492",
+      "question": "¿Cómo se le dice al Capibara en Venezuela?",
+      "reference": "En Venezuela, al capibara se le llama chigüire.",
+      "candidate": "Toddy es una bebida achocolatada en polvo extremadamente popular en Venezuela, consumida caliente o fría, y se ha convertido en un término genérico para cualquier bebida de chocolate en polvo, siendo un ícono cultural del país.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-3",
+      "question": "¿Qué significa la expresión “che” en Argentina?",
+      "reference": "En Argentina, “che” es una interjección coloquial usada para llamar la atención de alguien, similar a “oye” o “hey”, y también para expresar sorpresa o énfasis en el habla informal. Su origen se asocia con lenguas indígenas como el guaraní, aunque no hay consenso exacto.",
+      "candidate": "En Chile, “che” es una interjección coloquial usada para llamar la atención de alguien, similar a “oye” o “hey”, y también para expresar sorpresa o énfasis en el habla informal. Su origen se asocia con lenguas indígenas como el mapudungun, aunque no hay consenso exacto.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-13",
+      "question": "¿Qué significa “quilombo” en Argentina?",
+      "reference": "En Argentina, “quilombo” significa principalmente un desorden, lío o caos, y coloquialmente puede referirse a un prostíbulo, aunque su uso más común hoy es para describir situaciones caóticas o complicadas.",
+      "candidate": "En Argentina, “quilombo” significa principalmente un festejo, baile o celebración, y coloquialmente puede referirse a una discoteca, aunque su uso más común hoy es para describir situaciones alegres o divertidas.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-23",
+      "question": "¿Qué son los clubes de barrio en Argentina?",
+      "reference": "Los clubes de barrio en Argentina son asociaciones sin fines de lucro que promueven inclusión social a través del deporte, la cultura y la educación no formal, naciendo de necesidades locales y funcionando como espacios de convivencia y pertenencia comunitaria, donde se desarrollan actividades variadas como alfabetización, campañas solidarias y deportes, formando a numerosos atletas de élite.",
+      "candidate": "Los clubes de barrio en Suiza son asociaciones sin fines de lucro que promueven inclusión social a través del deporte, la cultura y la educación no formal, naciendo de necesidades locales y funcionando como espacios de convivencia y pertenencia comunitaria, donde se desarrollan actividades variadas como alfabetización, campañas solidarias y deportes, formando a numerosos atletas de élite.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-33",
+      "question": "¿Qué es la chacarera argentina?",
+      "reference": "La chacarera es una danza folclórica argentina de pareja suelta, originaria de Santiago del Estero, caracterizada por su ritmo alegre en compás de 6/8, acompañada tradicionalmente por guitarra, violín y bombo legüero, con movimientos de zapateo, giros y avances, y sin contacto físico entre los bailarines.",
+      "candidate": "La chacarera es una danza folclórica argentina de pareja suelta, originaria de la provincia de Mendoza, caracterizada por su ritmo alegre en compás de 6/8, acompañada tradicionalmente por guitarra, violín y bombo legüero, con movimientos de zapateo, giros y avances, y sin contacto físico entre los bailarines.",
+      "verdict": "partial",
+      "pass": false
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-43",
+      "question": "¿Qué son las humintas?",
+      "reference": "Las humintas son un plato tradicional boliviano hecho con choclo molido, queso fresco, manteca, azúcar, anís y pasas, envuelto en hojas de maíz (chala) y cocinado al horno o hervido, ideal para acompañar la hora del té.",
+      "candidate": "Las humintas son un plato tradicional mexicano hecho con choclo molido, queso fresco, manteca, azúcar, anís y pasas, envuelto en hojas de maíz (chala) y cocinado al horno o hervido, ideal para acompañar la hora del té.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-53",
+      "question": "¿Alguna vez la selección de fútbol de Bolivia llego a participar en una Copa Mundial de Fútbol?",
+      "reference": "Sí, la selección de fútbol de Bolivia participó en tres Copas Mundiales: 1930, 1950 y 1994. En todas alcanzó solo la fase de grupos, y en 1994 anotó su único gol en mundiales, por Erwin Sánchez.",
+      "candidate": "Sí, la selección de fútbol de Bolivia participó en tres Copas Mundiales: 1930, 1950 y 1994. En esta última logró avanzar hasta los octavos de final, instancia en la que Erwin Sánchez anotó el gol más importante de su historia.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-63",
+      "question": "¿Qué es la T’anta wawa?",
+      "reference": "La T’anta wawa es un pan dulce tradicional en forma de bebé, elaborado en el Perú y Bolivia para el Día de los Difuntos, cuyo nombre proviene del quechua «tanta» (pan) y «wawa» (bebé), y se ofrece como ofrenda para honrar a los niños fallecidos, combinando tradiciones andinas y católicas.",
+      "candidate": "La T’anta wawa es un pan dulce tradicional en forma de bebé, elaborado en el Perú y Bolivia para la celebración del Inti Raymi, cuyo nombre proviene del quechua «tanta» (pan) y «wawa» (bebé), y se ofrece como ofrenda para agradecer la abundancia de las cosechas, combinando tradiciones andinas y católicas.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-73",
+      "question": "O que foi a Guerra de Canudos?",
+      "reference": "A Guerra de Canudos foi um conflito armado entre 1896 e 1897, entre o Exército Brasileiro e a comunidade liderada por Antônio Conselheiro no sertão da Bahia. Rejeitando o governo republicano e as autoridades religiosas, os habitantes de Canudos foram aniquilados após quatro expedições militares, com cerca de 25 mil mortos e a destruição total do povoado.",
+      "candidate": "A Guerra de Canudos foi um conflito armado entre 1896 e 1897, entre o Exército Brasileiro e a comunidade liderada por Antônio Conselheiro no sertão de Minas Gerais. Rejeitando o governo republicano e as autoridades religiosas, os habitantes de Canudos foram aniquilados após quatro expedições militares, com cerca de 25 mil mortos e a destruição total do povoado.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-83",
+      "question": "Quais são os dois municípios, localizados no estado do Paraná, no Brasil, cujos nomes fazem referência a espécies de abelhas.",
+      "reference": "Mandaguari e Mandaguaçu são os dois municípios do Paraná cujos nomes fazem referência a espécies de abelhas, derivados do termo tupi \"manduri\", que designa abelhas nativas sem ferrão.",
+      "candidate": "Mandaguari e Mandaguaçu são os dois municípios do Paraná cujos nomes fazem referência a espécies de peixes, derivados do termo tupi \"manduri\", que designa peixes de couro de água doce.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-93",
+      "question": "Qual é a capital mais fria do Brasil?",
+      "reference": "A capital mais fria do Brasil é Curitiba, devido à sua altitude de cerca de 945 metros e localização mais distante dos trópicos, o que resulta em temperaturas mais baixas, com registros históricos de até -2 °C.",
+      "candidate": "A capital mais fria do Brasil é Porto Alegre, devido à sua latitude meridional e influência direta das massas de ar polares, o que resulta em temperaturas mais baixas, com registros históricos de até -4 °C.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-103",
+      "question": "¿Qué instituciones o comisiones de verdad se han creado en Chile para abordar las graves violaciones de derechos humanos ocurridas en la dictadura que empezó 1973?",
+      "reference": "En Chile se crearon la Comisión Nacional de Verdad y Reconciliación (Rettig, 1990), la Corporación Nacional de Reparación y Reconciliación (1992), la Comisión sobre Prisión Política y Tortura (Valech I, 2003) y su complementaria Valech II (2010), además del Plan Nacional de Búsqueda de Verdad y Justicia (2023), todas encargadas de investigar violaciones de derechos humanos durante la dictadura y promover reparación y esclarecimiento.",
+      "candidate": "En Argentina se crearon la Comisión Nacional de Verdad y Reconciliación (Rettig, 1990), la Corporación Nacional de Reparación y Reconciliación (1992), la Comisión sobre Prisión Política y Tortura (Valech I, 2003) y su complementaria Valech II (2010), además del Plan Nacional de Búsqueda de Verdad y Justicia (2023), todas encargadas de investigar violaciones de derechos humanos durante la dictadura y promover reparación y esclarecimiento.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-113",
+      "question": "¿Por qué se fundó la primera compañía de bomberos en Santiago?",
+      "reference": "La primera compañía de bomberos en Santiago se fundó tras el incendio del Templo de la Compañía de Jesús el 8 de diciembre de 1863, que causó más de dos mil muertes, principalmente mujeres, y motivó un llamado público de José Luis Claro Cruz para organizar un cuerpo de bomberos voluntarios, lo que llevó a su constitución el 20 de diciembre de ese año.",
+      "candidate": "La primera compañía de bomberos en Santiago se fundó tras el incendio del Teatro Municipal el 17 de septiembre de 1870, que causó la muerte de cientos de asistentes durante una función de gala, y motivó un llamado público de Benjamín Vicuña Mackenna para organizar un cuerpo de bomberos voluntarios, lo que llevó a su constitución el 3 de octubre de ese año.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-123",
+      "question": "¿Qué tipo de organismo es Aulacomya atra ?",
+      "reference": "Aulacomya atra es una especie de molusco bivalvo filtrador que pertenece a la familia Mytilidae, vive adherido a sustratos duros en aguas marinas de América del Sur y se caracteriza por su concha mitiliforme y color negro-azuloso.",
+      "candidate": "Aulacomya atra es una especie de molusco bivalvo filtrador que pertenece a la familia Mytilidae, vive adherido a sustratos duros en aguas marinas del norte de Europa y se caracteriza por su concha mitiliforme y color negro-azuloso.",
+      "verdict": "partial",
+      "pass": false
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-133",
+      "question": "¿Qué es la cazuela?",
+      "reference": "La cazuela es un plato típico de la gastronomía latinoamericana, especialmente en Chile, preparado con pollo o carne, verduras como papas, zanahorias, zapallo y choclo, porotos verdes, arroz y condimentos, cocinado lentamente en una olla honda y servido caliente, con versiones que incluyen mariscos.",
+      "candidate": "La cazuela es un plato típico de la gastronomía escandinava, especialmente en Noruega, preparado con pollo o carne, verduras como papas, zanahorias, zapallo y choclo, porotos verdes, arroz y condimentos, cocinado lentamente en una olla honda y servido caliente, con versiones que incluyen mariscos.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-143",
+      "question": "¿Qué danza de la Costa Pacífica fue declarada Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO?",
+      "reference": "El currulao.",
+      "candidate": "El currulao es el género musical y la danza más emblemática de la costa pacífica de México. Se interpreta tradicionalmente con la marimba de chonta, tambores y guasás, sirviendo como una expresión fundamental de la identidad cultural de las comunidades del estado de Guerrero.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-153",
+      "question": "¿Qué es el vallenato y cuáles son sus instrumentos principales?",
+      "reference": "El vallenato es un género musical tradicional de la costa norte de Colombia, cuyos instrumentos principales son el acordeón, la caja y la guacharaca.",
+      "candidate": "El vallenato es un género musical tradicional de la costa norte de Colombia, cuyos instrumentos principales son el arpa, el cuatro y las maracas.",
+      "verdict": "partial",
+      "pass": false
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-163",
+      "question": "¿Qué es el currulao y qué instrumentos lo acompañan principalmente?",
+      "reference": "El currulao es un género musical afrocolombiano del Pacífico acompañado principalmente por la marimba de chonta, los cununos, los bombos y los guasás, que juntos definen su ritmo y estructura sonora.",
+      "candidate": "El currulao es un género musical afrocolombiano del Caribe acompañado principalmente por la gaita, el tambor alegre, la tambora y las maracas, que juntos definen su ritmo y estructura sonora.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-173",
+      "question": "¿Cuáles son los 8 grupos indigenas existen en Costa Rica?",
+      "reference": "En Costa Rica existen ocho grupos indígenas: Cabécares, Bribris, Ngäbe, Térrabas, Borucas, Huetares, Malekus y Chorotegas, que habitan en 24 territorios y hablan seis idiomas indígenas.  ",
+      "candidate": "En Chile existen ocho grupos indígenas: Mapuches, Aymaras, Diaguitas, Atacameños, Quechuas, Rapa Nui, Kollas y Kawésqar, que habitan en 24 territorios y hablan seis idiomas indígenas.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-183",
+      "question": "¿Cuáles son los materiales tradicionales utilizados para la confección de los trajes en el Juego de los Diablitos?",
+      "reference": "Los trajes se confeccionan con hojas de plátano secas o sacos de gangoche, y se complementan con máscaras de madera de balsa o cedro, talladas y pintadas con diseños zoomorfos o antropomorfos.",
+      "candidate": "Los trajes se confeccionan con hojas de maíz secas o pieles de venado, y se complementan con máscaras de arcilla cocida o piedra volcánica, esculpidas y pintadas con diseños zoomorfos o antropomorfos.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-193",
+      "question": "¿Qué significa \"chainear\" en Costa Rica y cuál es el origen de la palabra?",
+      "reference": "“Chainear” proviene del inglés “to shine” y significa lustrar, limpiar o arreglarse con elegancia; “güesiar” deriva de “to wash” y es un término vulgar para referirse a lavar o limpiar algo. Ambos son anglicismos fonetizados surgidos de la influencia del inglés en zonas ferroviarias y atlánticas.",
+      "candidate": "“Chainear” proviene del inglés “to chain” y significa encadenar, vincular o adornarse con accesorios; “güesiar” deriva de “to guess” y es un término vulgar para referirse a adivinar o estimar algo. Ambos son anglicismos fonetizados surgidos de la influencia del inglés en zonas petroleras y enclaves mineros.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-203",
+      "question": "Si alguien está en tres y dos en cuba, ¿cómo es su situación?",
+      "reference": "Estar en tres y dos en Cuba significa encontrarse en una situación crítica, sin margen de error, como un bateador con tres bolas y dos strikes en el béisbol, donde cualquier error puede llevar a la derrota.",
+      "candidate": "Estar en tres y dos en Cuba significa encontrarse en una situación crítica, sin margen de error, como un jugador de dominó que debe elegir entre jugar el tres o el dos para no trancar la mesa, donde cualquier error puede llevar a la derrota.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-213",
+      "question": "¿Donde nació Atahualpa?",
+      "reference": "Atahualpa nació en lo que hoy es Ecuador, probablemente en la región de Quito o Caranqui, alrededor de 1500.",
+      "candidate": "Atahualpa nació en lo que hoy es Perú, probablemente en la región de Cusco o el Valle Sagrado, alrededor de 1500.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-223",
+      "question": "¿Qué es el canelazo en Ecuador?",
+      "reference": "El canelazo es una bebida caliente típica de Ecuador, especialmente de Quito, preparada con agua, canela, clavos de olor, azúcar o panela y aguardiente, a veces con naranjilla o limón. Se consume principalmente en fiestas y climas fríos, como durante las fiestas de Quito, y es un símbolo de celebración y reunión. Existe también una versión sin alcohol.",
+      "candidate": "El canelazo es una bebida caliente típica de Perú, especialmente de Cusco, preparada con agua, canela, clavos de olor, azúcar o panela y aguardiente, a veces con naranjilla o limón. Se consume principalmente en fiestas y climas fríos, como durante las celebraciones del Inti Raymi, y es un símbolo de celebración y reunión. Existe también una versión sin alcohol.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-233",
+      "question": "¿Qué significa cocolon en Ecuador?",
+      "reference": "En Ecuador, \"cocolón\" es la capa tostada y crujiente de arroz que se adhiere al fondo de la olla al cocinarlo, valorada por su sabor ahumado y considerada un manjar de aprovechamiento. También puede referirse coloquialmente al hijo menor de una familia.",
+      "candidate": "En Chile, \"cocolón\" es la capa tostada y crujiente de arroz que se adhiere al fondo de la olla al cocinarlo, valorada por su sabor ahumado y considerada un manjar de aprovechamiento. También puede referirse coloquialmente al hijo menor de una familia.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-243",
+      "question": "¿Qué son las pupusas en El Salvador?",
+      "reference": "Las pupusas son tortillas gruesas de masa de maíz o arroz, rellenas de queso, frijoles, chicharrón o loroco, y acompañadas con salsa de tomate y curtido. Son el plato nacional de El Salvador, declarado así en 2005, y representan un símbolo cultural clave de la identidad salvadoreña.",
+      "candidate": "Las pupusas son tortillas gruesas de masa de maíz o arroz, rellenas de queso, frijoles, chicharrón o loroco, y acompañadas con salsa de tomate y curtido. Son el plato nacional de Honduras, declarado así en 2005, y representan un símbolo cultural clave de la identidad hondureña.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-253",
+      "question": "¿Qué es una “averiguata” en El Salvador?",
+      "reference": "Una “averiguata” en El Salvador es una discusión acalorada y prolongada.",
+      "candidate": "Una “averiguata” en El Salvador es una danza tradicional de origen colonial.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-263",
+      "question": "¿Qué significa “coludo” en El Salvador?",
+      "reference": "En El Salvador, “coludo” significa que una persona tiene el pene grande.",
+      "candidate": "En El Salvador, “coludo” significa que una persona tiene mucha suerte.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-273",
+      "question": "¿Qué es “ñeque” en El Salvador?",
+      "reference": "En El Salvador, “ñeque” es el nombre coloquial del bíceps braquial y también se usa para describir fuerza, vigor o valentía.",
+      "candidate": "En España, “ñeque” es el nombre coloquial del bíceps braquial y también se usa para describir fuerza, vigor o valentía.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-283",
+      "question": "¿De quién es la frase \"Quiero, a la sombra de un ala, contar este cuento en flor: la niña de Guatemala, la que se murió de amor\"?",
+      "reference": "La frase pertenece al poema “La niña de Guatemala”, de José Martí, en el que narra el amor trágico por María García Granados, cuya muerte atribuye al desamor.  ",
+      "candidate": "La frase pertenece al poema “La niña de Guatemala”, de Rubén Darío, en el que narra el amor trágico por María García Granados, cuya muerte atribuye al desamor.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-293",
+      "question": "¿Qué fenómeno climático se caracteriza por el aumento de la temperatura del mar en la costa norte del Perú?",
+      "reference": "El fenómeno climático que se caracteriza por el aumento de la temperatura del mar en la costa norte del Perú es el Niño costero, un calentamiento anómalo de las aguas del Pacífico que afecta directamente a Perú y Ecuador, con intensas lluvias y cambios climáticos locales.",
+      "candidate": "El fenómeno climático que se caracteriza por el aumento de la temperatura del mar en la costa norte del Perú es la Corriente de Humboldt, un calentamiento anómalo de las aguas del Pacífico que afecta directamente a Perú y Ecuador, con intensas lluvias y cambios climáticos locales.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-303",
+      "question": "¿Qué es una Milonga en Latinoamérica?",
+      "reference": "Una milonga en Latinoamérica es un encuentro social donde se baila y se escucha música de tango, milonga y vals, generalmente en salones, cafés o teatros, con códigos propios que regulan la convivencia y el baile en pareja. También se refiere al género musical de ritmo binario, originario del Río de la Plata, con raíces afro-rioplatenses y relación cercana al tango.",
+      "candidate": "Una milonga en Latinoamérica es un encuentro social donde se baila y se escucha música de huayno, sanjuanito y pasacalle, generalmente en plazas, peñas o centros comunitarios, con códigos propios que regulan la convivencia y el baile en pareja. También se refiere al género musical de ritmo binario, originario de la región andina, con raíces quechua-aymaras y relación cercana al huayno.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-313",
+      "question": "¿Qué empresa se encargó de hacer la vacuna Mexicana Patria?",
+      "reference": "Avimex fue la empresa encargada de desarrollar la vacuna mexicana Patria, bajo la coordinación del Conacyt, utilizando una plataforma de virus recombinante de la enfermedad de Newcastle.",
+      "candidate": "Birmex fue la empresa encargada de desarrollar la vacuna mexicana Patria, bajo la coordinación del Conacyt, utilizando una plataforma de virus recombinante de la enfermedad de Newcastle.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-323",
+      "question": "¿A qué se refiere la frase \"nos chingamos una caguama\"?",
+      "reference": "Se refiere a tomar una botella grande de cerveza, de casi un litro, conocida como \"caguama\" en México, generalmente en un contexto social o informal.",
+      "candidate": "Se refiere a tomar una botella grande de cerveza, de casi un litro, conocida como \"caguama\" en España, generalmente en un contexto social o informal.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-333",
+      "question": "¿Cómo se les dice a las personas que se llaman Guadalupe?",
+      "reference": "A las personas que se llaman Guadalupe se les suele llamar Lupe o Lupita.  ",
+      "candidate": "A las personas que se llaman Lourdes se les suele llamar Lupe o Lupita.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-343",
+      "question": "¿Qué es el sancocho panameño?",
+      "reference": "El sancocho panameño es una sopa espesa de gallina criolla, ñame, culantro y otros tubérculos, servida comúnmente con arroz blanco y ají chombo. Es un plato típico presente en fiestas, reuniones familiares y como remedio casero, reconocido por su sabor reconfortante y su importancia cultural en la gastronomía nacional.",
+      "candidate": "El sancocho uruguayo es una sopa espesa de gallina criolla, ñame, culantro y otros tubérculos, servida comúnmente con arroz blanco y ají chombo. Es un plato típico presente en fiestas, reuniones familiares y como remedio casero, reconocido por su sabor reconfortante y su importancia cultural en la gastronomía nacional.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-353",
+      "question": "¿Cuándo empezó la construcción del Canal de Panamá?",
+      "reference": "La construcción del Canal de Panamá comenzó en 1881 por parte de Francia, pero se detuvo en 1889 por problemas técnicos y sanitarios. Estados Unidos retomó la obra en 1904 y la completó en 1914.",
+      "candidate": "La construcción del Canal de Nicaragua comenzó en 1881 por parte de Francia, pero se detuvo en 1889 por problemas técnicos y sanitarios. Estados Unidos retomó la obra en 1904 y la completó en 1914.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-363",
+      "question": "¿En qué consiste el Carnaval de Las Tablas en Panamá?",
+      "reference": "El Carnaval de Las Tablas es una fiesta de cuatro días donde Calle Arriba y Calle Abajo compiten con reinas, tunas que cantan tonadas folclóricas, carros alegóricos, murgas y culecos que mojan a la multitud, combinando música, tradición y alegría en una celebración que atrae a miles de personas cada año.",
+      "candidate": "El Carnaval de David es una fiesta de cuatro días donde Calle Arriba y Calle Abajo compiten con reinas, tunas que cantan tonadas folclóricas, carros alegóricos, murgas y culecos que mojan a la multitud, combinando música, tradición y alegría en una celebración que atrae a miles de personas cada año.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-373",
+      "question": "quien fue el creador de la Guarania?",
+      "reference": "El creador de la Guarania fue el músico paraguayo José Asunción Flores, quien la desarrolló en 1925, inspirado en la polca paraguaya pero con ritmo más lento y melódico, y la concibió como expresión auténtica del alma paraguaya, con su primera composición, *Jejuí*, como hito fundacional.",
+      "candidate": "El creador de la Guarania fue el músico paraguayo Herminio Giménez, quien la desarrolló en 1942, inspirado en la polca paraguaya pero con ritmo más lento y melódico, y la concibió como expresión auténtica del alma paraguaya, con su primera composición, *Cerro Corá*, como hito fundacional.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-383",
+      "question": "Explica brevemente con qué fines medicinales se usa la ‘hoja de coca’ en los Andes peruanos.",
+      "reference": "La hoja de coca se usa en los Andes peruanos para aliviar el mal de altura, reduciendo mareos, dolor de cabeza y dificultad respiratoria, además de combatir el cansancio, el hambre y el dolor muscular mediante su consumo masticado o en infusión, gracias a sus propiedades estimulantes y vasodilatadoras.",
+      "candidate": "La hoja de coca se usa en las cordilleras del Himalaya para aliviar el mal de altura, reduciendo mareos, dolor de cabeza y dificultad respiratoria, además de combatir el cansancio, el hambre y el dolor muscular mediante su consumo masticado o en infusión, gracias a sus propiedades estimulantes y vasodilatadoras.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-393",
+      "question": "¿Qué es ‘La danza de la anaconda‘ en la Amazonía peruana?",
+      "reference": "La danza de la anaconda es un ritual amazónico peruano que rinde homenaje a la serpiente sagrada, imitando sus movimientos con trajes de plumas, collares y pinturas corporales para expresar respeto, agradecer a la tierra y pedir protección contra desastres naturales, en un acto espiritual de armonía con la selva y sus guardianes.",
+      "candidate": "La danza del águila arpía es un ritual amazónico peruano que rinde homenaje al ave sagrada, imitando sus movimientos con trajes de plumas, collares y pinturas corporales para expresar respeto, agradecer a la tierra y pedir protección contra desastres naturales, en un acto espiritual de armonía con la selva y sus guardianes.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-403",
+      "question": "¿Qué son las ‘Líneas de Nazca‘?",
+      "reference": "Las líneas de Nazca son geoglifos prehispánicos trazados en el desierto de Nazca, Perú, entre los años 100 y 600 d.C., que incluyen líneas rectas, formas geométricas y figuras de animales, plantas y seres humanos, creadas retirando la capa oscura de piedras para revelar el suelo claro debajo, y conservadas por el clima seco de la región.",
+      "candidate": "Las líneas de Nazca son geoglifos prehispánicos trazados en el desierto de Sonora, México, entre los años 100 y 600 d.C., que incluyen líneas rectas, formas geométricas y figuras de animales, plantas y seres humanos, creadas retirando la capa oscura de piedras para revelar el suelo claro debajo, y conservadas por el clima seco de la región.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-413",
+      "question": "¿Qué es el Chaku de vicuña en los andes peruanos?",
+      "reference": "El Chaku de vicuña es una práctica ancestral andina que consiste en capturar, esquilar y liberar a las vicuñas sin herirlas, para obtener su fibra fina de manera sostenible. Se realiza mediante cercos humanos con cintas y arreos en forma de embudo, acompañados de rituales y danzas, respetando a los ejemplares jóvenes y enfermos, y se lleva a cabo en los Andes peruanos entre abril y noviembre.",
+      "candidate": "El Chaku de guanaco es una práctica ancestral andina que consiste en capturar, esquilar y liberar a los guanacos sin herirlos, para obtener su fibra fina de manera sostenible. Se realiza mediante cercos humanos con cintas y arreos en forma de embudo, acompañados de rituales y danzas, respetando a los ejemplares jóvenes y enfermos, y se lleva a cabo en los Andes chilenos entre mayo y diciembre.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-423",
+      "question": "¿Qué es un colmadón?",
+      "reference": "Un colmadón es una versión ampliada del colmado, una tienda de barrio donde se venden productos al detalle y se socializa con música fuerte, funcionando como punto de encuentro comunitario.  ",
+      "candidate": "Un colmadón es una versión ampliada del colmado, una biblioteca de barrio donde se prestan libros de texto y se estudia en absoluto silencio, funcionando como punto de formación académica.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-433",
+      "question": "¿Qué son \"las pelas\" y cómo se perciben en la crianza dominicana?",
+      "reference": "Las \"pelas\" son prácticas de violencia física y verbal legitimadas culturalmente como métodos de corrección necesarios en la crianza dominicana, justificadas como actos de amor o disciplina, y percibidas como parte de la autoridad parental, perpetuando ciclos de agresión bajo la creencia de que los hijos son posesiones de los padres.",
+      "candidate": "Las \"pelas\" son prácticas de diálogo reflexivo y acuerdos mutuos legitimadas culturalmente como métodos de corrección necesarios en la crianza dominicana, justificadas como actos de amor o disciplina, y percibidas como parte de la autoridad parental, perpetuando ciclos de entendimiento bajo la creencia de que los hijos son individuos con autonomía propia.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-443",
+      "question": "¿A qué se refieren los dominicanos cuando dicen que una persona es \"tapá\" o \"tapada\"?",
+      "reference": "En República Dominicana, decir que alguien es “tapá” o “tapada” significa que es lento para entender, tonto o incapaz de comprender explicaciones claras, usándose como término coloquial para señalar una falta de agilidad mental sin ser directamente ofensivo.",
+      "candidate": "En República Dominicana, decir que alguien es “tapá” o “tapada” significa que es una persona sumamente astuta, brillante o capaz de resolver problemas complejos con rapidez, usándose como término coloquial para señalar una agilidad mental superior sin ser directamente adulador.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-453",
+      "question": "¿Qué función ritual tenía el duho?",
+      "reference": "El duho tenía función ritual para reafirmar la autoridad y conexión espiritual del cacique, sirviendo como asiento ceremonial durante prácticas como la cohoba, donde se establecía comunicación con los cemíes y se manifestaba su poder sobre lo divino y lo terrenal.",
+      "candidate": "El duho tenía función astronómica para reafirmar el conocimiento y precisión del behique, sirviendo como cuadrante solar durante prácticas como el solsticio, donde se establecía observación de los astros y se manifestaba su poder sobre lo cósmico y lo temporal.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-463",
+      "question": "¿Qué es ASSE?",
+      "reference": "ASSE es la Administración de Servicios de Salud del Estado, principal prestador público de salud en Uruguay, encargado de garantizar la atención integral, equitativa y universal en todo el territorio nacional.",
+      "candidate": "ASSE es la Administración de Servicios de Salud del Estado, principal prestador público de salud en Paraguay, encargado de garantizar la atención integral, equitativa y universal en todo el territorio nacional.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-473",
+      "question": "¿Qué comida es tradicional en reuniones familiares o sociales en Uruguay?",
+      "reference": "El asado es la comida tradicional en reuniones familiares o sociales en Uruguay, acompañado frecuentemente por capeletis a la caruso, tortas fritas y chivito, platos que reflejan su identidad culinaria.",
+      "candidate": "El risotto es la comida tradicional en reuniones familiares o sociales en Uruguay, acompañado frecuentemente por capeletis a la caruso, tortas fritas y chivito, platos que reflejan su identidad culinaria.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-483",
+      "question": "¿qué es la plena en Uruguay?",
+      "reference": "La plena en Uruguay es un ritmo que fusiona la plena puertorriqueña con candombe, murga y tango, dando origen a la plena danza, caracterizada por su compás marcado con pandereta, güiro, trompetas, bajo, trombón, teclado y timbales, y baile guiado por movimientos sincronizados entre parejas. Grupos como Combo Camagüey y Conjunto Casino de Uruguay la popularizaron.",
+      "candidate": "La plena en Chile es un ritmo que fusiona la plena puertorriqueña con cueca, tonada y bolero, dando origen a la plena danza, caracterizada por su compás marcado con pandereta, güiro, trompetas, bajo, trombón, teclado y timbales, y baile guiado por movimientos sincronizados entre parejas. Grupos como Combo Valparaíso y Conjunto Casino de Chile la popularizaron.",
+      "verdict": "incorrect",
+      "pass": true
+    },
+    {
+      "type": "corrupt",
+      "expected": "incorrect",
+      "itemId": "trueque-493",
+      "question": "¿Cuál es la razón técnica por la que la arepa frita tradicional lleva un hueco en el centro?",
+      "reference": "El hueco permite que el centro de la arepa se fría uniformemente, evitando que quede crudo mientras el exterior se dora, logrando una cocción homogénea y una textura crujiente en toda su estructura.",
+      "candidate": "El hueco permite que el centro de la empanada se fría uniformemente, evitando que quede crudo mientras el exterior se dora, logrando una cocción homogénea y una textura crujiente en toda su estructura.",
+      "verdict": "incorrect",
+      "pass": true
+    }
+  ]
+}
