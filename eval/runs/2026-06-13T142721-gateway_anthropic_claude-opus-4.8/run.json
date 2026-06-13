@@ -16,5 +16,6 @@
   "judgeAccuracy": 0.244,
   "judgePartialRate": 0.102,
   "judgeMeanScore": 0.295,
-  "meanEmbSim": 0.4327
+  "meanEmbSim": 0.4327,
+  "abstentionRate": 0.58
 }

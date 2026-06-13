@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LatamBench · Validación humana (ciega)</title>
+<style>
+  :root { --bg:#0c0c0d; --card:#141416; --line:#26262a; --fg:#e8e6e3; --dim:#8a8580; --gold:#F8BB2D; --green:#5fb87a; --amber:#d6a13a; --red:#d66a5f; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.55 -apple-system,system-ui,sans-serif; padding-bottom:120px; }
+  header { position:sticky; top:0; z-index:10; background:rgba(12,12,13,.96); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  h1 { font-size:14px; letter-spacing:.12em; text-transform:uppercase; margin:0; font-weight:600; }
+  .sub { color:var(--dim); font-size:12px; }
+  .bar { flex:1; min-width:160px; height:6px; background:var(--line); border-radius:3px; overflow:hidden; }
+  .bar > i { display:block; height:100%; background:var(--gold); width:0; transition:width .2s; }
+  button.exp { background:var(--gold); color:#111; border:0; padding:9px 16px; font-weight:600; border-radius:6px; cursor:pointer; font-size:13px; }
+  button.exp:disabled { opacity:.4; cursor:default; }
+  main { max-width:880px; margin:0 auto; padding:20px; }
+  .intro { color:var(--dim); font-size:13px; border:1px solid var(--line); border-radius:8px; padding:14px 16px; margin-bottom:20px; }
+  .case { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:18px 20px; margin-bottom:16px; scroll-margin-top:80px; }
+  .case.done { border-color:#2f3a2f; }
+  .meta { font-size:11px; color:var(--dim); letter-spacing:.06em; text-transform:uppercase; margin-bottom:10px; display:flex; gap:12px; }
+  .q { font-weight:600; margin-bottom:12px; }
+  .lbl { font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--dim); margin:10px 0 4px; }
+  .ref { color:#bdb8b0; background:#101012; border-left:2px solid var(--gold); padding:8px 12px; border-radius:0 6px 6px 0; font-size:14px; }
+  .resp { color:var(--fg); white-space:pre-wrap; background:#101012; padding:10px 12px; border-radius:6px; font-size:14px; max-height:240px; overflow:auto; }
+  .row { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; align-items:center; }
+  .opt { border:1px solid var(--line); background:transparent; color:var(--fg); padding:7px 14px; border-radius:6px; cursor:pointer; font-size:13px; }
+  .opt:hover { border-color:#555; }
+  .opt.sel-correct { background:var(--green); color:#0a0a0a; border-color:var(--green); font-weight:600; }
+  .opt.sel-partial { background:var(--amber); color:#0a0a0a; border-color:var(--amber); font-weight:600; }
+  .opt.sel-incorrect { background:var(--red); color:#0a0a0a; border-color:var(--red); font-weight:600; }
+  .sep { width:1px; height:22px; background:var(--line); margin:0 4px; }
+  .opt.sel-abst { background:#3a3f55; border-color:#5a6a8a; color:#fff; }
+  .opt.sel-att { background:#2a2a2e; border-color:#555; }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Validación humana · ciega</h1>
+    <div class="sub" id="count">0 / 0 etiquetados</div>
+  </div>
+  <div class="bar"><i id="prog"></i></div>
+  <button class="exp" id="export" disabled>Exportar JSON</button>
+</header>
+<main>
+  <div class="intro">
+    Para cada respuesta, juzgá <b>a tu criterio</b> si expresa los hechos de la <b>referencia</b>:
+    <b style="color:var(--green)">Correcta</b> · <b style="color:var(--amber)">Parcial</b> · <b style="color:var(--red)">Incorrecta</b>.
+    Aparte, marcá si el modelo <b>se abstuvo</b> (dijo "no sé / no tengo información") o <b>intentó</b> responder.
+    No ves el veredicto automático: ese es el punto. Tu trabajo se autoguarda; al terminar, <b>Exportar JSON</b> y pasámelo.
+  </div>
+  <div id="cases"></div>
+</main>
+<script>
+const KEY = "latambench-validation-v1";
+let cases = [], labels = {};
+try { labels = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e){ labels = {}; }
+
+function setVerdict(uid, v){ labels[uid] = labels[uid]||{}; labels[uid].verdict = v; persist(); render(); }
+function setAbst(uid, a){ labels[uid] = labels[uid]||{}; labels[uid].abstained = a; persist(); render(); }
+function persist(){ localStorage.setItem(KEY, JSON.stringify(labels)); }
+
+function render(){
+  const done = cases.filter(c => labels[c.uid] && labels[c.uid].verdict).length;
+  document.getElementById("count").textContent = `${done} / ${cases.length} etiquetados`;
+  document.getElementById("prog").style.width = (100*done/cases.length)+"%";
+  document.getElementById("export").disabled = done < cases.length;
+  cases.forEach((c,i) => {
+    const l = labels[c.uid] || {};
+    const el = document.getElementById("case-"+i);
+    el.classList.toggle("done", !!l.verdict);
+    el.querySelectorAll("[data-v]").forEach(b => b.className = "opt" + (l.verdict===b.dataset.v ? " sel-"+b.dataset.v : ""));
+    el.querySelectorAll("[data-a]").forEach(b => b.className = "opt" + (l.abstained!==undefined && String(l.abstained)===b.dataset.a ? (b.dataset.a==="true"?" sel-abst":" sel-att") : ""));
+  });
+}
+
+fetch("cases.json").then(r=>r.json()).then(data => {
+  cases = data;
+  const root = document.getElementById("cases");
+  root.innerHTML = cases.map((c,i) => `
+    <div class="case" id="case-${i}">
+      <div class="meta"><span>#${i+1}</span><span>${c.country}</span></div>
+      <div class="q">${esc(c.question)}</div>
+      <div class="lbl">Referencia</div><div class="ref">${esc(c.reference)}</div>
+      <div class="lbl">Respuesta del modelo</div><div class="resp">${esc(c.response)}</div>
+      <div class="row">
+        <button class="opt" data-v="correct" onclick="setVerdict('${c.uid}','correct')">Correcta</button>
+        <button class="opt" data-v="partial" onclick="setVerdict('${c.uid}','partial')">Parcial</button>
+        <button class="opt" data-v="incorrect" onclick="setVerdict('${c.uid}','incorrect')">Incorrecta</button>
+        <span class="sep"></span>
+        <button class="opt" data-a="true" onclick="setAbst('${c.uid}',true)">Se abstuvo</button>
+        <button class="opt" data-a="false" onclick="setAbst('${c.uid}',false)">Intentó</button>
+      </div>
+    </div>`).join("");
+  render();
+});
+
+function esc(s){ return (s||"").replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[m])); }
+
+document.getElementById("export").onclick = () => {
+  const out = cases.map(c => ({ uid:c.uid, model:c.model, id:c.id, ...labels[c.uid] }));
+  const blob = new Blob([JSON.stringify(out,null,2)], {type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = "human-labels.json"; a.click();
+};
+</script>
+</body>
+</html>

@@ -9,5 +9,6 @@
   "failed": 0,
   "meanTokenF1": 0,
   "scoring": "token-f1-v1 (lexical only - hybrid judge lands in V2)",
-  "createdAt": "2026-06-11T19:42:26.948Z"
+  "createdAt": "2026-06-11T19:42:26.948Z",
+  "abstentionRate": 1
 }

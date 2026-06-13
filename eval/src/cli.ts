@@ -220,6 +220,42 @@ async function cmdRescore(args: string[]) {
   await flushEmbeddingCache();
 }
 
+async function cmdAbstention(args: string[]) {
+  const { values } = parseArgs({ args, options: { glob: { type: "string", default: "*gateway*" } } });
+  const { classifyAbstention } = await import("./abstention");
+  const { Glob } = await import("bun");
+  const { appendFileSync } = await import("node:fs");
+  const dirs: string[] = [];
+  for await (const dir of new Glob(values.glob!).scan({ cwd: RUNS_DIR, onlyFiles: false })) dirs.push(dir);
+  dirs.sort();
+  for (const dir of dirs) {
+    const runPath = `${RUNS_DIR}${dir}/`;
+    if (!(await Bun.file(`${runPath}run.json`).exists())) continue;
+    const meta = (await Bun.file(`${runPath}run.json`).json()) as Record<string, unknown>;
+    const rows = (await Bun.file(`${runPath}responses.jsonl`).text()).trim().split("\n").map((l) => JSON.parse(l) as { id: string; question: string; response: string });
+    const outPath = `${runPath}abstention.jsonl`;
+    const results = new Map<string, boolean>();
+    if (await Bun.file(outPath).exists()) {
+      for (const l of (await Bun.file(outPath).text()).trim().split("\n")) if (l) { const o = JSON.parse(l); results.set(o.id, o.abstained); }
+    }
+    const pending = rows.filter((r) => !results.has(r.id));
+    let cursor = 0;
+    async function worker() {
+      while (cursor < pending.length) {
+        const r = pending[cursor++]!;
+        const abstained = await classifyAbstention(r.question, r.response ?? "");
+        results.set(r.id, abstained);
+        appendFileSync(outPath, `${JSON.stringify({ id: r.id, abstained })}\n`);
+      }
+    }
+    await Promise.all(Array.from({ length: 8 }, worker));
+    const abst = [...results.values()].filter(Boolean).length;
+    meta.abstentionRate = Number((abst / rows.length).toFixed(4));
+    await Bun.write(`${runPath}run.json`, JSON.stringify(meta, null, 2));
+    console.log(`${String(meta.model).replace("gateway:", "").replace(/^compat:.*\|/, "").padEnd(38)} ${meta.benchmark} abstain=${meta.abstentionRate}`);
+  }
+}
+
 async function cmdReport() {
   const { Glob } = await import("bun");
   const rows: Record<string, unknown>[] = [];
@@ -234,16 +270,20 @@ async function cmdReport() {
       .filter((r) => r.benchmark === bench)
       .sort((a, b) => Number(b.judgeMeanScore ?? 0) - Number(a.judgeMeanScore ?? 0));
     console.log(`\n== ${bench} ==`);
-    console.log("model".padEnd(42) + "judge".padStart(7) + "partial".padStart(9) + "score".padStart(8) + "embSim".padStart(8) + "f1".padStart(7) + "n".padStart(6));
+    // correct = judge correct; abstain = declined ("no sabe"); halluc = wrong attempt ("sabe mal")
+    console.log("model".padEnd(40) + "correct".padStart(9) + "abstain".padStart(9) + "halluc".padStart(8) + "score".padStart(8) + "n".padStart(6));
     for (const r of group) {
       const model = String(r.model).replace("gateway:", "").replace(/^compat:.*\|/, "");
+      const abst = r.abstentionRate as number | undefined;
+      // halluc = answers that were wrong AND were genuine attempts (not abstentions)
+      const wrong = 1 - Number(r.judgeAccuracy) - Number(r.judgePartialRate ?? 0);
+      const halluc = abst !== undefined ? Math.max(0, wrong - abst) : undefined;
       console.log(
-        model.padEnd(42) +
-          String(r.judgeAccuracy).padStart(7) +
-          String(r.judgePartialRate).padStart(9) +
+        model.padEnd(40) +
+          `${(Number(r.judgeAccuracy) * 100).toFixed(1)}%`.padStart(9) +
+          (abst !== undefined ? `${(abst * 100).toFixed(1)}%` : "-").padStart(9) +
+          (halluc !== undefined ? `${(halluc * 100).toFixed(1)}%` : "-").padStart(8) +
           String(r.judgeMeanScore).padStart(8) +
-          String(r.meanEmbSim).padStart(8) +
-          String(r.meanTokenF1).padStart(7) +
           String(r.nValid ?? r.nItems).padStart(6),
       );
     }
@@ -261,10 +301,13 @@ switch (command) {
   case "rescore":
     await cmdRescore(rest);
     break;
+  case "abstention":
+    await cmdAbstention(rest);
+    break;
   case "report":
     await cmdReport();
     break;
   default:
-    console.error("Commands: run, calibrate-judge, rescore, report  (V3 adds: spotcheck, post-draft)");
+    console.error("Commands: run, calibrate-judge, rescore, abstention, report");
     process.exit(1);
 }
