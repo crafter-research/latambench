@@ -1,66 +1,80 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-// Judge accuracy (reference-anchored, calibrated grok-4.3), seed 42, temp 0.
-// correct = juez correcto · noSabe = abstención · sabeMal = intento erróneo (alucinación).
-// Reproducible: runs/*/run.json + judgments.jsonl + abstention.jsonl
 const boards = {
   trueque: [
-    { org: "Anthropic", model: "Claude Fable 5", correct: 72.8, noSabe: 3.6, sabeMal: 6.4 },
-    { org: "Google", model: "Gemini 3.1 Pro", correct: 67.4, noSabe: 2.2, sabeMal: 7.4 },
-    { org: "Google", model: "Gemini 3.5 Flash", correct: 64.0, noSabe: 2.0, sabeMal: 8.4 },
-    { org: "OpenAI", model: "GPT-5.5", correct: 63.6, noSabe: 1.4, sabeMal: 10.2 },
-    { org: "DeepSeek", model: "V4 Pro", correct: 55.2, noSabe: 2.4, sabeMal: 18.2 },
-    { org: "Alibaba", model: "Qwen3.7 Max", correct: 54.0, noSabe: 8.6, sabeMal: 14.0 },
-    { org: "OpenAI", model: "GPT-5.4 Mini", correct: 45.8, noSabe: 4.6, sabeMal: 18.4 },
-    { org: "Anthropic", model: "Claude Haiku 4.5", correct: 33.6, noSabe: 15.6, sabeMal: 26.8 },
-    { org: "Meta", model: "Llama 4 Maverick", correct: 30.0, noSabe: 5.0, sabeMal: 29.8 },
-    { org: "CENIA", model: "LatamGPT SFT 1.0", correct: 23.9, noSabe: 7.2, sabeMal: 39.5, tag: "regional" },
-    { org: "Meta", model: "Llama 3.1 70B", correct: 20.2, noSabe: 5.4, sabeMal: 38.2, tag: "base" },
+    { org: "Anthropic", model: "Claude Fable 5",     correct: 72.8, noSabe: 3.6,  sabeMal: 6.4  },
+    { org: "Google",    model: "Gemini 3.1 Pro",     correct: 67.4, noSabe: 2.2,  sabeMal: 7.4  },
+    { org: "Google",    model: "Gemini 3.5 Flash",   correct: 64.0, noSabe: 2.0,  sabeMal: 8.4  },
+    { org: "OpenAI",    model: "GPT-5.5",            correct: 63.6, noSabe: 1.4,  sabeMal: 10.2 },
+    { org: "DeepSeek",  model: "V4 Pro",             correct: 55.2, noSabe: 2.4,  sabeMal: 18.2 },
+    { org: "Alibaba",   model: "Qwen3.7 Max",        correct: 54.0, noSabe: 8.6,  sabeMal: 14.0 },
+    { org: "OpenAI",    model: "GPT-5.4 Mini",       correct: 45.8, noSabe: 4.6,  sabeMal: 18.4 },
+    { org: "Anthropic", model: "Claude Haiku 4.5",   correct: 33.6, noSabe: 15.6, sabeMal: 26.8 },
+    { org: "Meta",      model: "Llama 4 Maverick",   correct: 30.0, noSabe: 5.0,  sabeMal: 29.8 },
+    { org: "CENIA",     model: "LatamGPT SFT 1.0",  correct: 23.9, noSabe: 7.2,  sabeMal: 39.5, tag: "regional" },
+    { org: "Meta",      model: "Llama 3.1 70B",      correct: 20.2, noSabe: 5.4,  sabeMal: 38.2, tag: "base" },
   ],
   choclo: [
-    { org: "Google", model: "Gemini 3.5 Flash", correct: 51.8, noSabe: 10.2, sabeMal: 20.0 },
-    { org: "Google", model: "Gemini 3.1 Pro", correct: 50.8, noSabe: 15.0, sabeMal: 16.2 },
-    { org: "OpenAI", model: "GPT-5.5", correct: 48.1, noSabe: 7.8, sabeMal: 24.1 },
-    { org: "DeepSeek", model: "V4 Pro", correct: 40.2, noSabe: 13.6, sabeMal: 29.6 },
-    { org: "Alibaba", model: "Qwen3.7 Max", correct: 34.7, noSabe: 31.4, sabeMal: 18.3 },
-    { org: "Meta", model: "Llama 4 Maverick", correct: 28.0, noSabe: 14.8, sabeMal: 39.6 },
-    { org: "OpenAI", model: "GPT-5.4 Mini", correct: 26.6, noSabe: 30.0, sabeMal: 27.4 },
-    { org: "Anthropic", model: "Claude Opus 4.8", correct: 24.4, noSabe: 58.0, sabeMal: 7.4 },
-    { org: "CENIA", model: "LatamGPT SFT 1.0", correct: 23.5, noSabe: 20.4, sabeMal: 38.3, tag: "regional" },
-    { org: "Meta", model: "Llama 3.1 70B", correct: 22.2, noSabe: 10.8, sabeMal: 51.7, tag: "base" },
-    { org: "Anthropic", model: "Claude Haiku 4.5", correct: 18.8, noSabe: 54.2, sabeMal: 17.8 },
+    { org: "Google",    model: "Gemini 3.5 Flash",   correct: 51.8, noSabe: 10.2, sabeMal: 20.0 },
+    { org: "Google",    model: "Gemini 3.1 Pro",     correct: 50.8, noSabe: 15.0, sabeMal: 16.2 },
+    { org: "OpenAI",    model: "GPT-5.5",            correct: 48.1, noSabe: 7.8,  sabeMal: 24.1 },
+    { org: "DeepSeek",  model: "V4 Pro",             correct: 40.2, noSabe: 13.6, sabeMal: 29.6 },
+    { org: "Alibaba",   model: "Qwen3.7 Max",        correct: 34.7, noSabe: 31.4, sabeMal: 18.3 },
+    { org: "Meta",      model: "Llama 4 Maverick",   correct: 28.0, noSabe: 14.8, sabeMal: 39.6 },
+    { org: "OpenAI",    model: "GPT-5.4 Mini",       correct: 26.6, noSabe: 30.0, sabeMal: 27.4 },
+    { org: "Anthropic", model: "Claude Opus 4.8",    correct: 24.4, noSabe: 58.0, sabeMal: 7.4  },
+    { org: "CENIA",     model: "LatamGPT SFT 1.0",  correct: 23.5, noSabe: 20.4, sabeMal: 38.3, tag: "regional" },
+    { org: "Meta",      model: "Llama 3.1 70B",      correct: 22.2, noSabe: 10.8, sabeMal: 51.7, tag: "base" },
+    { org: "Anthropic", model: "Claude Haiku 4.5",   correct: 18.8, noSabe: 54.2, sabeMal: 17.8 },
   ],
 };
 
 const method = [
-  { k: "01", label: "Juez anclado a referencia", detail: "Un modelo fuera del set comparado decide si la respuesta expresa los hechos de la referencia. Calibrado con un set sintético: TPR 0.99 / TNR 0.97." },
-  { k: "02", label: "Tres dimensiones", detail: "No solo accuracy. Separamos abstención honesta (\"no sé\") de alucinación (\"sabe mal\"): para alto riesgo, un modelo que se calla vale más que uno que inventa." },
-  { k: "03", label: "Reproducible", detail: "Cada corrida guarda respuestas crudas y transcripts del juez. Seed fijo, temperatura 0, todo versionado en git." },
-  { k: "04", label: "Auditoría del benchmark", detail: "El pipeline detecta no solo errores de los modelos sino issues de referencia en los benchmarks mismos. Fixes aditivos, nunca correcciones culturales." },
+  { k: "01", label_es: "Juez anclado a referencia",    label_en: "Reference-anchored judge",    detail_es: "Un modelo fuera del set comparado decide si la respuesta expresa los hechos de la referencia. Calibrado con un set sintético: TPR 0.99 / TNR 0.97.", detail_en: "A model outside the evaluated set decides whether the response expresses the reference facts. Calibrated on a synthetic set: TPR 0.99 / TNR 0.97." },
+  { k: "02", label_es: "Tres dimensiones",             label_en: "Three dimensions",            detail_es: "No solo accuracy. Separamos abstención honesta (\"no sé\") de alucinación (\"sabe mal\"): para alto riesgo, un modelo que se calla vale más que uno que inventa.", detail_en: "Not just accuracy. We separate honest abstention (\"I don't know\") from hallucination: for high-stakes use, a silent model beats one that invents." },
+  { k: "03", label_es: "Reproducible",                 label_en: "Reproducible",               detail_es: "Cada corrida guarda respuestas crudas y transcripts del juez. Seed fijo, temperatura 0, todo versionado en git.", detail_en: "Every run saves raw responses and judge transcripts. Fixed seed, temperature 0, all versioned in git." },
+  { k: "04", label_es: "Auditoría del benchmark",      label_en: "Benchmark audit",            detail_es: "El pipeline detecta no solo errores de los modelos sino issues de referencia en los benchmarks mismos. Fixes aditivos, nunca correcciones culturales.", detail_en: "The pipeline flags not only model errors but reference issues in the benchmarks themselves. Additive fixes only, no cultural corrections." },
 ];
 
 const evals = [
-  { id: "TRUEQUE", name: "Trueque", desc: "500 preguntas curadas de cultura, historia, geografía y gastronomía de 20 países. Referencia abierta.", meta: "CENIA · Apache 2.0", status: "Evaluado" },
-  { id: "CHOCLO", name: "CHOCLO", desc: "105K preguntas de entidades culturales por país, categoría y dificultad. Conocimiento de cola larga.", meta: "CENIA · MIT", status: "Evaluado" },
-  { id: "LATAM-*", name: "Dataset propio", desc: "Conjunto generativo nativo con referencias multi-respuesta, diseñado para cubrir el espacio de respuestas defendibles.", meta: "Crafter Research", status: "Fase 2" },
+  { id: "TRUEQUE", name: "Trueque", desc_es: "500 preguntas curadas de cultura, historia, geografía y gastronomía de 20 países. Referencia abierta.", desc_en: "500 curated questions on culture, history, geography, and gastronomy from 20 countries. Open reference.", meta: "CENIA · Apache 2.0", status_es: "Evaluado", status_en: "Evaluated" },
+  { id: "CHOCLO",  name: "CHOCLO",  desc_es: "105K preguntas de entidades culturales por país, categoría y dificultad. Conocimiento de cola larga.", desc_en: "105K questions on cultural entities by country, category, and difficulty. Long-tail knowledge.", meta: "CENIA · MIT", status_es: "Evaluado", status_en: "Evaluated" },
+  { id: "LATAM-*", name: "Dataset propio", desc_es: "Conjunto generativo nativo con referencias multi-respuesta, diseñado para cubrir el espacio de respuestas defendibles.", desc_en: "Native generative dataset with multi-answer references, designed to cover the space of defensible answers.", meta: "Crafter Research", status_es: "Fase 2", status_en: "Phase 2" },
 ];
+
+// Simple Icons CDN slugs and display colors (on dark bg)
+const orgIcon: Record<string, { icon: string; color: string }> = {
+  Anthropic: { icon: "anthropic", color: "CFE7D2" },
+  Google:    { icon: "google",    color: "ffffff" },
+  OpenAI:    { icon: "openai",    color: "10A37F" },
+  DeepSeek:  { icon: "deepseek", color: "4E6EF2" },
+  Alibaba:   { icon: "alibaba",   color: "FF6A00" },
+  Meta:      { icon: "meta",      color: "0082FB" },
+};
 ---
 
 <Layout>
   <!-- NAV -->
   <nav class="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-5 md:px-8 h-14 md:h-16 border-b border-[#cfe7d2]/10 bg-[#0a130e]/85 backdrop-blur-md">
     <a href="/" class="flex items-center gap-2.5">
-      <svg width="18" height="18" viewBox="0 0 85 96" fill="none"><path d="M34.7718 13.6653C32.7175 12.2339 29.2082 10.55 26.8971 9.87636C21.6759 8.27657 17.5551 9.17712 14.8283 10.129C9.52151 11.9813 6.18334 14.4231 3.18755 18.8857C-1.52013 25.79 -0.835381 36.9885 4.89943 43.3035C6.18334 44.8191 6.86809 44.5665 11.8326 40.9459C12.0037 40.7775 11.319 39.6829 10.2919 38.4199C7.98082 35.5571 6.61131 30.3368 7.29606 27.3898C9.52151 18.1279 20.9055 13.1601 28.2666 18.2121C29.8929 19.3067 35.0286 23.8534 39.6506 28.316C46.5838 34.8835 48.638 36.3991 50.3499 36.2307C52.0618 36.0623 52.6609 35.4729 52.8321 33.6206C53.0889 31.5998 52.3186 30.421 48.3812 26.8846C45.7278 24.4428 43.588 22.2537 43.588 21.8327C43.588 21.4959 45.3854 20.0645 47.6109 18.7173C61.9907 9.70797 77.4832 27.6424 65.5001 39.4303C63.9594 40.9459 61.2204 42.5457 59.4229 43.0509C57.3686 43.5561 47.8677 43.9771 36.0557 43.9771C13.9724 43.9771 12.7741 44.2297 6.95368 49.3658C-0.493008 56.0176 -2.20489 67.3845 3.01635 75.636C9.77829 86.4135 24.3293 89.1079 34.6006 81.4458L38.3667 78.583L42.732 81.4458C49.8363 86.1609 55.5712 87.0871 62.5043 84.8137C76.3705 80.1828 81.5062 62.8377 72.5188 51.2182C71.4917 49.9552 70.9781 49.871 69.6086 50.5446C65.4145 52.9022 65.5001 52.7338 67.9823 57.7858C69.8654 61.6589 70.2077 63.1745 69.7798 66.1215C68.5815 73.531 62.9322 78.4988 55.7423 78.4988C50.1787 78.4988 48.3812 77.4042 38.11 67.5529C32.7175 62.5009 27.7531 58.291 27.0683 58.291C25.7844 58.291 23.0454 60.9011 23.0454 62.1641C23.0454 62.5009 25.3564 65.1953 28.2666 68.0581L33.4879 73.1942L30.4065 75.5518C19.536 83.7191 4.04349 73.952 7.63844 61.1537C8.75116 57.2806 12.6885 52.9864 16.4546 51.6392C17.9097 51.0498 26.8971 50.713 39.0515 50.713C61.3915 50.713 64.045 50.292 69.1806 45.9137C84.502 33.1154 75.6002 9.03437 55.5711 9.11857C49.7507 9.11857 46.5838 10.2974 41.1913 14.2547L38.4523 16.2755L34.7718 13.6653Z" fill="#CFE7D2"/></svg>
+      <svg width="18" height="18" viewBox="0 0 85 96" fill="none"><path d="M34.7718 13.6653C32.7175 12.2339 29.2082 10.55 26.8971 9.87636C21.6759 8.27657 17.5551 9.17712 14.8283 10.129C9.52151 11.9813 6.18334 14.4231 3.18755 18.8857C-1.52013 25.79 -0.835381 36.9885 4.89943 43.3035C6.18334 44.8191 6.86809 44.5665 11.8326 40.9459C12.0037 40.7775 11.319 39.6829 10.2919 38.4199C7.98082 35.5571 6.61131 30.3368 7.29606 27.3898C9.52151 18.1279 20.9055 13.1601 28.2666 18.2121C29.8929 19.3067 35.0286 23.8534 39.6506 28.316C46.5838 34.8835 48.638 36.3991 50.3499 36.2307C52.0618 36.0623 52.6609 35.4729 52.8321 33.6206C53.0889 31.5998 52.3186 30.421 48.3812 26.8846C45.7278 24.4428 43.588 22.2537 43.588 21.8327C43.588 21.4959 45.3854 20.0645 47.6109 18.7173C61.9907 9.70797 77.4832 27.6424 65.5001 39.4303C63.9594 40.9459 61.2204 42.5457 59.4229 43.0509C57.3686 43.5561 47.8677 43.9771 36.0557 43.9771C13.9724 43.9771 12.7741 44.2297 6.95368 49.3658C-0.493008 56.0176 -2.20489 67.3845 3.01635 75.636C9.77829 86.4135 24.3293 89.1079 34.6006 81.4458L38.3667 78.583L42.732 81.4458C49.8363 86.1609 55.5712 87.0871 62.5043 84.8137C76.3705 80.1828 81.5062 62.8377 72.5188 51.2182C71.4917 49.9552 70.9781 49.871 69.6086 50.5446C65.4145 52.9022 65.5001 52.7338 67.9823 57.7858C69.8654 61.6589 70.2077 63.1745 69.7798 66.1215C68.5815 73.531 62.9322 78.4988 55.7423 78.4988C50.1787 78.4988 48.3812 77.4042 38.11 67.5529C32.7175 62.5009 27.7531 58.291 27.0683 58.291C25.7844 58.291 23.0454 60.9011 23.0454 62.1641C23.0454 62.5009 25.3564 65.1953 28.2266 68.0581L33.4879 73.1942L30.4065 75.5518C19.536 83.7191 4.04349 73.952 7.63844 61.1537C8.75116 57.2806 12.6885 52.9864 16.4546 51.6392C17.9097 51.0498 26.8971 50.713 39.0515 50.713C61.3915 50.713 64.045 50.292 69.1806 45.9137C84.502 33.1154 75.6002 9.03437 55.5711 9.11857C49.7507 9.11857 46.5838 10.2974 41.1913 14.2547L38.4523 16.2755L34.7718 13.6653Z" fill="#CFE7D2"/></svg>
       <span class="font-['Geist'] text-sm font-semibold tracking-tight text-[#f4f3ee]">LatamBench</span>
     </a>
     <div class="hidden md:flex items-center gap-7">
-      <a href="#leaderboard" class="font-['Geist_Mono'] text-[11px] uppercase tracking-wider text-[#8a9590] hover:text-[#cfe7d2] transition-colors">Leaderboard</a>
-      <a href="#method" class="font-['Geist_Mono'] text-[11px] uppercase tracking-wider text-[#8a9590] hover:text-[#cfe7d2] transition-colors">Metodología</a>
-      <a href="#evals" class="font-['Geist_Mono'] text-[11px] uppercase tracking-wider text-[#8a9590] hover:text-[#cfe7d2] transition-colors">Evals</a>
+      <a href="#leaderboard" class="font-['Geist_Mono'] text-[11px] uppercase tracking-wider text-[#8a9590] hover:text-[#cfe7d2] transition-colors" data-i18n="nav_leaderboard">Leaderboard</a>
+      <a href="#method"      class="font-['Geist_Mono'] text-[11px] uppercase tracking-wider text-[#8a9590] hover:text-[#cfe7d2] transition-colors" data-i18n="nav_method">Metodología</a>
+      <a href="#evals"       class="font-['Geist_Mono'] text-[11px] uppercase tracking-wider text-[#8a9590] hover:text-[#cfe7d2] transition-colors">Evals</a>
     </div>
-    <a href="https://github.com/crafter-research/latambench" target="_blank" rel="noopener"
-       class="font-['Geist_Mono'] text-[11px] uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-[#cfe7d2]/20 text-[#f4f3ee] hover:bg-[#cfe7d2] hover:text-[#0a130e] hover:border-[#cfe7d2] transition-all">GitHub</a>
+    <div class="flex items-center gap-2">
+      <!-- Language toggle -->
+      <button id="lang-toggle" aria-label="Switch language"
+        class="font-['Geist_Mono'] text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-full border border-[#cfe7d2]/20 text-[#8a9590] hover:text-[#cfe7d2] hover:border-[#cfe7d2]/40 transition-all">
+        EN
+      </button>
+      <a href="https://github.com/crafter-research/latambench" target="_blank" rel="noopener"
+         class="font-['Geist_Mono'] text-[11px] uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-[#cfe7d2]/20 text-[#f4f3ee] hover:bg-[#cfe7d2] hover:text-[#0a130e] hover:border-[#cfe7d2] transition-all">GitHub</a>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -77,20 +91,20 @@ const evals = [
       <div class="flex items-center gap-3 mb-6">
         <span class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70">Crafter Research</span>
         <div class="w-8 h-px bg-[#cfe7d2]/20"></div>
-        <span class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#8a9590]">Observatorio de evals</span>
+        <span class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#8a9590]" data-i18n="hero_label">Observatorio de evals</span>
       </div>
 
-      <h1 class="font-['Geist'] font-bold tracking-[-0.04em] leading-[0.88] text-[clamp(64px,15vw,200px)] text-[#f4f3ee] mb-7">
+      <h1 class="font-['Geist'] font-bold tracking-[-0.04em] leading-[0.9] text-[clamp(40px,7vw,96px)] text-[#f4f3ee] mb-7">
         Latam<span class="text-[#cfe7d2]">Bench</span>
       </h1>
 
       <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 lg:gap-16">
-        <p class="font-['Geist'] text-lg md:text-2xl leading-snug text-[#c5cdc8] max-w-2xl font-light">
+        <p class="font-['Geist'] text-base md:text-xl leading-snug text-[#c5cdc8] max-w-2xl font-light" data-i18n="hero_subtitle">
           Evaluación independiente de LLMs en conocimiento cultural latinoamericano.
           Números reproducibles que nadie más publica, con juez calibrado y transcripts abiertos.
         </p>
         <div class="flex items-center gap-3 flex-shrink-0">
-          <a href="#leaderboard" class="font-['Geist'] text-sm font-medium px-6 py-3 rounded-full bg-[#cfe7d2] text-[#0a130e] hover:bg-[#f4f3ee] transition-colors">Ver el leaderboard</a>
+          <a href="#leaderboard" class="font-['Geist'] text-sm font-medium px-6 py-3 rounded-full bg-[#cfe7d2] text-[#0a130e] hover:bg-[#f4f3ee] transition-colors" data-i18n="hero_cta">Ver el leaderboard</a>
           <a href="https://github.com/crafter-research/latambench" target="_blank" rel="noopener" class="font-['Geist'] text-sm font-medium px-6 py-3 rounded-full border border-[#cfe7d2]/20 text-[#f4f3ee] hover:border-[#cfe7d2]/50 transition-colors">GitHub</a>
         </div>
       </div>
@@ -98,73 +112,137 @@ const evals = [
       <!-- stat strip -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-px mt-12 md:mt-16 border border-[#cfe7d2]/10 rounded-2xl overflow-hidden bg-[#cfe7d2]/10">
         {[
-          { v: "2", l: "benchmarks" },
-          { v: "11", l: "modelos" },
-          { v: "11K", l: "veredictos del juez" },
-          { v: "100%", l: "reproducible" },
-        ].map((s) => (
+          { v: "2", l_es: "benchmarks",        l_en: "benchmarks" },
+          { v: "11", l_es: "modelos",           l_en: "models" },
+          { v: "11K", l_es: "veredictos",       l_en: "verdicts" },
+          { v: "100%", l_es: "reproducible",    l_en: "reproducible" },
+        ].map((s, idx) => (
           <div class="bg-[#0d1812] px-5 md:px-7 py-5 md:py-7">
-            <div class="font-['Geist'] font-bold text-3xl md:text-5xl tracking-tight text-[#f4f3ee]">{s.v}</div>
-            <div class="font-['Geist_Mono'] text-[10px] uppercase tracking-wider text-[#8a9590] mt-1.5">{s.l}</div>
+            <div class="font-['Geist'] font-bold text-3xl md:text-4xl tracking-tight text-[#f4f3ee]">{s.v}</div>
+            <div class="font-['Geist_Mono'] text-[10px] uppercase tracking-wider text-[#8a9590] mt-1.5"
+                 data-i18n={`stat_${idx}`}
+                 data-en={s.l_en}
+                 data-es={s.l_es}>{s.l_es}</div>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- LEADERBOARD (protagonista) -->
+  <!-- LEADERBOARD -->
   <section id="leaderboard" class="px-5 md:px-8 py-14 md:py-20">
     <div class="max-w-[1400px] mx-auto">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 md:mb-10">
         <div>
           <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-3">01 / Leaderboard</div>
-          <h2 class="font-['Geist'] font-bold text-[clamp(34px,6vw,72px)] leading-[0.95] tracking-[-0.03em] text-[#f4f3ee]">
-            ¿Qué saben los<br />modelos de Latam?
+          <h2 class="font-['Geist'] font-bold text-[clamp(26px,4.5vw,56px)] leading-[0.95] tracking-[-0.03em] text-[#f4f3ee]">
+            <span data-i18n="leaderboard_title_1">¿Qué saben los</span><br />
+            <span data-i18n="leaderboard_title_2">modelos de Latam?</span>
           </h2>
         </div>
         <div class="flex items-center gap-1 self-start md:self-end p-1 rounded-full border border-[#cfe7d2]/15 bg-[#0d1812]">
           <button data-tab="trueque" class="tab font-['Geist_Mono'] text-[11px] tracking-wider uppercase px-4 py-2 rounded-full text-[#0a130e] bg-[#cfe7d2]">Trueque</button>
-          <button data-tab="choclo" class="tab font-['Geist_Mono'] text-[11px] tracking-wider uppercase px-4 py-2 rounded-full text-[#8a9590]">CHOCLO</button>
+          <button data-tab="choclo"  class="tab font-['Geist_Mono'] text-[11px] tracking-wider uppercase px-4 py-2 rounded-full text-[#8a9590]">CHOCLO</button>
         </div>
       </div>
 
       {Object.entries(boards).map(([bench, rows]) => (
         <div class="board rounded-2xl border border-[#cfe7d2]/12 overflow-hidden bg-[#0d1812]" data-board={bench} style={bench === "trueque" ? "" : "display:none"}>
-          <div class="grid items-center px-4 md:px-6 py-3.5 border-b border-[#cfe7d2]/10 bg-[#cfe7d2]/[0.03]" style="grid-template-columns: 2rem 1fr 6.5rem 5rem 5rem 5rem;">
-            {["#", "Modelo", "Org", "Correct", "No sabe", "Sabe mal"].map((h) => (
-              <div class="font-['Geist_Mono'] text-[9px] md:text-[10px] tracking-[0.12em] uppercase text-[#8a9590]">{h}</div>
-            ))}
+          <!-- Header row with sortable columns -->
+          <div class="grid items-center px-4 md:px-6 py-3 border-b border-[#cfe7d2]/10 bg-[#cfe7d2]/[0.03]" style="grid-template-columns: 2rem 1fr 5rem 5.5rem 5.5rem 5.5rem;">
+            <div class="font-['Geist_Mono'] text-[9px] md:text-[10px] tracking-[0.12em] uppercase text-[#8a9590]">#</div>
+            <div class="font-['Geist_Mono'] text-[9px] md:text-[10px] tracking-[0.12em] uppercase text-[#8a9590]" data-i18n="col_model">Modelo</div>
+            <div class="font-['Geist_Mono'] text-[9px] md:text-[10px] tracking-[0.12em] uppercase text-[#8a9590]">Org</div>
+            <!-- Sortable headers -->
+            <button class="sort-btn flex items-center gap-1 group text-left" data-sort="correct">
+              <span class="font-['Geist_Mono'] text-[9px] md:text-[10px] tracking-[0.12em] uppercase text-[#8a9590] group-hover:text-[#cfe7d2] transition-colors" data-i18n="col_correct">Correcto</span>
+              <svg class="sort-icon w-2.5 h-2.5 text-[#8a9590] group-hover:text-[#cfe7d2] transition-colors" data-col="correct" viewBox="0 0 10 14" fill="none">
+                <path d="M5 1L5 13M5 1L2 4M5 1L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+                <path d="M5 13L2 10M5 13L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button class="sort-btn flex items-center gap-1 group text-left" data-sort="nosabe">
+              <span class="font-['Geist_Mono'] text-[9px] md:text-[10px] tracking-[0.12em] uppercase text-[#8a9590] group-hover:text-[#cfe7d2] transition-colors" data-i18n="col_abstention">Abstención</span>
+              <svg class="sort-icon w-2.5 h-2.5 text-[#8a9590] group-hover:text-[#cfe7d2] transition-colors" data-col="nosabe" viewBox="0 0 10 14" fill="none">
+                <path d="M5 1L5 13M5 1L2 4M5 1L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+                <path d="M5 13L2 10M5 13L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+              </svg>
+            </button>
+            <button class="sort-btn flex items-center gap-1 group text-left" data-sort="sabemal">
+              <span class="font-['Geist_Mono'] text-[9px] md:text-[10px] tracking-[0.12em] uppercase text-[#8a9590] group-hover:text-[#cfe7d2] transition-colors" data-i18n="col_hallucination">Alucinación</span>
+              <svg class="sort-icon w-2.5 h-2.5 text-[#8a9590] group-hover:text-[#cfe7d2] transition-colors" data-col="sabemal" viewBox="0 0 10 14" fill="none">
+                <path d="M5 1L5 13M5 1L2 4M5 1L8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+                <path d="M5 13L2 10M5 13L8 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+              </svg>
+            </button>
           </div>
-          {rows.map((row, i) => (
-            <div class={`grid items-center px-4 md:px-6 py-4 border-b border-[#cfe7d2]/[0.06] last:border-0 transition-colors hover:bg-[#cfe7d2]/[0.03] ${row.tag === "regional" ? "bg-[#cfe7d2]/[0.07]" : ""}`} style="grid-template-columns: 2rem 1fr 6.5rem 5rem 5rem 5rem;">
-              <div class="font-['Geist_Mono'] text-[12px] text-[#8a9590]">{i + 1}</div>
-              <div class="flex items-center gap-2 min-w-0 pr-2">
-                <span class="font-['Geist'] font-medium text-[15px] text-[#f4f3ee] truncate">{row.model}</span>
-                {row.tag === "regional" && <span class="font-['Geist_Mono'] text-[8px] tracking-wider uppercase text-[#0a130e] bg-[#cfe7d2] px-1.5 py-0.5 rounded flex-shrink-0">regional</span>}
-                {row.tag === "base" && <span class="font-['Geist_Mono'] text-[8px] tracking-wider uppercase text-[#8a9590] border border-[#cfe7d2]/20 px-1.5 py-0.5 rounded flex-shrink-0">base</span>}
-              </div>
-              <div class="font-['Geist_Mono'] text-[11px] text-[#8a9590]">{row.org}</div>
-              <div class="font-['Geist_Mono'] text-[15px] font-medium text-[#f4f3ee] tabular-nums">{row.correct.toFixed(1)}<span class="text-[#8a9590] text-[11px]">%</span></div>
-              <div class="font-['Geist_Mono'] text-[13px] text-[#8a9590] tabular-nums">{row.noSabe.toFixed(1)}<span class="text-[11px]">%</span></div>
-              <div class={`font-['Geist_Mono'] text-[13px] tabular-nums ${row.sabeMal >= 35 ? "text-[#e8a08b]" : "text-[#bfa394]"}`}>{row.sabeMal.toFixed(1)}<span class="text-[11px] opacity-60">%</span></div>
-            </div>
-          ))}
+
+          <!-- Body rows -->
+          <div class="board-body" data-board={bench}>
+            {rows.map((row, i) => {
+              const cfg = orgIcon[row.org];
+              return (
+                <div
+                  class={`board-row grid items-center px-4 md:px-6 py-3.5 border-b border-[#cfe7d2]/[0.06] last:border-0 transition-colors hover:bg-[#cfe7d2]/[0.03] ${row.tag === "regional" ? "bg-[#cfe7d2]/[0.07]" : ""}`}
+                  style="grid-template-columns: 2rem 1fr 5rem 5.5rem 5.5rem 5.5rem;"
+                  data-correct={row.correct}
+                  data-nosabe={row.noSabe}
+                  data-sabemal={row.sabeMal}
+                  data-model={row.model}
+                >
+                  <div class="rank-num font-['Geist_Mono'] text-[11px] text-[#8a9590]">{i + 1}</div>
+
+                  <div class="flex items-center gap-2 min-w-0 pr-2">
+                    <span class="font-['Geist'] font-medium text-[14px] text-[#f4f3ee] truncate">{row.model}</span>
+                    {row.tag === "regional" && <span class="font-['Geist_Mono'] text-[8px] tracking-wider uppercase text-[#0a130e] bg-[#cfe7d2] px-1.5 py-0.5 rounded flex-shrink-0">regional</span>}
+                    {row.tag === "base"     && <span class="font-['Geist_Mono'] text-[8px] tracking-wider uppercase text-[#8a9590] border border-[#cfe7d2]/20 px-1.5 py-0.5 rounded flex-shrink-0">base</span>}
+                  </div>
+
+                  <!-- Org logo + name -->
+                  <div class="flex items-center gap-1.5 min-w-0">
+                    {cfg ? (
+                      <img
+                        src={`https://cdn.simpleicons.org/${cfg.icon}/${cfg.color}`}
+                        width="14" height="14"
+                        alt={row.org}
+                        class="opacity-90 flex-shrink-0"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <span class="w-3.5 h-3.5 rounded text-[6px] font-bold font-['Geist_Mono'] flex items-center justify-center bg-[#2D6A4F] text-[#cfe7d2] flex-shrink-0 leading-none">CE</span>
+                    )}
+                    <span class="font-['Geist_Mono'] text-[10px] text-[#8a9590] truncate">{row.org}</span>
+                  </div>
+
+                  <div class="font-['Geist_Mono'] text-[14px] font-medium text-[#f4f3ee] tabular-nums">
+                    {row.correct.toFixed(1)}<span class="text-[#8a9590] text-[10px]">%</span>
+                  </div>
+                  <div class="font-['Geist_Mono'] text-[12px] text-[#cfe7d2]/70 tabular-nums">
+                    {row.noSabe.toFixed(1)}<span class="text-[10px] opacity-60">%</span>
+                  </div>
+                  <div class={`font-['Geist_Mono'] text-[12px] tabular-nums ${row.sabeMal >= 35 ? "text-[#e8a08b]" : "text-[#bfa394]"}`}>
+                    {row.sabeMal.toFixed(1)}<span class="text-[10px] opacity-60">%</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       ))}
 
       <div class="grid md:grid-cols-3 gap-4 mt-6">
         <div class="md:col-span-2 rounded-2xl border border-[#cfe7d2]/10 p-5 md:p-6 bg-[#0d1812]">
-          <p class="font-['Geist'] text-[15px] leading-relaxed text-[#c5cdc8]">
+          <p class="font-['Geist'] text-[14px] leading-relaxed text-[#c5cdc8]" data-i18n="leaderboard_note">
             El accuracy crudo colapsa <span class="text-[#cfe7d2]">abstención</span> y <span class="text-[#e8a08b]">alucinación</span> en un solo "incorrecto", pero son opuestos.
-            Rankeado por <span class="text-[#e8a08b]">sabe mal</span> (menos es mejor) el orden cambia: en CHOCLO, Opus 4.8 inventa solo <span class="font-['Geist_Mono']">7.4%</span> mientras
+            Rankeado por <span class="text-[#e8a08b]">alucinación</span> (menos es mejor) el orden cambia: en CHOCLO, Opus 4.8 inventa solo <span class="font-['Geist_Mono']">7.4%</span> mientras
             Llama 3.1 70B inventa <span class="font-['Geist_Mono']">51.7%</span>. Para gobierno o educación, un "no sé" honesto vale más que un dato inventado.
           </p>
         </div>
         <div class="rounded-2xl border border-[#cfe7d2]/10 p-5 md:p-6 bg-[#0d1812] flex flex-col justify-center gap-1.5">
-          <div class="font-['Geist_Mono'] text-[10px] uppercase tracking-wider text-[#8a9590]">columnas</div>
-          <div class="font-['Geist'] text-[13px] text-[#c5cdc8]"><span class="text-[#f4f3ee]">Correct</span> · expresa los hechos de la referencia</div>
-          <div class="font-['Geist'] text-[13px] text-[#c5cdc8]"><span class="text-[#cfe7d2]">No sabe</span> · se abstiene honestamente</div>
-          <div class="font-['Geist'] text-[13px] text-[#c5cdc8]"><span class="text-[#e8a08b]">Sabe mal</span> · inventa (alucinación)</div>
+          <div class="font-['Geist_Mono'] text-[10px] uppercase tracking-wider text-[#8a9590]" data-i18n="legend_title">columnas</div>
+          <div class="font-['Geist'] text-[13px] text-[#c5cdc8]"><span class="text-[#f4f3ee]" data-i18n="col_correct_inline">Correcto</span> · <span data-i18n="legend_correct">expresa los hechos de la referencia</span></div>
+          <div class="font-['Geist'] text-[13px] text-[#c5cdc8]"><span class="text-[#cfe7d2]" data-i18n="col_abstention_inline">Abstención</span> · <span data-i18n="legend_abstention">se abstiene honestamente</span></div>
+          <div class="font-['Geist'] text-[13px] text-[#c5cdc8]"><span class="text-[#e8a08b]" data-i18n="col_hallucination_inline">Alucinación</span> · <span data-i18n="legend_hallucination">inventa (alucinación)</span></div>
         </div>
       </div>
     </div>
@@ -173,22 +251,22 @@ const evals = [
   <!-- HALLAZGOS -->
   <section class="px-5 md:px-8 py-14 md:py-20 border-t border-[#cfe7d2]/8">
     <div class="max-w-[1400px] mx-auto">
-      <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-8 md:mb-12">02 / Lo que encontramos</div>
+      <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-8 md:mb-12" data-i18n="findings_label">02 / Lo que encontramos</div>
       <div class="grid md:grid-cols-3 gap-px rounded-2xl overflow-hidden border border-[#cfe7d2]/10 bg-[#cfe7d2]/10">
         {[
-          { t: "El frontier domina, pero no aplasta", d: "El mejor modelo responde 73% de las preguntas culturales; ninguno pasa de ahí. El conocimiento regional sigue siendo la cola débil incluso para SOTA." },
-          { t: "Las métricas léxicas mienten", d: "El token-F1 castiga respuestas correctas pero verbosas. Con el juez calibrado, el ranking se reordena por completo." },
-          { t: "El pretraining regional mueve poco", d: "El primer eval independiente de un modelo con continued-pretraining regional lo deja apenas sobre su base, y entre los que más alucinan." },
+          { t_es: "El frontier domina, pero no aplasta",   t_en: "Frontier leads, but doesn't crush",   d_es: "El mejor modelo responde 73% de las preguntas culturales; ninguno pasa de ahí. El conocimiento regional sigue siendo la cola débil incluso para SOTA.", d_en: "The best model answers 73% of cultural questions; none exceeds that. Regional knowledge remains the weak tail even for SOTA." },
+          { t_es: "Las métricas léxicas mienten",          t_en: "Lexical metrics lie",                 d_es: "El token-F1 castiga respuestas correctas pero verbosas. Con el juez calibrado, el ranking se reordena por completo.", d_en: "Token-F1 penalizes correct but verbose answers. With the calibrated judge, the ranking reshuffles entirely." },
+          { t_es: "El pretraining regional mueve poco",    t_en: "Regional pretraining moves little",   d_es: "El primer eval independiente de un modelo con continued-pretraining regional lo deja apenas sobre su base, y entre los que más alucinan.", d_en: "The first independent eval of a model with continued regional pretraining leaves it barely above its base, and among the highest hallucinators." },
         ].map((f) => (
           <div class="bg-[#0d1812] p-6 md:p-8">
-            <h3 class="font-['Geist'] font-semibold text-lg md:text-xl tracking-tight text-[#f4f3ee] mb-3 leading-snug">{f.t}</h3>
-            <p class="font-['Geist'] text-[14px] leading-relaxed text-[#8a9590]">{f.d}</p>
+            <h3 class="font-['Geist'] font-semibold text-base md:text-lg tracking-tight text-[#f4f3ee] mb-3 leading-snug" data-i18n-es={f.t_es} data-i18n-en={f.t_en}>{f.t_es}</h3>
+            <p  class="font-['Geist'] text-[13px] leading-relaxed text-[#8a9590]" data-i18n-es={f.d_es} data-i18n-en={f.d_en}>{f.d_es}</p>
           </div>
         ))}
       </div>
       <div class="mt-6 rounded-2xl border-l-2 border-[#cfe7d2] bg-[#cfe7d2]/[0.04] px-6 md:px-8 py-6">
-        <p class="font-['Geist'] text-lg md:text-xl italic text-[#e3e9e4] leading-snug">"La ambigüedad no es pecado del lenguaje, es pecado del diseño del benchmark."</p>
-        <div class="font-['Geist_Mono'] text-[10px] uppercase tracking-wider text-[#8a9590] mt-3">Principio del proyecto</div>
+        <p class="font-['Geist'] text-base md:text-lg italic text-[#e3e9e4] leading-snug" data-i18n="quote">"La ambigüedad no es pecado del lenguaje, es pecado del diseño del benchmark."</p>
+        <div class="font-['Geist_Mono'] text-[10px] uppercase tracking-wider text-[#8a9590] mt-3" data-i18n="quote_label">Principio del proyecto</div>
       </div>
     </div>
   </section>
@@ -196,15 +274,17 @@ const evals = [
   <!-- METODOLOGIA -->
   <section id="method" class="px-5 md:px-8 py-14 md:py-20 border-t border-[#cfe7d2]/8">
     <div class="max-w-[1400px] mx-auto">
-      <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-8 md:mb-12">03 / Metodología</div>
+      <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-8 md:mb-12" data-i18n="method_label">03 / Metodología</div>
       <div class="grid md:grid-cols-2 gap-px rounded-2xl overflow-hidden border border-[#cfe7d2]/10 bg-[#cfe7d2]/10">
         {method.map((m) => (
           <div class="bg-[#0d1812] p-6 md:p-9">
             <div class="flex items-baseline gap-3 mb-3">
               <span class="font-['Geist_Mono'] text-[11px] text-[#cfe7d2]/60">{m.k}</span>
-              <h3 class="font-['Geist'] font-semibold text-lg md:text-xl tracking-tight text-[#f4f3ee]">{m.label}</h3>
+              <h3 class="font-['Geist'] font-semibold text-base md:text-lg tracking-tight text-[#f4f3ee]"
+                  data-i18n-es={m.label_es} data-i18n-en={m.label_en}>{m.label_es}</h3>
             </div>
-            <p class="font-['Geist'] text-[14px] leading-relaxed text-[#8a9590] pl-8">{m.detail}</p>
+            <p class="font-['Geist'] text-[13px] leading-relaxed text-[#8a9590] pl-8"
+               data-i18n-es={m.detail_es} data-i18n-en={m.detail_en}>{m.detail_es}</p>
           </div>
         ))}
       </div>
@@ -214,16 +294,18 @@ const evals = [
   <!-- EVALS -->
   <section id="evals" class="px-5 md:px-8 py-14 md:py-20 border-t border-[#cfe7d2]/8">
     <div class="max-w-[1400px] mx-auto">
-      <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-8 md:mb-12">04 / Qué evaluamos</div>
+      <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-8 md:mb-12" data-i18n="evals_label">04 / Qué evaluamos</div>
       <div class="grid md:grid-cols-3 gap-4">
         {evals.map((e) => (
           <div class="rounded-2xl border border-[#cfe7d2]/12 p-6 md:p-8 bg-[#0d1812] flex flex-col">
             <div class="flex items-center justify-between mb-6">
               <span class="font-['Geist_Mono'] text-[10px] tracking-wider text-[#8a9590]">[{e.id}]</span>
-              <span class={`font-['Geist_Mono'] text-[9px] tracking-wider uppercase px-2.5 py-1 rounded-full ${e.status === "Evaluado" ? "text-[#0a130e] bg-[#cfe7d2]" : "text-[#8a9590] border border-[#cfe7d2]/20"}`}>{e.status}</span>
+              <span class={`font-['Geist_Mono'] text-[9px] tracking-wider uppercase px-2.5 py-1 rounded-full ${e.status_es === "Evaluado" ? "text-[#0a130e] bg-[#cfe7d2]" : "text-[#8a9590] border border-[#cfe7d2]/20"}`}
+                    data-i18n-es={e.status_es} data-i18n-en={e.status_en}>{e.status_es}</span>
             </div>
-            <h3 class="font-['Geist'] font-bold text-2xl tracking-tight text-[#f4f3ee] mb-3">{e.name}</h3>
-            <p class="font-['Geist'] text-[14px] leading-relaxed text-[#8a9590] mb-6 flex-1">{e.desc}</p>
+            <h3 class="font-['Geist'] font-bold text-xl tracking-tight text-[#f4f3ee] mb-3">{e.name}</h3>
+            <p  class="font-['Geist'] text-[13px] leading-relaxed text-[#8a9590] mb-6 flex-1"
+                data-i18n-es={e.desc_es} data-i18n-en={e.desc_en}>{e.desc_es}</p>
             <div class="font-['Geist_Mono'] text-[10px] tracking-wider uppercase text-[#6f7a75] pt-4 border-t border-[#cfe7d2]/8">{e.meta}</div>
           </div>
         ))}
@@ -236,8 +318,8 @@ const evals = [
     <div class="max-w-[1400px] mx-auto rounded-3xl border border-[#cfe7d2]/12 bg-gradient-to-br from-[#0f1c15] to-[#0d1812] p-8 md:p-14">
       <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
         <div class="max-w-xl">
-          <h2 class="font-['Geist'] font-bold text-[clamp(30px,5vw,56px)] leading-[0.95] tracking-[-0.03em] text-[#f4f3ee] mb-5">Todo abierto y<br />reproducible</h2>
-          <p class="font-['Geist'] text-[#8a9590] leading-relaxed">
+          <h2 class="font-['Geist'] font-bold text-[clamp(26px,4vw,48px)] leading-[0.95] tracking-[-0.03em] text-[#f4f3ee] mb-5" data-i18n="cta_title">Todo abierto y<br />reproducible</h2>
+          <p class="font-['Geist'] text-[#8a9590] leading-relaxed text-[14px]" data-i18n="cta_body">
             El harness, las respuestas crudas, los transcripts del juez y la calibración están en GitHub.
             Cualquiera puede correr un modelo nuevo, auditar un veredicto o reproducir la tabla con el mismo seed.
           </p>
@@ -266,21 +348,182 @@ const evals = [
   </footer>
 
   <script>
-    const tabs = document.querySelectorAll(".tab");
-    const boards = document.querySelectorAll(".board");
+    // ─── i18n ───────────────────────────────────────────────────────────────────
+    const T: Record<string, Record<string, string>> = {
+      es: {
+        nav_leaderboard: "Leaderboard",
+        nav_method: "Metodología",
+        hero_label: "Observatorio de evals",
+        hero_subtitle: "Evaluación independiente de LLMs en conocimiento cultural latinoamericano. Números reproducibles que nadie más publica, con juez calibrado y transcripts abiertos.",
+        hero_cta: "Ver el leaderboard",
+        stat_0: "benchmarks", stat_1: "modelos", stat_2: "veredictos", stat_3: "reproducible",
+        col_model: "Modelo",
+        col_correct: "Correcto",
+        col_abstention: "Abstención",
+        col_hallucination: "Alucinación",
+        col_correct_inline: "Correcto",
+        col_abstention_inline: "Abstención",
+        col_hallucination_inline: "Alucinación",
+        legend_title: "columnas",
+        legend_correct: "expresa los hechos de la referencia",
+        legend_abstention: "se abstiene honestamente",
+        legend_hallucination: "inventa",
+        leaderboard_title_1: "¿Qué saben los",
+        leaderboard_title_2: "modelos de Latam?",
+        leaderboard_note: "El accuracy crudo colapsa abstención y alucinación en un solo \"incorrecto\", pero son opuestos. Rankeado por alucinación (menos es mejor) el orden cambia: en CHOCLO, Opus 4.8 inventa solo 7.4% mientras Llama 3.1 70B inventa 51.7%. Para gobierno o educación, un \"no sé\" honesto vale más que un dato inventado.",
+        findings_label: "02 / Lo que encontramos",
+        method_label: "03 / Metodología",
+        evals_label: "04 / Qué evaluamos",
+        cta_title: "Todo abierto y\nreproducible",
+        cta_body: "El harness, las respuestas crudas, los transcripts del juez y la calibración están en GitHub. Cualquiera puede correr un modelo nuevo, auditar un veredicto o reproducir la tabla con el mismo seed.",
+        quote: '"La ambigüedad no es pecado del lenguaje, es pecado del diseño del benchmark."',
+        quote_label: "Principio del proyecto",
+      },
+      en: {
+        nav_leaderboard: "Leaderboard",
+        nav_method: "Methodology",
+        hero_label: "Evals observatory",
+        hero_subtitle: "Independent evaluation of LLMs on Latin American cultural knowledge. Reproducible numbers nobody else publishes, with a calibrated judge and open transcripts.",
+        hero_cta: "View the leaderboard",
+        stat_0: "benchmarks", stat_1: "models", stat_2: "verdicts", stat_3: "reproducible",
+        col_model: "Model",
+        col_correct: "Correct",
+        col_abstention: "Abstention",
+        col_hallucination: "Hallucination",
+        col_correct_inline: "Correct",
+        col_abstention_inline: "Abstention",
+        col_hallucination_inline: "Hallucination",
+        legend_title: "columns",
+        legend_correct: "expresses the reference facts",
+        legend_abstention: "abstains honestly",
+        legend_hallucination: "hallucinates",
+        leaderboard_title_1: "What do models know",
+        leaderboard_title_2: "about Latam?",
+        leaderboard_note: "Raw accuracy collapses abstention and hallucination into a single \"wrong\", but they are opposites. Ranked by hallucination (less is better) the order shifts: on CHOCLO, Opus 4.8 hallucinates only 7.4% while Llama 3.1 70B hallucinates 51.7%. For government or education, an honest \"I don't know\" is worth more than a fabricated fact.",
+        findings_label: "02 / What we found",
+        method_label: "03 / Methodology",
+        evals_label: "04 / What we evals",
+        cta_title: "All open and\nreproducible",
+        cta_body: "The harness, raw responses, judge transcripts, and calibration are on GitHub. Anyone can run a new model, audit a verdict, or reproduce the table with the same seed.",
+        quote: '"Ambiguity is not a sin of language, it is a sin of benchmark design."',
+        quote_label: "Project principle",
+      },
+    };
+
+    let lang = "es";
+
+    function applyLang(l: string) {
+      lang = l;
+      const btn = document.getElementById("lang-toggle")!;
+      btn.textContent = l === "es" ? "EN" : "ES";
+
+      // data-i18n="key" → replace textContent
+      document.querySelectorAll<HTMLElement>("[data-i18n]").forEach((el) => {
+        const key = el.dataset.i18n!;
+        if (T[l][key] !== undefined) el.textContent = T[l][key];
+      });
+
+      // data-i18n-es / data-i18n-en → swap textContent
+      document.querySelectorAll<HTMLElement>("[data-i18n-es]").forEach((el) => {
+        const val = l === "es" ? el.dataset.i18nEs : el.dataset.i18nEn;
+        if (val !== undefined) el.textContent = val;
+      });
+    }
+
+    document.getElementById("lang-toggle")!.addEventListener("click", () => {
+      applyLang(lang === "es" ? "en" : "es");
+    });
+
+    // ─── Sorting ─────────────────────────────────────────────────────────────────
+    const SORT_ATTRS: Record<string, string> = {
+      correct: "data-correct",
+      nosabe:  "data-nosabe",
+      sabemal: "data-sabemal",
+    };
+
+    let sortCol = "correct";
+    let sortDir = "desc";
+
+    function getActiveBoard() {
+      return document.querySelector<HTMLElement>(".board:not([style*='none'])");
+    }
+
+    function updateSortIcons() {
+      document.querySelectorAll<SVGElement>(".sort-icon").forEach((svg) => {
+        const col = svg.dataset.col!;
+        const isActive = col === sortCol;
+        const upPath  = svg.querySelector("path:first-child")!;
+        const downPath = svg.querySelector("path:last-child")!;
+
+        if (!isActive) {
+          upPath.setAttribute("opacity", "0.4");
+          downPath.setAttribute("opacity", "0.4");
+        } else if (sortDir === "desc") {
+          upPath.setAttribute("opacity", "0.4");
+          downPath.setAttribute("opacity", "1");
+        } else {
+          upPath.setAttribute("opacity", "1");
+          downPath.setAttribute("opacity", "0.4");
+        }
+      });
+    }
+
+    function sortBoard(board: HTMLElement) {
+      const body = board.querySelector<HTMLElement>(".board-body")!;
+      const rows = Array.from(body.querySelectorAll<HTMLElement>(".board-row"));
+      const attr = SORT_ATTRS[sortCol];
+
+      rows.sort((a, b) => {
+        const va = parseFloat(a.getAttribute(attr) ?? "0");
+        const vb = parseFloat(b.getAttribute(attr) ?? "0");
+        return sortDir === "desc" ? vb - va : va - vb;
+      });
+
+      rows.forEach((r, i) => {
+        const rankEl = r.querySelector<HTMLElement>(".rank-num");
+        if (rankEl) rankEl.textContent = String(i + 1);
+        body.appendChild(r);
+      });
+    }
+
+    document.querySelectorAll<HTMLElement>(".sort-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const col = btn.dataset.sort!;
+        if (sortCol === col) {
+          sortDir = sortDir === "desc" ? "asc" : "desc";
+        } else {
+          sortCol = col;
+          sortDir = "desc";
+        }
+        updateSortIcons();
+        const board = getActiveBoard();
+        if (board) sortBoard(board);
+      });
+    });
+
+    // ─── Tabs ────────────────────────────────────────────────────────────────────
+    const tabs   = document.querySelectorAll<HTMLElement>(".tab");
+    const boards = document.querySelectorAll<HTMLElement>(".board");
+
     tabs.forEach((tab) => {
       tab.addEventListener("click", () => {
-        const target = (tab as HTMLElement).dataset.tab;
+        const target = tab.dataset.tab!;
         tabs.forEach((t) => {
-          const on = (t as HTMLElement).dataset.tab === target;
+          const on = t.dataset.tab === target;
           t.classList.toggle("text-[#0a130e]", on);
           t.classList.toggle("bg-[#cfe7d2]", on);
           t.classList.toggle("text-[#8a9590]", !on);
         });
         boards.forEach((b) => {
-          (b as HTMLElement).style.display = (b as HTMLElement).dataset.board === target ? "" : "none";
+          b.style.display = b.dataset.board === target ? "" : "none";
         });
+        // Apply current sort to newly visible board
+        const active = getActiveBoard();
+        if (active) sortBoard(active);
       });
     });
+
+    // Initialize: sort icons default state
+    updateSortIcons();
   </script>
 </Layout>
