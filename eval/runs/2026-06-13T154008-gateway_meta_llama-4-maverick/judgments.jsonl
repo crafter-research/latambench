@@ -1,0 +1,500 @@
+{"id":"choclo-91542","embSim":0.7149,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que es un territorio indígena en Costa Rica, coincidiendo exactamente con la referencia."}
+{"id":"choclo-70384","embSim":0.7611,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa que ISO 3166-2:CU es la entrada del estándar para subdivisiones de Cuba."}
+{"id":"choclo-9080","embSim":0.7312,"verdict":"correct","key_fact_match":true,"rationale":"La candidata coincide en la técnica píib/pib y en cerdo adobado con achiote y especias."}
+{"id":"choclo-17559","embSim":0.4296,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa que es nativa de California y Baja California, coincidiendo con el hecho central de la referencia."}
+{"id":"choclo-45571","embSim":0.4656,"verdict":"correct","key_fact_match":true,"rationale":"Candidate states it was a naval engagement, matching the reference key fact."}
+{"id":"choclo-3059","embSim":0.3165,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata nombra una obra distinta a Mocosita."}
+{"id":"choclo-40868","embSim":0.396,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa que es una polilla, coincidiendo exactamente con el hecho clave de la referencia."}
+{"id":"choclo-45592","embSim":0.5743,"verdict":"correct","key_fact_match":true,"rationale":"La candidata identifica la batalla como la acción final tras Trafalgar, coincidiendo con el hecho central de la referencia."}
+{"id":"choclo-65137","embSim":0.4213,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata no menciona que sea profundo ni expresa el hecho central de la referencia."}
+{"id":"choclo-32298","embSim":0.2546,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener la información en lugar de indicar mediados del otoño."}
+{"id":"choclo-84705","embSim":0.8306,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que Peabody es una ciudad, coincidiendo con el hecho clave de la referencia."}
+{"id":"choclo-64146","embSim":0.6193,"verdict":"partial","key_fact_match":false,"rationale":"Omite la familia Cricetidae, da una caracteristica de pelaje no presente en la referencia y describe la ubicacion con imprecisiones (norte vs noroeste, sin mencionar este de los Andes)."}
+{"id":"choclo-80421","embSim":0.7186,"verdict":"correct","key_fact_match":true,"rationale":"La candidata replica exactamente los hechos clave de la referencia."}
+{"id":"choclo-95707","embSim":0.5049,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no saber la información en lugar de expresar los hechos de la referencia."}
+{"id":"choclo-33815","embSim":0.59,"verdict":"partial","key_fact_match":true,"rationale":"Coincide en la familia Cactaceae pero sustituye 'fanerógama' por 'suculenta', contradiciendo el descriptor principal de la referencia."}
+{"id":"choclo-88900","embSim":0.5957,"verdict":"partial","key_fact_match":false,"rationale":"Menciona México y Oaxaca pero omite el dato central de endemismo en Sierra Mixe."}
+{"id":"choclo-41600","embSim":0.5206,"verdict":"partial","key_fact_match":false,"rationale":"acierta que es una especie de lagarto pero omite la clasificación específica de iguanios Dactyloidae"}
+{"id":"choclo-76324","embSim":0.4741,"verdict":"partial","key_fact_match":true,"rationale":"Menciona la destrucción y pérdida de hábitat como causa principal pero omite el desplazamiento específico de áreas de agua dulce y añade factores no presentes en la referencia."}
+{"id":"choclo-12088","embSim":0.527,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata atribuye la solicitud a la AFA en lugar de Futbolistas Argentinos Agremiados."}
+{"id":"choclo-97401","embSim":0.2787,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice la referencia al negar información sobre fechas específicas."}
+{"id":"choclo-29559","embSim":0.5561,"verdict":"correct","key_fact_match":true,"rationale":"Candidate lists the reference's core meats (ternera, cerdo, gallina/pollo) and fundamental vegetables (garbanzos, patata) without contradiction."}
+{"id":"choclo-92744","embSim":0.5666,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma el hecho central de que el río Cauto es el más largo de Cuba."}
+{"id":"choclo-49865","embSim":0.5731,"verdict":"correct","key_fact_match":true,"rationale":"The candidate directly states Caravelí is located in the department of Arequipa, matching the reference fact."}
+{"id":"choclo-37955","embSim":0.5692,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice el tipo de ejército (campo vs área) y el período (etapas finales vs toda la guerra)."}
+{"id":"choclo-5930","embSim":0.4931,"verdict":"partial","key_fact_match":true,"rationale":"Menciona los tres países pero con imprecisión, vaguedad y duda que contradice la referencia precisa."}
+{"id":"choclo-37803","embSim":0.2376,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información, contradiciendo la referencia."}
+{"id":"choclo-555","embSim":0.5143,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho clave de que es una especie de planta floral."}
+{"id":"choclo-89658","embSim":0.4491,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que es un puerto marítimo (además de fluvial) y por tanto expresa el hecho clave de la referencia."}
+{"id":"choclo-93397","embSim":0.4125,"verdict":"incorrect","key_fact_match":false,"rationale":"contradice tanto el nombre Bermejo como la longitud de 50 km"}
+{"id":"choclo-43192","embSim":0.5779,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice el número de sección (9.ª vs 6ª) y las localidades incluidas."}
+{"id":"choclo-87835","embSim":0.3532,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata da un rango de 10-15% que contradice el dato central de alrededor del 10%."}
+{"id":"choclo-70440","embSim":0.5143,"verdict":"incorrect","key_fact_match":false,"rationale":"contradice el número central de casas dañadas (35 vs 150)"}
+{"id":"choclo-55365","embSim":0.555,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma captura en lugar de la voladura trágica indicada por la referencia."}
+{"id":"choclo-34731","embSim":0.5938,"verdict":"incorrect","key_fact_match":false,"rationale":"Candidate omits the reference's key fact (16 km south of Puyuhuapi) and states a different location instead."}
+{"id":"choclo-1651","embSim":0.3251,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata describe la cuenca amazónica en varios países sin mencionar Venezuela, contradiciendo la referencia."}
+{"id":"choclo-26340","embSim":0.4958,"verdict":"partial","key_fact_match":false,"rationale":"La candidata omite la especificación 'fines' del siglo XVI presente en la referencia."}
+{"id":"choclo-6528","embSim":0.4633,"verdict":"partial","key_fact_match":true,"rationale":"Coincide en el nombre del movimiento pero contradice el año de fundación."}
+{"id":"choclo-30185","embSim":0.1961,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata describe ubicación geográfica en vez del tipo de lugar (balneario y caleta) de la referencia."}
+{"id":"choclo-87853","embSim":0.3258,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice la referencia al añadir Chile y omitir la distribución específica en Argentina."}
+{"id":"choclo-19534","embSim":0.0814,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no saber la información en lugar de indicar 1990."}
+{"id":"choclo-72548","embSim":0.3106,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información, contradiciendo directamente la referencia."}
+{"id":"choclo-14703","embSim":0.4708,"verdict":"correct","key_fact_match":true,"rationale":"La candidata define el festival como evento cinematográfico internacional, coincidiendo con el hecho central de la referencia."}
+{"id":"choclo-55447","embSim":0.6562,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice ubicación (Guatemala City vs Antigua) y estado actual (museos vs ruinas)."}
+{"id":"choclo-64616","embSim":0.0852,"verdict":"incorrect","key_fact_match":false,"rationale":"Candidate declares no knowledge of the service year instead of stating 1977."}
+{"id":"choclo-103231","embSim":0.493,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara explícitamente no tener la información y no expresa ningún hecho de la referencia."}
+{"id":"choclo-36092","embSim":0.4222,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que es un movimiento musical, coincidiendo con el hecho central de la referencia."}
+{"id":"choclo-3963","embSim":0.5352,"verdict":"correct","key_fact_match":true,"rationale":"Coincide exactamente en fundador y fecha, con variación menor de nombre y detalles extra irrelevantes."}
+{"id":"choclo-84700","embSim":0.5349,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente la fecha de la referencia."}
+{"id":"choclo-4309","embSim":0.261,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata describe una definición completamente distinta a la de la referencia."}
+{"id":"choclo-62139","embSim":0.6437,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice el rango altitudinal de la referencia (600-2000 vs 700-1000) aunque coincide en los países."}
+{"id":"choclo-3790","embSim":0.6378,"verdict":"partial","key_fact_match":true,"rationale":"Menciona correctamente el paso por el Mercado Persa Teniente Cruz pero omite por completo el Estadio Modelo de Pudahuel y añade otros lugares."}
+{"id":"choclo-86556","embSim":0.7736,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que es una placa tectónica oceánica y describe su historia de subducción, expresando el hecho central de la referencia."}
+{"id":"choclo-22499","embSim":0.4796,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa que se agregó alcohol (ron) a la receta original tras Colón."}
+{"id":"choclo-13234","embSim":0.4079,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente los mismos hechos de origen que la referencia."}
+{"id":"choclo-84104","embSim":0.5687,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice tanto la altitud máxima como el evento geológico de formación de la referencia."}
+{"id":"choclo-88166","embSim":0.5259,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho central de la llegada de Colón en su cuarto viaje al territorio mencionado."}
+{"id":"choclo-61611","embSim":0.455,"verdict":"partial","key_fact_match":false,"rationale":"Coincide en el origen menonita alemán pero contradice la procedencia específica (Rusia/Alemania vs. Danzig/Prusia Occidental)."}
+{"id":"choclo-50228","embSim":0.3474,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice directamente el valor de altitud de la referencia (118 vs 32)."}
+{"id":"choclo-99173","embSim":0.4474,"verdict":"correct","key_fact_match":true,"rationale":"La candidata indica exactamente la fecha de inicio del 1 de junio."}
+{"id":"choclo-74352","embSim":0.4681,"verdict":"incorrect","key_fact_match":false,"rationale":"contradice la misión paraguaya al atribuirlo a Belaieff como individuo ruso y altera la fecha"}
+{"id":"choclo-79019","embSim":0.6165,"verdict":"incorrect","key_fact_match":false,"rationale":"Candidate lists wrong distributions for all three subspecies mentioned, omits maranonicus entirely, and contradicts every location in the reference."}
+{"id":"choclo-40984","embSim":0.4351,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara desconocimiento y omite todos los hechos clave de la referencia."}
+{"id":"choclo-39372","embSim":0.4344,"verdict":"incorrect","key_fact_match":false,"rationale":"Candidate names Copán Ruinas, contradicting reference's municipality of Copán."}
+{"id":"choclo-65078","embSim":0.5669,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho central de la referencia (estado de Jalisco) sin contradecirlo."}
+{"id":"choclo-104755","embSim":0.4393,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice directamente el estado IUCN y omite que es monotípica."}
+{"id":"choclo-29992","embSim":0.4511,"verdict":"incorrect","key_fact_match":false,"rationale":"Candidate omits all reference facts on height and elevation range, vaguely approximates habitat, and states lack of specific information."}
+{"id":"choclo-36356","embSim":0.4213,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata omite el hecho central de ser muy pequeña y da una definición distinta."}
+{"id":"choclo-58763","embSim":0.5464,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho central de hábitat en arrecifes de coral sin contradecirlo."}
+{"id":"choclo-52276","embSim":0.5705,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que es un cerro en Venecia, Antioquia, lo cual coincide con el hecho central de la referencia."}
+{"id":"choclo-19122","embSim":0.0175,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información, contradiciendo el dato de la referencia."}
+{"id":"choclo-40950","embSim":0.2246,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata da 1984/1986 en lugar de la fecha 15 de septiembre de 1974."}
+{"id":"choclo-22709","embSim":0.5263,"verdict":"correct","key_fact_match":true,"rationale":"Candidate covers the two key facts (globose cactus shape and desert/arid habitat) without contradiction."}
+{"id":"choclo-26731","embSim":0.3731,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma que tocaba acordeón, contradiciendo el clarinete de la referencia."}
+{"id":"choclo-75779","embSim":0.5972,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata da un nombre distinto y contradictorio al de la referencia."}
+{"id":"choclo-30695","embSim":0.2481,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata define una figura retórica inexistente en lugar de la faena chilota de matanza de chancho."}
+{"id":"choclo-20570","embSim":0.3782,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice los materiales y cantidades de la referencia, inventando otros distintos."}
+{"id":"choclo-78740","embSim":0.6168,"verdict":"incorrect","key_fact_match":false,"rationale":"Candidate names wrong person (Antonio Velasco Piña) as leader and title recipient, contradicting the reference's central fact about Francisco Jiménez Sánchez."}
+{"id":"choclo-11935","embSim":0.4115,"verdict":"partial","key_fact_match":true,"rationale":"Menciona México pero omite Guatemala."}
+{"id":"choclo-96268","embSim":0.2224,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara explícitamente no tener la información y no menciona el hecho de la referencia."}
+{"id":"choclo-18380","embSim":0.446,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata describe un récord de altura con otros pilotos en lugar del cruce andino con Scheidhauer y Dori."}
+{"id":"choclo-13200","embSim":0.5481,"verdict":"correct","key_fact_match":true,"rationale":"La candidata identifica a Epunamun como ser/espíritu de la mitología mapuche, coincidiendo con el hecho central de la referencia."}
+{"id":"choclo-48483","embSim":0.6352,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata describe defensas japonesas contra invasión, contradiciendo el hecho central de la referencia sobre áreas de preparación aliadas."}
+{"id":"choclo-96468","embSim":0.4131,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma un nombre distinto al de la referencia."}
+{"id":"choclo-42730","embSim":0.6577,"verdict":"incorrect","key_fact_match":false,"rationale":"declara no saber y no expresa los hechos de la referencia"}
+{"id":"choclo-84818","embSim":0.6067,"verdict":"partial","key_fact_match":false,"rationale":"Coincide en dispersión de semillas pero describe el hábitat de forma más general y omite los tipos específicos indicados en la referencia."}
+{"id":"choclo-64357","embSim":0.499,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata omite por completo los hechos clave de establecimiento y fecha de la referencia."}
+{"id":"choclo-22092","embSim":0.5374,"verdict":"partial","key_fact_match":false,"rationale":"Coincide en escritor chileno pero contradice librero por periodista."}
+{"id":"choclo-11308","embSim":0.5058,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente el hecho central de la referencia."}
+{"id":"choclo-781","embSim":0.3771,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata nombra un restaurante distinto (Komedor) al de la referencia (Tepuy)."}
+{"id":"choclo-64802","embSim":0.3749,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata menciona géneros distintos (afroperuana y salsa) en lugar de música llanera."}
+{"id":"choclo-56316","embSim":0.1364,"verdict":"incorrect","key_fact_match":false,"rationale":"Candidate states role in formation/influencing instead of strengthening"}
+{"id":"choclo-78379","embSim":0.4547,"verdict":"partial","key_fact_match":false,"rationale":"Menciona Sudamérica y Brasil pero omite las cuencas específicas de Crixás Açu y Araguaia."}
+{"id":"choclo-43226","embSim":0.0139,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener la información y no menciona el año 1946."}
+{"id":"choclo-71509","embSim":0.5927,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice la ubicación especificada en la referencia (laguna Yaxhá vs. lago Petexbatún)."}
+{"id":"choclo-5064","embSim":0.5789,"verdict":"partial","key_fact_match":false,"rationale":"Menciona solo dos de los cuatro estados de la referencia y añade un dato de clasificación ausente en ella."}
+{"id":"choclo-30913","embSim":0.5505,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara explícitamente no tener información sobre el reconocimiento UNESCO, omitiendo y contradiciendo el hecho central de la referencia."}
+{"id":"choclo-52722","embSim":0.4978,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata describe coloración y franjas en lugar de forma ovalada comprimida, y detalla arrecifes de Galápagos en vez de aguas subtropicales del Pacífico sudeste."}
+{"id":"choclo-34546","embSim":0.434,"verdict":"partial","key_fact_match":false,"rationale":"incluye ríos y pérdida de hábitat pero añade bosques templados alterando el hecho central de la referencia"}
+{"id":"choclo-54606","embSim":0.535,"verdict":"partial","key_fact_match":false,"rationale":"Coincide en el autor pero contradice el año de publicación."}
+{"id":"choclo-54709","embSim":0.5104,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice directamente la nacionalidad indicada en la referencia (salvadoreño vs mexicano)."}
+{"id":"choclo-33780","embSim":0.4359,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma directamente que se distribuye en México, coincidiendo con la referencia."}
+{"id":"choclo-49942","embSim":0.4203,"verdict":"partial","key_fact_match":false,"rationale":"Captures that it is a genus of New World/platyrrhine monkeys from South America but omits the Pitheciidae family and adds unrelated details."}
+{"id":"choclo-88304","embSim":0.6459,"verdict":"partial","key_fact_match":true,"rationale":"Menciona el rol importante de Ibarra pero omite que la batalla fue decisiva."}
+{"id":"choclo-24698","embSim":0.6995,"verdict":"partial","key_fact_match":true,"rationale":"Coincide en la mayor pluviosidad pero describe el clima de forma distinta (templado lluvioso vs. templado de verano seco con corta sequía)."}
+{"id":"choclo-100277","embSim":0.6376,"verdict":"correct","key_fact_match":true,"rationale":"La candidata identifica correctamente que es un colibrí, coincidiendo con el hecho central de la referencia."}
+{"id":"choclo-90851","embSim":0.474,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata menciona un decreto y año distintos a los de la referencia."}
+{"id":"choclo-55003","embSim":0.7066,"verdict":"partial","key_fact_match":true,"rationale":"Identifica que es escarabajo pero omite 'longicornio' y el género Coleoxestia."}
+{"id":"choclo-79118","embSim":0.5568,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice la fecha de fundación y el corregimiento de origen indicados en la referencia."}
+{"id":"choclo-104460","embSim":0.4136,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata menciona rituales religiosos, ceremonias y medicina tradicional en lugar de percusión para jotas, tonadas y fandangos."}
+{"id":"choclo-6300","embSim":0.253,"verdict":"incorrect","key_fact_match":false,"rationale":"Candidate declares it cannot answer instead of stating the reference's timeframe"}
+{"id":"choclo-95582","embSim":0.6697,"verdict":"correct","key_fact_match":true,"rationale":"La candidata incluye los hechos clave de la referencia (municipio en Sololá, Guatemala) sin contradecirlos."}
+{"id":"choclo-3789","embSim":0.4617,"verdict":"incorrect","key_fact_match":false,"rationale":"Candidate names different avenues (Mapocho Sur/Las Rejas) than the reference (José Joaquín Pérez/San Francisco)."}
+{"id":"choclo-45166","embSim":0.5491,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que es el principal santuario de peregrinación dedicado a la patrona de Costa Rica, coincidiendo con la referencia."}
+{"id":"choclo-36653","embSim":0.5048,"verdict":"incorrect","key_fact_match":false,"rationale":"Candidate omits the reference's core characterization as one of the largest illegal fast-fashion dumps."}
+{"id":"choclo-15812","embSim":0.3711,"verdict":"incorrect","key_fact_match":false,"rationale":"declara no tener información sobre el tema"}
+{"id":"choclo-34421","embSim":0.3445,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata describe una identidad y biografía distintas al nombre de la referencia."}
+{"id":"choclo-48861","embSim":0.52,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice directamente la referencia al afirmar integración al Distrito Federal en vez de disolución y división en Miranda y Bolívar."}
+{"id":"choclo-59098","embSim":0.7323,"verdict":"correct","key_fact_match":true,"rationale":"Candidate directly states the exact key fact from the reference."}
+{"id":"choclo-79170","embSim":0.7073,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice la referencia al definir el Miske como cóctel de pisco en lugar de bebida autóctona ecuatoriana."}
+{"id":"choclo-7775","embSim":0.3495,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma origen prehispánico mientras la referencia indica el virreinato del Perú."}
+{"id":"choclo-38286","embSim":0.195,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata indica Costa Rica en lugar de Perú."}
+{"id":"choclo-50565","embSim":0.4601,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice directamente la provincia (Villa Clara en vez de Camagüey) y la ubicación respecto a La Habana."}
+{"id":"choclo-28159","embSim":0.3707,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice la referencia con autores y años distintos."}
+{"id":"choclo-65017","embSim":0.5087,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma el hecho central de ser un cable submarino de comunicaciones."}
+{"id":"choclo-73383","embSim":0.5366,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente el hecho central de la referencia: siete barrios (ku)."}
+{"id":"choclo-15936","embSim":0.6303,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información, sin expresar el nombre de la referencia."}
+{"id":"choclo-4296","embSim":0.4341,"verdict":"correct","key_fact_match":true,"rationale":"La candidata coincide exactamente en el significado del epíteto y en el autor de la descripción."}
+{"id":"choclo-52849","embSim":0.6012,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente el hecho clave de la referencia."}
+{"id":"choclo-69895","embSim":0.3801,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información, contradiciendo la referencia que afirma un hecho específico sobre el huracán."}
+{"id":"choclo-32440","embSim":0.323,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice el evento histórico recordado y omite/niega la participación de Allende."}
+{"id":"choclo-10248","embSim":0.3239,"verdict":"incorrect","key_fact_match":false,"rationale":"La fecha difiere en el día (18 vs 28 de octubre)."}
+{"id":"choclo-54730","embSim":0.5727,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa que es una entidad paraguaya de tipo club deportivo (equipo de fútbol)."}
+{"id":"choclo-53430","embSim":0.4455,"verdict":"partial","key_fact_match":true,"rationale":"Covers mestizo, indigenous and black (african) origins but adds unmentioned European influence as a separate category."}
+{"id":"choclo-34724","embSim":0.5247,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice el hecho central al ubicarlas en Perú en lugar de Bolivia."}
+{"id":"choclo-56583","embSim":0.3816,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata no menciona la relación geológica con los Andes fueguinos y describe en su lugar rasgos costeros y una extensión general de los Andes en Patagonia."}
+{"id":"choclo-24983","embSim":0.4501,"verdict":"incorrect","key_fact_match":false,"rationale":"Declara no saber, en lugar de expresar los hechos de la referencia."}
+{"id":"choclo-28477","embSim":0.377,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice directamente la altura de 40 metros al afirmar 213 metros."}
+{"id":"choclo-82067","embSim":0.6865,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice la profundidad (1050 m vs 3800 m) y omite el Pacífico indo-occidental."}
+{"id":"choclo-22904","embSim":0.548,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma que Chile presentó la teoría en 2012, contradiciendo directamente que el gobierno debió soslayarla parcialmente."}
+{"id":"choclo-97119","embSim":0.6956,"verdict":"correct","key_fact_match":true,"rationale":"The candidate states the identical key fact of dependency on the Federación Ecuatoriana de Fútbol."}
+{"id":"choclo-58631","embSim":-0.0058,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información, en lugar de expresar el año de nacimiento de la referencia."}
+{"id":"choclo-102297","embSim":0.2414,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata da fechas de abril y omite por completo las fechas de referencia (27 dic-6 ene)."}
+{"id":"choclo-36263","embSim":0.7048,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente los mismos hechos clave sobre la clasificación taxonómica."}
+{"id":"choclo-31361","embSim":0.6797,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice directamente el hecho central de la referencia al afirmar que es política en lugar de actriz."}
+{"id":"choclo-16203","embSim":0.248,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata nombra un valle distinto (río Pamplonita) en lugar del valle del mismo nombre indicado en la referencia."}
+{"id":"choclo-76950","embSim":0.4908,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma 14 estaciones en lugar de las 11 de la referencia."}
+{"id":"choclo-13219","embSim":0.4647,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice la cuenca específica (Bogotá vs Magdalena) indicada en la referencia."}
+{"id":"choclo-4943","embSim":0.4836,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho central de la referencia (clima mediterráneo) sin contradecirlo."}
+{"id":"choclo-14729","embSim":0.7278,"verdict":"incorrect","key_fact_match":false,"rationale":"Candidate names wrong organization (Corporación Cultural de Valdivia) and different annual supports than CPCV plus municipality and intendencia in reference."}
+{"id":"choclo-28647","embSim":0.3698,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que es una especie de ave de la familia Cracidae, lo cual coincide con el hecho central de la referencia (ave galliforme)."}
+{"id":"choclo-22090","embSim":0.1363,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información y no menciona la fecha de la referencia."}
+{"id":"choclo-56273","embSim":0.3468,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata nombra a Alexander von Humboldt en lugar de José de Acosta."}
+{"id":"choclo-99312","embSim":0.4126,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener la información y no menciona el huracán Agatha."}
+{"id":"choclo-27715","embSim":0.5737,"verdict":"correct","key_fact_match":true,"rationale":"La candidata menciona exactamente el hecho central de añadir maní tostado y molido (equivalente a la salsa de maní tostado y triturado de la referencia)."}
+{"id":"choclo-71120","embSim":0.3112,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información, contradiciendo la referencia al no expresar la fecha."}
+{"id":"choclo-91079","embSim":0.8235,"verdict":"partial","key_fact_match":true,"rationale":"Menciona la potencia (~807 MW) y las dos represas del complejo pero introduce una contradicción explícita sobre Ilha Solteira."}
+{"id":"choclo-104069","embSim":0.5691,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata da un nombre distinto al de la referencia"}
+{"id":"choclo-11739","embSim":0.5509,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente el hecho central de la referencia (nacimiento en Santiago del Estero)."}
+{"id":"choclo-38684","embSim":0.4946,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente el hecho clave de la referencia (es una polilla)."}
+{"id":"choclo-49096","embSim":0.7394,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente los mismos hechos clave de la referencia."}
+{"id":"choclo-56807","embSim":0.3667,"verdict":"partial","key_fact_match":true,"rationale":"Incluye Panamá pero añade Costa Rica no mencionado en la referencia."}
+{"id":"choclo-94570","embSim":0.3454,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho central de que un tifón azotó y causó el hundimiento, sin contradecir la referencia."}
+{"id":"choclo-11156","embSim":0.4702,"verdict":"partial","key_fact_match":true,"rationale":"Coincide en marismas de agua dulce y jardines rurales pero omite el resto y añade hábitats distintos"}
+{"id":"choclo-12840","embSim":0.6132,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener la información, en lugar de expresar el nombre de la referencia."}
+{"id":"choclo-20579","embSim":0.1397,"verdict":"incorrect","key_fact_match":false,"rationale":"Candidate declares lack of information rather than naming Manuel A. Ventura."}
+{"id":"choclo-87408","embSim":0.5885,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma el hecho central de que es una especie de escarabajo longicornio, sin contradecirlo."}
+{"id":"choclo-87268","embSim":0.6127,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente la ubicación de referencia y añade un detalle compatible."}
+{"id":"choclo-10905","embSim":0.2623,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que es compositor, coincidiendo con el hecho clave de la referencia."}
+{"id":"choclo-30832","embSim":0.6025,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice la ordenanza (49/2005 vs 054/2018) y el número de especies (428 vs >60)."}
+{"id":"choclo-7859","embSim":0.409,"verdict":"partial","key_fact_match":true,"rationale":"Cubre México y Centroamérica pero omite norte de Colombia y el sotobosque específico."}
+{"id":"choclo-40685","embSim":0.4605,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho central de que es un anfibio caudado de la familia Ambystomatidae."}
+{"id":"choclo-54852","embSim":0.3702,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener la información y no menciona la densidad de 10,2 hab/km²."}
+{"id":"choclo-67127","embSim":0.7051,"verdict":"correct","key_fact_match":true,"rationale":"La candidata reproduce exactamente el hecho clave de la referencia y añade detalles compatibles."}
+{"id":"choclo-31750","embSim":0.6519,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente los mismos hechos de frontera: Perú-Brasil y Bolivia-Brasil."}
+{"id":"choclo-57418","embSim":0.7212,"verdict":"partial","key_fact_match":true,"rationale":"Omite el descriptor 'histricomorfo' presente en la referencia."}
+{"id":"choclo-71119","embSim":0.1836,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma Granada en lugar de León como lugar de nacimiento."}
+{"id":"choclo-90061","embSim":0.2477,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice la ubicación al indicar Brasil en lugar de Perú."}
+{"id":"choclo-47254","embSim":0.5335,"verdict":"partial","key_fact_match":false,"rationale":"Matches amphibian type (gimnofión/cecilia) but contradicts family (Caeciliidae vs Siphonophidae)."}
+{"id":"choclo-97178","embSim":0.1557,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice la referencia al hablar de Sena como río en Francia u otros lugares en vez de una localidad amazónica boliviana."}
+{"id":"choclo-846","embSim":0.7175,"verdict":"correct","key_fact_match":true,"rationale":"la candidata expresa exactamente el hecho clave de la referencia más detalles adicionales"}
+{"id":"choclo-46648","embSim":0.603,"verdict":"partial","key_fact_match":false,"rationale":"La candidata indica que es una salamandra pero omite la familia Plethodontidae indicada en la referencia."}
+{"id":"choclo-84547","embSim":0.6552,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma que está dentro del departamento, contradiciendo la ubicación al noreste indicada en la referencia."}
+{"id":"choclo-98455","embSim":0.5121,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice la profundidad máxima (298 m vs 476 m) y el hábitat (arrecifes de coral vs aguas profundas)."}
+{"id":"choclo-29250","embSim":0.5099,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice el rango de altitud central de la referencia con cifras distintas y sin solapamiento."}
+{"id":"choclo-5413","embSim":0.2073,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata describe un color equino en vez de una comida típica nicaragüense."}
+{"id":"choclo-16485","embSim":0.662,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice el nombre completo de la referencia con uno distinto."}
+{"id":"choclo-104557","embSim":0.191,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información sobre el tema en vez de indicar el lugar Nacaome."}
+{"id":"choclo-32156","embSim":0.4132,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice la referencia al definirla como salsa dominicana en vez de cualquier salsa picante mexicana del Bajío."}
+{"id":"choclo-17938","embSim":0.1612,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata nombra un instrumento distinto (xilófono de cristal) en lugar del Nomeolbídet de la referencia."}
+{"id":"choclo-67068","embSim":0.5466,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice la referencia al afirmar que también se ubica en Pensilvania."}
+{"id":"choclo-75286","embSim":0.2585,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener la información y omite por completo las características de la referencia."}
+{"id":"choclo-80161","embSim":0.5918,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata ubica el museo en Parque México (Condesa), contradiciendo la referencia que lo sitúa en el Zoológico de Chapultepec."}
+{"id":"choclo-65591","embSim":0.4932,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice la referencia al listar ingredientes distintos y omitir chuño y mote."}
+{"id":"choclo-4969","embSim":0.6397,"verdict":"partial","key_fact_match":false,"rationale":"Coincide en ser ecorregión en occidente de Colombia y parte de Panamá, pero contradice al añadir Ecuador y omitir el oriente panameño específico."}
+{"id":"choclo-10571","embSim":0.5192,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho clave de la referencia sobre la diferencia en la forma del cuello."}
+{"id":"choclo-49133","embSim":0.1875,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice la referencia al dar 73.6% en vez de 89%."}
+{"id":"choclo-104517","embSim":0.6492,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice el origen afroamericano y amplía los países donde es plato nacional."}
+{"id":"choclo-75214","embSim":0.678,"verdict":"partial","key_fact_match":false,"rationale":"acierta el título y año pero omite que es el primer tomo y contradice/ignora el análisis específico de música primitiva indígena/negra y culta hasta 1860"}
+{"id":"choclo-66334","embSim":0.5002,"verdict":"partial","key_fact_match":false,"rationale":"La candidata menciona el Pacífico y ubicaciones dentro de la región Indo-Pacífica pero contradice al omitir el componente Índico y limitarse a 'Océano Pacífico'."}
+{"id":"choclo-30053","embSim":0.617,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que Quercus wislizeni es una especie de roble (género Quercus) y por tanto expresa el hecho central de la referencia."}
+{"id":"choclo-43418","embSim":0.6245,"verdict":"partial","key_fact_match":true,"rationale":"Omite el orden Characiformes mencionado en la referencia."}
+{"id":"choclo-59321","embSim":0.7374,"verdict":"correct","key_fact_match":true,"rationale":"Candidate states the exact estimated range of 1400-2000 sailors lost matching the reference fact."}
+{"id":"choclo-57379","embSim":0.7186,"verdict":"partial","key_fact_match":false,"rationale":"Omite la mención explícita al género Ctenomys de la referencia."}
+{"id":"choclo-12809","embSim":0.6116,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice la cuenca este (Lord Howe vs Nueva Caledonia) y el mecanismo de separación (dorsal vs falla)."}
+{"id":"choclo-91534","embSim":0.5959,"verdict":"partial","key_fact_match":false,"rationale":"Coincide en Ecuador y Napo pero omite el cantón El Chaco y lo ubica en otro sitio específico."}
+{"id":"choclo-82235","embSim":0.8853,"verdict":"partial","key_fact_match":true,"rationale":"Coincide en la etimología de Opuntia (ciudad de Opunte/Opus) pero contradice el significado exacto de sulphurea (dice 'azufre/sulfuroso' en vez de 'amarillo como azufre')."}
+{"id":"choclo-100643","embSim":0.2805,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información, contradiciendo el hecho central de la referencia."}
+{"id":"choclo-101448","embSim":0.1491,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata indica 1947 en lugar de agosto de 1855."}
+{"id":"choclo-49756","embSim":0.2345,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que Cape May es una ciudad, coincidiendo con la referencia."}
+{"id":"choclo-73046","embSim":0.2374,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice la referencia al describir una identidad y época distintas en lugar de Eduardo María Díaz Blasco."}
+{"id":"choclo-25911","embSim":0.8118,"verdict":"partial","key_fact_match":false,"rationale":"acierta que es cucaracha pero omite el género Nyctibora"}
+{"id":"choclo-86966","embSim":0.7672,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información en lugar de expresar los hechos de la referencia."}
+{"id":"choclo-78660","embSim":0.5924,"verdict":"correct","key_fact_match":true,"rationale":"La candidata identifica el mismo hecho central: Mesosa mediofasciata es un escarabajo de la familia Cerambycidae (longicornio)."}
+{"id":"choclo-48424","embSim":0.481,"verdict":"partial","key_fact_match":true,"rationale":"Coincide en que es paraguayo pero usa 'distrito' en vez de 'ciudad' y añade ubicación específica."}
+{"id":"choclo-78729","embSim":0.6704,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa los hechos clave: pseudoscorpión (orden Pseudoscorpionida) de la familia Chernetidae."}
+{"id":"choclo-46141","embSim":0.468,"verdict":"correct","key_fact_match":true,"rationale":"La candidata confirma que es un área protegida (reserva natural), sin contradecir la referencia."}
+{"id":"choclo-60428","embSim":0.4816,"verdict":"correct","key_fact_match":true,"rationale":"La candidata coincide en la distribución en bosques templados de Chile centro-sur al especificar el bosque templado valdiviano."}
+{"id":"choclo-96441","embSim":0.5274,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata responde sobre la cabecera de un aeropuerto (18 m) en lugar de la altitud de la cabecera municipal (685 m)."}
+{"id":"choclo-59497","embSim":0.4692,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho central de que es una especie de quiróptero/murciélago."}
+{"id":"choclo-46425","embSim":0.4757,"verdict":"partial","key_fact_match":false,"rationale":"Menciona los dos océanos pero contradice la distribución específica y omite 'Pacífico occidental'."}
+{"id":"choclo-36","embSim":0.7597,"verdict":"correct","key_fact_match":true,"rationale":"Candidate states the exact key fact from reference plus non-contradictory extra detail."}
+{"id":"choclo-13716","embSim":0.5029,"verdict":"correct","key_fact_match":true,"rationale":"La candidata identifica correctamente la planta como especie de la familia Cactaceae."}
+{"id":"choclo-102996","embSim":0.6659,"verdict":"partial","key_fact_match":false,"rationale":"Menciona Tungurahua y los Andes pero omite el límite con Chimborazo y Cordillera Oriental."}
+{"id":"choclo-75205","embSim":0.3963,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información, contradiciendo los hechos de la referencia."}
+{"id":"choclo-5867","embSim":0.2496,"verdict":"correct","key_fact_match":true,"rationale":"La candidata confirma el origen en Estados Unidos al ubicarlo en California y Oregón."}
+{"id":"choclo-52939","embSim":0.5275,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que el nombre común es pacaya, expresando exactamente el hecho clave de la referencia."}
+{"id":"choclo-88753","embSim":0.4603,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata ubica la especie en Colombia (río Magdalena), contradiciendo directamente la distribución en el sur de Brasil indicada por la referencia."}
+{"id":"choclo-55093","embSim":0.7395,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho clave de que es una especie de escarabajo del género Colobothea (con detalles extra correctos)."}
+{"id":"choclo-80131","embSim":0.4451,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata indica una ubicación distinta a la de la referencia."}
+{"id":"choclo-74462","embSim":0.5292,"verdict":"correct","key_fact_match":true,"rationale":"Candidate matches the core fact that it is a freshwater lagoon/lake."}
+{"id":"choclo-19068","embSim":0.4434,"verdict":"correct","key_fact_match":true,"rationale":"La candidata usa sinónimos equivalentes para definirlo como tipo de asentamiento."}
+{"id":"choclo-21581","embSim":0.5419,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho central de uso en bebidas alcohólicas fermentadas a base de frutos, coincidiendo con la referencia."}
+{"id":"choclo-60227","embSim":0.4349,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no saber el número y no menciona las 64 parroquias."}
+{"id":"choclo-73620","embSim":0.1618,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice la referencia al afirmar origen en México en lugar de Perú."}
+{"id":"choclo-14248","embSim":0.4411,"verdict":"correct","key_fact_match":true,"rationale":"Candidate states the exact key fact (Hidalgo) plus accurate extra detail."}
+{"id":"choclo-80887","embSim":0.557,"verdict":"partial","key_fact_match":true,"rationale":"Menciona Costa Rica pero expande la distribución a muchos otros países y regiones, contradiciendo el alcance de la referencia."}
+{"id":"choclo-24639","embSim":0.4149,"verdict":"incorrect","key_fact_match":false,"rationale":"contradice el origen en Lara (Venezuela) al afirmar que es de República Dominicana"}
+{"id":"choclo-14864","embSim":0.2963,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata describe el martirio del siglo III en lugar del origen en 1640 y oficialización en 1720 indicados por la referencia."}
+{"id":"choclo-64583","embSim":0.2826,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata da Casablanca en lugar de El-Yadida."}
+{"id":"choclo-73370","embSim":0.7102,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa que es una tortuga de la familia Kinosternidae, coincidiendo con la referencia."}
+{"id":"choclo-42082","embSim":0.5095,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice el color beige y blanco nacarado con franja separadora y compresión fuerte al describir amarillo brillante y franjas negras distintas."}
+{"id":"choclo-63394","embSim":0.3757,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma que es un humedal en lugar de un curso natural de agua."}
+{"id":"choclo-6161","embSim":0.1448,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información, en lugar de expresar los hechos de la referencia."}
+{"id":"choclo-12975","embSim":0.3285,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata atribuye la interpretación a Queens of the Stone Age contradiciendo la referencia que indica Shakira."}
+{"id":"choclo-81224","embSim":0.3753,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata no menciona tamaño, color blanco/negro ni hábitat árido con refugio diurno bajo piedras."}
+{"id":"choclo-8673","embSim":0.4234,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que es una especie, expresando el hecho central de la referencia."}
+{"id":"choclo-81771","embSim":0.6242,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice las fechas y el hecho central de entradas de tropas en 1940 y julio de 1941."}
+{"id":"choclo-64464","embSim":0.5471,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho central de abundante y variada vida marina (biodiversidad/fauna) sin contradecirlo."}
+{"id":"choclo-63975","embSim":0.3478,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice tanto la ubicación como el autor indicados en la referencia."}
+{"id":"choclo-94642","embSim":0.6494,"verdict":"correct","key_fact_match":true,"rationale":"La candidata coincide en el hundimiento por el U-486 y en el número aproximado de soldados fallecidos (763 vs ~700)."}
+{"id":"choclo-96674","embSim":0.5661,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que es una localidad uruguaya, coincidiendo con el hecho clave de la referencia."}
+{"id":"choclo-95663","embSim":0.6703,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata no afirma que San Lorenzo es un distrito y en cambio presenta ambigüedad con otros significados."}
+{"id":"choclo-49170","embSim":0.4138,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no saber y no expresa los hechos de la referencia."}
+{"id":"choclo-31385","embSim":0.0487,"verdict":"incorrect","key_fact_match":false,"rationale":"Candidate declares no information instead of stating the year 1968."}
+{"id":"choclo-31577","embSim":0.6163,"verdict":"partial","key_fact_match":true,"rationale":"acierta que es localidad en Bolivia pero omite el detalle clave de valles interandinos"}
+{"id":"choclo-47309","embSim":0.2794,"verdict":"partial","key_fact_match":true,"rationale":"Menciona clima tropical y temperaturas cálidas pero omite el rango específico de 22-24 °C"}
+{"id":"choclo-5107","embSim":0.4645,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma que es una especie mientras que la referencia indica un género monotípico."}
+{"id":"choclo-32453","embSim":0.6447,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho central de ser una especie vegetal de la familia Santalaceae."}
+{"id":"choclo-51488","embSim":0.6149,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente el hecho central de elevación máxima de 1600 metros."}
+{"id":"choclo-68933","embSim":0.3098,"verdict":"incorrect","key_fact_match":false,"rationale":"La fecha indicada (15 de septiembre) contradice directamente la referencia (17 de septiembre)."}
+{"id":"choclo-11437","embSim":0.3441,"verdict":"partial","key_fact_match":true,"rationale":"Menciona agua dulce pero omite por completo el clima tropical y rango de temperatura"}
+{"id":"choclo-53338","embSim":0.6396,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa que es una bebida fermentada de Perú (especialmente), coincidiendo con los hechos clave de la referencia."}
+{"id":"choclo-14318","embSim":0.328,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice ambos hechos clave de la referencia sobre elementos distintivos y año."}
+{"id":"choclo-5154","embSim":0.4586,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice al nombrar Puerto Maldonado como principal y omitir Pucallpa"}
+{"id":"choclo-100967","embSim":0.827,"verdict":"partial","key_fact_match":true,"rationale":"Coincide en que es ecuatoriano pero usa 'cantón' en lugar de 'ciudad'."}
+{"id":"choclo-101392","embSim":0.4671,"verdict":"partial","key_fact_match":true,"rationale":"Menciona el impacto y Cosquín pero omite Villa María y Jesús María."}
+{"id":"choclo-104473","embSim":0.7195,"verdict":"correct","key_fact_match":true,"rationale":"La candidata coincide exactamente con la referencia en tribu, subfamilia y país de origen."}
+{"id":"choclo-7439","embSim":0.46,"verdict":"incorrect","key_fact_match":false,"rationale":"La altura reportada (3.064 m) contradice directamente la de la referencia (3.046 m)."}
+{"id":"choclo-46422","embSim":0.4744,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara explícitamente no tener la información en lugar de expresar los hechos de la referencia."}
+{"id":"choclo-27429","embSim":0.5645,"verdict":"correct","key_fact_match":true,"rationale":"Coincide exactamente en la ubicación indicada por la referencia."}
+{"id":"choclo-19425","embSim":0.4971,"verdict":"incorrect","key_fact_match":false,"rationale":"The candidate states a different full name (Jerónimo Gil Pino) than the reference."}
+{"id":"choclo-82342","embSim":0.7143,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente los mismos hechos clave de la referencia sin contradicciones."}
+{"id":"choclo-31173","embSim":0.1603,"verdict":"incorrect","key_fact_match":false,"rationale":"Candidate declares no information, failing to express any reference facts."}
+{"id":"choclo-10799","embSim":0.4306,"verdict":"correct","key_fact_match":true,"rationale":"Nombres de autores y año coinciden exactamente con la referencia."}
+{"id":"choclo-46628","embSim":0.4935,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa los hechos clave de ubicación (Guatemala y México/Chiapas) sin contradecir la referencia."}
+{"id":"choclo-26921","embSim":0.5298,"verdict":"partial","key_fact_match":true,"rationale":"Omite el municipio específico de Champotón y generaliza el origen a la región de Campeche."}
+{"id":"choclo-86756","embSim":0.6674,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente los mismos hechos (autor y año) que la referencia."}
+{"id":"choclo-44994","embSim":0.5577,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata nombra localidades distintas que contradicen directamente la referencia."}
+{"id":"choclo-18118","embSim":0.2411,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata describe una distribución amplia en Centroamérica y norte de Sudamérica, contradiciendo el hecho central de la referencia (sur de México)."}
+{"id":"choclo-12015","embSim":0.6773,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente el hecho central de la referencia (Día de la Resistencia Indígena) sin contradicciones."}
+{"id":"choclo-42485","embSim":0.4452,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que es un tipo de pulpo (octópodo), expresando el hecho central de la referencia."}
+{"id":"choclo-3613","embSim":0.4204,"verdict":"correct","key_fact_match":true,"rationale":"La candidata coincide en el autor (Torr. ex S.Wats./S.Watson) y el año 1874."}
+{"id":"choclo-54122","embSim":0.1533,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma 2017 por Christian Nodal, contradiciendo directamente el año 1974 de la referencia."}
+{"id":"choclo-7326","embSim":0.6511,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice la distribución (Oriental+Perijá vs Occidental+Ecuador) y altera detalles del hábitat."}
+{"id":"choclo-71102","embSim":0.6958,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente el mismo hecho numérico central de la referencia."}
+{"id":"choclo-63629","embSim":0.4067,"verdict":"partial","key_fact_match":true,"rationale":"Coincide en la ubicación en el nororiente/nordeste de Brasil pero añade regiones adicionales no mencionadas en la referencia."}
+{"id":"choclo-41615","embSim":0.5305,"verdict":"partial","key_fact_match":false,"rationale":"La candidata indica que es un lagarto sin mencionar la clasificación específica de iguanios Dactyloidae."}
+{"id":"choclo-19364","embSim":0.3187,"verdict":"incorrect","key_fact_match":false,"rationale":"Declara no tener información, sin mencionar ningún premio de la referencia."}
+{"id":"choclo-104833","embSim":0.1163,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata describe un grupo indígena en lugar de un café célebre."}
+{"id":"choclo-74424","embSim":0.2457,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata indica una ubicación distinta y contradictoria a la de la referencia."}
+{"id":"choclo-2003","embSim":0.7286,"verdict":"partial","key_fact_match":false,"rationale":"Omite varios países listados en la referencia (Paraguay, Costa Rica, Trinidad y Tobago) y describe el hábitat con términos distintos y más específicos."}
+{"id":"choclo-28213","embSim":0.0541,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice directamente el año 1928 de la referencia al afirmar 1013 y que no está establecido."}
+{"id":"choclo-27131","embSim":0.1756,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información, contradiciendo directamente los hechos de la referencia."}
+{"id":"choclo-95282","embSim":0.6329,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata no menciona corregimiento ni expresa el hecho central de la referencia."}
+{"id":"choclo-61641","embSim":0.3324,"verdict":"partial","key_fact_match":true,"rationale":"Captures negative consequences and death but omits floods and changes 'announces' to 'brings for viewers'."}
+{"id":"choclo-5015","embSim":0.5273,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata especifica cuencas fluviales distintas y omite los ambientes tropicales/subtropicales en el centro y centro-sur de Sudamérica indicados en la referencia."}
+{"id":"choclo-93137","embSim":0.6229,"verdict":"partial","key_fact_match":true,"rationale":"Coincide en que es un curso de agua en Río Negro, Argentina, pero omite el departamento Bariloche, la Patagonia y que es pequeño."}
+{"id":"choclo-95461","embSim":0.2926,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice fecha, fundadores y contexto central de la referencia."}
+{"id":"choclo-21604","embSim":0.3553,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata indica Punitaqui en lugar de Las Cabras."}
+{"id":"choclo-102449","embSim":0.725,"verdict":"correct","key_fact_match":true,"rationale":"La candidata incluye todos los hechos clave de la referencia (especie doméstica de mamífero artiodáctilo de la familia Camelidae) sin contradecirlos."}
+{"id":"choclo-98728","embSim":0.5967,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice la referencia al atribuir la victoria a Changsha 1939 en vez de Tai'erzhuang 1938."}
+{"id":"choclo-84424","embSim":0.4766,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener la información y no expresa el dato de 78900 hectáreas."}
+{"id":"choclo-72672","embSim":0.349,"verdict":"partial","key_fact_match":true,"rationale":"Menciona disentería y malaria (que causan diarrea grave y fiebres altas) pero añade muchos otros problemas no presentes en la referencia."}
+{"id":"choclo-97554","embSim":0.8615,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho clave de la ubicación en el sur/suroeste de República Dominicana sin contradecir la referencia."}
+{"id":"choclo-82754","embSim":0.4336,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara explícitamente no tener la información y no expresa ningún hecho de la referencia."}
+{"id":"choclo-42356","embSim":0.4165,"verdict":"partial","key_fact_match":true,"rationale":"acierta en el tipo anticlinal/geanticlinal pero omite alto de basamento, orientación y ubicación"}
+{"id":"choclo-58653","embSim":0.6191,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice ambos hechos centrales al mencionar Botón de plata y más de 1 millón de suscriptores."}
+{"id":"choclo-61584","embSim":0.6881,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice la referencia en ubicación, tipo de lugar y entidad administrativa."}
+{"id":"choclo-19672","embSim":0.2572,"verdict":"incorrect","key_fact_match":false,"rationale":"El año 1971 contradice directamente el dato central de 1961."}
+{"id":"choclo-69573","embSim":0.5538,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata indica el 11 de junio mientras la referencia especifica las 06:00 UTC del 12 de junio."}
+{"id":"choclo-74549","embSim":0.6445,"verdict":"correct","key_fact_match":true,"rationale":"La candidata confirma que es un lago de cráter en Guatemala y añade detalles compatibles."}
+{"id":"choclo-79074","embSim":0.4921,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata describe una mina física en lugar de una sociedad minera como indica la referencia."}
+{"id":"choclo-76087","embSim":0.247,"verdict":"incorrect","key_fact_match":false,"rationale":"Declara no tener información, contradiciendo los hechos de la referencia."}
+{"id":"choclo-61677","embSim":0.6042,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice fechas, ley y hechos centrales de creación y cambio de capital."}
+{"id":"choclo-3256","embSim":0.6477,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice los estados de la referencia (Oaxaca y Guerrero) al nombrar Veracruz, Hidalgo y Chiapas en su lugar."}
+{"id":"choclo-47963","embSim":0.5384,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente los mismos países que la referencia."}
+{"id":"choclo-80110","embSim":0.4026,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata indica una dirección distinta y contradictoria a la de la referencia."}
+{"id":"choclo-33150","embSim":0.343,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata nombra un municipio distinto al de la referencia."}
+{"id":"choclo-41654","embSim":0.5446,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata dice solo 'lagarto' sin mencionar iguanios ni la familia Dactyloidae."}
+{"id":"choclo-62126","embSim":0.4252,"verdict":"incorrect","key_fact_match":false,"rationale":"Candidate includes Haiti and omits the southeast DR specification."}
+{"id":"choclo-102569","embSim":0.8426,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho clave de la referencia sin contradecirlo"}
+{"id":"choclo-89231","embSim":0.5618,"verdict":"correct","key_fact_match":true,"rationale":"Coincide exactamente en la amenaza central de pérdida de hábitat natural."}
+{"id":"choclo-65068","embSim":0.5313,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice el departamento de origen (Huancavelica) al ubicarla en Áncash."}
+{"id":"choclo-57322","embSim":0.6498,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa los hechos clave: estructura de impacto submarina en el Mar del Norte."}
+{"id":"choclo-72714","embSim":0.606,"verdict":"partial","key_fact_match":true,"rationale":"Coincide en el nombre dado (Ilhas dos Papuas) pero omite la desviación de ruta y afirma que llegó a las islas de las Especias, contradiciendo la referencia."}
+{"id":"choclo-85653","embSim":0.6806,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente los mismos hechos clave que la referencia."}
+{"id":"choclo-41065","embSim":0.581,"verdict":"incorrect","key_fact_match":false,"rationale":"Omite el rango específico de la referencia y declara explícitamente no tener información detallada."}
+{"id":"choclo-37263","embSim":0.1525,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no saber la información en lugar de indicar que fue Luis Muñoz."}
+{"id":"choclo-53295","embSim":0.3909,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata indica Tartagal/Salta en lugar de Pirané/Formosa."}
+{"id":"choclo-20578","embSim":0.18,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice directamente el año de la referencia (1958 vs 1912)."}
+{"id":"choclo-78226","embSim":0.46,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice la referencia al incluir Argentina y Paraguay en lugar de limitarse a la cuenca amazónica brasileña."}
+{"id":"choclo-9246","embSim":0.5477,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que es un utensilio/pieza de cocina tradicional."}
+{"id":"choclo-17299","embSim":0.3704,"verdict":"partial","key_fact_match":true,"rationale":"Menciona Neblina pero como región amplia en dos países, no Cerro de la Neblina exacto."}
+{"id":"choclo-77650","embSim":0.5264,"verdict":"incorrect","key_fact_match":false,"rationale":"Candidate names San Pedro department while reference specifies border between Central and Paraguarí."}
+{"id":"choclo-60715","embSim":0.3337,"verdict":"correct","key_fact_match":true,"rationale":"Candidate affirms it is a commemorative celebration honoring indigenous women, matching the reference's core definition."}
+{"id":"choclo-75663","embSim":0.3877,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información, contradiciendo la referencia que indica que fue descrita por Pic en 1901."}
+{"id":"choclo-43352","embSim":0.6653,"verdict":"correct","key_fact_match":true,"rationale":"La candidata reproduce exactamente los hechos clave de la referencia."}
+{"id":"choclo-44970","embSim":0.7553,"verdict":"incorrect","key_fact_match":false,"rationale":"Omite por completo la recolección en Putumayo y no identifica las tres actividades tradicionales con sus ubicaciones específicas."}
+{"id":"choclo-82700","embSim":0.4833,"verdict":"correct","key_fact_match":true,"rationale":"La candidata coincide en la región principal del Pacífico noroccidental hasta Japón y zonas adyacentes de China."}
+{"id":"choclo-27630","embSim":0.5836,"verdict":"partial","key_fact_match":false,"rationale":"menciona la familia pero omite 'fanerógama' y añade 'planta trepadora'"}
+{"id":"choclo-83664","embSim":0.615,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que es un área protegida en Ecuador y añade detalles compatibles."}
+{"id":"choclo-81326","embSim":0.4023,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata da un nombre original y significado completamente distintos a los de la referencia."}
+{"id":"choclo-102279","embSim":0.6167,"verdict":"correct","key_fact_match":true,"rationale":"Candidate matches the exact location fact from the reference"}
+{"id":"choclo-22682","embSim":0.4639,"verdict":"partial","key_fact_match":false,"rationale":"Menciona espinas radiales numerosas pero omite la ausencia total de centrales y el número específico de hasta 120."}
+{"id":"choclo-19367","embSim":0.567,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no saber en lugar de expresar el hecho central de la referencia."}
+{"id":"choclo-42288","embSim":0.5857,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma 4 en lugar de 8 islas e islotes."}
+{"id":"choclo-23655","embSim":0.1541,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata indica un lugar de nacimiento distinto al de la referencia."}
+{"id":"choclo-72701","embSim":0.0684,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información, en lugar de indicar el año 1983 de la referencia."}
+{"id":"choclo-11303","embSim":0.4792,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice el hecho central al afirmar que Desaguadero no es un punto directo en la ruta principal y que su importancia es indirecta o variable."}
+{"id":"choclo-89162","embSim":0.5527,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información y omite/contradice el hecho central de extinción en Bahamas."}
+{"id":"choclo-53609","embSim":0.2836,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata da ubicación geográfica distinta y omite por completo la elevación de la referencia."}
+{"id":"choclo-40923","embSim":0.1238,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata indica Brasil en lugar de Venezuela."}
+{"id":"choclo-22337","embSim":0.8981,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente los mismos hechos clave: hermanas y ambas pintoras."}
+{"id":"choclo-12572","embSim":0.1631,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información, sin expresar ningún hecho de la referencia."}
+{"id":"choclo-71221","embSim":0.3652,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata ubica la isla en Perú Pacífico, contradiciendo la referencia sobre el Lago de Valencia."}
+{"id":"choclo-1237","embSim":0.2742,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente el hecho central de la referencia (nacimiento en Santa Fe)."}
+{"id":"choclo-1325","embSim":0.7262,"verdict":"partial","key_fact_match":true,"rationale":"Covers oppression, indigenous-criolla relation and 1919 but omits cholo-mestizos and specific uprising capacity."}
+{"id":"choclo-76585","embSim":0.6642,"verdict":"incorrect","key_fact_match":false,"rationale":"Declara no saber la información en lugar de expresar los hechos de la referencia."}
+{"id":"choclo-2981","embSim":0.1752,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no saber mientras la referencia afirma nueve oportunidades."}
+{"id":"choclo-92485","embSim":0.7523,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que el Anauco es afluente del Guaire, expresando el hecho central de la referencia."}
+{"id":"choclo-6507","embSim":0.6159,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información, contradiciendo directamente el hecho central de la referencia."}
+{"id":"choclo-92949","embSim":0.4248,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma 76 km en lugar de aproximadamente 90 km."}
+{"id":"choclo-59462","embSim":0.5264,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice la fecha central al cambiar mayo por octubre."}
+{"id":"choclo-53600","embSim":0.2033,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información sobre el lugar, contradiciendo la referencia que especifica las cuevas del Sistema Purificación."}
+{"id":"choclo-67477","embSim":0.5911,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información, en lugar de expresar los hechos de la referencia."}
+{"id":"choclo-27379","embSim":0.4095,"verdict":"partial","key_fact_match":false,"rationale":"Menciona Colombia pero omite por completo la Cordillera Oriental y la Región Andina de los Andes indicadas en la referencia."}
+{"id":"choclo-79225","embSim":0.503,"verdict":"partial","key_fact_match":false,"rationale":"Omite Colombia (mencionada en la referencia) e incluye países y regiones adicionales no presentes en la referencia."}
+{"id":"choclo-47385","embSim":0.4751,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa los hechos clave (Thomas en 1896) sin contradecir la referencia."}
+{"id":"choclo-88479","embSim":0.939,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente el mismo hecho central que la referencia."}
+{"id":"choclo-52187","embSim":0.3783,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice el departamento (Caaguazú en vez de Paraguarí)"}
+{"id":"choclo-69061","embSim":0.7048,"verdict":"partial","key_fact_match":false,"rationale":"acierta que es lagarto gecko pero omite el género Homonota y añade familia distinta"}
+{"id":"choclo-36298","embSim":0.4973,"verdict":"partial","key_fact_match":true,"rationale":"Coincide en el rango de madurez (6-8 meses dentro de 5-9) pero omite por completo el requisito de precipitaciones (800-1400 mm) y lo reemplaza por otras condiciones climáticas."}
+{"id":"choclo-98566","embSim":0.5811,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata menciona tamaño, cobertura de milanesa y acompañamientos que no coinciden con los hechos clave de la referencia."}
+{"id":"choclo-43593","embSim":0.4276,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma directamente que es endémica de Ecuador, coincidiendo con la referencia."}
+{"id":"choclo-86675","embSim":0.6475,"verdict":"partial","key_fact_match":true,"rationale":"Coincide en la capacidad de 450 MW pero omite los 3 turbogeneradores de 150 MW y da una explicación distinta sobre cómo se logra."}
+{"id":"choclo-11250","embSim":0.4737,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma cactus en lugar de planta suculenta."}
+{"id":"choclo-43086","embSim":0.2401,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata nombra 'Waakye' en lugar de 'kanzo o ɛmo ase'."}
+{"id":"choclo-25729","embSim":0.8414,"verdict":"partial","key_fact_match":true,"rationale":"acierta que está en Chile pero omite la distribución endémica limitada en interior de Atacama"}
+{"id":"choclo-54080","embSim":0.2443,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata indica países de Centroamérica pero omite por completo el hábitat clave 'nebliselvas' de la referencia."}
+{"id":"choclo-9574","embSim":0.396,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata ubica la cordillera en Magallanes/Tierra del Fuego, contradiciendo la referencia sobre Atacama."}
+{"id":"choclo-3199","embSim":0.516,"verdict":"partial","key_fact_match":false,"rationale":"Menciona chile poblano pero añade epazote y omite la preparación líquida."}
+{"id":"choclo-18954","embSim":0.6826,"verdict":"partial","key_fact_match":false,"rationale":"La candidata identifica Isla Fuerte como isla en zona costera caribeña pero omite los hechos clave de 'pequeña' y 'costera' de la referencia."}
+{"id":"choclo-88901","embSim":0.4741,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no saber y no menciona los hechos de conservación ni las causas indicadas en la referencia."}
+{"id":"choclo-72547","embSim":0.0696,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información en vez de indicar Sucre como lugar de nacimiento."}
+{"id":"choclo-79311","embSim":0.4843,"verdict":"partial","key_fact_match":false,"rationale":"Identifica correctamente que es un momoto pero omite el dato central de que es grande."}
+{"id":"choclo-82075","embSim":0.5199,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice directamente la longitud de 20,6 cm con un valor distinto de 13,5 cm."}
+{"id":"choclo-21181","embSim":0.1753,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma endémica de Brasil, contradiciendo la referencia de México."}
+{"id":"choclo-80286","embSim":0.6727,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa los hechos clave (especie de anfibio de la familia Hylidae) sin contradecir la referencia."}
+{"id":"choclo-103649","embSim":0.5588,"verdict":"correct","key_fact_match":true,"rationale":"Candidate states it is a cactus (Cactaceae succulent), matching the reference's core facts with only extra non-contradictory detail."}
+{"id":"choclo-40841","embSim":0.7537,"verdict":"partial","key_fact_match":false,"rationale":"La candidata indica que es una polilla pero omite la referencia al género Amorbia."}
+{"id":"choclo-3783","embSim":0.3512,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata indica una ubicación distinta en Buenos Aires en vez de la intersección de Guardia Chalaca y Colonial."}
+{"id":"choclo-63351","embSim":0.6623,"verdict":"partial","key_fact_match":false,"rationale":"Omite el hecho clave de la huida de Ba Maw a Japón mientras menciona solo el derrumbe del gobierno."}
+{"id":"choclo-7600","embSim":0.3862,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice la ubicación y el tipo de lugar de la referencia."}
+{"id":"choclo-33500","embSim":0.3655,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata no menciona el arbusto de 3-4 m ni describe ese tipo de especie."}
+{"id":"choclo-77668","embSim":0.4079,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata nombra a Daniel Salamanca de Bolivia, contradiciendo directamente la referencia sobre Mario Abdo Benítez."}
+{"id":"choclo-6102","embSim":0.4519,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma Pastene en 1544 en vez de Ulloa en 1553."}
+{"id":"choclo-77196","embSim":0.5516,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho central de limitar al norte con Honduras."}
+{"id":"choclo-4737","embSim":0.4411,"verdict":"partial","key_fact_match":false,"rationale":"acierta en 'dentadas' pero omite 'peludas' y generaliza el rango nativo en vez de especificar suroeste de EE.UU. y norte de México"}
+{"id":"choclo-30811","embSim":0.6617,"verdict":"incorrect","key_fact_match":false,"rationale":"contradice el porcentaje (60% vs 43%) y cambia la especie a ballena franca austral"}
+{"id":"choclo-73618","embSim":0.7047,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice la referencia al negar conexión directa y enfatizar diferencias en vez de un enorme parecido."}
+{"id":"choclo-81905","embSim":0.5376,"verdict":"partial","key_fact_match":false,"rationale":"La candidata coincide en la amenaza por destrucción/pérdida de hábitat pero contradice al incluir bosques de tierras bajas que la referencia no menciona y omite la especificación exclusiva de montanos."}
+{"id":"choclo-96021","embSim":0.2499,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma Warren en 1904, contradiciendo directamente el autor y año de la referencia."}
+{"id":"choclo-54259","embSim":0.2992,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata no afirma que es una ciudad y describe otro tipo de lugar."}
+{"id":"choclo-84715","embSim":0.1332,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información en lugar de indicar el año 2008."}
+{"id":"choclo-84150","embSim":0.5723,"verdict":"partial","key_fact_match":true,"rationale":"Candidate identifies the entity as national park via its name and describes it as protected area without contradicting the reference classification, but omits stating the key type directly."}
+{"id":"choclo-90519","embSim":0.6616,"verdict":"partial","key_fact_match":false,"rationale":"Identifica la entidad y ubicación pero omite el hecho central de que es la más antigua."}
+{"id":"choclo-54569","embSim":0.1263,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma distribución en Europa/Paleártico, contradiciendo la referencia que indica Ecuador."}
+{"id":"choclo-100321","embSim":0.6487,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata describe la captura y ejecución de Túpac Amaru II, no el inicio de su rebelión."}
+{"id":"choclo-71712","embSim":0.5239,"verdict":"incorrect","key_fact_match":false,"rationale":"Candidate names a different monument (San Felipe de Barajas) than the reference."}
+{"id":"choclo-73052","embSim":0.5023,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no saber en lugar de indicar el apodo La Barragana."}
+{"id":"choclo-61273","embSim":0.2506,"verdict":"incorrect","key_fact_match":false,"rationale":"Declara no tener información, sin expresar el hecho central de la referencia."}
+{"id":"choclo-9536","embSim":0.4694,"verdict":"correct","key_fact_match":true,"rationale":"La candidata coincide en el descriptor F.Ritter y el año 1963, sin contradicciones."}
+{"id":"choclo-45553","embSim":0.6307,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que fue una batalla naval, coincidiendo exactamente con la referencia."}
+{"id":"choclo-21898","embSim":0.292,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata nombra 'Karkú' en vez de 'Corazón Rebelde'."}
+{"id":"choclo-83962","embSim":0.5228,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma directamente que el parque se ubica en Honduras, coincidiendo con el hecho central de la referencia."}
+{"id":"choclo-13184","embSim":0.5268,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice la altitud de referencia y omite el rango completo de color de flor."}
+{"id":"choclo-11205","embSim":0.7085,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho central de ser una especie de anfibios de la familia Hylidae, con detalle adicional correcto."}
+{"id":"choclo-104416","embSim":0.6336,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice y omite todos los hechos geológicos y ecológicos clave de la referencia."}
+{"id":"choclo-4539","embSim":0.3515,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener acceso a la información en vez de expresar los hechos de la referencia."}
+{"id":"choclo-6501","embSim":0.4744,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata menciona un premio y cuento distintos a los de la referencia."}
+{"id":"choclo-65200","embSim":0.4418,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata omite el hecho central de la referencia (ubicación al sur oriente de Ecuador) y responde con información distinta."}
+{"id":"choclo-98609","embSim":0.5689,"verdict":"correct","key_fact_match":true,"rationale":"Candidate affirms it is a duck (with extra compatible details)."}
+{"id":"choclo-2679","embSim":0.7236,"verdict":"partial","key_fact_match":false,"rationale":"menciona que está en la provincia pero omite que es una de las dos comunas que la componen"}
+{"id":"choclo-23955","embSim":0.3645,"verdict":"partial","key_fact_match":true,"rationale":"acierta 'pez de agua dulce' pero omite 'actinopeterigio'"}
+{"id":"choclo-35780","embSim":0.2462,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice directamente la fecha central de la referencia."}
+{"id":"choclo-26381","embSim":0.5668,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice la referencia al negar el género y dar especies distintas"}
+{"id":"choclo-48875","embSim":0.6309,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente el hecho central de la referencia."}
+{"id":"choclo-94360","embSim":0.6936,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara explícitamente no tener información sobre los hechos clave de la referencia."}
+{"id":"choclo-30386","embSim":0.3489,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice directamente el lugar de nacimiento de la referencia."}
+{"id":"choclo-48866","embSim":0.6803,"verdict":"correct","key_fact_match":true,"rationale":"Candidate states the exact same central fact as reference (Atuntaqui is the cabecera cantonal)."}
+{"id":"choclo-5431","embSim":0.3974,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma explícitamente que es un edificio histórico, coincidiendo con el hecho clave de la referencia."}
+{"id":"choclo-50430","embSim":0.3273,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice ambos hechos centrales: año 1994 vs 1907 y provincia Mendoza vs Tucumán."}
+{"id":"choclo-59424","embSim":0.2319,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata menciona Brasil y Paraguay en lugar de Venezuela, Colombia, Bolivia, Ecuador y Perú."}
+{"id":"choclo-18576","embSim":0.3987,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata define una región geopolítica en vez de una biogeográfica de los mares."}
+{"id":"choclo-79861","embSim":0.5675,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho central de la referencia (departamento de Cerro Largo) con detalles adicionales correctos."}
+{"id":"choclo-15892","embSim":0.2921,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice directamente los países listados en la referencia al mencionar naciones africanas distintas."}
+{"id":"choclo-54144","embSim":0.5046,"verdict":"correct","key_fact_match":true,"rationale":"La candidata nombra directamente la técnica central 'cincelado' que coincide con la referencia."}
+{"id":"choclo-75944","embSim":0.7045,"verdict":"incorrect","key_fact_match":false,"rationale":"cambia género Liolaemus por familia Liolaemidae"}
+{"id":"choclo-103398","embSim":0.8419,"verdict":"partial","key_fact_match":true,"rationale":"La candidata coincide en el hábitat acuático general pero omite la preferencia específica por la desembocadura del Amazonas mencionada en la referencia."}
+{"id":"choclo-58136","embSim":0.5582,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice directamente el rango de profundidad de la referencia."}
+{"id":"choclo-38090","embSim":0.5445,"verdict":"partial","key_fact_match":true,"rationale":"Omite el orden Characiformes mencionado en la referencia."}
+{"id":"choclo-83651","embSim":0.4141,"verdict":"partial","key_fact_match":false,"rationale":"Coincide en la descarga eléctrica frecuente pero omite el aspecto magnético, el 'no da trueno' y la ubicación en llanura."}
+{"id":"choclo-79187","embSim":0.446,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener acceso a la información en vez de listar los títulos de la referencia."}
+{"id":"choclo-60128","embSim":0.6424,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente el hecho central de la referencia sobre la sede."}
+{"id":"choclo-41210","embSim":0.4685,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa que es una localidad peruana y añade detalles extra sin contradecir la referencia."}
+{"id":"choclo-101411","embSim":0.9394,"verdict":"correct","key_fact_match":true,"rationale":"Candidate matches all key facts from reference without contradiction or omission of central elements."}
+{"id":"choclo-8022","embSim":0.4169,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener la información y no menciona ninguno de los hechos clave de la referencia."}
+{"id":"choclo-22898","embSim":0.5912,"verdict":"correct","key_fact_match":true,"rationale":"La candidata coincide en que es un sitio clave de formación de aguas profundas y describe el proceso de modificación por densidad."}
+{"id":"choclo-49189","embSim":0.5829,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma exactamente que la cabecera es Naranjito, coincidiendo con la referencia."}
+{"id":"choclo-9998","embSim":0.5424,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que Cotapata es un punto importante en la red viaria boliviana, expresando el hecho clave de la referencia."}
+{"id":"choclo-36947","embSim":0.4577,"verdict":"partial","key_fact_match":false,"rationale":"Coincide en estratovolcán pero omite el hecho clave de que es activo."}
+{"id":"choclo-6643","embSim":0.7119,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata da un nombre completamente diferente al de la referencia."}
+{"id":"choclo-60993","embSim":0.3656,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata omite por completo las costillas (10-14 comprimidas) y el bioma tropical montano, reemplazándolos por otros rasgos y un hábitat árido rocoso genérico."}
+{"id":"choclo-70529","embSim":0.4821,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no saber el nombre del arquitecto, contradiciendo directamente la referencia."}
+{"id":"choclo-94901","embSim":0.4309,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho clave de que es un salar."}
+{"id":"choclo-7499","embSim":0.5433,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata omite el límite con la Región Metropolitana y menciona un límite comunal distinto."}
+{"id":"choclo-73338","embSim":0.5844,"verdict":"partial","key_fact_match":false,"rationale":"menciona municipio y estado pero omite el hecho central de estar dentro del parque Canaima"}
+{"id":"choclo-60151","embSim":0.463,"verdict":"partial","key_fact_match":false,"rationale":"Coincide en Iglesia católica pero omite Paraguay y usa diócesis en vez de circunscripción eclesiástica."}
+{"id":"choclo-29756","embSim":0.4803,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata indica la familia Bromeliaceae en vez del género Puya de la referencia."}
+{"id":"choclo-64733","embSim":0.4194,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata atribuye el término a Sten De Geer en 1919 en lugar de Wilhelm Ramsay en 1898."}
+{"id":"choclo-86807","embSim":0.3032,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información, sin expresar ningún hecho de la referencia."}
+{"id":"choclo-52406","embSim":0.3076,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener la información, en lugar de expresar la altitud de 225 metros de la referencia."}
+{"id":"choclo-104193","embSim":0.5906,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice la referencia al indicar provincia y distrito distintos."}
+{"id":"choclo-29699","embSim":0.1613,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata no menciona ni coincide con 'una gran extensión'."}
+{"id":"choclo-9636","embSim":0.4256,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata no expresa que sea un cordón de montañas y da una definición/descripción distinta."}
+{"id":"choclo-63650","embSim":0.4501,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa exactamente los hechos clave de la referencia."}
+{"id":"choclo-78280","embSim":0.4991,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que se encuentra en México, expresando el hecho central de la referencia."}
+{"id":"choclo-95746","embSim":0.606,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no tener información, contradiciendo los hechos específicos de la referencia."}
+{"id":"choclo-7822","embSim":0.4972,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata da una definicion distinta y no expresa que sea una localidad lacustre de Bolivia."}
+{"id":"choclo-50862","embSim":0.2711,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata omite por completo el dato central de 233 especies y describe otros rasgos en su lugar."}
+{"id":"choclo-48837","embSim":0.5386,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma dos cantores en lugar de los tres indicados en la referencia."}
+{"id":"choclo-32562","embSim":0.514,"verdict":"incorrect","key_fact_match":false,"rationale":"El número central de hectáreas (4400) contradice el dato de referencia (4589)."}
+{"id":"choclo-91685","embSim":0.4441,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice tipo de bosque (húmedos vs secos) y rango altitudinal (600-2000 vs 200-1700)."}
+{"id":"choclo-87874","embSim":0.2072,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice directamente la ubicación de la referencia al indicar Colombia en lugar de Perú."}
+{"id":"choclo-63623","embSim":0.4308,"verdict":"partial","key_fact_match":false,"rationale":"Covers northern South America but omits Trinidad and adds uncertain coastal details instead."}
+{"id":"choclo-80708","embSim":0.5996,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa los hechos clave: calendarios juliano (ortodoxos rusos, 7 enero) vs gregoriano (25 diciembre) permiten celebraciones en fechas distintas."}
+{"id":"choclo-38456","embSim":0.5586,"verdict":"correct","key_fact_match":true,"rationale":"La candidata afirma que es un pez cirujano, coincidiendo exactamente con el hecho central de la referencia."}
+{"id":"choclo-18232","embSim":0.4782,"verdict":"partial","key_fact_match":false,"rationale":"La candidata menciona distribución en la cuenca amazónica pero especifica subregiones distintas sin aludir a la región amazónica occidental de la referencia."}
+{"id":"choclo-35199","embSim":0.116,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma 1953 contradiciendo el año 2012 de la referencia."}
+{"id":"choclo-91199","embSim":0.8562,"verdict":"partial","key_fact_match":true,"rationale":"Menciona la co-gestión con SERNANP y la organización ejecutora indígena pero declara no tener el nombre exacto y omite el aprovechamiento de recursos para el sostenimiento comunitario."}
+{"id":"choclo-43584","embSim":0.2009,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma endémica de Bolivia, contradiciendo directamente la referencia que indica Perú."}
+{"id":"choclo-76712","embSim":0.4188,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho central de que es una especie de cucaracha, alineado con la referencia de insecto blatodeo Blaberidae."}
+{"id":"choclo-96754","embSim":0.6166,"verdict":"partial","key_fact_match":false,"rationale":"Coincide en la longitud de 61 cm pero describe la dentadura de forma distinta sin mencionar la placa dentaria."}
+{"id":"choclo-60950","embSim":0.4307,"verdict":"correct","key_fact_match":true,"rationale":"Arequipa is located in southern Peru, matching the reference's key fact without contradiction."}
+{"id":"choclo-73906","embSim":0.426,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa que el lago es importante por su rica biodiversidad y como reservorio de flora/fauna acuática y silvestre, coincidiendo con el hecho clave de la referencia."}
+{"id":"choclo-65881","embSim":0.2927,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata da una fecha completamente distinta y contradice la referencia."}
+{"id":"choclo-85268","embSim":0.3913,"verdict":"incorrect","key_fact_match":false,"rationale":"Declara no tener información y no menciona los hechos del nido."}
+{"id":"choclo-47939","embSim":0.4197,"verdict":"partial","key_fact_match":false,"rationale":"Coincide en Brasil/Colombia/Perú pero omite Guayana Francesa y Surinam e incluye Ecuador/Bolivia."}
+{"id":"choclo-61843","embSim":0.5746,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho clave de que es una novela de fantasía y aventuras, coincidiendo con la referencia."}
+{"id":"choclo-99302","embSim":0.6185,"verdict":"incorrect","key_fact_match":false,"rationale":"Candidate states 17 named storms, contradicting the reference's 19."}
+{"id":"choclo-56262","embSim":0.3448,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata contradice la referencia al atribuir el mar libre de hielo a corrientes cálidas en vez de clima seco."}
+{"id":"choclo-28084","embSim":0.1398,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata afirma 8 km en lugar de los 1670 m de la referencia."}
+{"id":"choclo-57457","embSim":0.696,"verdict":"partial","key_fact_match":false,"rationale":"Omite la especificación 'histricomorfo' de la referencia."}
+{"id":"choclo-79955","embSim":0.4208,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata describe ríos y rasgos geográficos distintos a los de la referencia."}
+{"id":"choclo-46840","embSim":0.5384,"verdict":"incorrect","key_fact_match":false,"rationale":"Contradice la campaña de referencia al indicar Nueva Guinea en vez de Nueva Bretaña."}
+{"id":"choclo-97370","embSim":0.1106,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata describe universidades estadounidenses en lugar de acantilados de creta."}
+{"id":"choclo-96594","embSim":0.2325,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata indica Madagascar en lugar del centro-este de Brasil y nordeste de Argentina."}
+{"id":"choclo-51890","embSim":0.13,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata declara no saber en lugar de dar la altitud de la referencia."}
+{"id":"choclo-76559","embSim":0.4619,"verdict":"incorrect","key_fact_match":false,"rationale":"La candidata da un nombre distinto al de la referencia."}
+{"id":"choclo-873","embSim":0.5274,"verdict":"correct","key_fact_match":true,"rationale":"La candidata expresa el hecho central de ser un avión utilitario argentino, con detalles adicionales compatibles."}

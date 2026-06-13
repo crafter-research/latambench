@@ -9,5 +9,12 @@
   "failed": 1,
   "meanTokenF1": 0.1643,
   "scoring": "token-f1-v1 (lexical only - hybrid judge lands in V2)",
-  "createdAt": "2026-06-13T15:40:08.664Z"
+  "createdAt": "2026-06-13T15:40:08.664Z",
+  "judgeModel": "xai/grok-4.3",
+  "nExcluded": 1,
+  "nValid": 499,
+  "judgeAccuracy": 0.3467,
+  "judgePartialRate": 0.1563,
+  "judgeMeanScore": 0.4248,
+  "meanEmbSim": 0.463
 }
