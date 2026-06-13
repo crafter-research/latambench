@@ -6,8 +6,8 @@ interface Props {
   description?: string;
 }
 const {
-  title = "LatamBench - LLM Benchmark for Latin American Spanish",
-  description = "The first generation-first benchmark evaluating large language models on authentic Latin American Spanish. Latam-Gen, Latam-Reason, Latam-Code, Latam-Cultura, Latam-IF.",
+  title = "LatamBench - Independent LLM evals for Latin American cultural knowledge",
+  description = "Evaluación independiente de LLMs en conocimiento cultural latinoamericano. Leaderboard reproducible con juez calibrado y transcripts abiertos. Trueque + CHOCLO, 11 modelos.",
 } = Astro.props;
 
 const siteUrl = "https://latambench.org";
@@ -42,15 +42,15 @@ const siteUrl = "https://latambench.org";
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${siteUrl}/og-twitter.png`} />
 
-    <!-- Fonts -->
+    <!-- Fonts: Geist + Geist Mono (Crafter Research brand) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body class="bg-[#080808] text-white min-h-screen">
+  <body class="bg-[#0a130e] text-[#f4f3ee] min-h-screen antialiased">
     <slot />
   </body>
 </html>

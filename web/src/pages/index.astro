@@ -2,8 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 
 // Judge accuracy (reference-anchored, calibrated grok-4.3), seed 42, temp 0.
-// correct = juez correcto · noSabe = abstención (no compromete respuesta) · sabeMal = intento erróneo (alucinación).
-// Datos reproducibles en el repo (runs/*/run.json + judgments.jsonl + abstention.jsonl).
+// correct = juez correcto · noSabe = abstención · sabeMal = intento erróneo (alucinación).
+// Reproducible: runs/*/run.json + judgments.jsonl + abstention.jsonl
 const boards = {
   trueque: [
     { org: "Anthropic", model: "Claude Fable 5", correct: 72.8, noSabe: 3.6, sabeMal: 6.4 },
@@ -33,259 +33,178 @@ const boards = {
   ],
 };
 
-const evals = [
-  {
-    id: "TRUEQUE",
-    name: "Trueque",
-    description: "500 preguntas curadas de cultura, historia, geografía y gastronomía de 20 países. Referencia abierta.",
-    meta: "CENIA · Apache 2.0",
-    status: "done",
-  },
-  {
-    id: "CHOCLO",
-    name: "CHOCLO",
-    description: "105K preguntas de entidades culturales por país, categoría y dificultad. Referencias cortas, conocimiento de cola larga.",
-    meta: "CENIA · MIT",
-    status: "done",
-  },
-  {
-    id: "LATAM-*",
-    name: "Dataset propio",
-    description: "Conjunto generativo nativo con referencias multi-respuesta, diseñado para cubrir el espacio de respuestas defendibles, no un solo punto.",
-    meta: "Crafter Research · fase 2",
-    status: "planned",
-  },
-];
-
 const method = [
-  { label: "Juez anclado a referencia", detail: "Un modelo fuera del set comparado decide si la respuesta expresa los hechos de la referencia. Calibrado con un set sintético (TPR 0.99 / TNR 0.97)." },
-  { label: "Scoring híbrido", detail: "token-F1 + similitud de embeddings + veredicto del juez. Los desacuerdos entre señales pasan a revisión manual." },
-  { label: "Reproducible", detail: "Cada corrida guarda las respuestas crudas y los transcripts del juez. Seed fijo, temperatura 0, todo versionado en git." },
-  { label: "Auditoría del benchmark", detail: "El pipeline detecta no solo errores de los modelos sino issues de referencia en los propios benchmarks: propuestas de fix aditivas." },
+  { k: "01", label: "Juez anclado a referencia", detail: "Un modelo fuera del set comparado decide si la respuesta expresa los hechos de la referencia. Calibrado con un set sintético: TPR 0.99 / TNR 0.97." },
+  { k: "02", label: "Tres dimensiones", detail: "No solo accuracy. Separamos abstención honesta (\"no sé\") de alucinación (\"sabe mal\"): para alto riesgo, un modelo que se calla vale más que uno que inventa." },
+  { k: "03", label: "Reproducible", detail: "Cada corrida guarda respuestas crudas y transcripts del juez. Seed fijo, temperatura 0, todo versionado en git." },
+  { k: "04", label: "Auditoría del benchmark", detail: "El pipeline detecta no solo errores de los modelos sino issues de referencia en los benchmarks mismos. Fixes aditivos, nunca correcciones culturales." },
 ];
 
-const findings = [
-  { label: "El frontier domina, pero no aplasta uniforme", detail: "El mejor modelo responde 73% de las preguntas culturales; ninguno pasa de ahí. El conocimiento regional sigue siendo la cola débil." },
-  { label: "Las métricas léxicas mienten", detail: "El token-F1 castiga respuestas correctas pero verbosas. Con el juez calibrado, el ranking se reordena por completo." },
-  { label: "El pretraining regional mueve poco la aguja", detail: "El primer eval independiente de un modelo con continued-pretraining regional lo deja apenas por encima de su modelo base, lejos del frontier." },
+const evals = [
+  { id: "TRUEQUE", name: "Trueque", desc: "500 preguntas curadas de cultura, historia, geografía y gastronomía de 20 países. Referencia abierta.", meta: "CENIA · Apache 2.0", status: "Evaluado" },
+  { id: "CHOCLO", name: "CHOCLO", desc: "105K preguntas de entidades culturales por país, categoría y dificultad. Conocimiento de cola larga.", meta: "CENIA · MIT", status: "Evaluado" },
+  { id: "LATAM-*", name: "Dataset propio", desc: "Conjunto generativo nativo con referencias multi-respuesta, diseñado para cubrir el espacio de respuestas defendibles.", meta: "Crafter Research", status: "Fase 2" },
 ];
 ---
 
 <Layout>
   <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 md:px-8 py-4 md:py-5 border-b border-white/8 backdrop-blur-sm bg-[#080808]/80">
-    <a href="/" class="flex items-center gap-3 group">
-      <svg width="20" height="20" viewBox="0 0 85 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M34.7718 13.6653C32.7175 12.2339 29.2082 10.55 26.8971 9.87636C21.6759 8.27657 17.5551 9.17712 14.8283 10.129C9.52151 11.9813 6.18334 14.4231 3.18755 18.8857C-1.52013 25.79 -0.835381 36.9885 4.89943 43.3035C6.18334 44.8191 6.86809 44.5665 11.8326 40.9459C12.0037 40.7775 11.319 39.6829 10.2919 38.4199C7.98082 35.5571 6.61131 30.3368 7.29606 27.3898C9.52151 18.1279 20.9055 13.1601 28.2666 18.2121C29.8929 19.3067 35.0286 23.8534 39.6506 28.316C46.5838 34.8835 48.638 36.3991 50.3499 36.2307C52.0618 36.0623 52.6609 35.4729 52.8321 33.6206C53.0889 31.5998 52.3186 30.421 48.3812 26.8846C45.7278 24.4428 43.588 22.2537 43.588 21.8327C43.588 21.4959 45.3854 20.0645 47.6109 18.7173C61.9907 9.70797 77.4832 27.6424 65.5001 39.4303C63.9594 40.9459 61.2204 42.5457 59.4229 43.0509C57.3686 43.5561 47.8677 43.9771 36.0557 43.9771C13.9724 43.9771 12.7741 44.2297 6.95368 49.3658C-0.493008 56.0176 -2.20489 67.3845 3.01635 75.636C9.77829 86.4135 24.3293 89.1079 34.6006 81.4458L38.3667 78.583L42.732 81.4458C49.8363 86.1609 55.5712 87.0871 62.5043 84.8137C76.3705 80.1828 81.5062 62.8377 72.5188 51.2182C71.4917 49.9552 70.9781 49.871 69.6086 50.5446C65.4145 52.9022 65.5001 52.7338 67.9823 57.7858C69.8654 61.6589 70.2077 63.1745 69.7798 66.1215C68.5815 73.531 62.9322 78.4988 55.7423 78.4988C50.1787 78.4988 48.3812 77.4042 38.11 67.5529C32.7175 62.5009 27.7531 58.291 27.0683 58.291C25.7844 58.291 23.0454 60.9011 23.0454 62.1641C23.0454 62.5009 25.3564 65.1953 28.2666 68.0581L33.4879 73.1942L30.4065 75.5518C19.536 83.7191 4.04349 73.952 7.63844 61.1537C8.75116 57.2806 12.6885 52.9864 16.4546 51.6392C17.9097 51.0498 26.8971 50.713 39.0515 50.713C61.3915 50.713 64.045 50.292 69.1806 45.9137C84.502 33.1154 75.6002 9.03437 55.5711 9.11857C49.7507 9.11857 46.5838 10.2974 41.1913 14.2547L38.4523 16.2755L34.7718 13.6653Z" fill="#F8BB2D"/>
-      </svg>
-      <div class="flex flex-col leading-none">
-        <span class="font-['Space_Grotesk'] text-xs font-medium tracking-[0.12em] uppercase text-white">LatamBench</span>
-        <span class="font-['JetBrains_Mono'] text-[9px] tracking-[0.08em] text-[#6b6560]">by Crafter Research</span>
-      </div>
+  <nav class="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-5 md:px-8 h-14 md:h-16 border-b border-[#cfe7d2]/10 bg-[#0a130e]/85 backdrop-blur-md">
+    <a href="/" class="flex items-center gap-2.5">
+      <svg width="18" height="18" viewBox="0 0 85 96" fill="none"><path d="M34.7718 13.6653C32.7175 12.2339 29.2082 10.55 26.8971 9.87636C21.6759 8.27657 17.5551 9.17712 14.8283 10.129C9.52151 11.9813 6.18334 14.4231 3.18755 18.8857C-1.52013 25.79 -0.835381 36.9885 4.89943 43.3035C6.18334 44.8191 6.86809 44.5665 11.8326 40.9459C12.0037 40.7775 11.319 39.6829 10.2919 38.4199C7.98082 35.5571 6.61131 30.3368 7.29606 27.3898C9.52151 18.1279 20.9055 13.1601 28.2666 18.2121C29.8929 19.3067 35.0286 23.8534 39.6506 28.316C46.5838 34.8835 48.638 36.3991 50.3499 36.2307C52.0618 36.0623 52.6609 35.4729 52.8321 33.6206C53.0889 31.5998 52.3186 30.421 48.3812 26.8846C45.7278 24.4428 43.588 22.2537 43.588 21.8327C43.588 21.4959 45.3854 20.0645 47.6109 18.7173C61.9907 9.70797 77.4832 27.6424 65.5001 39.4303C63.9594 40.9459 61.2204 42.5457 59.4229 43.0509C57.3686 43.5561 47.8677 43.9771 36.0557 43.9771C13.9724 43.9771 12.7741 44.2297 6.95368 49.3658C-0.493008 56.0176 -2.20489 67.3845 3.01635 75.636C9.77829 86.4135 24.3293 89.1079 34.6006 81.4458L38.3667 78.583L42.732 81.4458C49.8363 86.1609 55.5712 87.0871 62.5043 84.8137C76.3705 80.1828 81.5062 62.8377 72.5188 51.2182C71.4917 49.9552 70.9781 49.871 69.6086 50.5446C65.4145 52.9022 65.5001 52.7338 67.9823 57.7858C69.8654 61.6589 70.2077 63.1745 69.7798 66.1215C68.5815 73.531 62.9322 78.4988 55.7423 78.4988C50.1787 78.4988 48.3812 77.4042 38.11 67.5529C32.7175 62.5009 27.7531 58.291 27.0683 58.291C25.7844 58.291 23.0454 60.9011 23.0454 62.1641C23.0454 62.5009 25.3564 65.1953 28.2666 68.0581L33.4879 73.1942L30.4065 75.5518C19.536 83.7191 4.04349 73.952 7.63844 61.1537C8.75116 57.2806 12.6885 52.9864 16.4546 51.6392C17.9097 51.0498 26.8971 50.713 39.0515 50.713C61.3915 50.713 64.045 50.292 69.1806 45.9137C84.502 33.1154 75.6002 9.03437 55.5711 9.11857C49.7507 9.11857 46.5838 10.2974 41.1913 14.2547L38.4523 16.2755L34.7718 13.6653Z" fill="#CFE7D2"/></svg>
+      <span class="font-['Geist'] text-sm font-semibold tracking-tight text-[#f4f3ee]">LatamBench</span>
     </a>
-    <div class="hidden md:flex items-center gap-8">
-      <a href="#leaderboard" class="font-['JetBrains_Mono'] text-xs text-[#6b6560] hover:text-white transition-colors tracking-[0.08em] uppercase">Leaderboard</a>
-      <a href="#method"   class="font-['JetBrains_Mono'] text-xs text-[#6b6560] hover:text-white transition-colors tracking-[0.08em] uppercase">Metodología</a>
-      <a href="#evals" class="font-['JetBrains_Mono'] text-xs text-[#6b6560] hover:text-white transition-colors tracking-[0.08em] uppercase">Evals</a>
-      <a href="https://github.com/crafter-research/latambench" target="_blank" rel="noopener"
-         class="font-['JetBrains_Mono'] text-xs border border-white/12 px-4 py-2 text-[#c8c4be] hover:text-white hover:border-white/30 transition-all tracking-[0.08em] uppercase">
-        GitHub
-      </a>
+    <div class="hidden md:flex items-center gap-7">
+      <a href="#leaderboard" class="font-['Geist_Mono'] text-[11px] uppercase tracking-wider text-[#8a9590] hover:text-[#cfe7d2] transition-colors">Leaderboard</a>
+      <a href="#method" class="font-['Geist_Mono'] text-[11px] uppercase tracking-wider text-[#8a9590] hover:text-[#cfe7d2] transition-colors">Metodología</a>
+      <a href="#evals" class="font-['Geist_Mono'] text-[11px] uppercase tracking-wider text-[#8a9590] hover:text-[#cfe7d2] transition-colors">Evals</a>
     </div>
     <a href="https://github.com/crafter-research/latambench" target="_blank" rel="noopener"
-       class="md:hidden font-['JetBrains_Mono'] text-xs border border-white/12 px-3 py-2 text-[#c8c4be] tracking-[0.08em] uppercase">
-      GitHub
-    </a>
+       class="font-['Geist_Mono'] text-[11px] uppercase tracking-wider px-3.5 py-1.5 rounded-full border border-[#cfe7d2]/20 text-[#f4f3ee] hover:bg-[#cfe7d2] hover:text-[#0a130e] hover:border-[#cfe7d2] transition-all">GitHub</a>
   </nav>
 
   <!-- HERO -->
-  <section class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-16 md:pt-20">
-    <div class="absolute inset-0 pointer-events-none select-none">
+  <section class="relative px-5 md:px-8 pt-28 md:pt-36 pb-12 md:pb-16 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none opacity-[0.5]">
       <svg class="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#F8F8F8" stroke-width="0.5"/>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid)" />
+        <defs><pattern id="g" width="56" height="56" patternUnits="userSpaceOnUse"><path d="M 56 0 L 0 0 0 56" fill="none" stroke="#CFE7D2" stroke-width="0.5"/></pattern></defs>
+        <rect width="100%" height="100%" fill="url(#g)" />
       </svg>
-      <svg class="absolute top-0 right-0 w-[300px] h-[300px] md:w-[640px] md:h-[640px] opacity-[0.07]" viewBox="0 0 640 640" fill="none">
-        <path class="spiral-path" d="M 320 320 C 320 270, 270 220, 220 220 C 120 220, 70 300, 70 380 C 70 500, 170 580, 320 580 C 500 580, 600 460, 600 320 C 600 140, 460 60, 280 60 C 80 60, -60 200, -60 400"
-          stroke="#F8F8F8" stroke-width="0.8" fill="none" vector-effect="non-scaling-stroke"/>
-        <circle cx="320" cy="320" r="50"  stroke="#F8F8F8" stroke-width="0.5" fill="none" opacity="0.6"/>
-        <circle cx="320" cy="320" r="100" stroke="#F8F8F8" stroke-width="0.5" fill="none" opacity="0.5"/>
-        <circle cx="320" cy="320" r="180" stroke="#F8F8F8" stroke-width="0.5" fill="none" opacity="0.4"/>
-        <circle cx="320" cy="320" r="280" stroke="#F8F8F8" stroke-width="0.5" fill="none" opacity="0.3"/>
-      </svg>
-      <svg class="hidden md:block absolute bottom-0 left-0 w-[400px] h-[400px] opacity-[0.05]" viewBox="0 0 400 400" fill="none">
-        <circle cx="200" cy="200" r="160" stroke="#F8F8F8" stroke-width="0.5"/>
-        <circle cx="120" cy="200" r="80"  stroke="#F8F8F8" stroke-width="0.5"/>
-        <circle cx="280" cy="200" r="80"  stroke="#F8F8F8" stroke-width="0.5"/>
-        <circle cx="200" cy="130" r="80"  stroke="#F8F8F8" stroke-width="0.5"/>
-        <circle cx="200" cy="270" r="80"  stroke="#F8F8F8" stroke-width="0.5"/>
-        <line x1="40" y1="200" x2="360" y2="200" stroke="#F8F8F8" stroke-width="0.3"/>
-        <line x1="200" y1="40" x2="200" y2="360" stroke="#F8F8F8" stroke-width="0.3"/>
-      </svg>
+      <div class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-[#cfe7d2]/[0.04] blur-3xl"></div>
     </div>
 
-    <div class="relative z-10 px-5 md:px-16 max-w-6xl">
-      <div class="flex items-center gap-4 mb-8 md:mb-10">
-        <div class="w-6 md:w-8 h-px bg-white/20"></div>
-        <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">
-          Crafter Research Lab · observatorio de evals
-        </span>
+    <div class="relative max-w-[1400px] mx-auto">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70">Crafter Research</span>
+        <div class="w-8 h-px bg-[#cfe7d2]/20"></div>
+        <span class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#8a9590]">Observatorio de evals</span>
       </div>
 
-      <h1 class="font-['Space_Grotesk'] font-light text-[clamp(56px,12vw,112px)] leading-[1.0] tracking-[0.04em] uppercase text-white mb-6 md:mb-8">
-        Latam<br />Bench
+      <h1 class="font-['Geist'] font-bold tracking-[-0.04em] leading-[0.88] text-[clamp(64px,15vw,200px)] text-[#f4f3ee] mb-7">
+        Latam<span class="text-[#cfe7d2]">Bench</span>
       </h1>
 
-      <p class="font-['IBM_Plex_Sans'] font-light text-[#c8c4be] text-lg md:text-xl leading-relaxed mb-8 md:mb-12 max-w-sm md:max-w-xl">
-        Evaluación independiente de LLMs en conocimiento cultural latinoamericano.
-        Números reproducibles que nadie más publica, con juez calibrado y transcripts abiertos.
-      </p>
-
-      <div class="inline-flex items-center gap-3 border border-white/8 px-4 md:px-5 py-3 mb-8 md:mb-12">
-        <div class="w-1.5 h-1.5 rounded-full bg-[#F8BB2D] animate-pulse"></div>
-        <span class="font-['JetBrains_Mono'] text-[10px] text-[#c8c4be] tracking-[0.1em] uppercase">
-          Trueque + CHOCLO · 11 modelos · juez calibrado
-        </span>
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 lg:gap-16">
+        <p class="font-['Geist'] text-lg md:text-2xl leading-snug text-[#c5cdc8] max-w-2xl font-light">
+          Evaluación independiente de LLMs en conocimiento cultural latinoamericano.
+          Números reproducibles que nadie más publica, con juez calibrado y transcripts abiertos.
+        </p>
+        <div class="flex items-center gap-3 flex-shrink-0">
+          <a href="#leaderboard" class="font-['Geist'] text-sm font-medium px-6 py-3 rounded-full bg-[#cfe7d2] text-[#0a130e] hover:bg-[#f4f3ee] transition-colors">Ver el leaderboard</a>
+          <a href="https://github.com/crafter-research/latambench" target="_blank" rel="noopener" class="font-['Geist'] text-sm font-medium px-6 py-3 rounded-full border border-[#cfe7d2]/20 text-[#f4f3ee] hover:border-[#cfe7d2]/50 transition-colors">GitHub</a>
+        </div>
       </div>
 
-      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-4">
-        <a href="#leaderboard"
-           class="font-['Space_Grotesk'] text-sm tracking-[0.08em] uppercase bg-white text-[#080808] px-6 md:px-7 py-3 hover:bg-[#c8c4be] transition-colors font-medium w-full sm:w-auto text-center">
-          Ver el leaderboard
-        </a>
-        <a href="https://github.com/crafter-research/latambench" target="_blank" rel="noopener"
-           class="font-['Space_Grotesk'] text-sm tracking-[0.08em] uppercase border border-white/12 text-[#c8c4be] px-6 md:px-7 py-3 hover:border-white/30 hover:text-white transition-all w-full sm:w-auto text-center">
-          Ver en GitHub
-        </a>
+      <!-- stat strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-px mt-12 md:mt-16 border border-[#cfe7d2]/10 rounded-2xl overflow-hidden bg-[#cfe7d2]/10">
+        {[
+          { v: "2", l: "benchmarks" },
+          { v: "11", l: "modelos" },
+          { v: "11K", l: "veredictos del juez" },
+          { v: "100%", l: "reproducible" },
+        ].map((s) => (
+          <div class="bg-[#0d1812] px-5 md:px-7 py-5 md:py-7">
+            <div class="font-['Geist'] font-bold text-3xl md:text-5xl tracking-tight text-[#f4f3ee]">{s.v}</div>
+            <div class="font-['Geist_Mono'] text-[10px] uppercase tracking-wider text-[#8a9590] mt-1.5">{s.l}</div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- EL PROBLEMA -->
-  <section class="border-t border-white/8 py-20 md:py-28 px-5 md:px-16">
-    <div class="max-w-6xl">
-      <div class="flex items-center gap-4 mb-10 md:mb-16">
-        <div class="w-6 md:w-8 h-px bg-white/20"></div>
-        <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">01 / El Problema</span>
-      </div>
-
-      <div class="flex flex-col lg:flex-row gap-12 lg:gap-24">
-        <div class="flex-1 lg:max-w-lg">
-          <h2 class="font-['Space_Grotesk'] font-light text-[clamp(28px,5vw,52px)] leading-[1.1] tracking-[0.02em] uppercase text-white mb-6 md:mb-8">
-            Nadie mide<br />qué saben los<br />modelos de Latam
+  <!-- LEADERBOARD (protagonista) -->
+  <section id="leaderboard" class="px-5 md:px-8 py-14 md:py-20">
+    <div class="max-w-[1400px] mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 md:mb-10">
+        <div>
+          <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-3">01 / Leaderboard</div>
+          <h2 class="font-['Geist'] font-bold text-[clamp(34px,6vw,72px)] leading-[0.95] tracking-[-0.03em] text-[#f4f3ee]">
+            ¿Qué saben los<br />modelos de Latam?
           </h2>
-          <p class="font-['IBM_Plex_Sans'] text-[#c8c4be] leading-relaxed mb-5">
-            Existen benchmarks de cultura latinoamericana, pero corren sin auditoría: nadie
-            compara modelos de forma independiente, nadie verifica que las referencias estén
-            bien, y los rankings ingenuos por solapamiento de palabras dan resultados engañosos.
-          </p>
-          <p class="font-['IBM_Plex_Sans'] text-[#c8c4be] leading-relaxed">
-            LatamBench corre esos evals con un juez calibrado y transcripts abiertos, y en el
-            proceso audita los benchmarks mismos. La pregunta de fondo: ¿quién posee la "verdad
-            cultural" cuando una respuesta tiene varias formas legítimas?
-          </p>
-
-          <div class="mt-8 md:mt-10 p-5 md:p-6 bg-[#e8dfc8] border-l-2 border-[#4a3f35]">
-            <p class="font-['IBM_Plex_Sans'] text-[#4a3f35] text-sm italic leading-relaxed">
-              "La ambigüedad no es pecado del lenguaje, es pecado del diseño del benchmark."
-            </p>
-            <div class="font-['JetBrains_Mono'] text-[#6b6560] text-[10px] tracking-[0.12em] uppercase mt-3">
-              - Principio del proyecto
-            </div>
-          </div>
         </div>
-
-        <div class="flex-1">
-          <div class="font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] uppercase text-[#6b6560] mb-6 md:mb-8">
-            Lo que encontramos
-          </div>
-          <div class="space-y-5 md:space-y-6">
-            {findings.map((item) => (
-              <div class="border-b border-white/8 pb-5 md:pb-6">
-                <div class="font-['Space_Grotesk'] text-sm font-medium text-white mb-2">{item.label}</div>
-                <div class="font-['IBM_Plex_Sans'] text-sm text-[#6b6560] leading-relaxed">{item.detail}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEADERBOARD -->
-  <section id="leaderboard" class="border-t border-white/8 py-20 md:py-28 px-5 md:px-16">
-    <div class="max-w-6xl">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10 md:mb-16">
-        <div class="flex items-center gap-4">
-          <div class="w-6 md:w-8 h-px bg-white/20"></div>
-          <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">02 / Leaderboard</span>
-        </div>
-        <div class="flex items-center gap-1.5 self-start border border-white/8 p-1">
-          <button data-tab="trueque" class="tab font-['JetBrains_Mono'] text-[10px] tracking-[0.12em] uppercase px-3 py-1.5 text-white bg-white/10">Trueque</button>
-          <button data-tab="choclo" class="tab font-['JetBrains_Mono'] text-[10px] tracking-[0.12em] uppercase px-3 py-1.5 text-[#6b6560]">CHOCLO</button>
+        <div class="flex items-center gap-1 self-start md:self-end p-1 rounded-full border border-[#cfe7d2]/15 bg-[#0d1812]">
+          <button data-tab="trueque" class="tab font-['Geist_Mono'] text-[11px] tracking-wider uppercase px-4 py-2 rounded-full text-[#0a130e] bg-[#cfe7d2]">Trueque</button>
+          <button data-tab="choclo" class="tab font-['Geist_Mono'] text-[11px] tracking-wider uppercase px-4 py-2 rounded-full text-[#8a9590]">CHOCLO</button>
         </div>
       </div>
 
       {Object.entries(boards).map(([bench, rows]) => (
-        <div class="board border border-white/8" data-board={bench} style={bench === "trueque" ? "" : "display:none"}>
-          <div class="grid border-b border-white/8 bg-[#111111]" style="grid-template-columns: 2.2rem 1fr 6rem 4.5rem 4.5rem 4.5rem;">
+        <div class="board rounded-2xl border border-[#cfe7d2]/12 overflow-hidden bg-[#0d1812]" data-board={bench} style={bench === "trueque" ? "" : "display:none"}>
+          <div class="grid items-center px-4 md:px-6 py-3.5 border-b border-[#cfe7d2]/10 bg-[#cfe7d2]/[0.03]" style="grid-template-columns: 2rem 1fr 6.5rem 5rem 5rem 5rem;">
             {["#", "Modelo", "Org", "Correct", "No sabe", "Sabe mal"].map((h) => (
-              <div class="px-2 md:px-3 py-3 font-['JetBrains_Mono'] text-[9px] md:text-[10px] tracking-[0.12em] uppercase text-[#3a3a3a]">{h}</div>
+              <div class="font-['Geist_Mono'] text-[9px] md:text-[10px] tracking-[0.12em] uppercase text-[#8a9590]">{h}</div>
             ))}
           </div>
           {rows.map((row, i) => (
-            <div class={`grid border-b border-white/8 items-center ${row.tag === "regional" ? "bg-[#F8BB2D]/[0.06]" : row.tag === "base" ? "bg-white/[0.015]" : ""}`} style="grid-template-columns: 2.2rem 1fr 6rem 4.5rem 4.5rem 4.5rem;">
-              <div class="px-2 md:px-3 py-3.5 font-['JetBrains_Mono'] text-[11px] text-[#6b6560]">{i + 1}</div>
-              <div class="px-2 md:px-3 py-3.5 flex items-center gap-2 min-w-0">
-                <span class="font-['Space_Grotesk'] text-sm text-white truncate">{row.model}</span>
-                {row.tag === "regional" && (
-                  <span class="font-['JetBrains_Mono'] text-[8px] tracking-[0.12em] uppercase text-[#F8BB2D] border border-[#F8BB2D]/30 px-1.5 py-0.5 flex-shrink-0">regional</span>
-                )}
-                {row.tag === "base" && (
-                  <span class="font-['JetBrains_Mono'] text-[8px] tracking-[0.12em] uppercase text-[#6b6560] border border-white/10 px-1.5 py-0.5 flex-shrink-0">base</span>
-                )}
+            <div class={`grid items-center px-4 md:px-6 py-4 border-b border-[#cfe7d2]/[0.06] last:border-0 transition-colors hover:bg-[#cfe7d2]/[0.03] ${row.tag === "regional" ? "bg-[#cfe7d2]/[0.07]" : ""}`} style="grid-template-columns: 2rem 1fr 6.5rem 5rem 5rem 5rem;">
+              <div class="font-['Geist_Mono'] text-[12px] text-[#8a9590]">{i + 1}</div>
+              <div class="flex items-center gap-2 min-w-0 pr-2">
+                <span class="font-['Geist'] font-medium text-[15px] text-[#f4f3ee] truncate">{row.model}</span>
+                {row.tag === "regional" && <span class="font-['Geist_Mono'] text-[8px] tracking-wider uppercase text-[#0a130e] bg-[#cfe7d2] px-1.5 py-0.5 rounded flex-shrink-0">regional</span>}
+                {row.tag === "base" && <span class="font-['Geist_Mono'] text-[8px] tracking-wider uppercase text-[#8a9590] border border-[#cfe7d2]/20 px-1.5 py-0.5 rounded flex-shrink-0">base</span>}
               </div>
-              <div class="px-2 md:px-3 py-3.5 font-['JetBrains_Mono'] text-[11px] text-[#6b6560]">{row.org}</div>
-              <div class="px-2 md:px-3 py-3.5 font-['JetBrains_Mono'] text-[12px] text-white">{row.correct.toFixed(1)}%</div>
-              <div class="px-2 md:px-3 py-3.5 font-['JetBrains_Mono'] text-[12px] text-[#6b6560]">{row.noSabe.toFixed(1)}%</div>
-              <div class="px-2 md:px-3 py-3.5 font-['JetBrains_Mono'] text-[12px] text-[#d66a5f]">{row.sabeMal.toFixed(1)}%</div>
+              <div class="font-['Geist_Mono'] text-[11px] text-[#8a9590]">{row.org}</div>
+              <div class="font-['Geist_Mono'] text-[15px] font-medium text-[#f4f3ee] tabular-nums">{row.correct.toFixed(1)}<span class="text-[#8a9590] text-[11px]">%</span></div>
+              <div class="font-['Geist_Mono'] text-[13px] text-[#8a9590] tabular-nums">{row.noSabe.toFixed(1)}<span class="text-[11px]">%</span></div>
+              <div class={`font-['Geist_Mono'] text-[13px] tabular-nums ${row.sabeMal >= 35 ? "text-[#e8a08b]" : "text-[#bfa394]"}`}>{row.sabeMal.toFixed(1)}<span class="text-[11px] opacity-60">%</span></div>
             </div>
           ))}
         </div>
       ))}
 
-      <div class="mt-5 max-w-3xl space-y-2">
-        <p class="font-['JetBrains_Mono'] text-[10px] text-[#3a3a3a] leading-relaxed">
-          <span class="text-white">Correct</span>: el juez considera que expresa los hechos de la referencia ·
-          <span class="text-[#6b6560]">No sabe</span>: el modelo se abstiene ("no tengo información") ·
-          <span class="text-[#d66a5f]">Sabe mal</span>: intento erróneo (alucinación).
-        </p>
-        <p class="font-['JetBrains_Mono'] text-[10px] text-[#3a3a3a] leading-relaxed">
-          El accuracy crudo colapsa abstención y alucinación en "incorrecto", pero son opuestos. Rankeado por
-          <span class="text-[#d66a5f]"> sabe mal</span> (menos es mejor), el orden cambia: en CHOCLO, Opus 4.8 alucina solo 7.4%
-          mientras Llama 3.1 70B alucina 51.7%. Para gobierno o educación, un "no sé" honesto vale más que un dato inventado.
-        </p>
+      <div class="grid md:grid-cols-3 gap-4 mt-6">
+        <div class="md:col-span-2 rounded-2xl border border-[#cfe7d2]/10 p-5 md:p-6 bg-[#0d1812]">
+          <p class="font-['Geist'] text-[15px] leading-relaxed text-[#c5cdc8]">
+            El accuracy crudo colapsa <span class="text-[#cfe7d2]">abstención</span> y <span class="text-[#e8a08b]">alucinación</span> en un solo "incorrecto", pero son opuestos.
+            Rankeado por <span class="text-[#e8a08b]">sabe mal</span> (menos es mejor) el orden cambia: en CHOCLO, Opus 4.8 inventa solo <span class="font-['Geist_Mono']">7.4%</span> mientras
+            Llama 3.1 70B inventa <span class="font-['Geist_Mono']">51.7%</span>. Para gobierno o educación, un "no sé" honesto vale más que un dato inventado.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-[#cfe7d2]/10 p-5 md:p-6 bg-[#0d1812] flex flex-col justify-center gap-1.5">
+          <div class="font-['Geist_Mono'] text-[10px] uppercase tracking-wider text-[#8a9590]">columnas</div>
+          <div class="font-['Geist'] text-[13px] text-[#c5cdc8]"><span class="text-[#f4f3ee]">Correct</span> · expresa los hechos de la referencia</div>
+          <div class="font-['Geist'] text-[13px] text-[#c5cdc8]"><span class="text-[#cfe7d2]">No sabe</span> · se abstiene honestamente</div>
+          <div class="font-['Geist'] text-[13px] text-[#c5cdc8]"><span class="text-[#e8a08b]">Sabe mal</span> · inventa (alucinación)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HALLAZGOS -->
+  <section class="px-5 md:px-8 py-14 md:py-20 border-t border-[#cfe7d2]/8">
+    <div class="max-w-[1400px] mx-auto">
+      <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-8 md:mb-12">02 / Lo que encontramos</div>
+      <div class="grid md:grid-cols-3 gap-px rounded-2xl overflow-hidden border border-[#cfe7d2]/10 bg-[#cfe7d2]/10">
+        {[
+          { t: "El frontier domina, pero no aplasta", d: "El mejor modelo responde 73% de las preguntas culturales; ninguno pasa de ahí. El conocimiento regional sigue siendo la cola débil incluso para SOTA." },
+          { t: "Las métricas léxicas mienten", d: "El token-F1 castiga respuestas correctas pero verbosas. Con el juez calibrado, el ranking se reordena por completo." },
+          { t: "El pretraining regional mueve poco", d: "El primer eval independiente de un modelo con continued-pretraining regional lo deja apenas sobre su base, y entre los que más alucinan." },
+        ].map((f) => (
+          <div class="bg-[#0d1812] p-6 md:p-8">
+            <h3 class="font-['Geist'] font-semibold text-lg md:text-xl tracking-tight text-[#f4f3ee] mb-3 leading-snug">{f.t}</h3>
+            <p class="font-['Geist'] text-[14px] leading-relaxed text-[#8a9590]">{f.d}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-6 rounded-2xl border-l-2 border-[#cfe7d2] bg-[#cfe7d2]/[0.04] px-6 md:px-8 py-6">
+        <p class="font-['Geist'] text-lg md:text-xl italic text-[#e3e9e4] leading-snug">"La ambigüedad no es pecado del lenguaje, es pecado del diseño del benchmark."</p>
+        <div class="font-['Geist_Mono'] text-[10px] uppercase tracking-wider text-[#8a9590] mt-3">Principio del proyecto</div>
       </div>
     </div>
   </section>
 
   <!-- METODOLOGIA -->
-  <section id="method" class="border-t border-white/8 py-20 md:py-28 px-5 md:px-16">
-    <div class="max-w-6xl">
-      <div class="flex items-center gap-4 mb-10 md:mb-16">
-        <div class="w-6 md:w-8 h-px bg-white/20"></div>
-        <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">03 / Metodología</span>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 border-l border-t border-white/8">
+  <section id="method" class="px-5 md:px-8 py-14 md:py-20 border-t border-[#cfe7d2]/8">
+    <div class="max-w-[1400px] mx-auto">
+      <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-8 md:mb-12">03 / Metodología</div>
+      <div class="grid md:grid-cols-2 gap-px rounded-2xl overflow-hidden border border-[#cfe7d2]/10 bg-[#cfe7d2]/10">
         {method.map((m) => (
-          <div class="border-r border-b border-white/8 p-6 md:p-8">
-            <h3 class="font-['Space_Grotesk'] text-base md:text-lg font-medium tracking-[0.02em] text-white mb-3">{m.label}</h3>
-            <p class="font-['IBM_Plex_Sans'] text-[#6b6560] text-sm leading-relaxed">{m.detail}</p>
+          <div class="bg-[#0d1812] p-6 md:p-9">
+            <div class="flex items-baseline gap-3 mb-3">
+              <span class="font-['Geist_Mono'] text-[11px] text-[#cfe7d2]/60">{m.k}</span>
+              <h3 class="font-['Geist'] font-semibold text-lg md:text-xl tracking-tight text-[#f4f3ee]">{m.label}</h3>
+            </div>
+            <p class="font-['Geist'] text-[14px] leading-relaxed text-[#8a9590] pl-8">{m.detail}</p>
           </div>
         ))}
       </div>
@@ -293,31 +212,19 @@ const findings = [
   </section>
 
   <!-- EVALS -->
-  <section id="evals" class="border-t border-white/8 py-20 md:py-28 px-5 md:px-16">
-    <div class="max-w-6xl">
-      <div class="flex items-center gap-4 mb-10 md:mb-16">
-        <div class="w-6 md:w-8 h-px bg-white/20"></div>
-        <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">04 / Qué evaluamos</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 border-l border-t border-white/8">
+  <section id="evals" class="px-5 md:px-8 py-14 md:py-20 border-t border-[#cfe7d2]/8">
+    <div class="max-w-[1400px] mx-auto">
+      <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-8 md:mb-12">04 / Qué evaluamos</div>
+      <div class="grid md:grid-cols-3 gap-4">
         {evals.map((e) => (
-          <div class="border-r border-b border-white/8 p-6 md:p-8">
-            <div class="flex items-start justify-between mb-6 md:mb-8">
-              <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.15em] text-[#6b6560]">[{e.id}]</span>
-              <span class={`font-['JetBrains_Mono'] text-[8px] tracking-[0.15em] uppercase px-2 py-0.5 border ${
-                e.status === "done" ? "text-[#F8BB2D] border-[#F8BB2D]/30" :
-                e.status === "progress" ? "text-[#c8c4be] border-white/20" :
-                "text-[#3a3a3a] border-white/8"
-              }`}>
-                {e.status === "done" ? "evaluado" : e.status === "progress" ? "en proceso" : "fase 2"}
-              </span>
+          <div class="rounded-2xl border border-[#cfe7d2]/12 p-6 md:p-8 bg-[#0d1812] flex flex-col">
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-['Geist_Mono'] text-[10px] tracking-wider text-[#8a9590]">[{e.id}]</span>
+              <span class={`font-['Geist_Mono'] text-[9px] tracking-wider uppercase px-2.5 py-1 rounded-full ${e.status === "Evaluado" ? "text-[#0a130e] bg-[#cfe7d2]" : "text-[#8a9590] border border-[#cfe7d2]/20"}`}>{e.status}</span>
             </div>
-            <h3 class="font-['Space_Grotesk'] text-lg font-medium tracking-[0.02em] text-white mb-3">{e.name}</h3>
-            <p class="font-['IBM_Plex_Sans'] text-[#6b6560] text-sm leading-relaxed mb-6">{e.description}</p>
-            <div class="pt-4 border-t border-white/8">
-              <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.12em] uppercase text-[#3a3a3a]">{e.meta}</span>
-            </div>
+            <h3 class="font-['Geist'] font-bold text-2xl tracking-tight text-[#f4f3ee] mb-3">{e.name}</h3>
+            <p class="font-['Geist'] text-[14px] leading-relaxed text-[#8a9590] mb-6 flex-1">{e.desc}</p>
+            <div class="font-['Geist_Mono'] text-[10px] tracking-wider uppercase text-[#6f7a75] pt-4 border-t border-[#cfe7d2]/8">{e.meta}</div>
           </div>
         ))}
       </div>
@@ -325,52 +232,35 @@ const findings = [
   </section>
 
   <!-- CTA -->
-  <section class="border-t border-white/8 py-20 md:py-28 px-5 md:px-16">
-    <div class="max-w-6xl">
-      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
-        <div class="lg:max-w-xl">
-          <div class="flex items-center gap-4 mb-8 md:mb-10">
-            <div class="w-6 md:w-8 h-px bg-white/20"></div>
-            <span class="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] uppercase text-[#6b6560]">05 / Open</span>
-          </div>
-          <h2 class="font-['Space_Grotesk'] font-light text-[clamp(28px,5vw,44px)] leading-[1.1] tracking-[0.02em] uppercase text-white mb-6 md:mb-8">
-            Todo abierto<br />y reproducible
-          </h2>
-          <p class="font-['IBM_Plex_Sans'] text-[#c8c4be] leading-relaxed">
-            El harness, las respuestas crudas, los transcripts del juez y la calibración están en
-            GitHub. Cualquiera puede correr un modelo nuevo, auditar un veredicto o reproducir la
-            tabla con el mismo seed.
+  <section class="px-5 md:px-8 py-16 md:py-24 border-t border-[#cfe7d2]/8">
+    <div class="max-w-[1400px] mx-auto rounded-3xl border border-[#cfe7d2]/12 bg-gradient-to-br from-[#0f1c15] to-[#0d1812] p-8 md:p-14">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+        <div class="max-w-xl">
+          <h2 class="font-['Geist'] font-bold text-[clamp(30px,5vw,56px)] leading-[0.95] tracking-[-0.03em] text-[#f4f3ee] mb-5">Todo abierto y<br />reproducible</h2>
+          <p class="font-['Geist'] text-[#8a9590] leading-relaxed">
+            El harness, las respuestas crudas, los transcripts del juez y la calibración están en GitHub.
+            Cualquiera puede correr un modelo nuevo, auditar un veredicto o reproducir la tabla con el mismo seed.
           </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-3 md:gap-4 flex-shrink-0">
-          <a href="https://github.com/crafter-research/latambench" target="_blank" rel="noopener"
-             class="font-['Space_Grotesk'] text-sm tracking-[0.08em] uppercase bg-white text-[#080808] px-6 md:px-7 py-3 hover:bg-[#c8c4be] transition-colors font-medium text-center">
-            GitHub
-          </a>
-          <a href="https://huggingface.co/crafter-research" target="_blank" rel="noopener"
-             class="font-['Space_Grotesk'] text-sm tracking-[0.08em] uppercase border border-white/12 text-[#c8c4be] px-6 md:px-7 py-3 hover:border-white/30 hover:text-white transition-all text-center">
-            HuggingFace
-          </a>
+        <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+          <a href="https://github.com/crafter-research/latambench" target="_blank" rel="noopener" class="font-['Geist'] text-sm font-medium px-7 py-3.5 rounded-full bg-[#cfe7d2] text-[#0a130e] hover:bg-[#f4f3ee] transition-colors text-center">GitHub</a>
+          <a href="https://huggingface.co/crafter-research" target="_blank" rel="noopener" class="font-['Geist'] text-sm font-medium px-7 py-3.5 rounded-full border border-[#cfe7d2]/20 text-[#f4f3ee] hover:border-[#cfe7d2]/50 transition-colors text-center">HuggingFace</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="border-t border-white/8 py-10 md:py-12 px-5 md:px-16">
-    <div class="max-w-6xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-      <div>
-        <div class="flex items-center gap-2.5 mb-2">
-          <svg width="16" height="16" viewBox="0 0 85 96" fill="none"><path d="M34.7718 13.6653C32.7175 12.2339 29.2082 10.55 26.8971 9.87636C21.6759 8.27657 17.5551 9.17712 14.8283 10.129C9.52151 11.9813 6.18334 14.4231 3.18755 18.8857C-1.52013 25.79 -0.835381 36.9885 4.89943 43.3035C6.18334 44.8191 6.86809 44.5665 11.8326 40.9459C12.0037 40.7775 11.319 39.6829 10.2919 38.4199C7.98082 35.5571 6.61131 30.3368 7.29606 27.3898C9.52151 18.1279 20.9055 13.1601 28.2666 18.2121C29.8929 19.3067 35.0286 23.8534 39.6506 28.316C46.5838 34.8835 48.638 36.3991 50.3499 36.2307C52.0618 36.0623 52.6609 35.4729 52.8321 33.6206C53.0889 31.5998 52.3186 30.421 48.3812 26.8846C45.7278 24.4428 43.588 22.2537 43.588 21.8327C43.588 21.4959 45.3854 20.0645 47.6109 18.7173C61.9907 9.70797 77.4832 27.6424 65.5001 39.4303C63.9594 40.9459 61.2204 42.5457 59.4229 43.0509C57.3686 43.5561 47.8677 43.9771 36.0557 43.9771C13.9724 43.9771 12.7741 44.2297 6.95368 49.3658C-0.493008 56.0176 -2.20489 67.3845 3.01635 75.636C9.77829 86.4135 24.3293 89.1079 34.6006 81.4458L38.3667 78.583L42.732 81.4458C49.8363 86.1609 55.5712 87.0871 62.5043 84.8137C76.3705 80.1828 81.5062 62.8377 72.5188 51.2182C71.4917 49.9552 70.9781 49.871 69.6086 50.5446C65.4145 52.9022 65.5001 52.7338 67.9823 57.7858C69.8654 61.6589 70.2077 63.1745 69.7798 66.1215C68.5815 73.531 62.9322 78.4988 55.7423 78.4988C50.1787 78.4988 48.3812 77.4042 38.11 67.5529C32.7175 62.5009 27.7531 58.291 27.0683 58.291C25.7844 58.291 23.0454 60.9011 23.0454 62.1641C23.0454 62.5009 25.3564 65.1953 28.2666 68.0581L33.4879 73.1942L30.4065 75.5518C19.536 83.7191 4.04349 73.952 7.63844 61.1537C8.75116 57.2806 12.6885 52.9864 16.4546 51.6392C17.9097 51.0498 26.8971 50.713 39.0515 50.713C61.3915 50.713 64.045 50.292 69.1806 45.9137C84.502 33.1154 75.6002 9.03437 55.5711 9.11857C49.7507 9.11857 46.5838 10.2974 41.1913 14.2547L38.4523 16.2755L34.7718 13.6653Z" fill="#F8BB2D"/></svg>
-          <span class="font-['Space_Grotesk'] text-sm tracking-[0.08em] uppercase text-white">LatamBench</span>
-        </div>
-        <div class="font-['JetBrains_Mono'] text-[10px] text-[#6b6560] tracking-[0.1em]">A Crafter Research Lab · Lima, Perú · 2026</div>
+  <footer class="px-5 md:px-8 py-10 border-t border-[#cfe7d2]/8">
+    <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div class="flex items-center gap-2.5">
+        <svg width="15" height="15" viewBox="0 0 85 96" fill="none"><path d="M34.7718 13.6653C32.7175 12.2339 29.2082 10.55 26.8971 9.87636C21.6759 8.27657 17.5551 9.17712 14.8283 10.129C9.52151 11.9813 6.18334 14.4231 3.18755 18.8857C-1.52013 25.79 -0.835381 36.9885 4.89943 43.3035C6.18334 44.8191 6.86809 44.5665 11.8326 40.9459C12.0037 40.7775 11.319 39.6829 10.2919 38.4199C7.98082 35.5571 6.61131 30.3368 7.29606 27.3898C9.52151 18.1279 20.9055 13.1601 28.2666 18.2121C29.8929 19.3067 35.0286 23.8534 39.6506 28.316C46.5838 34.8835 48.638 36.3991 50.3499 36.2307C52.0618 36.0623 52.6609 35.4729 52.8321 33.6206C53.0889 31.5998 52.3186 30.421 48.3812 26.8846C45.7278 24.4428 43.588 22.2537 43.588 21.8327C43.588 21.4959 45.3854 20.0645 47.6109 18.7173C61.9907 9.70797 77.4832 27.6424 65.5001 39.4303C63.9594 40.9459 61.2204 42.5457 59.4229 43.0509C57.3686 43.5561 47.8677 43.9771 36.0557 43.9771C13.9724 43.9771 12.7741 44.2297 6.95368 49.3658C-0.493008 56.0176 -2.20489 67.3845 3.01635 75.636C9.77829 86.4135 24.3293 89.1079 34.6006 81.4458L38.3667 78.583L42.732 81.4458C49.8363 86.1609 55.5712 87.0871 62.5043 84.8137C76.3705 80.1828 81.5062 62.8377 72.5188 51.2182C71.4917 49.9552 70.9781 49.871 69.6086 50.5446C65.4145 52.9022 65.5001 52.7338 67.9823 57.7858C69.8654 61.6589 70.2077 63.1745 69.7798 66.1215C68.5815 73.531 62.9322 78.4988 55.7423 78.4988C50.1787 78.4988 48.3812 77.4042 38.11 67.5529C32.7175 62.5009 27.7531 58.291 27.0683 58.291C25.7844 58.291 23.0454 60.9011 23.0454 62.1641C23.0454 62.5009 25.3564 65.1953 28.2666 68.0581L33.4879 73.1942L30.4065 75.5518C19.536 83.7191 4.04349 73.952 7.63844 61.1537C8.75116 57.2806 12.6885 52.9864 16.4546 51.6392C17.9097 51.0498 26.8971 50.713 39.0515 50.713C61.3915 50.713 64.045 50.292 69.1806 45.9137C84.502 33.1154 75.6002 9.03437 55.5711 9.11857C49.7507 9.11857 46.5838 10.2974 41.1913 14.2547L38.4523 16.2755L34.7718 13.6653Z" fill="#CFE7D2"/></svg>
+        <span class="font-['Geist'] text-sm font-medium text-[#f4f3ee]">LatamBench</span>
+        <span class="font-['Geist_Mono'] text-[10px] text-[#6f7a75] ml-1">A Crafter Research Lab · Lima, Perú · 2026</span>
       </div>
-      <div class="flex items-center gap-6 md:gap-8">
-        <a href="https://github.com/crafter-research/latambench" target="_blank" rel="noopener"
-           class="font-['JetBrains_Mono'] text-[11px] text-[#6b6560] hover:text-white transition-colors tracking-[0.08em] uppercase">GitHub</a>
-        <a href="https://huggingface.co/crafter-research" target="_blank" rel="noopener"
-           class="font-['JetBrains_Mono'] text-[11px] text-[#6b6560] hover:text-white transition-colors tracking-[0.08em] uppercase">HuggingFace</a>
+      <div class="flex items-center gap-6">
+        <a href="https://github.com/crafter-research/latambench" target="_blank" rel="noopener" class="font-['Geist_Mono'] text-[11px] uppercase tracking-wider text-[#8a9590] hover:text-[#cfe7d2] transition-colors">GitHub</a>
+        <a href="https://huggingface.co/crafter-research" target="_blank" rel="noopener" class="font-['Geist_Mono'] text-[11px] uppercase tracking-wider text-[#8a9590] hover:text-[#cfe7d2] transition-colors">HuggingFace</a>
       </div>
     </div>
   </footer>
@@ -383,9 +273,9 @@ const findings = [
         const target = (tab as HTMLElement).dataset.tab;
         tabs.forEach((t) => {
           const on = (t as HTMLElement).dataset.tab === target;
-          t.classList.toggle("text-white", on);
-          t.classList.toggle("bg-white/10", on);
-          t.classList.toggle("text-[#6b6560]", !on);
+          t.classList.toggle("text-[#0a130e]", on);
+          t.classList.toggle("bg-[#cfe7d2]", on);
+          t.classList.toggle("text-[#8a9590]", !on);
         });
         boards.forEach((b) => {
           (b as HTMLElement).style.display = (b as HTMLElement).dataset.board === target ? "" : "none";
