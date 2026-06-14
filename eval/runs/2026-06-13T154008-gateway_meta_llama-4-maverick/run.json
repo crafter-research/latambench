@@ -18,5 +18,7 @@
   "judgeMeanScore": 0.368,
   "meanEmbSim": 0.4782,
   "abstentionRate": 0.148,
-  "nAbstained": 74
+  "nAbstained": 74,
+  "hallucRate": 0.402,
+  "nHalluc": 201
 }

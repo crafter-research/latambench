@@ -25,17 +25,17 @@ Three dimensions per model, not just accuracy: **correct** (judge considers the 
 
 | # | Model | Org | Correct | Abstain | Halluc |
 |---|-------|-----|---------|---------|--------|
-| 1 | Claude Fable 5 | Anthropic | 72.8% [68.7, 76.5] | 3.4% | 6.6% |
-| 2 | Gemini 3.1 Pro | Google | 67.4% [63.2, 71.4] | 2.2% | 7.4% |
-| 3 | Gemini 3.5 Flash | Google | 64.0% [59.7, 68.1] | 2.0% | 8.4% |
-| 4 | GPT-5.5 | OpenAI | 63.6% [59.3, 67.7] | 1.2% | 10.4% |
-| 5 | DeepSeek V4 Pro | DeepSeek | 55.2% [50.8, 59.5] | 2.4% | 18.2% |
-| 6 | Qwen3.7 Max | Alibaba | 54.0% [49.6, 58.3] | 8.6% | 14.0% |
-| 7 | GPT-5.4 Mini | OpenAI | 45.8% [41.5, 50.2] | 4.6% | 18.4% |
-| 8 | Claude Haiku 4.5 | Anthropic | 33.6% [29.6, 37.9] | 15.6% | 26.8% |
-| 9 | Llama 4 Maverick | Meta | 30.0% [26.1, 34.2] | 4.6% | 30.2% |
-| 10 | **LatamGPT SFT 1.0** `regional` | CENIA | 23.9% [20.3, 27.9] | 5.0% | 41.7% |
-| 11 | Llama 3.1 70B `base` | Meta | 20.2% [16.9, 23.9] | 5.0% | 38.6% |
+| 1 | Claude Fable 5 | Anthropic | 73.0% [68.9, 76.7] | 3.4% | 7.6% |
+| 2 | Gemini 3.1 Pro | Google | 67.4% [63.2, 71.4] | 2.2% | 8.4% |
+| 3 | Gemini 3.5 Flash | Google | 64.0% [59.7, 68.1] | 2.0% | 10.0% |
+| 4 | GPT-5.5 | OpenAI | 63.7% [59.4, 67.8] | 1.2% | 10.8% |
+| 5 | DeepSeek V4 Pro | DeepSeek | 55.2% [50.8, 59.5] | 2.4% | 19.4% |
+| 6 | Qwen3.7 Max | Alibaba | 54.0% [49.6, 58.3] | 8.6% | 14.8% |
+| 7 | GPT-5.4 Mini | OpenAI | 45.8% [41.5, 50.2] | 4.6% | 19.0% |
+| 8 | Claude Haiku 4.5 | Anthropic | 33.6% [29.6, 37.9] | 15.6% | 27.0% |
+| 9 | Llama 4 Maverick | Meta | 30.0% [26.1, 34.2] | 4.6% | 30.8% |
+| 10 | **LatamGPT SFT 1.0** `regional` | CENIA | 23.9% [20.3, 27.9] | 5.0% | 42.1% |
+| 11 | Llama 3.1 70B `base` | Meta | 20.3% [16.9, 24.0] | 5.0% | 38.8% |
 
 All three rates (correct / abstain / hallucination) share the `nValid` denominator; infra-excluded items (pod timeouts) are dropped. Ranking is by Correct (binary judge accuracy). Canonical numbers: [`eval/results-leaderboard.json`](eval/results-leaderboard.json).
 
@@ -45,23 +45,23 @@ All three rates (correct / abstain / hallucination) share the `nValid` denominat
 
 | # | Model | Org | Correct | Abstain | Halluc |
 |---|-------|-----|---------|---------|--------|
-| 1 | Gemini 3.5 Flash | Google | 51.8% [47.4, 56.1] | 10.2% | 20.0% |
-| 2 | Gemini 3.1 Pro | Google | 50.8% [46.4, 55.2] | 15.0% | 16.2% |
-| 3 | GPT-5.5 | OpenAI | 48.1% [43.7, 52.5] | 7.8% | 24.0% |
-| 4 | DeepSeek V4 Pro | DeepSeek | 40.2% [36.0, 44.6] | 13.8% | 29.4% |
-| 5 | Qwen3.7 Max | Alibaba | 34.7% [30.6, 38.9] | 31.5% | 18.2% |
-| 6 | Llama 4 Maverick | Meta | 28.0% [24.2, 32.1] | 14.8% | 39.6% |
-| 7 | GPT-5.4 Mini | OpenAI | 26.6% [22.9, 30.6] | 29.6% | 27.8% |
-| 8 | Claude Opus 4.8 | Anthropic | 24.4% [20.8, 28.4] | 58.0% | 7.4% |
+| 1 | Gemini 3.5 Flash | Google | 51.8% [47.4, 56.1] | 10.2% | 20.2% |
+| 2 | Gemini 3.1 Pro | Google | 50.8% [46.4, 55.2] | 15.0% | 16.8% |
+| 3 | GPT-5.5 | OpenAI | 48.1% [43.7, 52.5] | 7.8% | 24.4% |
+| 4 | DeepSeek V4 Pro | DeepSeek | 40.2% [36.0, 44.6] | 13.8% | 29.6% |
+| 5 | Qwen3.7 Max | Alibaba | 34.7% [30.6, 38.9] | 31.5% | 19.8% |
+| 6 | Llama 4 Maverick | Meta | 28.0% [24.2, 32.1] | 14.8% | 40.2% |
+| 7 | GPT-5.4 Mini | OpenAI | 26.6% [22.9, 30.6] | 29.6% | 28.0% |
+| 8 | Claude Opus 4.8 | Anthropic | 24.4% [20.8, 28.4] | 58.0% | 9.4% |
 | 9 | **LatamGPT SFT 1.0** `regional` | CENIA | 23.5% [19.7, 27.8] | 5.5% | 53.2% |
-| 10 | Llama 3.1 70B `base` | Meta | 22.2% [18.8, 26.1] | 10.8% | 51.7% |
-| 11 | Claude Haiku 4.5 | Anthropic | 18.8% [15.6, 22.5] | 53.8% | 18.2% |
+| 10 | Llama 3.1 70B `base` | Meta | 22.2% [18.8, 26.1] | 10.8% | 52.3% |
+| 11 | Claude Haiku 4.5 | Anthropic | 18.8% [15.6, 22.5] | 53.8% | 18.6% |
 
 ### How to read this
 
 - **The frontier leads but does not crush.** The best model answers ~73% of cultural questions; none goes higher. Regional cultural knowledge is still the weak tail even for SOTA.
 - **The regional model's CPT shows no significant gain.** LatamGPT (23.9% [20.3, 27.9]) and its base Llama 3.1 70B (20.2% [16.9, 23.9]) overlap: the continued-pretraining produced **no statistically significant improvement** over the base model (two-prop z, p=0.166 Trueque / p=0.647 CHOCLO; not significant after Holm-Bonferroni). LatamGPT is near the bottom but not last: its own base ranks below it (and Haiku ranks below both on CHOCLO).
-- **Rank by hallucination and the order flips.** Opus 4.8 invents only 7.4% on CHOCLO (it abstains instead); LatamGPT invents 53.2% on CHOCLO and its base 51.7% (the two highest). LatamGPT almost never abstains (5.5%): when it fails, it makes something up. For the government/education use cases attributed to regional models, that is the worst profile. Note: abstention rates are partly prompt-driven (the system prompt asks models to decline when unsure); see Threats to Validity in the methodology.
+- **Rank by hallucination and the order flips.** Opus 4.8 invents only 9.4% on CHOCLO (it abstains instead); LatamGPT invents 53.2% on CHOCLO and its base 52.3% (the two highest). LatamGPT almost never abstains (5.5%): when it fails, it makes something up. For the government/education use cases attributed to regional models, that is the worst profile. Note: abstention rates are partly prompt-driven (the system prompt asks models to decline when unsure); see Threats to Validity in the methodology.
 - **Adjacent models within overlapping CIs are statistical ties** (e.g. CHOCLO top-3). Do not read the ordinal rank as significant everywhere.
 
 ## Methodology

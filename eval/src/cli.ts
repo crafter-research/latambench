@@ -236,10 +236,12 @@ async function cmdAbstention(args: string[]) {
     // infra-excluded ids (timeouts, empty responses): a dead pod is not a model
     // abstaining. Read the verdicts and drop excluded ids from the abstention universe.
     const excluded = new Set<string>();
+    const verdictById = new Map<string, string>();
     if (await Bun.file(`${runPath}judgments.jsonl`).exists()) {
       for (const l of (await Bun.file(`${runPath}judgments.jsonl`).text()).trim().split("\n")) {
         if (!l) continue;
         const j = JSON.parse(l) as { id: string; verdict: string };
+        verdictById.set(j.id, j.verdict);
         if (j.verdict === "excluded") excluded.add(j.id);
       }
     }
@@ -273,12 +275,19 @@ async function cmdAbstention(args: string[]) {
 
     const nValid = (meta.nValid as number | undefined) ?? valid.length;
     const abst = valid.filter((r) => results.get(r.id) === true && validIds.has(r.id)).length;
+    // hallucination = genuine wrong ATTEMPTS = incorrect verdicts that did NOT abstain.
+    // Compute it directly from (verdict, abstained) instead of rate arithmetic
+    // (incorrectRate - abstentionRate), which undercounts when some abstentions land
+    // on correct/partial verdicts (a model that hedges but still answers correctly).
+    const nHalluc = valid.filter((r) => verdictById.get(r.id) === "incorrect" && results.get(r.id) !== true).length;
     // abstentionRate is over the VALID denominator (nValid), consistent with
     // judgeAccuracy/judgePartialRate. excluded infra failures are not abstentions.
     meta.abstentionRate = Number((abst / (nValid || 1)).toFixed(4));
     meta.nAbstained = abst;
+    meta.hallucRate = Number((nHalluc / (nValid || 1)).toFixed(4));
+    meta.nHalluc = nHalluc;
     await Bun.write(`${runPath}run.json`, JSON.stringify(meta, null, 2));
-    console.log(`${String(meta.model).replace("gateway:", "").replace(/^compat:.*\|/, "").padEnd(38)} ${meta.benchmark} abstain=${meta.abstentionRate} (n=${nValid}, excl=${excluded.size})`);
+    console.log(`${String(meta.model).replace("gateway:", "").replace(/^compat:.*\|/, "").padEnd(38)} ${meta.benchmark} abstain=${meta.abstentionRate} halluc=${meta.hallucRate} (n=${nValid}, excl=${excluded.size})`);
   }
 }
 
@@ -317,10 +326,15 @@ async function cmdReport() {
     for (const r of group) {
       const model = String(r.model).replace("gateway:", "").replace(/^compat:.*\|/, "");
       const abst = r.abstentionRate as number | undefined;
-      // halluc = wrong-and-not-abstained, over nValid. Same denominator as abst now,
-      // so the subtraction is well-defined (no mixed 500-vs-nValid denominators).
-      const wrong = 1 - Number(r.judgeAccuracy) - Number(r.judgePartialRate ?? 0);
-      const halluc = abst !== undefined ? Math.max(0, wrong - abst) : undefined;
+      // halluc = wrong-and-not-abstained = incorrect verdicts that did not abstain,
+      // counted directly in cmdAbstention (meta.hallucRate). Falls back to rate
+      // arithmetic for older runs lacking the field. Not derived as incorrectRate-abst
+      // because some abstentions land on correct/partial verdicts (hedged-but-right).
+      const halluc = r.hallucRate !== undefined
+        ? Number(r.hallucRate)
+        : abst !== undefined
+          ? Math.max(0, 1 - Number(r.judgeAccuracy) - Number(r.judgePartialRate ?? 0) - abst)
+          : undefined;
       console.log(
         model.padEnd(40) +
           `${(Number(r.judgeAccuracy) * 100).toFixed(1)}%`.padStart(9) +

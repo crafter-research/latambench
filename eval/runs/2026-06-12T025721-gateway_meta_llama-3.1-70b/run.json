@@ -11,10 +11,14 @@
   "scoring": "token-f1-v1 (lexical only - hybrid judge lands in V2)",
   "createdAt": "2026-06-12T03:03:21.863Z",
   "judgeModel": "xai/grok-4.3",
-  "judgeAccuracy": 0.202,
-  "judgePartialRate": 0.362,
-  "judgeMeanScore": 0.383,
-  "meanEmbSim": 0.7825,
+  "judgeAccuracy": 0.2028,
+  "judgePartialRate": 0.3635,
+  "judgeMeanScore": 0.3845,
+  "meanEmbSim": 0.7856,
   "abstentionRate": 0.0502,
-  "nAbstained": 25
+  "nAbstained": 25,
+  "nExcluded": 2,
+  "nValid": 498,
+  "hallucRate": 0.3876,
+  "nHalluc": 193
 }

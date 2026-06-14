@@ -3,12 +3,12 @@
     {
       "benchmark": "trueque",
       "model": "gateway:anthropic/claude-fable-5",
-      "correct": 72.8,
+      "correct": 73.0,
       "partial": 17.2,
       "noSabe": 3.4,
-      "sabeMal": 6.6,
-      "nValid": 500,
-      "judgeMeanScore": 0.814
+      "sabeMal": 7.6,
+      "nValid": 499,
+      "judgeMeanScore": 0.8156
     },
     {
       "benchmark": "trueque",
@@ -16,7 +16,7 @@
       "correct": 67.4,
       "partial": 23.0,
       "noSabe": 2.2,
-      "sabeMal": 7.4,
+      "sabeMal": 8.4,
       "nValid": 500,
       "judgeMeanScore": 0.789
     },
@@ -26,19 +26,19 @@
       "correct": 64.0,
       "partial": 25.6,
       "noSabe": 2.0,
-      "sabeMal": 8.4,
+      "sabeMal": 10.0,
       "nValid": 500,
       "judgeMeanScore": 0.768
     },
     {
       "benchmark": "trueque",
       "model": "gateway:openai/gpt-5.5",
-      "correct": 63.6,
-      "partial": 24.8,
+      "correct": 63.7,
+      "partial": 24.9,
       "noSabe": 1.2,
-      "sabeMal": 10.4,
-      "nValid": 500,
-      "judgeMeanScore": 0.76
+      "sabeMal": 10.8,
+      "nValid": 499,
+      "judgeMeanScore": 0.7615
     },
     {
       "benchmark": "trueque",
@@ -46,7 +46,7 @@
       "correct": 55.2,
       "partial": 24.2,
       "noSabe": 2.4,
-      "sabeMal": 18.2,
+      "sabeMal": 19.4,
       "nValid": 500,
       "judgeMeanScore": 0.673
     },
@@ -56,7 +56,7 @@
       "correct": 54.0,
       "partial": 23.4,
       "noSabe": 8.6,
-      "sabeMal": 14.0,
+      "sabeMal": 14.8,
       "nValid": 500,
       "judgeMeanScore": 0.657
     },
@@ -66,7 +66,7 @@
       "correct": 45.8,
       "partial": 31.2,
       "noSabe": 4.6,
-      "sabeMal": 18.4,
+      "sabeMal": 19.0,
       "nValid": 500,
       "judgeMeanScore": 0.614
     },
@@ -76,7 +76,7 @@
       "correct": 33.6,
       "partial": 24.0,
       "noSabe": 15.6,
-      "sabeMal": 26.8,
+      "sabeMal": 27.0,
       "nValid": 500,
       "judgeMeanScore": 0.456
     },
@@ -86,7 +86,7 @@
       "correct": 30.0,
       "partial": 35.2,
       "noSabe": 4.6,
-      "sabeMal": 30.2,
+      "sabeMal": 30.8,
       "nValid": 500,
       "judgeMeanScore": 0.476
     },
@@ -96,19 +96,19 @@
       "correct": 23.9,
       "partial": 29.5,
       "noSabe": 5.0,
-      "sabeMal": 41.7,
+      "sabeMal": 42.1,
       "nValid": 482,
       "judgeMeanScore": 0.3859
     },
     {
       "benchmark": "trueque",
       "model": "gateway:meta/llama-3.1-70b",
-      "correct": 20.2,
-      "partial": 36.2,
+      "correct": 20.3,
+      "partial": 36.4,
       "noSabe": 5.0,
-      "sabeMal": 38.6,
-      "nValid": 500,
-      "judgeMeanScore": 0.383
+      "sabeMal": 38.8,
+      "nValid": 498,
+      "judgeMeanScore": 0.3845
     }
   ],
   "choclo": [
@@ -118,7 +118,7 @@
       "correct": 51.8,
       "partial": 18.0,
       "noSabe": 10.2,
-      "sabeMal": 20.0,
+      "sabeMal": 20.2,
       "nValid": 500,
       "judgeMeanScore": 0.608
     },
@@ -128,7 +128,7 @@
       "correct": 50.8,
       "partial": 18.0,
       "noSabe": 15.0,
-      "sabeMal": 16.2,
+      "sabeMal": 16.8,
       "nValid": 500,
       "judgeMeanScore": 0.598
     },
@@ -138,7 +138,7 @@
       "correct": 48.1,
       "partial": 20.0,
       "noSabe": 7.8,
-      "sabeMal": 24.0,
+      "sabeMal": 24.4,
       "nValid": 499,
       "judgeMeanScore": 0.5812
     },
@@ -148,7 +148,7 @@
       "correct": 40.2,
       "partial": 16.6,
       "noSabe": 13.8,
-      "sabeMal": 29.4,
+      "sabeMal": 29.6,
       "nValid": 500,
       "judgeMeanScore": 0.485
     },
@@ -158,7 +158,7 @@
       "correct": 34.7,
       "partial": 15.6,
       "noSabe": 31.5,
-      "sabeMal": 18.2,
+      "sabeMal": 19.8,
       "nValid": 499,
       "judgeMeanScore": 0.4248
     },
@@ -168,7 +168,7 @@
       "correct": 28.0,
       "partial": 17.6,
       "noSabe": 14.8,
-      "sabeMal": 39.6,
+      "sabeMal": 40.2,
       "nValid": 500,
       "judgeMeanScore": 0.368
     },
@@ -178,7 +178,7 @@
       "correct": 26.6,
       "partial": 16.0,
       "noSabe": 29.6,
-      "sabeMal": 27.8,
+      "sabeMal": 28.0,
       "nValid": 500,
       "judgeMeanScore": 0.346
     },
@@ -188,7 +188,7 @@
       "correct": 24.4,
       "partial": 10.2,
       "noSabe": 58.0,
-      "sabeMal": 7.4,
+      "sabeMal": 9.4,
       "nValid": 500,
       "judgeMeanScore": 0.295
     },
@@ -208,7 +208,7 @@
       "correct": 22.2,
       "partial": 15.2,
       "noSabe": 10.8,
-      "sabeMal": 51.7,
+      "sabeMal": 52.3,
       "nValid": 499,
       "judgeMeanScore": 0.2986
     },
@@ -218,7 +218,7 @@
       "correct": 18.8,
       "partial": 9.2,
       "noSabe": 53.8,
-      "sabeMal": 18.2,
+      "sabeMal": 18.6,
       "nValid": 500,
       "judgeMeanScore": 0.234
     }
@@ -226,7 +226,7 @@
   "_meta": {
     "generated_from": "eval/runs/*/run.json",
     "ranking_metric": "correct (judgeAccuracy, binary correct rate)",
-    "note": "noSabe (abstain) and sabeMal (hallucination) share the nValid denominator; infra-excluded items dropped. CHOCLO is preliminary: judge calibration and 3-judge inter-rater cover Trueque only.",
+    "note": "noSabe (abstain) and sabeMal (hallucination=incorrect-and-not-abstained, counted per item not rate arithmetic) share the nValid denominator; infra-excluded items dropped. CHOCLO is preliminary: judge calibration and 3-judge inter-rater cover Trueque only.",
     "judge": "xai/grok-4.3 (reference-fidelity calibrated, TPR 0.99 / TNR 0.97 on Trueque synthetic set)"
   }
 }

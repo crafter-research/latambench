@@ -6,30 +6,30 @@ const boards = {
   // Ranking metric: correct (judgeAccuracy, binary). noSabe (abstain) and sabeMal (hallucination)
   // share the nValid denominator; infra-excluded items (pod timeouts) are dropped from all rates.
   trueque: [
-    { org: "Anthropic", model: "Claude Fable 5",     correct: 72.8, noSabe: 3.4,  sabeMal: 6.6,  n: 500 },
-    { org: "Google",    model: "Gemini 3.1 Pro",     correct: 67.4, noSabe: 2.2,  sabeMal: 7.4,  n: 500 },
-    { org: "Google",    model: "Gemini 3.5 Flash",   correct: 64.0, noSabe: 2.0,  sabeMal: 8.4,  n: 500 },
-    { org: "OpenAI",    model: "GPT-5.5",            correct: 63.6, noSabe: 1.2,  sabeMal: 10.4, n: 500 },
-    { org: "DeepSeek",  model: "V4 Pro",             correct: 55.2, noSabe: 2.4,  sabeMal: 18.2, n: 500 },
-    { org: "Alibaba",   model: "Qwen3.7 Max",        correct: 54.0, noSabe: 8.6,  sabeMal: 14.0, n: 500 },
-    { org: "OpenAI",    model: "GPT-5.4 Mini",       correct: 45.8, noSabe: 4.6,  sabeMal: 18.4, n: 500 },
-    { org: "Anthropic", model: "Claude Haiku 4.5",   correct: 33.6, noSabe: 15.6, sabeMal: 26.8, n: 500 },
-    { org: "Meta",      model: "Llama 4 Maverick",   correct: 30.0, noSabe: 4.6,  sabeMal: 30.2, n: 500 },
-    { org: "CENIA",     model: "LatamGPT SFT 1.0",  correct: 23.9, noSabe: 5.0,  sabeMal: 41.7, n: 482, tag: "regional" },
-    { org: "Meta",      model: "Llama 3.1 70B",      correct: 20.2, noSabe: 5.0,  sabeMal: 38.6, n: 500, tag: "base" },
+    { org: "Anthropic", model: "Claude Fable 5",     correct: 73.0, noSabe: 3.4,  sabeMal: 7.6,  n: 499 },
+    { org: "Google",    model: "Gemini 3.1 Pro",     correct: 67.4, noSabe: 2.2,  sabeMal: 8.4,  n: 500 },
+    { org: "Google",    model: "Gemini 3.5 Flash",   correct: 64.0, noSabe: 2.0,  sabeMal: 10.0, n: 500 },
+    { org: "OpenAI",    model: "GPT-5.5",            correct: 63.7, noSabe: 1.2,  sabeMal: 10.8, n: 499 },
+    { org: "DeepSeek",  model: "V4 Pro",             correct: 55.2, noSabe: 2.4,  sabeMal: 19.4, n: 500 },
+    { org: "Alibaba",   model: "Qwen3.7 Max",        correct: 54.0, noSabe: 8.6,  sabeMal: 14.8, n: 500 },
+    { org: "OpenAI",    model: "GPT-5.4 Mini",       correct: 45.8, noSabe: 4.6,  sabeMal: 19.0, n: 500 },
+    { org: "Anthropic", model: "Claude Haiku 4.5",   correct: 33.6, noSabe: 15.6, sabeMal: 27.0, n: 500 },
+    { org: "Meta",      model: "Llama 4 Maverick",   correct: 30.0, noSabe: 4.6,  sabeMal: 30.8, n: 500 },
+    { org: "CENIA",     model: "LatamGPT SFT 1.0",  correct: 23.9, noSabe: 5.0,  sabeMal: 42.1, n: 482, tag: "regional" },
+    { org: "Meta",      model: "Llama 3.1 70B",      correct: 20.3, noSabe: 5.0,  sabeMal: 38.8, n: 498, tag: "base" },
   ],
   choclo: [
-    { org: "Google",    model: "Gemini 3.5 Flash",   correct: 51.8, noSabe: 10.2, sabeMal: 20.0, n: 500 },
-    { org: "Google",    model: "Gemini 3.1 Pro",     correct: 50.8, noSabe: 15.0, sabeMal: 16.2, n: 500 },
-    { org: "OpenAI",    model: "GPT-5.5",            correct: 48.1, noSabe: 7.8,  sabeMal: 24.0, n: 499 },
-    { org: "DeepSeek",  model: "V4 Pro",             correct: 40.2, noSabe: 13.8, sabeMal: 29.4, n: 500 },
-    { org: "Alibaba",   model: "Qwen3.7 Max",        correct: 34.7, noSabe: 31.5, sabeMal: 18.2, n: 499 },
-    { org: "Meta",      model: "Llama 4 Maverick",   correct: 28.0, noSabe: 14.8, sabeMal: 39.6, n: 500 },
-    { org: "OpenAI",    model: "GPT-5.4 Mini",       correct: 26.6, noSabe: 29.6, sabeMal: 27.8, n: 500 },
-    { org: "Anthropic", model: "Claude Opus 4.8",    correct: 24.4, noSabe: 58.0, sabeMal: 7.4,  n: 500 },
+    { org: "Google",    model: "Gemini 3.5 Flash",   correct: 51.8, noSabe: 10.2, sabeMal: 20.2, n: 500 },
+    { org: "Google",    model: "Gemini 3.1 Pro",     correct: 50.8, noSabe: 15.0, sabeMal: 16.8, n: 500 },
+    { org: "OpenAI",    model: "GPT-5.5",            correct: 48.1, noSabe: 7.8,  sabeMal: 24.4, n: 499 },
+    { org: "DeepSeek",  model: "V4 Pro",             correct: 40.2, noSabe: 13.8, sabeMal: 29.6, n: 500 },
+    { org: "Alibaba",   model: "Qwen3.7 Max",        correct: 34.7, noSabe: 31.5, sabeMal: 19.8, n: 499 },
+    { org: "Meta",      model: "Llama 4 Maverick",   correct: 28.0, noSabe: 14.8, sabeMal: 40.2, n: 500 },
+    { org: "OpenAI",    model: "GPT-5.4 Mini",       correct: 26.6, noSabe: 29.6, sabeMal: 28.0, n: 500 },
+    { org: "Anthropic", model: "Claude Opus 4.8",    correct: 24.4, noSabe: 58.0, sabeMal: 9.4,  n: 500 },
     { org: "CENIA",     model: "LatamGPT SFT 1.0",  correct: 23.5, noSabe: 5.5,  sabeMal: 53.2, n: 421, tag: "regional" },
-    { org: "Meta",      model: "Llama 3.1 70B",      correct: 22.2, noSabe: 10.8, sabeMal: 51.7, n: 499, tag: "base" },
-    { org: "Anthropic", model: "Claude Haiku 4.5",   correct: 18.8, noSabe: 53.8, sabeMal: 18.2, n: 500 },
+    { org: "Meta",      model: "Llama 3.1 70B",      correct: 22.2, noSabe: 10.8, sabeMal: 52.3, n: 499, tag: "base" },
+    { org: "Anthropic", model: "Claude Haiku 4.5",   correct: 18.8, noSabe: 53.8, sabeMal: 18.6, n: 500 },
   ],
 };
 
@@ -311,8 +311,8 @@ const evals = [
             <div class="font-['Geist_Mono'] text-[9px] uppercase tracking-wider text-[#cfe7d2]/50 mb-3" data-i18n="insight_label">Hallazgo clave</div>
             <p class="font-['Geist'] text-[13px] leading-relaxed text-[#c5cdc8]" data-i18n="leaderboard_note">
               El accuracy crudo colapsa <span class="text-[#cfe7d2]">abstención</span> y <span class="text-[#e8a08b]">alucinación</span> en un solo "incorrecto", pero son opuestos.
-              En CHOCLO, Opus 4.8 inventa solo <span class="text-[#f4f3ee] font-semibold">7.4%</span> mientras
-              Llama 3.1 70B inventa <span class="text-[#f4f3ee] font-semibold">51.7%</span>.
+              En CHOCLO, Opus 4.8 inventa solo <span class="text-[#f4f3ee] font-semibold">9.4%</span> mientras
+              LatamGPT inventa <span class="text-[#f4f3ee] font-semibold">53.2%</span> (casi nunca se abstiene).
             </p>
           </div>
 
@@ -493,7 +493,7 @@ const evals = [
         caveats_label: "Rigor",
         caveats_note: "LatamGPT y su modelo base se solapan: el continued-pretraining no muestra mejora significativa. Tres jueces de familias distintas concuerdan (Fleiss kappa 0.68). Las tasas de abstención están parcialmente influidas por el prompt.",
         leaderboard_title_1: "¿Qué saben los", leaderboard_title_2: "modelos de Latam?",
-        leaderboard_note: "El accuracy crudo colapsa abstención y alucinación en un solo \"incorrecto\", pero son opuestos. En CHOCLO, Opus 4.8 inventa solo 7.4% mientras Llama 3.1 70B inventa 51.7%.",
+        leaderboard_note: "El accuracy crudo colapsa abstención y alucinación en un solo \"incorrecto\", pero son opuestos. En CHOCLO, Opus 4.8 inventa solo 9.4% mientras LatamGPT inventa 53.2%.",
         findings_label: "02 / Lo que encontramos", method_label: "03 / Metodología", evals_label: "04 / Qué evaluamos",
         cta_title: "Todo abierto y\nreproducible",
         cta_body: "El harness, las respuestas crudas, los transcripts del juez y la calibración están en GitHub. Cualquiera puede correr un modelo nuevo, auditar un veredicto o reproducir la tabla con el mismo seed.",
@@ -516,7 +516,7 @@ const evals = [
         caveats_label: "Rigor",
         caveats_note: "LatamGPT and its base model overlap: the continued-pretraining shows no significant gain. Three judges from different families agree (Fleiss kappa 0.68). Abstention rates are partly prompt-driven.",
         leaderboard_title_1: "What do models know", leaderboard_title_2: "about Latam?",
-        leaderboard_note: "Raw accuracy collapses abstention and hallucination into one \"wrong\", but they are opposites. On CHOCLO, Opus 4.8 hallucinates only 7.4% while Llama 3.1 70B hallucinates 51.7%.",
+        leaderboard_note: "Raw accuracy collapses abstention and hallucination into one \"wrong\", but they are opposites. On CHOCLO, Opus 4.8 hallucinates only 9.4% while LatamGPT hallucinates 53.2%.",
         findings_label: "02 / What we found", method_label: "03 / Methodology", evals_label: "04 / What we evals",
         cta_title: "All open and\nreproducible",
         cta_body: "The harness, raw responses, judge transcripts, and calibration are on GitHub. Anyone can run a new model, audit a verdict, or reproduce the table with the same seed.",
