@@ -17,32 +17,57 @@ Benchmarks of Latin American culture exist (Trueque, CHOCLO), but they run witho
 
 LatamBench is an **evals observatory**. It runs those benchmarks with a calibrated reference-anchored judge and open transcripts, and in the process audits the benchmarks themselves. The underlying question: *who owns the "cultural truth" when an answer has several legitimate forms?*
 
-## Leaderboard: Trueque (500 questions)
+## Leaderboard
 
-Judge accuracy: % of answers a reference-anchored judge (a model outside the compared set) considers correct. Seed 42, temperature 0. Reproducible from `eval/runs/`.
+Three dimensions per model, not just accuracy: **correct** (judge considers the answer expresses the reference facts), **abstain** (model declines, "no sé"), **halluc** (wrong attempt). Raw accuracy collapses abstention and hallucination into one "wrong", but for high-stakes use a model that says "I don't know" beats one that invents. Seed 42, temperature 0. 95% Wilson CIs in brackets.
 
-| # | Model | Org | Correct |
-|---|-------|-----|---------|
-| 1 | Claude Fable 5 | Anthropic | 72.8% |
-| 2 | Gemini 3.1 Pro | Google | 67.4% |
-| 3 | Gemini 3.5 Flash | Google | 64.0% |
-| 4 | GPT-5.5 | OpenAI | 63.6% |
-| 5 | DeepSeek V4 Pro | DeepSeek | 55.2% |
-| 6 | Qwen3.7 Max | Alibaba | 54.0% |
-| 7 | GPT-5.4 Mini | OpenAI | 45.8% |
-| 8 | Claude Haiku 4.5 | Anthropic | 33.6% |
-| 9 | Llama 4 Maverick | Meta | 30.0% |
-| 10 | **LatamGPT SFT 1.0** `regional` | CENIA | 23.9% |
-| 11 | Llama 3.1 70B `base` | Meta | 20.2% |
+### Trueque (500 questions)
 
-The best frontier model answers ~73% of cultural questions; none goes higher. A regionally continued-pretrained model (LatamGPT) lands just above its own base, far from the frontier. CHOCLO (105K short-reference questions) is under judge recalibration before publishing.
+| # | Model | Org | Correct | Abstain | Halluc |
+|---|-------|-----|---------|---------|--------|
+| 1 | Claude Fable 5 | Anthropic | 72.8% [68.7, 76.5] | 3.6% | 6.4% |
+| 2 | Gemini 3.1 Pro | Google | 67.4% [63.2, 71.4] | 2.2% | 7.4% |
+| 3 | Gemini 3.5 Flash | Google | 64.0% [59.7, 68.1] | 2.0% | 8.4% |
+| 4 | GPT-5.5 | OpenAI | 63.6% [59.3, 67.7] | 1.4% | 10.2% |
+| 5 | DeepSeek V4 Pro | DeepSeek | 55.2% [50.8, 59.5] | 2.4% | 18.2% |
+| 6 | Qwen3.7 Max | Alibaba | 54.0% [49.6, 58.3] | 8.6% | 14.0% |
+| 7 | GPT-5.4 Mini | OpenAI | 45.8% [41.5, 50.2] | 4.6% | 18.4% |
+| 8 | Claude Haiku 4.5 | Anthropic | 33.6% [29.6, 37.9] | 15.6% | 26.8% |
+| 9 | Llama 4 Maverick | Meta | 30.0% [26.1, 34.2] | 5.0% | 29.8% |
+| 10 | **LatamGPT SFT 1.0** `regional` | CENIA | 23.9% [20.3, 27.9] | 7.2% | 39.5% |
+| 11 | Llama 3.1 70B `base` | Meta | 20.2% [16.9, 23.9] | 5.4% | 38.2% |
+
+### CHOCLO (500 sampled, long-tail entities)
+
+| # | Model | Org | Correct | Abstain | Halluc |
+|---|-------|-----|---------|---------|--------|
+| 1 | Gemini 3.5 Flash | Google | 51.8% [47.4, 56.1] | 10.2% | 20.0% |
+| 2 | Gemini 3.1 Pro | Google | 50.8% [46.4, 55.2] | 15.0% | 16.2% |
+| 3 | GPT-5.5 | OpenAI | 48.1% [43.7, 52.5] | 7.8% | 24.1% |
+| 4 | DeepSeek V4 Pro | DeepSeek | 40.2% [36.0, 44.6] | 13.6% | 29.6% |
+| 5 | Qwen3.7 Max | Alibaba | 34.7% [30.6, 38.9] | 31.4% | 18.3% |
+| 6 | Llama 4 Maverick | Meta | 28.0% [24.2, 32.1] | 14.8% | 39.6% |
+| 7 | GPT-5.4 Mini | OpenAI | 26.6% [22.9, 30.6] | 30.0% | 27.4% |
+| 8 | Claude Opus 4.8 | Anthropic | 24.4% [20.8, 28.4] | 58.0% | 7.4% |
+| 9 | **LatamGPT SFT 1.0** `regional` | CENIA | 23.5% [19.7, 27.8] | 20.4% | 38.3% |
+| 10 | Llama 3.1 70B `base` | Meta | 22.2% [18.8, 26.1] | 10.8% | 51.7% |
+| 11 | Claude Haiku 4.5 | Anthropic | 18.8% [15.6, 22.5] | 54.2% | 17.8% |
+
+### How to read this
+
+- **The frontier leads but does not crush.** The best model answers ~73% of cultural questions; none goes higher. Regional cultural knowledge is still the weak tail even for SOTA.
+- **The regional model's CPT shows no significant gain.** LatamGPT (23.9% [20.3, 27.9]) and its base Llama 3.1 70B (20.2% [16.9, 23.9]) overlap: the continued-pretraining produced **no statistically significant improvement** over the base model.
+- **Rank by hallucination and the order flips.** Opus 4.8 invents only 7.4% on CHOCLO (it abstains instead); LatamGPT and its base invent ~38-52%. Note: abstention rates are partly prompt-driven (the system prompt asks models to decline when unsure); see Threats to Validity in the methodology.
+- **Adjacent models within overlapping CIs are statistical ties** (e.g. CHOCLO top-3). Do not read the ordinal rank as significant everywhere.
 
 ## Methodology
 
-- **Reference-anchored judge**: a model outside the compared set decides whether a candidate answer expresses the facts of the reference. Calibrated on a synthetic set built from the dataset itself (TPR 0.99 / TNR 0.97 gate ≥ 0.95).
-- **Hybrid scoring**: token-F1 + embedding similarity + judge verdict. Signal disagreements go to manual spot-check.
-- **Reproducible**: every run stores raw responses and full judge transcripts. Fixed seed, temperature 0, versioned in git.
-- **Benchmark audit**: the disagreement pipeline surfaces reference-quality issues in the benchmarks themselves; proposed fixes are additive (accept synonyms / multiple senses), never cultural corrections.
+- **Reference-anchored judge**: a model outside the compared set decides whether a candidate answer expresses the facts of the reference. Three judges from different families (grok-4.3, kimi-k2.6, glm-5.1) show substantial agreement (Fleiss kappa 0.68 on the binary correct/wrong axis).
+- **Reference-fidelity check (not a correctness oracle)**: a synthetic set built from the references reports TPR 0.99 / TNR 0.97. This measures that the judge faithfully reproduces reference-anchored verdicts, NOT that the references are correct. Reference quality is a separate axis (see audit below).
+- **Three dimensions**: correct (primary metric, binary) + abstain vs hallucinate (an abstention classifier outside the compared set). A secondary hybrid `score` weights partial credit at 0.5.
+- **Reproducible methodology**: every run stores raw responses and full judge transcripts; fixed seed and temperature 0. Note: exact numbers are not bit-reproducible (provider routing, model aliases drift, e.g. a model was retired mid-study), but the pipeline and inputs are.
+- **Benchmark audit**: the disagreement pipeline surfaces reference-quality issues in the benchmarks themselves; a random audit (n=60) estimates ~5-7% imprecise references. Proposed fixes are additive (accept synonyms / multiple senses), never cultural corrections.
+- **Threats to validity**: serving conditions, prompt-confounded abstention, single-reference judging, and reference quality are documented limitations under active mitigation.
 
 ## Repository Structure
 
@@ -73,9 +98,11 @@ Model id prefixes: `gateway:<provider>/<model>` (Vercel AI Gateway), `compat:<ba
 
 ## Roadmap
 
-- [x] Evals observatory live: Trueque-500, 11 models, calibrated judge
+- [x] Evals observatory live: Trueque + CHOCLO, 11 models, reference-anchored judge
+- [x] Three dimensions: correct / abstain / hallucinate
+- [x] Inter-rater reliability (3 judges, Fleiss kappa 0.68) + Wilson CIs
 - [x] Benchmark audit: reference-quality issues surfaced
-- [ ] CHOCLO leaderboard: judge recalibration for short references
+- [ ] Human validation of the judge against ground truth (in progress)
 - [ ] Own generative dataset with multi-answer references (covering the space of defensible answers, not a single point)
 
 ## License

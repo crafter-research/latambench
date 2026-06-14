@@ -44,7 +44,7 @@ const maxes = {
   },
 };
 
-// Brand logos from tryelements.dev/docs/logos — SVG inline, no CDN dependency
+// Brand logos from tryelements.dev/docs/logos. SVG inline, no CDN dependency
 const ORG: Record<string, { bg: string; logo: string; label?: string }> = {
   Anthropic: {
     bg: "#2a1410",
@@ -332,6 +332,15 @@ const evals = [
             </div>
           </div>
 
+          <!-- Rigor / caveats -->
+          <div class="rounded-2xl border border-[#cfe7d2]/10 p-5 bg-[#0d1812]">
+            <div class="font-['Geist_Mono'] text-[9px] uppercase tracking-wider text-[#cfe7d2]/50 mb-3" data-i18n="caveats_label">Rigor</div>
+            <p class="font-['Geist'] text-[12px] leading-relaxed text-[#8a9590]" data-i18n="caveats_note">
+              LatamGPT y su modelo base se solapan: el continued-pretraining no muestra mejora significativa.
+              Tres jueces de familias distintas concuerdan (Fleiss kappa 0.68). Las tasas de abstención están parcialmente influidas por el prompt.
+            </p>
+          </div>
+
           <!-- Org legend -->
           <div class="rounded-2xl border border-[#cfe7d2]/10 p-5 bg-[#0d1812]">
             <div class="font-['Geist_Mono'] text-[9px] uppercase tracking-wider text-[#cfe7d2]/50 mb-4" data-i18n="orgs_label">Organizaciones</div>
@@ -467,6 +476,8 @@ const evals = [
         insight_label: "Hallazgo clave",
         legend_title: "columnas", legend_correct: "expresa los hechos de la referencia", legend_abstention: "se abstiene honestamente", legend_hallucination: "inventa (alucinación)",
         orgs_label: "Organizaciones",
+        caveats_label: "Rigor",
+        caveats_note: "LatamGPT y su modelo base se solapan: el continued-pretraining no muestra mejora significativa. Tres jueces de familias distintas concuerdan (Fleiss kappa 0.68). Las tasas de abstención están parcialmente influidas por el prompt.",
         leaderboard_title_1: "¿Qué saben los", leaderboard_title_2: "modelos de Latam?",
         leaderboard_note: "El accuracy crudo colapsa abstención y alucinación en un solo \"incorrecto\", pero son opuestos. En CHOCLO, Opus 4.8 inventa solo 7.4% mientras Llama 3.1 70B inventa 51.7%.",
         findings_label: "02 / Lo que encontramos", method_label: "03 / Metodología", evals_label: "04 / Qué evaluamos",
@@ -486,6 +497,8 @@ const evals = [
         insight_label: "Key finding",
         legend_title: "columns", legend_correct: "expresses the reference facts", legend_abstention: "abstains honestly", legend_hallucination: "hallucinates",
         orgs_label: "Organizations",
+        caveats_label: "Rigor",
+        caveats_note: "LatamGPT and its base model overlap: the continued-pretraining shows no significant gain. Three judges from different families agree (Fleiss kappa 0.68). Abstention rates are partly prompt-driven.",
         leaderboard_title_1: "What do models know", leaderboard_title_2: "about Latam?",
         leaderboard_note: "Raw accuracy collapses abstention and hallucination into one \"wrong\", but they are opposites. On CHOCLO, Opus 4.8 hallucinates only 7.4% while Llama 3.1 70B hallucinates 51.7%.",
         findings_label: "02 / What we found", method_label: "03 / Methodology", evals_label: "04 / What we evals",
