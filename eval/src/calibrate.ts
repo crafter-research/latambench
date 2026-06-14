@@ -1,6 +1,9 @@
 /**
- * Judge calibration without human labels (V2). Builds a synthetic set with
- * verdicts known BY CONSTRUCTION from the dataset itself:
+ * Reference-FIDELITY check without human labels (V2). NOTE ON WHAT THIS MEASURES:
+ * the synthetic set is anchored to the references, so high TPR/TNR proves the judge
+ * faithfully reproduces reference-anchored verdicts. It does NOT prove the references
+ * are correct (reference quality is a separate axis; see the random reference audit
+ * and the human validation against ground truth). Builds verdicts known BY CONSTRUCTION:
  *   exact       reference itself as candidate            -> correct
  *   paraphrase  reference rewritten, same facts          -> correct
  *   swap        reference from another item, same country -> incorrect
