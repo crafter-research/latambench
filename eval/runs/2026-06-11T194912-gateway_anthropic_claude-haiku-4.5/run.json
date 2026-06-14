@@ -18,5 +18,7 @@
   "abstentionRate": 0.15,
   "nAbstained": 15,
   "hallucRate": 0.24,
-  "nHalluc": 24
+  "nHalluc": 24,
+  "nValid": 100,
+  "nExcluded": 0
 }

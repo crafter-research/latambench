@@ -39,6 +39,8 @@ Three dimensions per model, not just accuracy: **correct** (judge considers the 
 
 All three rates (correct / abstain / hallucination) share the `nValid` denominator; infra-excluded items (pod timeouts) are dropped. Ranking is by Correct (binary judge accuracy). Canonical numbers: [`eval/results-leaderboard.json`](eval/results-leaderboard.json).
 
+> The columns do not sum to 100%. They are not a partition: `correct` + `partial` (partial not shown) cover the judge verdict; `abstain` is an independent axis (a model can hedge on an answer the judge still scores correct/partial), and `hallucination` counts only `incorrect AND not-abstained`. So `correct + abstain + hallucination` can exceed 100% by the count of abstentions that landed on correct/partial verdicts.
+
 ### CHOCLO (500 sampled, long-tail entities) · preliminary
 
 > Preliminary: the judge calibration and the 3-judge inter-rater study cover Trueque only. CHOCLO (ultra-short references) has no validation of its own yet. The accuracy ordering is stable, but with all-pairs Holm-Bonferroni correction the entire CHOCLO board falls into a single statistical tie-group by accuracy, so do not read the ordinal rank as significant.

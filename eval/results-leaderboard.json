@@ -226,7 +226,7 @@
   "_meta": {
     "generated_from": "eval/runs/*/run.json",
     "ranking_metric": "correct (judgeAccuracy, binary correct rate)",
-    "note": "noSabe (abstain) and sabeMal (hallucination=incorrect-and-not-abstained, counted per item not rate arithmetic) share the nValid denominator; infra-excluded items dropped. CHOCLO is preliminary: judge calibration and 3-judge inter-rater cover Trueque only.",
+    "note": "noSabe (abstain) and sabeMal (hallucination=incorrect-and-not-abstained, per item) share the nValid denominator; infra-excluded items dropped. Columns do not partition: correct+abstain+halluc can exceed 100% (abstain is independent of verdict). CHOCLO is preliminary: judge calibration and 3-judge inter-rater cover Trueque only; with Holm-Bonferroni the whole CHOCLO board is one accuracy tie-group.",
     "judge": "xai/grok-4.3 (reference-fidelity calibrated, TPR 0.99 / TNR 0.97 on Trueque synthetic set)"
   }
 }

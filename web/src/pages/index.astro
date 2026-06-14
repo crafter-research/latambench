@@ -199,7 +199,7 @@ const evals = [
                   <div class="min-w-[520px] px-4 md:px-5 py-2.5 border-b border-[#e8a08b]/20 bg-[#e8a08b]/[0.06] flex items-start gap-2">
                     <span class="font-['Geist_Mono'] text-[9px] tracking-[0.12em] uppercase text-[#e8a08b] mt-0.5 flex-shrink-0">prelim.</span>
                     <p class="font-['Geist'] text-[11px] leading-snug text-[#b9c3be]" data-i18n="choclo_prelim">
-                      Resultados preliminares. La calibración del juez y el inter-rater de 3 jueces cubren Trueque; CHOCLO (referencias ultra-cortas) aún no tiene validación propia. El orden por accuracy es estable, los valores absolutos pueden moverse con recalibración.
+                      Resultados preliminares. La calibración del juez y el inter-rater de 3 jueces cubren Trueque; CHOCLO (referencias ultra-cortas) aún no tiene validación propia. Con corrección por comparaciones múltiples (Holm-Bonferroni) todo el board cae en un solo grupo estadístico por accuracy: no leas el orden ordinal como significativo.
                     </p>
                   </div>
                 )}
@@ -486,7 +486,7 @@ const evals = [
         col_model: "Modelo", col_correct: "Correcto", col_abstention: "Abstención", col_hallucination: "Alucinación",
         col_correct_inline: "Correcto", col_abstention_inline: "Abstención", col_hallucination_inline: "Alucinación",
         prelim_tag: "prelim.",
-        choclo_prelim: "Resultados preliminares. La calibración del juez y el inter-rater de 3 jueces cubren Trueque; CHOCLO (referencias ultra-cortas) aún no tiene validación propia. El orden por accuracy es estable, los valores absolutos pueden moverse con recalibración.",
+        choclo_prelim: "Resultados preliminares. La calibración del juez y el inter-rater de 3 jueces cubren Trueque; CHOCLO (referencias ultra-cortas) aún no tiene validación propia. Con corrección por comparaciones múltiples (Holm-Bonferroni) todo el board cae en un solo grupo estadístico por accuracy: no leas el orden ordinal como significativo.",
         insight_label: "Hallazgo clave",
         legend_title: "columnas", legend_correct: "expresa los hechos de la referencia", legend_abstention: "se abstiene honestamente", legend_hallucination: "inventa (alucinación)",
         orgs_label: "Organizaciones",
@@ -509,7 +509,7 @@ const evals = [
         col_model: "Model", col_correct: "Correct", col_abstention: "Abstention", col_hallucination: "Hallucination",
         col_correct_inline: "Correct", col_abstention_inline: "Abstention", col_hallucination_inline: "Hallucination",
         prelim_tag: "prelim.",
-        choclo_prelim: "Preliminary results. The judge calibration and the 3-judge inter-rater cover Trueque; CHOCLO (ultra-short references) has no validation of its own yet. The accuracy ordering is stable, absolute values may shift with recalibration.",
+        choclo_prelim: "Preliminary results. The judge calibration and the 3-judge inter-rater cover Trueque; CHOCLO (ultra-short references) has no validation of its own yet. With multiple-comparison correction (Holm-Bonferroni) the whole board collapses into a single statistical tie-group by accuracy: do not read the ordinal rank as significant.",
         insight_label: "Key finding",
         legend_title: "columns", legend_correct: "expresses the reference facts", legend_abstention: "abstains honestly", legend_hallucination: "hallucinates",
         orgs_label: "Organizations",
