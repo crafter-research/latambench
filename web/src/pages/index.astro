@@ -2,31 +2,34 @@
 import Layout from "../layouts/Layout.astro";
 
 const boards = {
+  // Numbers regenerated from eval/runs/*/run.json (canonical artifact: eval/results-leaderboard.json).
+  // Ranking metric: correct (judgeAccuracy, binary). noSabe (abstain) and sabeMal (hallucination)
+  // share the nValid denominator; infra-excluded items (pod timeouts) are dropped from all rates.
   trueque: [
-    { org: "Anthropic", model: "Claude Fable 5",     correct: 72.8, noSabe: 3.6,  sabeMal: 6.4  },
-    { org: "Google",    model: "Gemini 3.1 Pro",     correct: 67.4, noSabe: 2.2,  sabeMal: 7.4  },
-    { org: "Google",    model: "Gemini 3.5 Flash",   correct: 64.0, noSabe: 2.0,  sabeMal: 8.4  },
-    { org: "OpenAI",    model: "GPT-5.5",            correct: 63.6, noSabe: 1.4,  sabeMal: 10.2 },
-    { org: "DeepSeek",  model: "V4 Pro",             correct: 55.2, noSabe: 2.4,  sabeMal: 18.2 },
-    { org: "Alibaba",   model: "Qwen3.7 Max",        correct: 54.0, noSabe: 8.6,  sabeMal: 14.0 },
-    { org: "OpenAI",    model: "GPT-5.4 Mini",       correct: 45.8, noSabe: 4.6,  sabeMal: 18.4 },
-    { org: "Anthropic", model: "Claude Haiku 4.5",   correct: 33.6, noSabe: 15.6, sabeMal: 26.8 },
-    { org: "Meta",      model: "Llama 4 Maverick",   correct: 30.0, noSabe: 5.0,  sabeMal: 29.8 },
-    { org: "CENIA",     model: "LatamGPT SFT 1.0",  correct: 23.9, noSabe: 7.2,  sabeMal: 39.5, tag: "regional" },
-    { org: "Meta",      model: "Llama 3.1 70B",      correct: 20.2, noSabe: 5.4,  sabeMal: 38.2, tag: "base" },
+    { org: "Anthropic", model: "Claude Fable 5",     correct: 72.8, noSabe: 3.4,  sabeMal: 6.6,  n: 500 },
+    { org: "Google",    model: "Gemini 3.1 Pro",     correct: 67.4, noSabe: 2.2,  sabeMal: 7.4,  n: 500 },
+    { org: "Google",    model: "Gemini 3.5 Flash",   correct: 64.0, noSabe: 2.0,  sabeMal: 8.4,  n: 500 },
+    { org: "OpenAI",    model: "GPT-5.5",            correct: 63.6, noSabe: 1.2,  sabeMal: 10.4, n: 500 },
+    { org: "DeepSeek",  model: "V4 Pro",             correct: 55.2, noSabe: 2.4,  sabeMal: 18.2, n: 500 },
+    { org: "Alibaba",   model: "Qwen3.7 Max",        correct: 54.0, noSabe: 8.6,  sabeMal: 14.0, n: 500 },
+    { org: "OpenAI",    model: "GPT-5.4 Mini",       correct: 45.8, noSabe: 4.6,  sabeMal: 18.4, n: 500 },
+    { org: "Anthropic", model: "Claude Haiku 4.5",   correct: 33.6, noSabe: 15.6, sabeMal: 26.8, n: 500 },
+    { org: "Meta",      model: "Llama 4 Maverick",   correct: 30.0, noSabe: 4.6,  sabeMal: 30.2, n: 500 },
+    { org: "CENIA",     model: "LatamGPT SFT 1.0",  correct: 23.9, noSabe: 5.0,  sabeMal: 41.7, n: 482, tag: "regional" },
+    { org: "Meta",      model: "Llama 3.1 70B",      correct: 20.2, noSabe: 5.0,  sabeMal: 38.6, n: 500, tag: "base" },
   ],
   choclo: [
-    { org: "Google",    model: "Gemini 3.5 Flash",   correct: 51.8, noSabe: 10.2, sabeMal: 20.0 },
-    { org: "Google",    model: "Gemini 3.1 Pro",     correct: 50.8, noSabe: 15.0, sabeMal: 16.2 },
-    { org: "OpenAI",    model: "GPT-5.5",            correct: 48.1, noSabe: 7.8,  sabeMal: 24.1 },
-    { org: "DeepSeek",  model: "V4 Pro",             correct: 40.2, noSabe: 13.6, sabeMal: 29.6 },
-    { org: "Alibaba",   model: "Qwen3.7 Max",        correct: 34.7, noSabe: 31.4, sabeMal: 18.3 },
-    { org: "Meta",      model: "Llama 4 Maverick",   correct: 28.0, noSabe: 14.8, sabeMal: 39.6 },
-    { org: "OpenAI",    model: "GPT-5.4 Mini",       correct: 26.6, noSabe: 30.0, sabeMal: 27.4 },
-    { org: "Anthropic", model: "Claude Opus 4.8",    correct: 24.4, noSabe: 58.0, sabeMal: 7.4  },
-    { org: "CENIA",     model: "LatamGPT SFT 1.0",  correct: 23.5, noSabe: 20.4, sabeMal: 38.3, tag: "regional" },
-    { org: "Meta",      model: "Llama 3.1 70B",      correct: 22.2, noSabe: 10.8, sabeMal: 51.7, tag: "base" },
-    { org: "Anthropic", model: "Claude Haiku 4.5",   correct: 18.8, noSabe: 54.2, sabeMal: 17.8 },
+    { org: "Google",    model: "Gemini 3.5 Flash",   correct: 51.8, noSabe: 10.2, sabeMal: 20.0, n: 500 },
+    { org: "Google",    model: "Gemini 3.1 Pro",     correct: 50.8, noSabe: 15.0, sabeMal: 16.2, n: 500 },
+    { org: "OpenAI",    model: "GPT-5.5",            correct: 48.1, noSabe: 7.8,  sabeMal: 24.0, n: 499 },
+    { org: "DeepSeek",  model: "V4 Pro",             correct: 40.2, noSabe: 13.8, sabeMal: 29.4, n: 500 },
+    { org: "Alibaba",   model: "Qwen3.7 Max",        correct: 34.7, noSabe: 31.5, sabeMal: 18.2, n: 499 },
+    { org: "Meta",      model: "Llama 4 Maverick",   correct: 28.0, noSabe: 14.8, sabeMal: 39.6, n: 500 },
+    { org: "OpenAI",    model: "GPT-5.4 Mini",       correct: 26.6, noSabe: 29.6, sabeMal: 27.8, n: 500 },
+    { org: "Anthropic", model: "Claude Opus 4.8",    correct: 24.4, noSabe: 58.0, sabeMal: 7.4,  n: 500 },
+    { org: "CENIA",     model: "LatamGPT SFT 1.0",  correct: 23.5, noSabe: 5.5,  sabeMal: 53.2, n: 421, tag: "regional" },
+    { org: "Meta",      model: "Llama 3.1 70B",      correct: 22.2, noSabe: 10.8, sabeMal: 51.7, n: 499, tag: "base" },
+    { org: "Anthropic", model: "Claude Haiku 4.5",   correct: 18.8, noSabe: 53.8, sabeMal: 18.2, n: 500 },
   ],
 };
 
@@ -86,7 +89,7 @@ const method = [
 
 const evals = [
   { id: "TRUEQUE", name: "Trueque",       desc_es: "500 preguntas curadas de cultura, historia, geografía y gastronomía de 20 países. Referencia abierta.",          desc_en: "500 curated questions on culture, history, geography, and gastronomy from 20 countries. Open reference.",                                       meta: "CENIA · Apache 2.0", status_es: "Evaluado", status_en: "Evaluated" },
-  { id: "CHOCLO",  name: "CHOCLO",        desc_es: "105K preguntas de entidades culturales por país, categoría y dificultad. Conocimiento de cola larga.",            desc_en: "105K questions on cultural entities by country, category, and difficulty. Long-tail knowledge.",                                                   meta: "CENIA · MIT",        status_es: "Evaluado", status_en: "Evaluated" },
+  { id: "CHOCLO",  name: "CHOCLO",        desc_es: "105K preguntas de entidades culturales por país, categoría y dificultad. Conocimiento de cola larga.",            desc_en: "105K questions on cultural entities by country, category, and difficulty. Long-tail knowledge.",                                                   meta: "CENIA · MIT",        status_es: "Preliminar", status_en: "Preliminary" },
   { id: "LATAM-*", name: "Dataset propio",desc_es: "Conjunto generativo nativo con referencias multi-respuesta, diseñado para cubrir el espacio de respuestas defendibles.", desc_en: "Native generative dataset with multi-answer references, designed to cover the space of defensible answers.", meta: "Crafter Research",   status_es: "Fase 2",    status_en: "Phase 2"   },
 ];
 ---
@@ -177,7 +180,7 @@ const evals = [
         </div>
         <div class="flex items-center gap-1 self-start sm:self-end p-1 rounded-full border border-[#cfe7d2]/15 bg-[#0d1812]">
           <button data-tab="trueque" class="tab font-['Geist_Mono'] text-[11px] tracking-wider uppercase px-4 py-2 rounded-full text-[#0a130e] bg-[#cfe7d2]">Trueque</button>
-          <button data-tab="choclo"  class="tab font-['Geist_Mono'] text-[11px] tracking-wider uppercase px-4 py-2 rounded-full text-[#8a9590]">CHOCLO</button>
+          <button data-tab="choclo"  class="tab font-['Geist_Mono'] text-[11px] tracking-wider uppercase px-4 py-2 rounded-full text-[#8a9590]">CHOCLO <span class="text-[8px] align-super opacity-70" data-i18n="prelim_tag">prelim.</span></button>
         </div>
       </div>
 
@@ -191,6 +194,15 @@ const evals = [
             return (
               <div class="board rounded-2xl border border-[#cfe7d2]/12 overflow-x-auto bg-[#0d1812]"
                    data-board={bench} style={bench === "trueque" ? "" : "display:none"}>
+
+                {bench === "choclo" && (
+                  <div class="min-w-[520px] px-4 md:px-5 py-2.5 border-b border-[#e8a08b]/20 bg-[#e8a08b]/[0.06] flex items-start gap-2">
+                    <span class="font-['Geist_Mono'] text-[9px] tracking-[0.12em] uppercase text-[#e8a08b] mt-0.5 flex-shrink-0">prelim.</span>
+                    <p class="font-['Geist'] text-[11px] leading-snug text-[#b9c3be]" data-i18n="choclo_prelim">
+                      Resultados preliminares. La calibración del juez y el inter-rater de 3 jueces cubren Trueque; CHOCLO (referencias ultra-cortas) aún no tiene validación propia. El orden por accuracy es estable, los valores absolutos pueden moverse con recalibración.
+                    </p>
+                  </div>
+                )}
 
                 <!-- Header -->
                 <div class="min-w-[520px] grid items-center px-4 md:px-5 py-3 border-b border-[#cfe7d2]/10 bg-[#cfe7d2]/[0.03]"
@@ -473,6 +485,8 @@ const evals = [
         stat_0: "benchmarks", stat_1: "modelos", stat_2: "veredictos", stat_3: "reproducible",
         col_model: "Modelo", col_correct: "Correcto", col_abstention: "Abstención", col_hallucination: "Alucinación",
         col_correct_inline: "Correcto", col_abstention_inline: "Abstención", col_hallucination_inline: "Alucinación",
+        prelim_tag: "prelim.",
+        choclo_prelim: "Resultados preliminares. La calibración del juez y el inter-rater de 3 jueces cubren Trueque; CHOCLO (referencias ultra-cortas) aún no tiene validación propia. El orden por accuracy es estable, los valores absolutos pueden moverse con recalibración.",
         insight_label: "Hallazgo clave",
         legend_title: "columnas", legend_correct: "expresa los hechos de la referencia", legend_abstention: "se abstiene honestamente", legend_hallucination: "inventa (alucinación)",
         orgs_label: "Organizaciones",
@@ -494,6 +508,8 @@ const evals = [
         stat_0: "benchmarks", stat_1: "models", stat_2: "verdicts", stat_3: "reproducible",
         col_model: "Model", col_correct: "Correct", col_abstention: "Abstention", col_hallucination: "Hallucination",
         col_correct_inline: "Correct", col_abstention_inline: "Abstention", col_hallucination_inline: "Hallucination",
+        prelim_tag: "prelim.",
+        choclo_prelim: "Preliminary results. The judge calibration and the 3-judge inter-rater cover Trueque; CHOCLO (ultra-short references) has no validation of its own yet. The accuracy ordering is stable, absolute values may shift with recalibration.",
         insight_label: "Key finding",
         legend_title: "columns", legend_correct: "expresses the reference facts", legend_abstention: "abstains honestly", legend_hallucination: "hallucinates",
         orgs_label: "Organizations",

@@ -49,19 +49,68 @@ def load(bench):
             best[r["name"]] = r
     return sorted(best.values(), key=lambda r: -r["k"]/r["n"])
 
+def holm_bonferroni(pairs, alpha=0.05):
+    """Holm-Bonferroni step-down correction over a list of (label, p) pairs.
+    Returns a dict label -> (p_raw, reject) controlling FWER at alpha."""
+    ordered = sorted(pairs, key=lambda x: x[1])
+    m = len(ordered)
+    out = {}
+    still_rejecting = True
+    for i, (label, p) in enumerate(ordered):
+        adj_alpha = alpha / (m - i)
+        reject = still_rejecting and p <= adj_alpha
+        if not reject:
+            still_rejecting = False  # once we fail to reject, all larger p also fail
+        out[label] = (p, reject)
+    return out
+
+def tie_groups_allpairs(rows, reject):
+    """Build tie-groups as connected components over 'not significantly different'
+    edges (all-pairs, multiplicity-corrected). Two models share a group if their
+    accuracy difference is NOT significant after Holm correction. Greedy over the
+    accuracy ordering so groups stay contiguous and human-readable."""
+    n = len(rows)
+    parent = list(range(n))
+    def find(a):
+        while parent[a] != a: parent[a] = parent[parent[a]]; a = parent[a]
+        return a
+    def union(a, b):
+        ra, rb = find(a), find(b)
+        if ra != rb: parent[max(ra, rb)] = min(ra, rb)
+    for i in range(n):
+        for j in range(i + 1, n):
+            label = f"{rows[i]['name']}|{rows[j]['name']}"
+            if not reject.get(label, (0, True))[1]:  # not significantly different
+                union(i, j)
+    comp = defaultdict(list)
+    for i in range(n): comp[find(i)].append(rows[i]["name"])
+    return [comp[r] for r in sorted(comp)]
+
 for bench in ["trueque", "choclo"]:
     rows = load(bench)
     print(f"\n== {bench} (Wilson 95% CI) ==")
     for r in rows:
         p, lo, hi = wilson(r["k"], r["n"])
         print(f"  {r['name']:24} {p*100:5.1f}%  [{lo*100:4.1f}, {hi*100:4.1f}]  n={r['n']}")
-    # tie groups: models not significantly different from the one above (alpha=0.05)
-    print("  tie-groups (no significativamente distintos, two-prop z, a=0.05):")
-    groups, cur = [], [rows[0]]
-    for r in rows[1:]:
-        pv = two_prop_z(cur[0]["k"], cur[0]["n"], r["k"], r["n"])
-        if pv > 0.05: cur.append(r)
-        else: groups.append(cur); cur = [r]
-    groups.append(cur)
-    for g in groups:
-        print("    {" + ", ".join(x["name"] for x in g) + "}")
+
+    # ALL-PAIRS two-prop z with Holm-Bonferroni FWER correction over every pair.
+    # (Previous version only tested each model against the group head and applied no
+    #  multiplicity correction; with ~55 tests, ~2-3 false positives were expected.)
+    pairs = []
+    for i in range(len(rows)):
+        for j in range(i + 1, len(rows)):
+            pv = two_prop_z(rows[i]["k"], rows[i]["n"], rows[j]["k"], rows[j]["n"])
+            pairs.append((f"{rows[i]['name']}|{rows[j]['name']}", pv))
+    reject = holm_bonferroni(pairs, alpha=0.05)
+    n_sig = sum(1 for _, (_, rj) in reject.items() if rj)
+    print(f"  pairwise: {len(pairs)} comparisons, {n_sig} significant after Holm-Bonferroni (FWER 0.05)")
+
+    print("  tie-groups (connected components of NOT-significantly-different, all-pairs + Holm):")
+    for g in tie_groups_allpairs(rows, reject):
+        print("    {" + ", ".join(g) + "}")
+
+    # spotlight the CPT comparison explicitly (the headline claim)
+    cpt = next((l for l in reject if "LatamGPT" in l and ("llama-3.1-70b" in l or "Llama-3.1-70b" in l.lower())), None)
+    if cpt:
+        p, rj = reject[cpt]
+        print(f"  CPT vs base [{cpt}]: p={p:.4f} raw, {'SIGNIFICANT' if rj else 'NOT significant'} after correction")

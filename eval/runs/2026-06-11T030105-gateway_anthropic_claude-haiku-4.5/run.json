@@ -10,5 +10,6 @@
   "meanTokenF1": 0.1887,
   "scoring": "token-f1-v1 (lexical only - hybrid judge lands in V2)",
   "createdAt": "2026-06-11T03:01:23.054Z",
-  "abstentionRate": 0.2
+  "abstentionRate": 0.2,
+  "nAbstained": 1
 }

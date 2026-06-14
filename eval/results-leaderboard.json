@@ -1,0 +1,232 @@
+{
+  "trueque": [
+    {
+      "benchmark": "trueque",
+      "model": "gateway:anthropic/claude-fable-5",
+      "correct": 72.8,
+      "partial": 17.2,
+      "noSabe": 3.4,
+      "sabeMal": 6.6,
+      "nValid": 500,
+      "judgeMeanScore": 0.814
+    },
+    {
+      "benchmark": "trueque",
+      "model": "gateway:google/gemini-3.1-pro-preview",
+      "correct": 67.4,
+      "partial": 23.0,
+      "noSabe": 2.2,
+      "sabeMal": 7.4,
+      "nValid": 500,
+      "judgeMeanScore": 0.789
+    },
+    {
+      "benchmark": "trueque",
+      "model": "gateway:google/gemini-3.5-flash",
+      "correct": 64.0,
+      "partial": 25.6,
+      "noSabe": 2.0,
+      "sabeMal": 8.4,
+      "nValid": 500,
+      "judgeMeanScore": 0.768
+    },
+    {
+      "benchmark": "trueque",
+      "model": "gateway:openai/gpt-5.5",
+      "correct": 63.6,
+      "partial": 24.8,
+      "noSabe": 1.2,
+      "sabeMal": 10.4,
+      "nValid": 500,
+      "judgeMeanScore": 0.76
+    },
+    {
+      "benchmark": "trueque",
+      "model": "gateway:deepseek/deepseek-v4-pro",
+      "correct": 55.2,
+      "partial": 24.2,
+      "noSabe": 2.4,
+      "sabeMal": 18.2,
+      "nValid": 500,
+      "judgeMeanScore": 0.673
+    },
+    {
+      "benchmark": "trueque",
+      "model": "gateway:alibaba/qwen3.7-max",
+      "correct": 54.0,
+      "partial": 23.4,
+      "noSabe": 8.6,
+      "sabeMal": 14.0,
+      "nValid": 500,
+      "judgeMeanScore": 0.657
+    },
+    {
+      "benchmark": "trueque",
+      "model": "gateway:openai/gpt-5.4-mini",
+      "correct": 45.8,
+      "partial": 31.2,
+      "noSabe": 4.6,
+      "sabeMal": 18.4,
+      "nValid": 500,
+      "judgeMeanScore": 0.614
+    },
+    {
+      "benchmark": "trueque",
+      "model": "gateway:anthropic/claude-haiku-4.5",
+      "correct": 33.6,
+      "partial": 24.0,
+      "noSabe": 15.6,
+      "sabeMal": 26.8,
+      "nValid": 500,
+      "judgeMeanScore": 0.456
+    },
+    {
+      "benchmark": "trueque",
+      "model": "gateway:meta/llama-4-maverick",
+      "correct": 30.0,
+      "partial": 35.2,
+      "noSabe": 4.6,
+      "sabeMal": 30.2,
+      "nValid": 500,
+      "judgeMeanScore": 0.476
+    },
+    {
+      "benchmark": "trueque",
+      "model": "compat:http://146.115.17.148:18565/v1|latam-gpt/Llama-3.1-70B-LatamGPT-SFT-1.0",
+      "correct": 23.9,
+      "partial": 29.5,
+      "noSabe": 5.0,
+      "sabeMal": 41.7,
+      "nValid": 482,
+      "judgeMeanScore": 0.3859
+    },
+    {
+      "benchmark": "trueque",
+      "model": "gateway:meta/llama-3.1-70b",
+      "correct": 20.2,
+      "partial": 36.2,
+      "noSabe": 5.0,
+      "sabeMal": 38.6,
+      "nValid": 500,
+      "judgeMeanScore": 0.383
+    }
+  ],
+  "choclo": [
+    {
+      "benchmark": "choclo",
+      "model": "gateway:google/gemini-3.5-flash",
+      "correct": 51.8,
+      "partial": 18.0,
+      "noSabe": 10.2,
+      "sabeMal": 20.0,
+      "nValid": 500,
+      "judgeMeanScore": 0.608
+    },
+    {
+      "benchmark": "choclo",
+      "model": "gateway:google/gemini-3.1-pro-preview",
+      "correct": 50.8,
+      "partial": 18.0,
+      "noSabe": 15.0,
+      "sabeMal": 16.2,
+      "nValid": 500,
+      "judgeMeanScore": 0.598
+    },
+    {
+      "benchmark": "choclo",
+      "model": "gateway:openai/gpt-5.5",
+      "correct": 48.1,
+      "partial": 20.0,
+      "noSabe": 7.8,
+      "sabeMal": 24.0,
+      "nValid": 499,
+      "judgeMeanScore": 0.5812
+    },
+    {
+      "benchmark": "choclo",
+      "model": "gateway:deepseek/deepseek-v4-pro",
+      "correct": 40.2,
+      "partial": 16.6,
+      "noSabe": 13.8,
+      "sabeMal": 29.4,
+      "nValid": 500,
+      "judgeMeanScore": 0.485
+    },
+    {
+      "benchmark": "choclo",
+      "model": "gateway:alibaba/qwen3.7-max",
+      "correct": 34.7,
+      "partial": 15.6,
+      "noSabe": 31.5,
+      "sabeMal": 18.2,
+      "nValid": 499,
+      "judgeMeanScore": 0.4248
+    },
+    {
+      "benchmark": "choclo",
+      "model": "gateway:meta/llama-4-maverick",
+      "correct": 28.0,
+      "partial": 17.6,
+      "noSabe": 14.8,
+      "sabeMal": 39.6,
+      "nValid": 500,
+      "judgeMeanScore": 0.368
+    },
+    {
+      "benchmark": "choclo",
+      "model": "gateway:openai/gpt-5.4-mini",
+      "correct": 26.6,
+      "partial": 16.0,
+      "noSabe": 29.6,
+      "sabeMal": 27.8,
+      "nValid": 500,
+      "judgeMeanScore": 0.346
+    },
+    {
+      "benchmark": "choclo",
+      "model": "gateway:anthropic/claude-opus-4.8",
+      "correct": 24.4,
+      "partial": 10.2,
+      "noSabe": 58.0,
+      "sabeMal": 7.4,
+      "nValid": 500,
+      "judgeMeanScore": 0.295
+    },
+    {
+      "benchmark": "choclo",
+      "model": "compat:http://146.115.17.148:18565/v1|latam-gpt/Llama-3.1-70B-LatamGPT-SFT-1.0",
+      "correct": 23.5,
+      "partial": 17.8,
+      "noSabe": 5.5,
+      "sabeMal": 53.2,
+      "nValid": 421,
+      "judgeMeanScore": 0.3242
+    },
+    {
+      "benchmark": "choclo",
+      "model": "gateway:meta/llama-3.1-70b",
+      "correct": 22.2,
+      "partial": 15.2,
+      "noSabe": 10.8,
+      "sabeMal": 51.7,
+      "nValid": 499,
+      "judgeMeanScore": 0.2986
+    },
+    {
+      "benchmark": "choclo",
+      "model": "gateway:anthropic/claude-haiku-4.5",
+      "correct": 18.8,
+      "partial": 9.2,
+      "noSabe": 53.8,
+      "sabeMal": 18.2,
+      "nValid": 500,
+      "judgeMeanScore": 0.234
+    }
+  ],
+  "_meta": {
+    "generated_from": "eval/runs/*/run.json",
+    "ranking_metric": "correct (judgeAccuracy, binary correct rate)",
+    "note": "noSabe (abstain) and sabeMal (hallucination) share the nValid denominator; infra-excluded items dropped. CHOCLO is preliminary: judge calibration and 3-judge inter-rater cover Trueque only.",
+    "judge": "xai/grok-4.3 (reference-fidelity calibrated, TPR 0.99 / TNR 0.97 on Trueque synthetic set)"
+  }
+}

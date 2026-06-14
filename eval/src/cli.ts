@@ -224,7 +224,6 @@ async function cmdAbstention(args: string[]) {
   const { values } = parseArgs({ args, options: { glob: { type: "string", default: "*gateway*" } } });
   const { classifyAbstention } = await import("./abstention");
   const { Glob } = await import("bun");
-  const { appendFileSync } = await import("node:fs");
   const dirs: string[] = [];
   for await (const dir of new Glob(values.glob!).scan({ cwd: RUNS_DIR, onlyFiles: false })) dirs.push(dir);
   dirs.sort();
@@ -233,26 +232,53 @@ async function cmdAbstention(args: string[]) {
     if (!(await Bun.file(`${runPath}run.json`).exists())) continue;
     const meta = (await Bun.file(`${runPath}run.json`).json()) as Record<string, unknown>;
     const rows = (await Bun.file(`${runPath}responses.jsonl`).text()).trim().split("\n").map((l) => JSON.parse(l) as { id: string; question: string; response: string });
+
+    // infra-excluded ids (timeouts, empty responses): a dead pod is not a model
+    // abstaining. Read the verdicts and drop excluded ids from the abstention universe.
+    const excluded = new Set<string>();
+    if (await Bun.file(`${runPath}judgments.jsonl`).exists()) {
+      for (const l of (await Bun.file(`${runPath}judgments.jsonl`).text()).trim().split("\n")) {
+        if (!l) continue;
+        const j = JSON.parse(l) as { id: string; verdict: string };
+        if (j.verdict === "excluded") excluded.add(j.id);
+      }
+    }
+    const valid = rows.filter((r) => !excluded.has(r.id) && (r.response ?? "").trim().length > 0);
+
     const outPath = `${runPath}abstention.jsonl`;
+    // dedup any prior append-only writes: last value per id wins.
     const results = new Map<string, boolean>();
     if (await Bun.file(outPath).exists()) {
       for (const l of (await Bun.file(outPath).text()).trim().split("\n")) if (l) { const o = JSON.parse(l); results.set(o.id, o.abstained); }
     }
-    const pending = rows.filter((r) => !results.has(r.id));
+    const pending = valid.filter((r) => !results.has(r.id));
     let cursor = 0;
     async function worker() {
       while (cursor < pending.length) {
         const r = pending[cursor++]!;
         const abstained = await classifyAbstention(r.question, r.response ?? "");
         results.set(r.id, abstained);
-        appendFileSync(outPath, `${JSON.stringify({ id: r.id, abstained })}\n`);
       }
     }
     await Promise.all(Array.from({ length: 8 }, worker));
-    const abst = [...results.values()].filter(Boolean).length;
-    meta.abstentionRate = Number((abst / rows.length).toFixed(4));
+
+    // rewrite the file CLEAN (one line per valid id, excluded ids dropped): kills
+    // the append-only duplication and makes the artifact reproducible.
+    const validIds = new Set(valid.map((r) => r.id));
+    const clean = valid
+      .map((r) => ({ id: r.id, abstained: results.get(r.id) ?? false }))
+      .map((o) => JSON.stringify(o))
+      .join("\n");
+    await Bun.write(outPath, clean ? `${clean}\n` : "");
+
+    const nValid = (meta.nValid as number | undefined) ?? valid.length;
+    const abst = valid.filter((r) => results.get(r.id) === true && validIds.has(r.id)).length;
+    // abstentionRate is over the VALID denominator (nValid), consistent with
+    // judgeAccuracy/judgePartialRate. excluded infra failures are not abstentions.
+    meta.abstentionRate = Number((abst / (nValid || 1)).toFixed(4));
+    meta.nAbstained = abst;
     await Bun.write(`${runPath}run.json`, JSON.stringify(meta, null, 2));
-    console.log(`${String(meta.model).replace("gateway:", "").replace(/^compat:.*\|/, "").padEnd(38)} ${meta.benchmark} abstain=${meta.abstentionRate}`);
+    console.log(`${String(meta.model).replace("gateway:", "").replace(/^compat:.*\|/, "").padEnd(38)} ${meta.benchmark} abstain=${meta.abstentionRate} (n=${nValid}, excl=${excluded.size})`);
   }
 }
 
@@ -261,21 +287,38 @@ async function cmdReport() {
   const rows: Record<string, unknown>[] = [];
   for await (const dir of new Glob("*").scan({ cwd: RUNS_DIR, onlyFiles: false })) {
     const f = Bun.file(`${RUNS_DIR}${dir}/run.json`);
-    if (await f.exists()) rows.push((await f.json()) as Record<string, unknown>);
+    if (await f.exists()) rows.push({ ...(await f.json()), _dir: dir } as Record<string, unknown>);
   }
-  const scored = rows.filter((r) => r.judgeAccuracy !== undefined && !r.smokeOnly);
+  const allScored = rows.filter((r) => r.judgeAccuracy !== undefined && !r.smokeOnly);
+  // dedup by (benchmark, model): keep the largest-n run, tie-break by most recent dir.
+  // the runs dir holds both the early sample-100 sweeps and the final n=500 sweeps for
+  // the same models; without dedup every model shows up twice.
+  const best = new Map<string, Record<string, unknown>>();
+  for (const r of allScored) {
+    const key = `${r.benchmark}|${r.model}`;
+    const prev = best.get(key);
+    const n = Number(r.nValid ?? r.nItems ?? 0);
+    const pn = prev ? Number(prev.nValid ?? prev.nItems ?? 0) : -1;
+    if (!prev || n > pn || (n === pn && String(r._dir) > String(prev._dir))) best.set(key, r);
+  }
+  const scored = [...best.values()];
   const benchmarks = [...new Set(scored.map((r) => String(r.benchmark)))].sort();
   for (const bench of benchmarks) {
+    // PRIMARY ranking metric is judgeAccuracy (binary correct rate). judgeMeanScore
+    // (which weights partial=0.5) is reported as a sensitivity column only, because
+    // the partial weight is arbitrary and flips adjacent ranks. See threats T10.
     const group = scored
       .filter((r) => r.benchmark === bench)
-      .sort((a, b) => Number(b.judgeMeanScore ?? 0) - Number(a.judgeMeanScore ?? 0));
+      .sort((a, b) => Number(b.judgeAccuracy ?? 0) - Number(a.judgeAccuracy ?? 0));
     console.log(`\n== ${bench} ==`);
     // correct = judge correct; abstain = declined ("no sabe"); halluc = wrong attempt ("sabe mal")
+    // all three rates share the nValid denominator (excluded infra failures dropped everywhere).
     console.log("model".padEnd(40) + "correct".padStart(9) + "abstain".padStart(9) + "halluc".padStart(8) + "score".padStart(8) + "n".padStart(6));
     for (const r of group) {
       const model = String(r.model).replace("gateway:", "").replace(/^compat:.*\|/, "");
       const abst = r.abstentionRate as number | undefined;
-      // halluc = answers that were wrong AND were genuine attempts (not abstentions)
+      // halluc = wrong-and-not-abstained, over nValid. Same denominator as abst now,
+      // so the subtraction is well-defined (no mixed 500-vs-nValid denominators).
       const wrong = 1 - Number(r.judgeAccuracy) - Number(r.judgePartialRate ?? 0);
       const halluc = abst !== undefined ? Math.max(0, wrong - abst) : undefined;
       console.log(
