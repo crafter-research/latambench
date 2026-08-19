@@ -6,6 +6,7 @@ import json, glob, math, os, sys
 from collections import defaultdict
 
 RUNS = os.path.join(os.path.dirname(__file__), "..", "runs")
+ROWS_BY_BENCH = {}
 
 def wilson(k, n, z=1.96):
     if n == 0: return (0, 0, 0)
@@ -114,3 +115,118 @@ for bench in ["trueque", "choclo"]:
     if cpt:
         p, rj = reject[cpt]
         print(f"  CPT vs base [{cpt}]: p={p:.4f} raw, {'SIGNIFICANT' if rj else 'NOT significant'} after correction")
+    ROWS_BY_BENCH[bench] = rows
+
+
+# --- Fleiss kappa over the 3-judge validation set -------------------------
+# Previously the published 0.68 lived only in prose: no script regenerated it.
+
+VALID = os.path.join(os.path.dirname(__file__), "..", "validation")
+
+def fleiss_kappa(rows):
+    """rows: list of category-count lists, one per item. Returns kappa."""
+    n_items = len(rows)
+    if n_items == 0: return float("nan")
+    n_raters = sum(rows[0])
+    n_cat = len(rows[0])
+    p_j = [sum(r[c] for r in rows) / (n_items * n_raters) for c in range(n_cat)]
+    P_i = [(sum(c*c for c in r) - n_raters) / (n_raters * (n_raters - 1)) for r in rows]
+    P_bar = sum(P_i) / n_items
+    P_e = sum(p*p for p in p_j)
+    if P_e == 1: return float("nan")
+    return (P_bar - P_e) / (1 - P_e)
+
+def judge_verdicts_by_uid():
+    """Map 'model::item' -> verdict, preferring the largest-nValid run per model."""
+    best = {}
+    for f in glob.glob(os.path.join(RUNS, "*", "run.json")):
+        m = json.load(open(f))
+        if m.get("benchmark") != "trueque": continue
+        d = os.path.dirname(f)
+        if not os.path.exists(os.path.join(d, "judgments.jsonl")): continue
+        short = m.get("model", "").split("/")[-1].split("|")[-1]
+        nv = m.get("nValid") or 0
+        if short not in best or nv > best[short][0]:
+            best[short] = (nv, d)
+    out = {}
+    for short, (_, d) in best.items():
+        for line in open(os.path.join(d, "judgments.jsonl")):
+            r = json.loads(line)
+            out[(short, r.get("id"))] = r.get("verdict")
+    return out
+
+def report_kappa():
+    key_path = os.path.join(VALID, "judge-key.json")
+    if not os.path.exists(key_path):
+        return
+    key = json.load(open(key_path))
+    others = {}
+    for f in glob.glob(os.path.join(VALID, "mj-*.jsonl")):
+        name = os.path.basename(f)[3:-6]
+        lab = {}
+        for line in open(f):
+            r = json.loads(line)
+            uid = r.get("uid") or f"{r.get('model')}::{r.get('id')}"
+            lab[uid] = r.get("verdict")
+        others[name] = lab
+    if not others:
+        return
+
+    prod = judge_verdicts_by_uid()
+    def prod_verdict(uid):
+        model, iid = uid.split("::")
+        for (s, i), v in prod.items():
+            if i == iid and (model.lower() in s.lower() or s.lower() in model.lower()):
+                return v
+        return None
+
+    for label, judge1, note in (
+        ("judge-key.json (06-11 judge sweep)", lambda u: key.get(u), ""),
+        ("production judge verdicts (n=500 runs)", prod_verdict, "  <- regenerable from runs/"),
+    ):
+        for mode in ("binary", "3-category"):
+            rows = []
+            for uid in key:
+                vs = [judge1(uid)] + [o.get(uid) for o in others.values()]
+                if any(v is None for v in vs): continue
+                if mode == "binary":
+                    cats = ["correct", "other"]
+                    vs = [v if v == "correct" else "other" for v in vs]
+                else:
+                    cats = ["correct", "partial", "incorrect"]
+                    if any(v not in cats for v in vs): continue
+                rows.append([sum(1 for v in vs if v == c) for c in cats])
+            if rows:
+                k = fleiss_kappa(rows)
+                print(f"  Fleiss kappa ({mode}, {len(rows)} items, {1+len(others)} raters) "
+                      f"vs {label}: {k:.4f}{note}")
+
+def report_power(bench, rows):
+    """Power + MDE for the headline CPT-vs-base comparison. A null claim without
+    power is 'absence of evidence' dressed as 'evidence of absence'."""
+    lg = next((r for r in rows if "LatamGPT" in r["name"]), None)
+    base = next((r for r in rows if r["name"].lower().startswith("llama-3.1-70b")), None)
+    if not lg or not base: return
+    p1, n1 = lg["k"]/lg["n"], lg["n"]
+    p2, n2 = base["k"]/base["n"], base["n"]
+    d = p1 - p2
+    se = math.sqrt(p1*(1-p1)/n1 + p2*(1-p2)/n2)
+    z_a, z_b = 1.959964, 0.8416
+    lo, hi = d - z_a*se, d + z_a*se
+    phi = lambda x: 0.5 * math.erfc(-x/math.sqrt(2))
+    power = 1 - phi(z_a - d/se) + phi(-z_a - d/se)
+    pbar = (lg["k"] + base["k"]) / (n1 + n2)
+    mde = (z_a + z_b) * math.sqrt(2*pbar*(1-pbar)/min(n1, n2))
+    n_need = 2*pbar*(1-pbar)*((z_a+z_b)/d)**2 if d else float("inf")
+    print(f"  CPT power analysis: delta={100*d:+.2f}pts, 95% CI [{100*lo:+.2f}, {100*hi:+.2f}]")
+    print(f"    power for observed delta = {100*power:.1f}% | MDE at 80% power = {100*mde:.2f}pts "
+          f"| n needed/group = {n_need:.0f}")
+
+
+# The headline claim is a NULL result, so it needs power reported alongside it.
+for _bench, _rows in ROWS_BY_BENCH.items():
+    print(f"\n== {_bench} (power for the CPT null claim) ==")
+    report_power(_bench, _rows)
+
+print("\n== inter-rater agreement (3 judges, trueque validation set) ==")
+report_kappa()
