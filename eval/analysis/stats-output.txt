@@ -33,3 +33,17 @@
   tie-groups (connected components of NOT-significantly-different, all-pairs + Holm):
     {gemini-3.5-flash, gemini-3.1-pro-preview, gpt-5.5, deepseek-v4-pro, qwen3.7-max, llama-4-maverick, gpt-5.4-mini, claude-opus-4.8, LatamGPT, llama-3.1-70b, claude-haiku-4.5}
   CPT vs base [LatamGPT|llama-3.1-70b]: p=0.6472 raw, NOT significant after correction
+
+== trueque (power for the CPT null claim) ==
+  CPT power analysis: delta=+3.58pts, 95% CI [-1.61, +8.77]
+    power for observed delta = 27.2% | MDE at 80% power = 7.48pts | n needed/group = 2107
+
+== choclo (power for the CPT null claim) ==
+  CPT power analysis: delta=+1.27pts, 95% CI [-4.18, +6.72]
+    power for observed delta = 7.4% | MDE at 80% power = 8.10pts | n needed/group = 17119
+
+== inter-rater agreement (3 judges, trueque validation set) ==
+  Fleiss kappa (binary, 100 items, 3 raters) vs judge-key.json (06-11 judge sweep): 0.6748
+  Fleiss kappa (3-category, 100 items, 3 raters) vs judge-key.json (06-11 judge sweep): 0.6950
+  Fleiss kappa (binary, 100 items, 3 raters) vs production judge verdicts (n=500 runs): 0.5601  <- regenerable from runs/
+  Fleiss kappa (3-category, 100 items, 3 raters) vs production judge verdicts (n=500 runs): 0.6092  <- regenerable from runs/
