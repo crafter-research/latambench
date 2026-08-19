@@ -81,10 +81,10 @@ const ORG: Record<string, { bg: string; logo: string; label?: string }> = {
 };
 
 const method = [
-  { k: "01", label_es: "Juez anclado a referencia",  label_en: "Reference-anchored judge",  detail_es: "Un modelo fuera del set comparado decide si la respuesta expresa los hechos de la referencia. Calibrado con un set sintético: TPR 0.99 / TNR 0.97.", detail_en: "A model outside the evaluated set decides whether the response expresses the reference facts. Calibrated on a synthetic set: TPR 0.99 / TNR 0.97." },
+  { k: "01", label_es: "Juez anclado a referencia",  label_en: "Reference-anchored judge",  detail_es: "Un modelo fuera del set comparado decide si la respuesta expresa los hechos de la referencia. Un set sintético reporta TPR 0.99 / TNR 0.97: mide fidelidad a la referencia, no que la referencia sea correcta, y sus 200 items salen de los mismos 500 evaluados.", detail_en: "A model outside the evaluated set decides whether the response expresses the reference facts. A synthetic set reports TPR 0.99 / TNR 0.97: it measures fidelity to the reference, not that the reference is right, and its 200 items are drawn from the same 500 evaluated." },
   { k: "02", label_es: "Tres dimensiones",            label_en: "Three dimensions",          detail_es: "No solo accuracy. Separamos abstención honesta (\"no sé\") de alucinación (\"sabe mal\"): para alto riesgo, un modelo que se calla vale más que uno que inventa.", detail_en: "Not just accuracy. We separate honest abstention (\"I don't know\") from hallucination: for high-stakes use, a silent model beats one that invents." },
-  { k: "03", label_es: "Reproducible",                label_en: "Reproducible",              detail_es: "Cada corrida guarda respuestas crudas y transcripts del juez. Seed fijo, temperatura 0, todo versionado en git.", detail_en: "Every run saves raw responses and judge transcripts. Fixed seed, temperature 0, all versioned in git." },
-  { k: "04", label_es: "Auditoría del benchmark",     label_en: "Benchmark audit",           detail_es: "El pipeline detecta no solo errores de los modelos sino issues de referencia en los benchmarks mismos. Fixes aditivos, nunca correcciones culturales.", detail_en: "The pipeline flags not only model errors but reference issues in the benchmarks themselves. Additive fixes only, no cultural corrections." },
+  { k: "03", label_es: "Reproducible",                label_en: "Reproducible",              detail_es: "Cada corrida guarda respuestas crudas y transcripts del juez. Seed fijo, temperatura 0, todo versionado en git. Los números exactos no son bit-reproducibles (el routing y los alias de modelo derivan); lo reproducible es el pipeline y sus entradas.", detail_en: "Every run saves raw responses and judge transcripts. Fixed seed, temperature 0, all versioned in git. Exact numbers are not bit-reproducible (provider routing and model aliases drift); the pipeline and its inputs are." },
+  { k: "04", label_es: "Auditoría del benchmark",     label_en: "Benchmark audit",           detail_es: "El pipeline detecta no solo errores de los modelos sino issues de referencia en los benchmarks mismos. La muestra adjudicada (n=52) es la cola de desacuerdos, sesgada por construcción: sirve para encontrar defectos, no para estimar una tasa de error. Fixes aditivos, nunca correcciones culturales.", detail_en: "The pipeline flags not only model errors but reference issues in the benchmarks themselves. The adjudicated sample (n=52) is the disagreement queue, biased by construction: it finds defects but yields no error rate. Additive fixes only, no cultural corrections." },
 ];
 
 const evals = [
@@ -126,21 +126,22 @@ const evals = [
       <div class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-[#cfe7d2]/[0.04] blur-3xl"></div>
     </div>
 
-    <div class="relative max-w-[1400px] mx-auto">
+    <div class="relative max-w-[820px] mx-auto">
       <div class="flex items-center gap-3 mb-6">
         <span class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70">Crafter Research</span>
         <div class="w-8 h-px bg-[#cfe7d2]/20"></div>
         <span class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#8a9590]" data-i18n="hero_label">Observatorio de evals</span>
       </div>
 
-      <h1 class="font-['Geist'] font-bold tracking-[-0.04em] leading-[0.9] text-[clamp(40px,7vw,96px)] text-[#f4f3ee] mb-7">
+      <h1 class="font-['Geist'] font-bold tracking-[-0.03em] leading-[1.0] text-[clamp(30px,4vw,46px)] text-[#f4f3ee] mb-5">
         Latam<span class="text-[#cfe7d2]">Bench</span>
       </h1>
 
-      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 lg:gap-16">
-        <p class="font-['Geist'] text-base md:text-xl leading-snug text-[#c5cdc8] max-w-2xl font-light" data-i18n="hero_subtitle">
-          Evaluación independiente de LLMs en conocimiento cultural latinoamericano.
-          Números reproducibles que nadie más publica, con juez calibrado y transcripts abiertos.
+      <div class="flex flex-col gap-6">
+        <p class="font-['Geist'] text-[15px] md:text-base leading-relaxed text-[#c5cdc8] max-w-[62ch]" data-i18n="hero_subtitle">
+          Evaluación independiente de LLMs en conocimiento cultural latinoamericano:
+          11 modelos sobre dos benchmarks de CENIA, con un juez anclado a la referencia,
+          transcripts abiertos y las limitaciones declaradas.
         </p>
         <div class="flex items-center gap-3 flex-shrink-0">
           <a href="#leaderboard" class="font-['Geist'] text-sm font-medium px-6 py-3 rounded-full bg-[#cfe7d2] text-[#0a130e] hover:bg-[#f4f3ee] transition-colors" data-i18n="hero_cta">Ver el leaderboard</a>
@@ -148,15 +149,15 @@ const evals = [
         </div>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-px mt-12 md:mt-16 border border-[#cfe7d2]/10 rounded-2xl overflow-hidden bg-[#cfe7d2]/10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-px mt-10 border border-[#cfe7d2]/10 rounded-2xl overflow-hidden bg-[#cfe7d2]/10">
         {[
           { v: "2",    l_es: "benchmarks",  l_en: "benchmarks"  },
           { v: "11",   l_es: "modelos",     l_en: "models"      },
           { v: "11K",  l_es: "veredictos",  l_en: "verdicts"    },
-          { v: "100%", l_es: "reproducible",l_en: "reproducible"},
+          { v: "1,000", l_es: "items por modelo", l_en: "items per model"},
         ].map((s, idx) => (
-          <div class="bg-[#0d1812] px-5 md:px-7 py-5 md:py-7">
-            <div class="font-['Geist'] font-bold text-3xl md:text-4xl tracking-tight text-[#f4f3ee]">{s.v}</div>
+          <div class="bg-[#0d1812] px-5 py-4">
+            <div class="font-['Geist'] font-semibold text-xl md:text-2xl tracking-tight text-[#f4f3ee]">{s.v}</div>
             <div class="font-['Geist_Mono'] text-[10px] uppercase tracking-wider text-[#8a9590] mt-1.5"
                  data-i18n={`stat_${idx}`} data-en={s.l_en} data-es={s.l_es}>{s.l_es}</div>
           </div>
@@ -172,10 +173,9 @@ const evals = [
       <!-- Section header + tabs -->
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-8">
         <div>
-          <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-3">01 / Leaderboard</div>
-          <h2 class="font-['Geist'] font-bold text-[clamp(24px,4vw,52px)] leading-[0.95] tracking-[-0.03em] text-[#f4f3ee]">
-            <span data-i18n="leaderboard_title_1">¿Qué saben los</span><br />
-            <span data-i18n="leaderboard_title_2">modelos de Latam?</span>
+          <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-3">Leaderboard</div>
+          <h2 class="font-['Geist'] font-semibold text-[clamp(20px,2.4vw,28px)] leading-tight tracking-[-0.02em] text-[#f4f3ee]">
+            <span data-i18n="leaderboard_title_1">Resultados</span><span data-i18n="leaderboard_title_2"></span>
           </h2>
         </div>
         <div class="flex items-center gap-1 self-start sm:self-end p-1 rounded-full border border-[#cfe7d2]/15 bg-[#0d1812]">
@@ -308,7 +308,7 @@ const evals = [
 
           <!-- Insight note -->
           <div class="rounded-2xl border border-[#cfe7d2]/10 p-5 bg-[#0d1812]">
-            <div class="font-['Geist_Mono'] text-[9px] uppercase tracking-wider text-[#cfe7d2]/50 mb-3" data-i18n="insight_label">Hallazgo clave</div>
+            <div class="font-['Geist_Mono'] text-[9px] uppercase tracking-wider text-[#cfe7d2]/50 mb-3" data-i18n="insight_label">Lectura de la tabla</div>
             <p class="font-['Geist'] text-[13px] leading-relaxed text-[#c5cdc8]" data-i18n="leaderboard_note">
               El accuracy crudo colapsa <span class="text-[#cfe7d2]">abstención</span> y <span class="text-[#e8a08b]">alucinación</span> en un solo "incorrecto", pero son opuestos.
               En CHOCLO, Opus 4.8 inventa solo <span class="text-[#f4f3ee] font-semibold">9.4%</span> mientras
@@ -348,8 +348,11 @@ const evals = [
           <div class="rounded-2xl border border-[#cfe7d2]/10 p-5 bg-[#0d1812]">
             <div class="font-['Geist_Mono'] text-[9px] uppercase tracking-wider text-[#cfe7d2]/50 mb-3" data-i18n="caveats_label">Rigor</div>
             <p class="font-['Geist'] text-[12px] leading-relaxed text-[#8a9590]" data-i18n="caveats_note">
-              LatamGPT y su modelo base se solapan: el continued-pretraining no muestra mejora significativa.
-              Tres jueces de familias distintas concuerdan (Fleiss kappa 0.68). Las tasas de abstención están parcialmente influidas por el prompt.
+              LatamGPT y su modelo base se solapan: el continued-pretraining no muestra una mejora detectable
+              (+3.6 pts, IC95% [-1.6, +8.8]). Con n≈490 el estudio solo detecta diferencias mayores a 7.5 pts,
+              así que descarta mejoras grandes pero no las chicas. Tres jueces de familias distintas concuerdan
+              (Fleiss kappa 0.67, y 0.56 contra los veredictos de la corrida final). Las tasas de abstención
+              están parcialmente influidas por el prompt.
             </p>
           </div>
 
@@ -377,13 +380,13 @@ const evals = [
 
   <!-- HALLAZGOS -->
   <section class="px-5 md:px-8 py-14 md:py-20 border-t border-[#cfe7d2]/8">
-    <div class="max-w-[1400px] mx-auto">
-      <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-8 md:mb-12" data-i18n="findings_label">02 / Lo que encontramos</div>
+    <div class="max-w-[820px] mx-auto">
+      <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-8 md:mb-12" data-i18n="findings_label">Hallazgos</div>
       <div class="grid md:grid-cols-3 gap-px rounded-2xl overflow-hidden border border-[#cfe7d2]/10 bg-[#cfe7d2]/10">
         {[
-          { t_es: "El frontier domina, pero no aplasta",  t_en: "Frontier leads, but doesn't crush",  d_es: "El mejor modelo responde 73% de las preguntas culturales; ninguno pasa de ahí. El conocimiento regional sigue siendo la cola débil incluso para SOTA.", d_en: "The best model answers 73% of cultural questions; none exceeds that. Regional knowledge remains the weak tail even for SOTA." },
-          { t_es: "Las métricas léxicas mienten",         t_en: "Lexical metrics lie",                d_es: "El token-F1 castiga respuestas correctas pero verbosas. Con el juez calibrado, el ranking se reordena por completo.", d_en: "Token-F1 penalizes correct but verbose answers. With the calibrated judge, the ranking reshuffles entirely." },
-          { t_es: "El pretraining regional mueve poco",   t_en: "Regional pretraining moves little",  d_es: "El primer eval independiente de un modelo con continued-pretraining regional lo deja apenas sobre su base, y entre los que más alucinan.", d_en: "The first independent eval of a model with continued regional pretraining leaves it barely above its base, and among the highest hallucinators." },
+          { t_es: "El techo está en 72.9%",              t_en: "The ceiling sits at 72.9%",         d_es: "Ningún modelo supera ese valor en Trueque. El conocimiento cultural regional sigue siendo cola débil incluso para los modelos de frontera.", d_en: "No model exceeds that on Trueque. Regional cultural knowledge remains a weak tail even for frontier models." },
+          { t_es: "La métrica léxica reordena el ranking", t_en: "The lexical metric reorders the ranking", d_es: "El token-F1 puntúa el solapamiento de palabras, así que castiga respuestas correctas pero verbosas. Con el juez anclado a la referencia, el orden cambia: el modelo que el F1 ponía séptimo queda primero.", d_en: "Token-F1 scores word overlap, so it penalizes correct but verbose answers. Under the reference-anchored judge the order changes: the model F1 ranked seventh comes first." },
+          { t_es: "El pretraining regional no mueve la aguja de forma detectable", t_en: "Regional pretraining shows no detectable gain", d_es: "Primer eval independiente de un modelo con continued-pretraining regional: queda +3.6 pts sobre su base (IC95% [-1.6, +8.8]), dentro del ruido a este tamaño de muestra, y con la tasa de alucinación más alta del board.", d_en: "First independent eval of a model with continued regional pretraining: it lands +3.6 pts above its base (95% CI [-1.6, +8.8]), within noise at this sample size, and with the highest hallucination rate on the board." },
         ].map((f) => (
           <div class="bg-[#0d1812] p-6 md:p-8">
             <h3 class="font-['Geist'] font-semibold text-base md:text-lg tracking-tight text-[#f4f3ee] mb-3 leading-snug" data-i18n-es={f.t_es} data-i18n-en={f.t_en}>{f.t_es}</h3>
@@ -391,17 +394,13 @@ const evals = [
           </div>
         ))}
       </div>
-      <div class="mt-6 rounded-2xl border-l-2 border-[#cfe7d2] bg-[#cfe7d2]/[0.04] px-6 md:px-8 py-6">
-        <p class="font-['Geist'] text-base md:text-lg italic text-[#e3e9e4] leading-snug" data-i18n="quote">"La ambigüedad no es pecado del lenguaje, es pecado del diseño del benchmark."</p>
-        <div class="font-['Geist_Mono'] text-[10px] uppercase tracking-wider text-[#8a9590] mt-3" data-i18n="quote_label">Principio del proyecto</div>
-      </div>
     </div>
   </section>
 
   <!-- METODOLOGIA -->
   <section id="method" class="px-5 md:px-8 py-14 md:py-20 border-t border-[#cfe7d2]/8">
-    <div class="max-w-[1400px] mx-auto">
-      <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-8 md:mb-12" data-i18n="method_label">03 / Metodología</div>
+    <div class="max-w-[820px] mx-auto">
+      <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-8 md:mb-12" data-i18n="method_label">Metodología</div>
       <div class="grid md:grid-cols-2 gap-px rounded-2xl overflow-hidden border border-[#cfe7d2]/10 bg-[#cfe7d2]/10">
         {method.map((m) => (
           <div class="bg-[#0d1812] p-6 md:p-9">
@@ -420,8 +419,8 @@ const evals = [
 
   <!-- EVALS -->
   <section id="evals" class="px-5 md:px-8 py-14 md:py-20 border-t border-[#cfe7d2]/8">
-    <div class="max-w-[1400px] mx-auto">
-      <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-8 md:mb-12" data-i18n="evals_label">04 / Qué evaluamos</div>
+    <div class="max-w-[820px] mx-auto">
+      <div class="font-['Geist_Mono'] text-[10px] tracking-[0.25em] uppercase text-[#cfe7d2]/70 mb-8 md:mb-12" data-i18n="evals_label">Qué evaluamos</div>
       <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
         {evals.map((e) => (
           <div class="rounded-2xl border border-[#cfe7d2]/12 p-6 md:p-8 bg-[#0d1812] flex flex-col">
@@ -442,10 +441,10 @@ const evals = [
 
   <!-- CTA -->
   <section class="px-5 md:px-8 py-16 md:py-24 border-t border-[#cfe7d2]/8">
-    <div class="max-w-[1400px] mx-auto rounded-3xl border border-[#cfe7d2]/12 bg-gradient-to-br from-[#0f1c15] to-[#0d1812] p-8 md:p-14">
+    <div class="max-w-[820px] mx-auto rounded-3xl border border-[#cfe7d2]/12 bg-gradient-to-br from-[#0f1c15] to-[#0d1812] p-8 md:p-14">
       <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
         <div class="max-w-xl">
-          <h2 class="font-['Geist'] font-bold text-[clamp(26px,4vw,48px)] leading-[0.95] tracking-[-0.03em] text-[#f4f3ee] mb-5" data-i18n="cta_title">Todo abierto y<br />reproducible</h2>
+          <h2 class="font-['Geist'] font-semibold text-[clamp(20px,2.4vw,28px)] leading-tight tracking-[-0.02em] text-[#f4f3ee] mb-4" data-i18n="cta_title">Todo el harness es público</h2>
           <p class="font-['Geist'] text-[#8a9590] leading-relaxed text-[14px]" data-i18n="cta_body">
             El harness, las respuestas crudas, los transcripts del juez y la calibración están en GitHub.
             Cualquiera puede correr un modelo nuevo, auditar un veredicto o reproducir la tabla con el mismo seed.
@@ -480,48 +479,44 @@ const evals = [
       es: {
         nav_leaderboard: "Leaderboard", nav_method: "Metodología",
         hero_label: "Observatorio de evals",
-        hero_subtitle: "Evaluación independiente de LLMs en conocimiento cultural latinoamericano. Números reproducibles que nadie más publica, con juez calibrado y transcripts abiertos.",
+        hero_subtitle: "Evaluación independiente de LLMs en conocimiento cultural latinoamericano: 11 modelos sobre dos benchmarks de CENIA, con un juez anclado a la referencia, transcripts abiertos y las limitaciones declaradas.",
         hero_cta: "Ver el leaderboard",
         stat_0: "benchmarks", stat_1: "modelos", stat_2: "veredictos", stat_3: "reproducible",
         col_model: "Modelo", col_correct: "Correcto", col_abstention: "Abstención", col_hallucination: "Alucinación",
         col_correct_inline: "Correcto", col_abstention_inline: "Abstención", col_hallucination_inline: "Alucinación",
         prelim_tag: "prelim.",
         choclo_prelim: "Resultados preliminares. La calibración del juez y el inter-rater de 3 jueces cubren Trueque; CHOCLO (referencias ultra-cortas) aún no tiene validación propia. Con corrección por comparaciones múltiples (Holm-Bonferroni) todo el board cae en un solo grupo estadístico por accuracy: no leas el orden ordinal como significativo.",
-        insight_label: "Hallazgo clave",
+        insight_label: "Lectura de la tabla",
         legend_title: "columnas", legend_correct: "expresa los hechos de la referencia", legend_abstention: "se abstiene honestamente", legend_hallucination: "inventa (alucinación)",
         orgs_label: "Organizaciones",
         caveats_label: "Rigor",
-        caveats_note: "LatamGPT y su modelo base se solapan: el continued-pretraining no muestra mejora significativa. Tres jueces de familias distintas concuerdan (Fleiss kappa 0.68). Las tasas de abstención están parcialmente influidas por el prompt.",
-        leaderboard_title_1: "¿Qué saben los", leaderboard_title_2: "modelos de Latam?",
+        caveats_note: "LatamGPT y su modelo base se solapan: el continued-pretraining no muestra una mejora detectable (+3.6 pts, IC95% [-1.6, +8.8]). Con n≈490 el estudio solo detecta diferencias mayores a 7.5 pts, así que descarta mejoras grandes pero no las chicas. Tres jueces de familias distintas concuerdan (Fleiss kappa 0.67, y 0.56 contra los veredictos de la corrida final). Las tasas de abstención están parcialmente influidas por el prompt.",
+        leaderboard_title_1: "Resultados", leaderboard_title_2: "",
         leaderboard_note: "El accuracy crudo colapsa abstención y alucinación en un solo \"incorrecto\", pero son opuestos. En CHOCLO, Opus 4.8 inventa solo 9.4% mientras LatamGPT inventa 53.2%.",
-        findings_label: "02 / Lo que encontramos", method_label: "03 / Metodología", evals_label: "04 / Qué evaluamos",
-        cta_title: "Todo abierto y\nreproducible",
+        findings_label: "Hallazgos", method_label: "Metodología", evals_label: "Qué evaluamos",
+        cta_title: "Todo el harness es público",
         cta_body: "El harness, las respuestas crudas, los transcripts del juez y la calibración están en GitHub. Cualquiera puede correr un modelo nuevo, auditar un veredicto o reproducir la tabla con el mismo seed.",
-        quote: '"La ambigüedad no es pecado del lenguaje, es pecado del diseño del benchmark."',
-        quote_label: "Principio del proyecto",
       },
       en: {
         nav_leaderboard: "Leaderboard", nav_method: "Methodology",
         hero_label: "Evals observatory",
-        hero_subtitle: "Independent evaluation of LLMs on Latin American cultural knowledge. Reproducible numbers nobody else publishes, with a calibrated judge and open transcripts.",
+        hero_subtitle: "Independent evaluation of LLMs on Latin American cultural knowledge: 11 models across two CENIA benchmarks, with a reference-anchored judge, open transcripts, and the limitations stated.",
         hero_cta: "View the leaderboard",
         stat_0: "benchmarks", stat_1: "models", stat_2: "verdicts", stat_3: "reproducible",
         col_model: "Model", col_correct: "Correct", col_abstention: "Abstention", col_hallucination: "Hallucination",
         col_correct_inline: "Correct", col_abstention_inline: "Abstention", col_hallucination_inline: "Hallucination",
         prelim_tag: "prelim.",
         choclo_prelim: "Preliminary results. The judge calibration and the 3-judge inter-rater cover Trueque; CHOCLO (ultra-short references) has no validation of its own yet. With multiple-comparison correction (Holm-Bonferroni) the whole board collapses into a single statistical tie-group by accuracy: do not read the ordinal rank as significant.",
-        insight_label: "Key finding",
+        insight_label: "Reading the table",
         legend_title: "columns", legend_correct: "expresses the reference facts", legend_abstention: "abstains honestly", legend_hallucination: "hallucinates",
         orgs_label: "Organizations",
         caveats_label: "Rigor",
-        caveats_note: "LatamGPT and its base model overlap: the continued-pretraining shows no significant gain. Three judges from different families agree (Fleiss kappa 0.68). Abstention rates are partly prompt-driven.",
-        leaderboard_title_1: "What do models know", leaderboard_title_2: "about Latam?",
+        caveats_note: "LatamGPT and its base model overlap: the continued-pretraining shows no detectable gain (+3.6 pts, 95% CI [-1.6, +8.8]). At n=490 the study only resolves differences above 7.5 pts, so it rules out large gains but not small ones. Three judges from different families agree (Fleiss kappa 0.67, and 0.56 against the final-run verdicts). Abstention rates are partly prompt-driven.",
+        leaderboard_title_1: "Results", leaderboard_title_2: "",
         leaderboard_note: "Raw accuracy collapses abstention and hallucination into one \"wrong\", but they are opposites. On CHOCLO, Opus 4.8 hallucinates only 9.4% while LatamGPT hallucinates 53.2%.",
-        findings_label: "02 / What we found", method_label: "03 / Methodology", evals_label: "04 / What we evals",
-        cta_title: "All open and\nreproducible",
+        findings_label: "Findings", method_label: "Methodology", evals_label: "What we evaluate",
+        cta_title: "The whole harness is public",
         cta_body: "The harness, raw responses, judge transcripts, and calibration are on GitHub. Anyone can run a new model, audit a verdict, or reproduce the table with the same seed.",
-        quote: '"Ambiguity is not a sin of language, it is a sin of benchmark design."',
-        quote_label: "Project principle",
       },
     };
 
